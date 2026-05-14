@@ -4,14 +4,24 @@
   "description": "Shrink AI-generated pull requests into smaller reviewable patches.",
   "license": "MIT",
   "type": "module",
+  "homepage": "https://github.com/chenfei462/PatchDiet",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenfei462/PatchDiet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chenfei462/PatchDiet/issues"
+  },
   "bin": {
     "patchdiet": "dist/packages/cli/src/index.js"
   },
   "files": [
-    "dist",
+    "dist/packages/cli",
+    "dist/packages/core",
+    "dist/packages/report",
     "README.md",
     "LICENSE",
-    "action.yml"
+    "packages/action/index.mjs"
   ],
   "workspaces": [
     "packages/*"
