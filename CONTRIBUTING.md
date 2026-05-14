@@ -35,6 +35,6 @@ PatchDiet publishes to npm as a public package.
 
 ### GitHub Actions publish prerequisites
 
-- add an `NPM_TOKEN` repository secret with publish access to the `patchdiet` package
+- configure npm trusted publishing for this repo/workflow and keep `id-token: write` enabled in `publish-npm.yml`
 - use the `Publish npm` GitHub Actions workflow or publish from a GitHub release event
 - keep `npm run build`, `npm run typecheck`, and `npm test` green before publishing
