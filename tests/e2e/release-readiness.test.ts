@@ -12,6 +12,19 @@ describe("release readiness", () => {
     expect(contributing).toContain("GitHub Actions");
   });
 
+  it("pins a Node version that can run the TypeScript example tests", () => {
+    for (const workflowFile of [
+      ".github/workflows/ci.yml",
+      ".github/workflows/patchdiet-pr.yml",
+      ".github/workflows/publish-npm.yml"
+    ]) {
+      const workflow = readFileSync(join(process.cwd(), workflowFile), "utf8");
+
+      expect(workflow).toContain("actions/setup-node@v4");
+      expect(workflow).toContain("node-version: 22");
+    }
+  });
+
   it("ships a workflow for npm publishing from GitHub Actions", () => {
     const workflow = readFileSync(
       join(process.cwd(), ".github", "workflows", "publish-npm.yml"),
