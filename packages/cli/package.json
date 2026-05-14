@@ -1,0 +1,11 @@
+{
+  "name": "@patchdiet/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "dependencies": {
+    "commander": "^14.0.2"
+  },
+  "bin": {
+    "patchdiet": "dist/index.js"
+  }
+}

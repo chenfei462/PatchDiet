@@ -1,0 +1,8 @@
+{
+  "name": "@patchdiet/report",
+  "version": "0.1.0",
+  "type": "module",
+  "dependencies": {
+    "@patchdiet/core": "0.1.0"
+  }
+}

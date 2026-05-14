@@ -1,0 +1,20 @@
+name: PatchDiet
+description: Shrink AI-generated pull requests into smaller reviewable patches.
+inputs:
+  base:
+    description: Base git ref
+    required: true
+  head:
+    description: Head git ref
+    required: false
+    default: HEAD
+  test:
+    description: Required check command
+    required: false
+    default: node --test
+  github-token:
+    description: Token for posting PR comments
+    required: false
+runs:
+  using: node20
+  main: packages/action/index.mjs

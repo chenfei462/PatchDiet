@@ -1,0 +1,22 @@
+name: PatchDiet PR
+
+on:
+  pull_request:
+
+jobs:
+  patchdiet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - uses: ./
+        with:
+          base: ${{ github.event.pull_request.base.ref }}
+          head: ${{ github.event.pull_request.head.ref }}
+          test: node --test
+          github-token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,17 @@
+version: 1
+base: origin/main
+language: generic
+commands:
+  required:
+    - node --test
+  optional: []
+reduction:
+  strategy: conservative
+  atom_granularity: hunk
+scope:
+  ignore_paths:
+    - dist/**
+report:
+  html: true
+  markdown: true
+  github_comment: true

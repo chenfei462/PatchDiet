@@ -1,0 +1,8 @@
+node_modules/
+dist/
+coverage/
+.patchdiet/
+tmp/
+*.log
+*.tsbuildinfo
+*.tgz

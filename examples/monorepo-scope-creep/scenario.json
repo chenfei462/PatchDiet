@@ -1,0 +1,16 @@
+{
+  "name": "monorepo-scope-creep",
+  "baseBranch": "main",
+  "headBranch": "agent/bloated",
+  "baseFiles": {
+    "package.json": "{\n  \"name\": \"monorepo-scope-creep\",\n  \"private\": true,\n  \"type\": \"module\"\n}\n",
+    "packages/app/src/math.js": "export function add(a, b) {\n  return a + b;\n}\n",
+    "packages/app/test/math.test.js": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { add } from '../src/math.js';\n\ntest('add sums two numbers', () => {\n  assert.equal(add(2, 3), 5);\n});\n"
+  },
+  "headFiles": {
+    "packages/app/src/math.js": "export function add(a, b) {\n  return a + b;\n}\n\nexport function multiply(a, b) {\n  return a * b;\n}\n",
+    "packages/app/test/math.test.js": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { add, multiply } from '../src/math.js';\n\ntest('add sums two numbers', () => {\n  assert.equal(add(2, 3), 5);\n});\n\ntest('multiply multiplies two numbers', () => {\n  assert.equal(multiply(2, 3), 6);\n});\n",
+    "docs/roadmap.md": "# Unrelated docs update\n",
+    "packages/playground/scratch.txt": "temporary agent scratch output\n"
+  }
+}

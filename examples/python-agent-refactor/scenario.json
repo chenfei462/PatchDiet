@@ -1,0 +1,15 @@
+{
+  "name": "python-agent-refactor",
+  "baseBranch": "main",
+  "headBranch": "agent/bloated",
+  "baseFiles": {
+    "src/math.py": "def add(a, b):\n    return a + b\n",
+    "tests/test_math.py": "import unittest\nfrom src.math import add\n\nclass MathTests(unittest.TestCase):\n    def test_add(self):\n        self.assertEqual(add(2, 3), 5)\n\nif __name__ == '__main__':\n    unittest.main()\n"
+  },
+  "headFiles": {
+    "src/math.py": "def add(a, b):\n    return a + b\n\n\ndef multiply(a, b):\n    return a * b\n",
+    "tests/test_math.py": "import unittest\nfrom src.math import add, multiply\n\nclass MathTests(unittest.TestCase):\n    def test_add(self):\n        self.assertEqual(add(2, 3), 5)\n\n    def test_multiply(self):\n        self.assertEqual(multiply(2, 3), 6)\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "notes.py": "NOTES = 'agent added unrelated scratch file'\n",
+    "README.md": "# Python Demo\n\nUnrelated docs update.\n"
+  }
+}

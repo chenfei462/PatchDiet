@@ -1,0 +1,16 @@
+{
+  "name": "ts-bloated-pr",
+  "baseBranch": "main",
+  "headBranch": "agent/bloated",
+  "baseFiles": {
+    "package.json": "{\n  \"name\": \"ts-bloated-pr\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"scripts\": {\n    \"test\": \"node --test\"\n  }\n}\n",
+    "src/math.ts": "export function add(a, b) {\n  return a + b;\n}\n",
+    "test/math.test.js": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { add } from '../src/math.ts';\n\ntest('add sums two numbers', () => {\n  assert.equal(add(2, 3), 5);\n});\n"
+  },
+  "headFiles": {
+    "src/math.ts": "export function add(a, b) {\n  return a + b;\n}\n\nexport function multiply(a, b) {\n  return a * b;\n}\n",
+    "test/math.test.js": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { add, multiply } from '../src/math.ts';\n\ntest('add sums two numbers', () => {\n  assert.equal(add(2, 3), 5);\n});\n\ntest('multiply multiplies two numbers', () => {\n  assert.equal(multiply(2, 3), 6);\n});\n",
+    "src/unused.ts": "export const notes = 'agent added unrelated file';\n",
+    "README.md": "# Demo\n\nUnrelated docs update.\n"
+  }
+}
