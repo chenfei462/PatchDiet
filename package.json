@@ -1,6 +1,6 @@
 {
   "name": "patchdiet",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Shrink AI-generated pull requests into smaller reviewable patches.",
   "license": "MIT",
   "type": "module",
