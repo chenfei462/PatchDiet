@@ -4,7 +4,7 @@
 
 Show HN: PatchDiet - shrink bloated AI-generated PRs into minimal patches
 
-I built PatchDiet after noticing that coding agents often produce PRs that pass tests but include unrelated files and scope creep. PatchDiet takes a git diff, removes unnecessary changes conservatively, and outputs a smaller cleanup patch plus a report explaining what was removed and why. It is local-first and does not upload your code.
+I built PatchDiet after seeing coding agents produce PRs that pass checks but still include unrelated files and scope creep. PatchDiet takes a git diff, removes unnecessary changes conservatively, and outputs a smaller cleanup patch plus a report explaining what was removed and why. It is local-first and does not upload your code.
 
 ## X / LinkedIn
 
@@ -14,24 +14,18 @@ Your AI agent passed the tests. PatchDiet still deleted 71% of the patch.
 Body:
 PatchDiet takes an already-generated PR, reverts candidate hunks in temporary worktrees, reruns your checks, and emits a smaller cleanup patch plus an auditable report. Local-first. No source upload. Not a PR review bot.
 
-## 知乎
+## Release checklist
 
-标题：
-AI 写的 PR 太大？我做了一个自动瘦身工具
+1. Run `npm run smoke:release`.
+2. Confirm the packaged CLI works from a fresh install and can run `patchdiet --help` plus one end-to-end `shrink`.
+3. Publish the npm package with `npm publish --access public`.
+4. Create the GitHub release notes and update the Action example if inputs changed.
+5. Re-run the post-publish verification against the published package.
 
-摘要：
-PatchDiet 不负责“再写一遍代码”，而是处理 AI 已经写出来的 PR。它把补丁拆到 hunk 级，尝试在临时 worktree 里回退可疑改动，重新跑测试，再输出一个更小的 cleanup patch 和必要性报告。
+## Notes
 
-## 掘金
-
-标题：
-测试通过不代表 PR 好合并：给 AI 生成补丁做瘦身
-
-导语：
-我做了一个本地优先的 CLI，专门处理 Claude Code、Codex、Cursor 这类 AI coding agent 产出的“大而杂 PR”。PatchDiet 会删掉和当前验证目标无关的 diff，把 4 个文件、14 行改动缩成 1 个文件、4 行改动，并留下可以审计的报告。
-
-## 中文短标题
-
-- 我做了一个工具，把 AI 生成的臃肿 PR 自动瘦身
-- AI 写的 PR 太大？PatchDiet 自动删掉无关 diff
-- 测试通过不代表 PR 好合并：PatchDiet 给 AI 补丁做缩减
+- The primary onboarding command is `npx patchdiet shrink --base origin/main --head HEAD` for supported root JS repos.
+- `patchdiet init` belongs in the main onboarding path as the way to make detected or explicit commands durable.
+- The GitHub Action example omits `test` for supported root JS repos.
+- Non-JS repos and monorepo-targeted checks still need explicit commands.
+- The release smoke job is the same gate used in CI.

@@ -31,6 +31,13 @@ export interface PatchDietConfig {
 export interface ConfigFlags {
   base?: string;
   test?: string[];
+  lint?: string[];
+  typecheck?: string[];
+}
+
+export interface ResolvedCommands {
+  required: string[];
+  optional: string[];
 }
 
 export function loadPatchDietConfig(cwd: string): PatchDietConfig {
@@ -56,32 +63,44 @@ export function loadPatchDietConfig(cwd: string): PatchDietConfig {
     reduction: {
       strategy: "conservative",
       atomGranularity: "hunk",
-      maxRuntimeMinutes: defaults.reduction.maxRuntimeMinutes,
-      retryFlakyTests: defaults.reduction.retryFlakyTests
+      maxRuntimeMinutes: asNumber(raw.reduction, "max_runtime_minutes") ?? defaults.reduction.maxRuntimeMinutes,
+      retryFlakyTests: asNumber(raw.reduction, "retry_flaky_tests") ?? defaults.reduction.retryFlakyTests
     },
     scope: {
       ignorePaths: asStringArray(raw.scope, "ignore_paths") ?? defaults.scope.ignorePaths,
-      allowFormatOnlyRemoval: defaults.scope.allowFormatOnlyRemoval,
-      flagDependencyBumps: defaults.scope.flagDependencyBumps
+      allowFormatOnlyRemoval: asBoolean(raw.scope, "allow_format_only_removal") ?? defaults.scope.allowFormatOnlyRemoval,
+      flagDependencyBumps: asBoolean(raw.scope, "flag_dependency_bumps") ?? defaults.scope.flagDependencyBumps
     },
     report: {
-      html: defaults.report.html,
-      markdown: defaults.report.markdown,
-      githubComment: defaults.report.githubComment
+      html: asBoolean(raw.report, "html") ?? defaults.report.html,
+      markdown: asBoolean(raw.report, "markdown") ?? defaults.report.markdown,
+      githubComment: asBoolean(raw.report, "github_comment") ?? defaults.report.githubComment
     }
   };
 }
 
 export function mergeConfigWithFlags(
   config: PatchDietConfig,
-  flags: ConfigFlags
+  flags: ConfigFlags,
+  detectedCommands?: ResolvedCommands
 ): PatchDietConfig {
+  const explicitOptional = nonEmptyCommands([...(flags.lint ?? []), ...(flags.typecheck ?? [])]);
+
   return {
     ...config,
     base: flags.base ?? config.base,
     commands: {
       ...config.commands,
-      required: flags.test ?? config.commands.required
+      required: resolveCommandList(
+        flags.test,
+        config.commands.required,
+        detectedCommands?.required
+      ),
+      optional: resolveCommandList(
+        explicitOptional,
+        config.commands.optional,
+        detectedCommands?.optional
+      )
     }
   };
 }
@@ -113,6 +132,21 @@ function defaultConfig(): PatchDietConfig {
   };
 }
 
+function resolveCommandList(...candidates: Array<string[] | undefined>): string[] {
+  for (const candidate of candidates) {
+    const commands = nonEmptyCommands(candidate);
+    if (commands) {
+      return commands;
+    }
+  }
+
+  return [];
+}
+
+function nonEmptyCommands(commands: string[] | undefined): string[] | undefined {
+  return Array.isArray(commands) && commands.length > 0 ? commands : undefined;
+}
+
 function asString(value: unknown): string | undefined {
   return typeof value === "string" ? value : undefined;
 }
@@ -126,4 +160,22 @@ function asStringArray(parent: unknown, key: string): string[] | undefined {
   return Array.isArray(value) && value.every((item) => typeof item === "string")
     ? value
     : undefined;
+}
+
+function asNumber(parent: unknown, key: string): number | undefined {
+  if (!parent || typeof parent !== "object") {
+    return undefined;
+  }
+
+  const value = (parent as Record<string, unknown>)[key];
+  return typeof value === "number" && Number.isFinite(value) ? value : undefined;
+}
+
+function asBoolean(parent: unknown, key: string): boolean | undefined {
+  if (!parent || typeof parent !== "object") {
+    return undefined;
+  }
+
+  const value = (parent as Record<string, unknown>)[key];
+  return typeof value === "boolean" ? value : undefined;
 }

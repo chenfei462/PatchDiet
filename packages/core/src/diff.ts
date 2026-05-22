@@ -6,17 +6,32 @@ export function parseUnifiedDiff(input: string): ParsedDiff {
 
   let currentFile: DiffFile | undefined;
   let currentHunk: DiffHunk | undefined;
+  let pendingOldPath: string | undefined;
 
   for (const line of lines) {
     if (line.startsWith("diff --git ")) {
       currentHunk = undefined;
       currentFile = undefined;
+      pendingOldPath = undefined;
       continue;
     }
 
-    if (line.startsWith("+++ b/")) {
+    if (line.startsWith("--- ")) {
+      pendingOldPath = parsePatchPath(line.slice("--- ".length));
+      continue;
+    }
+
+    if (line.startsWith("+++ ")) {
+      const newPath = parsePatchPath(line.slice("+++ ".length));
+      const path = newPath === "/dev/null" ? pendingOldPath : newPath;
+      if (!path) {
+        continue;
+      }
+
       currentFile = {
-        path: line.slice("+++ b/".length),
+        path,
+        oldPath: pendingOldPath,
+        newPath,
         hunks: []
       };
       files.push(currentFile);
@@ -83,4 +98,16 @@ function toContextLine(line: string): DiffLine {
   }
 
   return { kind: "context", text: line };
+}
+
+function parsePatchPath(value: string): string {
+  if (value === "/dev/null") {
+    return value;
+  }
+
+  if (value.startsWith("a/") || value.startsWith("b/")) {
+    return value.slice(2);
+  }
+
+  return value;
 }

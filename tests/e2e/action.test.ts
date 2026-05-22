@@ -1,5 +1,5 @@
 import { createServer } from "node:http";
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { execFile } from "node:child_process";
@@ -39,6 +39,41 @@ describe("PatchDiet action", () => {
 
     expect(readFileSync(summaryPath, "utf8")).toContain("PatchDiet found a smaller equivalent patch.");
     expect(readFileSync(join(workspace, ".patchdiet", "report.github.md"), "utf8")).toContain("Cleanup patch artifact:");
+  });
+
+  it("lets the action fall through to auto-detection when INPUT_TEST is omitted", async () => {
+    const workspace = mkdtempSync(join(tmpdir(), "patchdiet-action-autodetect-"));
+    const summaryPath = join(workspace, "summary.md");
+    tempDirs.push(workspace);
+    await createExampleRepo("ts-bloated-pr", workspace);
+    installStubPackageManager(workspace, "npm");
+
+    writeFileSync(
+      join(workspace, "package.json"),
+      JSON.stringify({
+        name: "ts-bloated-pr",
+        private: true,
+        type: "module",
+        packageManager: "npm@10.0.0",
+        scripts: {
+          test: "node --test"
+        }
+      }, null, 2)
+    );
+
+    await execFileAsync("node", ["packages/action/index.mjs"], {
+      cwd: process.cwd(),
+      env: buildStubEnv(workspace, {
+        ...process.env,
+        GITHUB_WORKSPACE: workspace,
+        GITHUB_STEP_SUMMARY: summaryPath,
+        INPUT_BASE: "main",
+        INPUT_HEAD: "agent/bloated"
+      })
+    });
+
+    expect(readFileSync(summaryPath, "utf8")).toContain("PatchDiet found a smaller equivalent patch.");
+    expect(readFileSync(join(workspace, ".stub-bin", "npm.log"), "utf8")).toContain("test");
   });
 
   it("posts a PR comment when token and event payload are provided", async () => {
@@ -97,3 +132,26 @@ describe("PatchDiet action", () => {
     expect(requests[0]).toContain("PatchDiet found a smaller equivalent patch.");
   });
 });
+
+function installStubPackageManager(dir: string, commandName: "npm" | "pnpm" | "yarn"): void {
+  const binDir = join(dir, ".stub-bin");
+  mkdirSync(binDir, { recursive: true });
+  const logPath = join(binDir, `${commandName}.log`).replaceAll("\\", "/");
+  writeFileSync(
+    join(binDir, `${commandName}.cmd`),
+    [
+      "@echo off",
+      "setlocal",
+      `echo %*>>\"${logPath}\"`,
+      "exit /b 0"
+    ].join("\r\n"),
+    "utf8"
+  );
+}
+
+function buildStubEnv(dir: string, env: NodeJS.ProcessEnv): NodeJS.ProcessEnv {
+  return {
+    ...env,
+    PATH: `${join(dir, ".stub-bin")};${env.PATH ?? ""}`
+  };
+}

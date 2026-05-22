@@ -9,9 +9,14 @@ inputs:
     required: false
     default: HEAD
   test:
-    description: Required check command
+    description: Optional required check command override. When omitted, PatchDiet auto-detects supported root JS repos and otherwise requires explicit commands.
     required: false
-    default: node --test
+  lint:
+    description: Optional lint command that must not get worse when green at baseline
+    required: false
+  typecheck:
+    description: Optional typecheck command that must not get worse when green at baseline
+    required: false
   github-token:
     description: Token for posting PR comments
     required: false

@@ -18,5 +18,11 @@ jobs:
         with:
           base: ${{ github.event.pull_request.base.ref }}
           head: ${{ github.event.pull_request.head.ref }}
-          test: node --test
           github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: patchdiet-report
+          path: |
+            .patchdiet/cleanup.diff
+            .patchdiet/report.html
+            .patchdiet/run.json

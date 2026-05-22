@@ -7,6 +7,10 @@ export function renderMarkdownReport(report: ShrinkReport): string {
     `Base: \`${report.baseRef}\``,
     `Input diff: ${formatSummary(report.input)}`,
     `Output diff: ${formatSummary(report.output)}`,
+    `Reduction: ${formatReduction(report)}`,
+    "",
+    "## Evidence summary",
+    ...renderEvidenceSummary(report),
     "",
     "## High-confidence removals",
     ...renderEvidenceMarkdown(report.removals),
@@ -36,6 +40,8 @@ export function renderHtmlReport(report: ShrinkReport): string {
     `<p><strong>Base:</strong> <code>${escapeHtml(report.baseRef)}</code></p>`,
     `<p><strong>Input diff:</strong> ${escapeHtml(formatSummary(report.input))}</p>`,
     `<p><strong>Output diff:</strong> ${escapeHtml(formatSummary(report.output))}</p>`,
+    `<p><strong>Reduction:</strong> ${escapeHtml(formatReduction(report))}</p>`,
+    renderSummaryHtml(report),
     renderEvidenceHtml("High-confidence removals", report.removals),
     renderEvidenceHtml("Kept hunks", report.kept),
     renderEvidenceHtml("Needs human review", report.needsHumanReview),
@@ -52,12 +58,16 @@ export function renderGitHubComment(report: ShrinkReport): string {
     "",
     `Input: ${formatSummary(report.input)}`,
     `Minimal candidate: ${formatSummary(report.output)}`,
+    `Reduction: ${formatReduction(report)}`,
     "",
     "High-confidence removals:",
     ...renderEvidenceComment(report.removals),
     "",
     "Kept hunks:",
     ...renderEvidenceComment(report.kept),
+    "",
+    "Needs human review:",
+    ...renderEvidenceComment(report.needsHumanReview),
     "",
     `Cleanup patch artifact: ${report.patchPath ?? "not generated"}`
   ].join("\n");
@@ -74,7 +84,7 @@ function renderEvidenceMarkdown(items: ShrinkReport["removals"]): string[] {
 
   return items.map(
     (item) =>
-      `- \`${item.filePath}\` ${item.hunkHeader}: ${item.reason}`
+      `- \`${item.filePath}\` ${item.hunkHeader} [${item.category}]: ${item.reason}`
   );
 }
 
@@ -83,7 +93,7 @@ function renderEvidenceComment(items: ShrinkReport["removals"]): string[] {
     return ["- none"];
   }
 
-  return items.map((item) => `- ${item.filePath}: ${item.reason}`);
+  return items.map((item) => `- ${item.filePath} [${item.category}]: ${item.reason}`);
 }
 
 function renderEvidenceHtml(title: string, items: ShrinkReport["removals"]): string {
@@ -92,11 +102,47 @@ function renderEvidenceHtml(title: string, items: ShrinkReport["removals"]): str
     : items
         .map(
           (item) =>
-            `<li><code>${escapeHtml(item.filePath)}</code> ${escapeHtml(item.hunkHeader)}: ${escapeHtml(item.reason)}</li>`
+            `<li><code>${escapeHtml(item.filePath)}</code> ${escapeHtml(item.hunkHeader)} <strong>${escapeHtml(item.category)}</strong>: ${escapeHtml(item.reason)}</li>`
         )
         .join("");
 
   return `<section><h2>${escapeHtml(title)}</h2><ul>${list}</ul></section>`;
+}
+
+function renderEvidenceSummary(report: ShrinkReport): string[] {
+  const counts = countCategories([...report.removals, ...report.kept, ...report.needsHumanReview]);
+  return Object.entries(counts).map(([category, count]) => `- ${category}: ${count}`);
+}
+
+function renderSummaryHtml(report: ShrinkReport): string {
+  const items = renderEvidenceSummary(report)
+    .map((line) => line.slice(2))
+    .map((line) => `<li>${escapeHtml(line)}</li>`)
+    .join("");
+  return `<section><h2>Evidence summary</h2><ul>${items || "<li>none</li>"}</ul></section>`;
+}
+
+function countCategories(items: ShrinkReport["removals"]): Record<string, number> {
+  return items.reduce<Record<string, number>>((counts, item) => {
+    counts[item.category] = (counts[item.category] ?? 0) + 1;
+    return counts;
+  }, {});
+}
+
+function formatReduction(report: ShrinkReport): string {
+  return [
+    `files ${formatPercentReduction(report.input.fileCount, report.output.fileCount)}`,
+    `lines ${formatPercentReduction(report.input.changedLineCount, report.output.changedLineCount)}`,
+    `hunks ${formatPercentReduction(report.input.hunkCount, report.output.hunkCount)}`
+  ].join(", ");
+}
+
+function formatPercentReduction(input: number, output: number): string {
+  if (input === 0) {
+    return "0%";
+  }
+
+  return `-${Math.round(((input - output) / input) * 100)}%`;
 }
 
 function escapeHtml(value: string): string {

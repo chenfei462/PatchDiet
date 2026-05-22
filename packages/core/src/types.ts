@@ -12,6 +12,8 @@ export interface DiffHunk {
 
 export interface DiffFile {
   path: string;
+  oldPath?: string;
+  newPath?: string;
   hunks: DiffHunk[];
 }
 
@@ -32,7 +34,18 @@ export interface EvidenceItem {
   hunkHeader: string;
   reason: string;
   confidence: "high-confidence removal" | "kept" | "needs-human-review";
+  category: EvidenceCategory;
 }
+
+export type EvidenceCategory =
+  | "formatting-only"
+  | "dependency-bump"
+  | "docs-comment-only"
+  | "unrelated-path"
+  | "required-by-check"
+  | "reverse-apply-failed"
+  | "needs-human-review"
+  | "ignored-path";
 
 export interface ShrinkReport {
   baseRef: string;

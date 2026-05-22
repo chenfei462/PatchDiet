@@ -6,7 +6,9 @@ import { fileURLToPath } from "node:url";
 const workspace = process.env.GITHUB_WORKSPACE ?? process.cwd();
 const base = process.env.INPUT_BASE ?? "origin/main";
 const head = process.env.INPUT_HEAD ?? "HEAD";
-const testCommand = process.env.INPUT_TEST ?? "node --test";
+const testCommand = process.env.INPUT_TEST;
+const lintCommand = process.env.INPUT_LINT;
+const typecheckCommand = process.env.INPUT_TYPECHECK;
 const githubToken = process.env.INPUT_GITHUB_TOKEN;
 const actionRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const cliPath = join(actionRoot, "dist", "packages", "cli", "src", "index.js");
@@ -17,7 +19,17 @@ if (!existsSync(cliPath)) {
 
 execFileSync(
   "node",
-  [cliPath, "shrink", "--base", base, "--head", head, "--test", testCommand],
+  [
+    cliPath,
+    "shrink",
+    "--base",
+    base,
+    "--head",
+    head,
+    ...(testCommand ? ["--test", testCommand] : []),
+    ...(lintCommand ? ["--lint", lintCommand] : []),
+    ...(typecheckCommand ? ["--typecheck", typecheckCommand] : [])
+  ],
   { cwd: workspace, stdio: "inherit", env: { ...process.env, PATCHDIET_TARGET_CWD: workspace } }
 );
 

@@ -28,7 +28,8 @@ const report: ShrinkReport = {
       filePath: "src/ui/Button.tsx",
       hunkHeader: "@@ -1,3 +1,3 @@",
       reason: "formatting-only changes, checks unchanged",
-      confidence: "high-confidence removal"
+      confidence: "high-confidence removal",
+      category: "formatting-only"
     }
   ],
   kept: [
@@ -36,7 +37,8 @@ const report: ShrinkReport = {
       filePath: "src/auth/session.ts",
       hunkHeader: "@@ -5,6 +5,8 @@",
       reason: "required by auth regression test",
-      confidence: "kept"
+      confidence: "kept",
+      category: "required-by-check"
     }
   ],
   needsHumanReview: [
@@ -44,7 +46,8 @@ const report: ShrinkReport = {
       filePath: "package.json",
       hunkHeader: "@@ -10,1 +10,1 @@",
       reason: "dependency bump may be outside task scope",
-      confidence: "needs-human-review"
+      confidence: "needs-human-review",
+      category: "dependency-bump"
     }
   ],
   patchPath: ".patchdiet/cleanup.diff",
@@ -59,6 +62,8 @@ describe("report renderers", () => {
     expect(markdown).toContain("Base: `origin/main`");
     expect(markdown).toContain("Input diff: 4 files, 28 changed lines, 7 hunks");
     expect(markdown).toContain("Output diff: 2 files, 10 changed lines, 3 hunks");
+    expect(markdown).toContain("Reduction: files -50%, lines -64%, hunks -57%");
+    expect(markdown).toContain("formatting-only");
     expect(markdown).toContain("High-confidence removals");
     expect(markdown).toContain("Needs human review");
   });
@@ -69,6 +74,7 @@ describe("report renderers", () => {
     expect(html).toContain("<title>PatchDiet Report</title>");
     expect(html).toContain("patchdiet/cleanup-2026-05-14");
     expect(html).toContain("formatting-only changes, checks unchanged");
+    expect(html).toContain("Evidence summary");
     expect(html).toContain("dependency bump may be outside task scope");
   });
 
@@ -78,6 +84,8 @@ describe("report renderers", () => {
     expect(comment).toContain("PatchDiet found a smaller equivalent patch.");
     expect(comment).toContain("Input: 4 files, 28 changed lines, 7 hunks");
     expect(comment).toContain("Minimal candidate: 2 files, 10 changed lines, 3 hunks");
+    expect(comment).toContain("Reduction: files -50%, lines -64%, hunks -57%");
+    expect(comment).toContain("Needs human review:");
     expect(comment).toContain("Cleanup patch artifact: .patchdiet/cleanup.diff");
   });
 });

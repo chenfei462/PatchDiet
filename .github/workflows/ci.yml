@@ -16,3 +16,14 @@ jobs:
       - run: npm run build
       - run: npm run typecheck
       - run: npx vitest run
+
+  release-smoke:
+    name: release-smoke
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm run smoke:release

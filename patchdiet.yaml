@@ -3,14 +3,19 @@ base: origin/main
 language: generic
 commands:
   required:
-    - node --test
-  optional: []
+    - npm test
+  optional:
+    - npm run typecheck
 reduction:
   strategy: conservative
   atom_granularity: hunk
+  max_runtime_minutes: 20
+  retry_flaky_tests: 2
 scope:
   ignore_paths:
     - dist/**
+  allow_format_only_removal: true
+  flag_dependency_bumps: true
 report:
   html: true
   markdown: true

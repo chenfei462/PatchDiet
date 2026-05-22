@@ -28,6 +28,9 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "smoke:release": "node scripts/release-smoke.mjs",
+    "test:release": "npm run smoke:release",
+    "validate:real-repos": "node scripts/real-repo-validation.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc -p tsconfig.json --noEmit"
