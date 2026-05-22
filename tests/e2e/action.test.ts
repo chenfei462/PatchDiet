@@ -1,7 +1,7 @@
 import { createServer } from "node:http";
-import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { chmodSync, mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { delimiter, join } from "node:path";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 
@@ -137,6 +137,17 @@ function installStubPackageManager(dir: string, commandName: "npm" | "pnpm" | "y
   const binDir = join(dir, ".stub-bin");
   mkdirSync(binDir, { recursive: true });
   const logPath = join(binDir, `${commandName}.log`).replaceAll("\\", "/");
+  const shellScriptPath = join(binDir, commandName);
+  writeFileSync(
+    shellScriptPath,
+    [
+      "#!/usr/bin/env sh",
+      `printf '%s\\n' "$*" >> "${logPath}"`,
+      "exit 0"
+    ].join("\n"),
+    "utf8"
+  );
+  chmodSync(shellScriptPath, 0o755);
   writeFileSync(
     join(binDir, `${commandName}.cmd`),
     [
@@ -152,6 +163,6 @@ function installStubPackageManager(dir: string, commandName: "npm" | "pnpm" | "y
 function buildStubEnv(dir: string, env: NodeJS.ProcessEnv): NodeJS.ProcessEnv {
   return {
     ...env,
-    PATH: `${join(dir, ".stub-bin")};${env.PATH ?? ""}`
+    PATH: `${join(dir, ".stub-bin")}${delimiter}${env.PATH ?? ""}`
   };
 }
