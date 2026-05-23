@@ -3,11 +3,13 @@ base: origin/main
 language: generic
 commands:
   required:
-    - node --test
+    - npm test
   optional: []
 reduction:
   strategy: conservative
   atom_granularity: hunk
+  max_runtime_minutes: 20
+  retry_flaky_tests: 2
 scope:
   ignore_paths:
     - dist/**

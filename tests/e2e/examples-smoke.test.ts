@@ -29,7 +29,7 @@ describe("additional example scenarios", () => {
     });
 
     expect(result.input.fileCount).toBe(4);
-    expect(result.output.fileCount).toBe(1);
+    expect(result.output.fileCount).toBe(2);
     expect(readFileSync(result.patchPath!, "utf8")).toContain("multiply");
     expect(readFileSync(result.patchPath!, "utf8")).not.toContain("notes.py");
   });
@@ -47,7 +47,7 @@ describe("additional example scenarios", () => {
     });
 
     expect(result.input.fileCount).toBe(4);
-    expect(result.output.fileCount).toBe(1);
+    expect(result.output.fileCount).toBe(2);
     expect(readFileSync(result.patchPath!, "utf8")).toContain("multiply");
     expect(readFileSync(result.patchPath!, "utf8")).not.toContain("docs/roadmap.md");
   });

@@ -1,5 +1,8 @@
 node_modules/
-dist/
+/dist/
+packages/*/dist/
+!packages/action/dist/
+!packages/action/dist/index.mjs
 coverage/
 .patchdiet/
 tmp/

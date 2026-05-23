@@ -33,6 +33,43 @@ describe("parseUnifiedDiff", () => {
     expect(parsed.files[1]?.path).toBe("src/b.ts");
     expect(parsed.files[1]?.hunks).toHaveLength(1);
   });
+
+  it("marks binary diffs for human review", () => {
+    const parsed = parseUnifiedDiff(`diff --git a/asset.bin b/asset.bin
+index 1111111..2222222 100644
+GIT binary patch
+literal 4
+LcmZQzU|;|M00aO5
+`);
+
+    expect(parsed.files).toEqual([
+      {
+        path: "asset.bin",
+        hunks: [
+          {
+            header: "GIT binary patch",
+            lines: [],
+            binary: true
+          }
+        ]
+      }
+    ]);
+  });
+
+  it("keeps binary file paths when git reports /dev/null endpoints", () => {
+    const parsed = parseUnifiedDiff(`diff --git a/new.bin b/new.bin
+new file mode 100644
+index 0000000..2222222
+Binary files /dev/null and b/new.bin differ
+diff --git a/old.bin b/old.bin
+deleted file mode 100644
+index 1111111..0000000
+Binary files a/old.bin and /dev/null differ
+`);
+
+    expect(parsed.files.map((file) => file.path)).toEqual(["new.bin", "old.bin"]);
+    expect(parsed.files.every((file) => file.hunks[0]?.binary)).toBe(true);
+  });
 });
 
 describe("summarizeDiff", () => {

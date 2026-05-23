@@ -6,20 +6,51 @@ export function parseUnifiedDiff(input: string): ParsedDiff {
 
   let currentFile: DiffFile | undefined;
   let currentHunk: DiffHunk | undefined;
+  let pendingOldPath: string | undefined;
+  let pendingNewPath: string | undefined;
 
   for (const line of lines) {
     if (line.startsWith("diff --git ")) {
       currentHunk = undefined;
       currentFile = undefined;
+      const paths = parseDiffGitPaths(line);
+      pendingOldPath = paths?.oldPath;
+      pendingNewPath = paths?.newPath;
+      continue;
+    }
+
+    if (line.startsWith("--- a/")) {
+      pendingOldPath = line.slice("--- a/".length);
       continue;
     }
 
     if (line.startsWith("+++ b/")) {
+      pendingNewPath = line.slice("+++ b/".length);
       currentFile = {
-        path: line.slice("+++ b/".length),
+        path: pendingNewPath,
         hunks: []
       };
       files.push(currentFile);
+      currentHunk = undefined;
+      continue;
+    }
+
+    if (line.startsWith("Binary files ") && line.includes(" and ") && line.endsWith(" differ")) {
+      const path = parseBinaryFilesPath(line);
+      if (path) {
+        files.push(createBinaryFile(path, "Binary files differ"));
+      }
+      currentFile = undefined;
+      currentHunk = undefined;
+      continue;
+    }
+
+    if (line.startsWith("GIT binary patch")) {
+      const path = pendingNewPath ?? pendingOldPath;
+      if (path) {
+        files.push(createBinaryFile(path, "GIT binary patch"));
+      }
+      currentFile = undefined;
       currentHunk = undefined;
       continue;
     }
@@ -83,4 +114,52 @@ function toContextLine(line: string): DiffLine {
   }
 
   return { kind: "context", text: line };
+}
+
+function createBinaryFile(path: string, header: string): DiffFile {
+  return {
+    path,
+    hunks: [
+      {
+        header,
+        lines: [],
+        binary: true
+      }
+    ]
+  };
+}
+
+function parseDiffGitPaths(line: string): { oldPath: string; newPath: string } | undefined {
+  const match = /^diff --git a\/(.+) b\/(.+)$/.exec(line);
+  if (!match?.[1] || !match[2]) {
+    return undefined;
+  }
+
+  return {
+    oldPath: match[1],
+    newPath: match[2]
+  };
+}
+
+function parseBinaryFilesPath(line: string): string | undefined {
+  const match = /^Binary files (.+) and (.+) differ$/.exec(line);
+  if (!match?.[1] || !match[2]) {
+    return undefined;
+  }
+
+  const oldPath = normalizeBinaryEndpoint(match[1]);
+  const newPath = normalizeBinaryEndpoint(match[2]);
+  return newPath ?? oldPath;
+}
+
+function normalizeBinaryEndpoint(value: string): string | undefined {
+  if (value === "/dev/null") {
+    return undefined;
+  }
+
+  if (value.startsWith("a/") || value.startsWith("b/")) {
+    return value.slice(2);
+  }
+
+  return value;
 }

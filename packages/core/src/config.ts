@@ -56,8 +56,8 @@ export function loadPatchDietConfig(cwd: string): PatchDietConfig {
     reduction: {
       strategy: "conservative",
       atomGranularity: "hunk",
-      maxRuntimeMinutes: defaults.reduction.maxRuntimeMinutes,
-      retryFlakyTests: defaults.reduction.retryFlakyTests
+      maxRuntimeMinutes: asNumber(raw.reduction, "max_runtime_minutes") ?? defaults.reduction.maxRuntimeMinutes,
+      retryFlakyTests: asNumber(raw.reduction, "retry_flaky_tests") ?? defaults.reduction.retryFlakyTests
     },
     scope: {
       ignorePaths: asStringArray(raw.scope, "ignore_paths") ?? defaults.scope.ignorePaths,
@@ -124,6 +124,17 @@ function asStringArray(parent: unknown, key: string): string[] | undefined {
 
   const value = (parent as Record<string, unknown>)[key];
   return Array.isArray(value) && value.every((item) => typeof item === "string")
+    ? value
+    : undefined;
+}
+
+function asNumber(parent: unknown, key: string): number | undefined {
+  if (!parent || typeof parent !== "object") {
+    return undefined;
+  }
+
+  const value = (parent as Record<string, unknown>)[key];
+  return typeof value === "number" && Number.isFinite(value)
     ? value
     : undefined;
 }

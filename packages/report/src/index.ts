@@ -4,21 +4,31 @@ export function renderMarkdownReport(report: ShrinkReport): string {
   return [
     "# PatchDiet Report",
     "",
+    "## Summary",
+    "",
     `Base: \`${report.baseRef}\``,
+    `Head: \`${report.headRef}\``,
     `Input diff: ${formatSummary(report.input)}`,
     `Output diff: ${formatSummary(report.output)}`,
+    `Test command: \`${report.testCommand.command}\``,
+    `Test status: ${report.testCommand.status}`,
+    `Test attempts: ${report.testCommand.attempts}`,
+    `Test duration: ${report.testCommand.durationMs}ms`,
     "",
-    "## High-confidence removals",
+    "Safety: PatchDiet proves only that the cleanup patch passes the configured checks. It is not a semantic-equivalence proof.",
+    "",
+    "## Removed",
     ...renderEvidenceMarkdown(report.removals),
     "",
-    "## Kept hunks",
+    "## Kept",
     ...renderEvidenceMarkdown(report.kept),
     "",
     "## Needs human review",
     ...renderEvidenceMarkdown(report.needsHumanReview),
     "",
-    `Cleanup branch: ${report.cleanupBranch ?? "not created"}`,
-    `Cleanup patch: ${report.patchPath ?? "not generated"}`
+    "## Artifacts",
+    "",
+    ...renderArtifactsMarkdown(report)
   ].join("\n");
 }
 
@@ -29,18 +39,21 @@ export function renderHtmlReport(report: ShrinkReport): string {
     "<head>",
     "<meta charset=\"utf-8\">",
     "<title>PatchDiet Report</title>",
-    "<style>body{font-family:Arial,sans-serif;max-width:960px;margin:40px auto;padding:0 16px;}section{margin:24px 0;}li{margin:8px 0;}code{background:#f3f3f3;padding:2px 4px;}</style>",
+    "<style>body{font-family:Arial,sans-serif;max-width:1040px;margin:40px auto;padding:0 16px;color:#17202a;}section{margin:28px 0;}li{margin:8px 0;}code{background:#f3f3f3;padding:2px 4px;border-radius:4px;}table{border-collapse:collapse;width:100%;margin:16px 0;}td,th{border:1px solid #d8dee4;padding:8px;text-align:left;}th{background:#f6f8fa;}.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.panel{border:1px solid #d8dee4;border-radius:8px;padding:16px}.muted{color:#57606a}</style>",
     "</head>",
     "<body>",
     "<h1>PatchDiet Report</h1>",
-    `<p><strong>Base:</strong> <code>${escapeHtml(report.baseRef)}</code></p>`,
-    `<p><strong>Input diff:</strong> ${escapeHtml(formatSummary(report.input))}</p>`,
-    `<p><strong>Output diff:</strong> ${escapeHtml(formatSummary(report.output))}</p>`,
-    renderEvidenceHtml("High-confidence removals", report.removals),
-    renderEvidenceHtml("Kept hunks", report.kept),
+    "<section class=\"summary\">",
+    `<div class=\"panel\"><h2>Before</h2><p>${escapeHtml(formatSummary(report.input))}</p></div>`,
+    `<div class=\"panel\"><h2>After</h2><p>${escapeHtml(formatSummary(report.output))}</p></div>`,
+    `<div class=\"panel\"><h2>Tests</h2><p><code>${escapeHtml(report.testCommand.command)}</code></p><p>${escapeHtml(report.testCommand.status)} in ${report.testCommand.durationMs}ms over ${report.testCommand.attempts} attempt(s)</p></div>`,
+    "</section>",
+    "<p class=\"muted\"><strong>Safety:</strong> PatchDiet proves only that the cleanup patch passes the configured checks. It is not a semantic-equivalence proof.</p>",
+    `<p class=\"muted\"><strong>Base:</strong> <code>${escapeHtml(report.baseRef)}</code> <strong>Head:</strong> <code>${escapeHtml(report.headRef)}</code></p>`,
+    renderEvidenceHtml("Removed", report.removals),
+    renderEvidenceHtml("Kept", report.kept),
     renderEvidenceHtml("Needs human review", report.needsHumanReview),
-    `<p><strong>Cleanup branch:</strong> ${escapeHtml(report.cleanupBranch ?? "not created")}</p>`,
-    `<p><strong>Cleanup patch:</strong> ${escapeHtml(report.patchPath ?? "not generated")}</p>`,
+    `<section><h2>Artifacts</h2><ul>${renderArtifactsMarkdown(report).map((item) => `<li>${escapeHtml(item.replace(/^- /, ""))}</li>`).join("")}</ul></section>`,
     "</body>",
     "</html>"
   ].join("");
@@ -48,18 +61,35 @@ export function renderHtmlReport(report: ShrinkReport): string {
 
 export function renderGitHubComment(report: ShrinkReport): string {
   return [
-    "PatchDiet found a smaller equivalent patch.",
+    "<!-- patchdiet-comment -->",
+    "## PatchDiet",
     "",
-    `Input: ${formatSummary(report.input)}`,
-    `Minimal candidate: ${formatSummary(report.output)}`,
+    "Put your AI-generated PR on a diet. PatchDiet generated a cleanup patch locally and verified it with your tests.",
     "",
-    "High-confidence removals:",
+    "| Metric | Before | After |",
+    "| --- | ---: | ---: |",
+    `| Files | ${report.input.fileCount} | ${report.output.fileCount} |`,
+    `| Hunks | ${report.input.hunkCount} | ${report.output.hunkCount} |`,
+    `| Changed lines | ${report.input.changedLineCount} | ${report.output.changedLineCount} |`,
+    "",
+    `Tests: ${report.testCommand.status} with \`${report.testCommand.command}\` (${report.testCommand.durationMs}ms, ${report.testCommand.attempts} attempt(s))`,
+    `Removed: ${report.removals.length} | Kept: ${report.kept.length} | Needs review: ${report.needsHumanReview.length}`,
+    "Safety: Not a semantic-equivalence proof; PatchDiet only verifies the cleanup patch against the configured checks.",
+    "",
+    "Cleanup patch: download the workflow artifact or inspect `.patchdiet/cleanup.diff`.",
+    "",
+    "<details><summary>Why hunks were removed or kept</summary>",
+    "",
+    "**Removed**",
     ...renderEvidenceComment(report.removals),
     "",
-    "Kept hunks:",
+    "**Kept**",
     ...renderEvidenceComment(report.kept),
     "",
-    `Cleanup patch artifact: ${report.patchPath ?? "not generated"}`
+    "**Needs human review**",
+    ...renderEvidenceComment(report.needsHumanReview),
+    "",
+    "</details>"
   ].join("\n");
 }
 
@@ -74,7 +104,7 @@ function renderEvidenceMarkdown(items: ShrinkReport["removals"]): string[] {
 
   return items.map(
     (item) =>
-      `- \`${item.filePath}\` ${item.hunkHeader}: ${item.reason}`
+      `- \`${item.filePath}\` ${item.hunkHeader} (${item.category}): ${item.reason}`
   );
 }
 
@@ -83,7 +113,7 @@ function renderEvidenceComment(items: ShrinkReport["removals"]): string[] {
     return ["- none"];
   }
 
-  return items.map((item) => `- ${item.filePath}: ${item.reason}`);
+  return items.slice(0, 6).map((item) => `- \`${item.filePath}\` (${item.category}): ${item.reason}`);
 }
 
 function renderEvidenceHtml(title: string, items: ShrinkReport["removals"]): string {
@@ -92,11 +122,22 @@ function renderEvidenceHtml(title: string, items: ShrinkReport["removals"]): str
     : items
         .map(
           (item) =>
-            `<li><code>${escapeHtml(item.filePath)}</code> ${escapeHtml(item.hunkHeader)}: ${escapeHtml(item.reason)}</li>`
+            `<li><code>${escapeHtml(item.filePath)}</code> ${escapeHtml(item.hunkHeader)} <strong>${escapeHtml(item.category)}</strong>: ${escapeHtml(item.reason)}</li>`
         )
         .join("");
 
   return `<section><h2>${escapeHtml(title)}</h2><ul>${list}</ul></section>`;
+}
+
+function renderArtifactsMarkdown(report: ShrinkReport): string[] {
+  return [
+    `- Cleanup patch: ${report.patchPath ?? ".patchdiet/cleanup.diff"}`,
+    `- Markdown report: ${report.reportPath ?? ".patchdiet/report.md"}`,
+    `- JSON report: ${report.reportJsonPath ?? ".patchdiet/run.json"}`,
+    `- GitHub comment report: .patchdiet/report.github.md`,
+    `- HTML report: .patchdiet/report.html`,
+    `- Cleanup branch: ${report.cleanupBranch ?? "not created"}`
+  ];
 }
 
 function escapeHtml(value: string): string {

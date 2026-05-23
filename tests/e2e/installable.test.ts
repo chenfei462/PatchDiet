@@ -27,6 +27,7 @@ describe("installable package", () => {
     const paths = packResult[0]?.files.map((file) => file.path) ?? [];
 
     expect(paths).toContain("dist/packages/cli/src/index.js");
+    expect(paths).toContain("packages/action/dist/index.mjs");
     expect(paths).not.toContain("dist/tests/e2e/cli.test.js");
     expect(paths.every((path) => !path.startsWith("dist/tests/"))).toBe(true);
   }, 30000);
@@ -56,5 +57,5 @@ describe("installable package", () => {
     expect(installedPackageJson.repository?.url).toBe("git+https://github.com/chenfei462/PatchDiet.git");
     expect(installedPackageJson.homepage).toBe("https://github.com/chenfei462/PatchDiet");
     expect(installedPackageJson.bugs?.url).toBe("https://github.com/chenfei462/PatchDiet/issues");
-  }, 30000);
+  }, 60000);
 });

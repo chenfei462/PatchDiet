@@ -41,6 +41,8 @@ describe("loadPatchDietConfig", () => {
         "    - npm test",
         "reduction:",
         "  strategy: conservative",
+        "  max_runtime_minutes: 7",
+        "  retry_flaky_tests: 3",
         "scope:",
         "  ignore_paths:",
         "    - dist/**"
@@ -52,6 +54,8 @@ describe("loadPatchDietConfig", () => {
     expect(config.base).toBe("upstream/main");
     expect(config.language).toBe("python");
     expect(config.commands.required).toEqual(["npm test"]);
+    expect(config.reduction.maxRuntimeMinutes).toBe(7);
+    expect(config.reduction.retryFlakyTests).toBe(3);
     expect(config.scope.ignorePaths).toEqual(["dist/**"]);
   });
 });

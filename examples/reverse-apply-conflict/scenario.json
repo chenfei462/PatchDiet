@@ -1,0 +1,16 @@
+{
+  "name": "reverse-apply-conflict",
+  "baseBranch": "main",
+  "headBranch": "agent/bloated",
+  "baseFiles": {
+    "package.json": "{\n  \"name\": \"reverse-apply-conflict\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"scripts\": {\n    \"test\": \"node --test\"\n  }\n}\n",
+    "src/app.js": "export function value() {\n  return 1;\n}\n",
+    "test/app.test.js": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { value } from '../src/app.js';\n\ntest('value is stable', () => {\n  assert.equal(value(), 1);\n});\n",
+    "asset.bin": "base\u0000asset\n"
+  },
+  "headFiles": {
+    "src/app.js": "export function value() {\n  return 1;\n}\n",
+    "test/app.test.js": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { value } from '../src/app.js';\n\ntest('value is stable', () => {\n  assert.equal(value(), 1);\n});\n",
+    "asset.bin": "head\u0000asset\n"
+  }
+}

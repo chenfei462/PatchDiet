@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chenfei462/PatchDiet/docs/benchmark-schema.json",
+  "title": "PatchDiet benchmark scenario",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "scenarioId",
+    "agent",
+    "baseRef",
+    "headRef",
+    "testCommand",
+    "expectedKeptPaths",
+    "expectedRemovedPaths"
+  ],
+  "properties": {
+    "scenarioId": {
+      "type": "string",
+      "description": "Stable identifier for the benchmark scenario."
+    },
+    "agent": {
+      "type": "string",
+      "description": "Tool or workflow that produced the bloated patch, such as Codex, Claude Code, Cursor, OpenHands, or a Devin-like agent."
+    },
+    "task": {
+      "type": "string",
+      "description": "Short description of the requested change."
+    },
+    "baseRef": {
+      "type": "string"
+    },
+    "headRef": {
+      "type": "string"
+    },
+    "testCommand": {
+      "type": "string"
+    },
+    "expectedKeptPaths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "expectedRemovedPaths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "expectedNeedsReviewPaths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
