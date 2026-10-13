@@ -1,0 +1,10 @@
+{
+  "name": "@patchdiet/scope",
+  "version": "0.2.0",
+  "type": "module",
+  "dependencies": {
+    "@patchdiet/evidence": "0.2.0",
+    "@patchdiet/intent": "0.2.0",
+    "zod": "^4.6.5"
+  }
+}

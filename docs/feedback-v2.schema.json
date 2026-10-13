@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PatchDiet repository-local feedback v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "runRef", "feedback"],
+  "properties": {
+    "schemaVersion": { "const": 2 },
+    "runRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repositoryRootSha256", "baseCommitSha", "headCommitSha", "reportSha256", "cleanupDiffSha256"],
+      "properties": {
+        "repositoryRootSha256": { "$ref": "#/$defs/hash" },
+        "baseCommitSha": { "$ref": "#/$defs/commit" },
+        "headCommitSha": { "$ref": "#/$defs/commit" },
+        "reportSha256": { "$ref": "#/$defs/hash" },
+        "cleanupDiffSha256": { "$ref": "#/$defs/hash" }
+      }
+    },
+    "feedback": {
+      "type": "array",
+      "maxItems": 10000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["candidateOrdinal", "candidateSha256", "contentSha256", "path", "verdict", "reviewedAt"],
+        "properties": {
+          "candidateOrdinal": { "type": "integer", "minimum": 0 },
+          "candidateSha256": { "$ref": "#/$defs/hash" },
+          "contentSha256": { "$ref": "#/$defs/hash" },
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1024,
+            "allOf": [
+              { "pattern": "^(?!/)(?!.*//)(?!.*[/]$)[^\\\\:*?\"<>|\\u0000-\\u001F]+$" },
+              { "pattern": "^(?!.*(^|/)\\.\\.($|/))" },
+              { "pattern": "^(?!.*(^|/)\\.($|/))" }
+            ]
+          },
+          "verdict": { "enum": ["accepted", "rejected", "wrong_scope", "uncertain"] },
+          "note": { "type": "string", "maxLength": 2000 },
+          "reviewedAt": { "type": "string", "format": "date-time", "minLength": 20, "maxLength": 64 }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "commit": { "type": "string", "pattern": "^(?:[0-9a-f]{40}|[0-9a-f]{64})$" }
+  },
+  "$comment": "The CLI also enforces a 4 MiB encoded feedback-file limit and checks every entry against the current genuine run artifacts. Version 1 remains a separate legacy schema."
+}

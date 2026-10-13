@@ -1,0 +1,52 @@
+:root {
+  color-scheme: dark;
+  --color-void: #080c09;
+  --color-surface: #111712;
+  --color-ink: #f1f4e9;
+  --color-lime: #b9ff66;
+  --color-coral: #ff765f;
+  --color-cyan: #8cdef0;
+  --color-amber: #f7c76c;
+
+  --color-surface-deep: rgba(8, 12, 9, 0.88);
+  --color-surface-band: rgba(17, 23, 18, 0.92);
+  --color-surface-soft: rgba(17, 23, 18, 0.72);
+  --color-muted: rgba(241, 244, 233, 0.68);
+  --color-faint: rgba(241, 244, 233, 0.44);
+  --color-border: rgba(241, 244, 233, 0.18);
+  --color-border-strong: rgba(241, 244, 233, 0.32);
+  --color-focus: #8cdef0;
+
+  --font-display: "Barlow Condensed", sans-serif;
+  --font-body: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --header-height: 72px;
+  --content-max: 1440px;
+  --gutter: 40px;
+  --radius: 4px;
+
+  --z-canvas: -2;
+  --z-fallback: -1;
+  --z-content: 1;
+  --z-header: 30;
+  --z-skip: 50;
+
+  --motion-fast: 160ms;
+  --motion-standard: 280ms;
+  --motion-scene: 480ms;
+  --ease-forge: cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+@media (max-width: 900px) {
+  :root {
+    --gutter: 24px;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --header-height: 64px;
+    --gutter: 16px;
+  }
+}

@@ -1,5 +1,6 @@
 import { createServer } from "node:http";
-import { chmodSync, cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { chmodSync, cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
+import { rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { delimiter, join } from "node:path";
 import { execFile } from "node:child_process";
@@ -13,9 +14,9 @@ const execFileAsync = promisify(execFile);
 const tempDirs: string[] = [];
 const actionEntry = "packages/action/dist/index.mjs";
 
-afterEach(() => {
+afterEach(async () => {
   for (const dir of tempDirs.splice(0)) {
-    rmSync(dir, { recursive: true, force: true });
+    await rm(dir, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
   }
 });
 
@@ -47,6 +48,38 @@ describe("PatchDiet action", () => {
     const outputs = readFileSync(outputPath, "utf8");
     expect(outputs).toContain("report-md=");
     expect(outputs).toContain("cleanup-diff=");
+    // No patchdiet.yaml change in this PR, so no trust-boundary warning.
+    expect(readFileSync(summaryPath, "utf8")).not.toContain("modified in this pull request");
+  }, 60000);
+
+  it("warns without blocking when the PR diff modifies patchdiet.yaml", async () => {
+    const workspace = mkdtempSync(join(tmpdir(), "patchdiet-action-config-warning-"));
+    const summaryPath = join(workspace, "summary.md");
+    tempDirs.push(workspace);
+    await createExampleRepo("ts-bloated-pr", workspace);
+
+    // Commit patchdiet.yaml on the head branch so the PR diff contains a
+    // config change; the executed commands would then come from the PR.
+    writeFileSync(join(workspace, "patchdiet.yaml"), "version: 1\nbase: main\nlanguage: generic\n", "utf8");
+    await execFileAsync("git", ["add", "patchdiet.yaml"], { cwd: workspace });
+    await execFileAsync("git", ["commit", "-m", "add patchdiet config"], { cwd: workspace });
+
+    const result = await execFileAsync(process.execPath, [actionEntry], {
+      cwd: process.cwd(),
+      env: {
+        ...process.env,
+        GITHUB_WORKSPACE: workspace,
+        GITHUB_STEP_SUMMARY: summaryPath,
+        INPUT_BASE: "main",
+        INPUT_HEAD: "agent/bloated",
+        INPUT_TEST: "node --test"
+      }
+    });
+
+    expect(result.stderr).toContain("patchdiet.yaml was modified in this PR");
+    expect(readFileSync(summaryPath, "utf8")).toContain("`patchdiet.yaml` was modified in this pull request");
+    // The warning must not block the run.
+    expect(readFileSync(join(workspace, ".patchdiet", "report.github.md"), "utf8")).toContain("## PatchDiet");
   });
 
   it("updates an existing PR comment when token and event payload are provided", async () => {

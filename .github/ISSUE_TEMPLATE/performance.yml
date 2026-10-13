@@ -1,0 +1,19 @@
+name: Performance issue
+description: Report slow or expensive PatchDiet runs.
+title: "performance: "
+labels: ["performance"]
+body:
+  - type: textarea
+    id: run
+    attributes:
+      label: Run details
+      description: Include command, candidate count, test command duration, timeout/retry settings, and whether result was partial.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, CPU/runner type, Node version, package manager.
+    validations:
+      required: true

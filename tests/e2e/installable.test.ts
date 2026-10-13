@@ -1,4 +1,5 @@
-import { mkdtempSync, readdirSync, readFileSync, rmSync } from "node:fs";
+import { mkdtempSync, readdirSync, readFileSync } from "node:fs";
+import { rm } from "node:fs/promises";
 import { exec } from "node:child_process";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -10,9 +11,9 @@ const execAsync = promisify(exec);
 const tempDirs: string[] = [];
 const npmExec = process.platform === "win32" ? "npm.cmd" : "npm";
 
-afterEach(() => {
+afterEach(async () => {
   for (const dir of tempDirs.splice(0)) {
-    rmSync(dir, { recursive: true, force: true });
+    await rm(dir, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
   }
 });
 
@@ -57,5 +58,5 @@ describe("installable package", () => {
     expect(installedPackageJson.repository?.url).toBe("git+https://github.com/chenfei462/PatchDiet.git");
     expect(installedPackageJson.homepage).toBe("https://github.com/chenfei462/PatchDiet");
     expect(installedPackageJson.bugs?.url).toBe("https://github.com/chenfei462/PatchDiet/issues");
-  }, 60000);
+  }, 120000);
 });

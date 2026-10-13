@@ -1,4 +1,5 @@
-import { mkdtempSync, rmSync } from "node:fs";
+import { rm } from "node:fs/promises";
+import { mkdtempSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { execFile } from "node:child_process";
@@ -12,9 +13,9 @@ const execFileAsync = promisify(execFile);
 const tempDirs: string[] = [];
 const cliEntry = join(process.cwd(), "dist", "packages", "cli", "src", "index.js");
 
-afterEach(() => {
+afterEach(async () => {
   for (const dir of tempDirs.splice(0)) {
-    rmSync(dir, { recursive: true, force: true });
+    await rm(dir, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
   }
 });
 

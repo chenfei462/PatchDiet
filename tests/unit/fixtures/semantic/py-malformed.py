@@ -1,0 +1,5 @@
+def broken(:
+    return 1
+
+def fine():
+    return 2

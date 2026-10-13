@@ -19,5 +19,8 @@
   "include": [
     "packages/**/*.ts",
     "tests/**/*.ts"
+  ],
+  "exclude": [
+    "tests/unit/fixtures/semantic"
   ]
 }

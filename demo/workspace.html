@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080c09">
+  <title>PatchDiet - PR Reduction Workspace</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/demo/styles.css">
+</head>
+<body class="workspace-page" data-page="workspace">
+  <canvas id="workspace-canvas" aria-hidden="true"></canvas>
+
+  <header class="workspace-header">
+    <a class="brand workspace-brand" href="/demo/" aria-label="PatchDiet proof page">
+      <span class="brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="brand__name">PatchDiet</span>
+      <span class="brand__mode">Reduction workspace</span>
+    </a>
+    <nav class="workspace-header__nav" aria-label="Workspace navigation">
+      <a href="/demo/">Back to proof</a>
+      <a class="quiet-link" href="/demo/classic/">Classic</a>
+    </nav>
+    <p id="workspace-status" class="workspace-status" role="status" aria-live="polite">Loading the bundled sample...</p>
+  </header>
+
+  <main id="workspace" class="workspace-shell">
+    <section class="input-pane" aria-labelledby="input-heading">
+      <header class="pane-heading">
+        <p class="pane-index">01 / Input</p>
+        <h1 id="input-heading">Choose the diff</h1>
+        <p>Preview likely review noise from a sample, pasted unified diff, or public GitHub pull request.</p>
+      </header>
+
+      <div class="input-mode" role="tablist" aria-label="Diff input source">
+        <button id="input-mode-sample" type="button" role="tab" data-input-mode="sample" aria-selected="true" aria-controls="sample-panel" tabindex="0">Sample</button>
+        <button id="input-mode-paste" type="button" role="tab" data-input-mode="paste" aria-selected="false" aria-controls="paste-panel" tabindex="-1">Paste</button>
+        <button id="input-mode-pr" type="button" role="tab" data-input-mode="pr" aria-selected="false" aria-controls="pr-panel" tabindex="-1">PR</button>
+      </div>
+
+      <div id="sample-panel" class="input-panel" role="tabpanel" data-input-panel="sample" aria-labelledby="input-mode-sample" aria-hidden="false">
+        <p class="input-panel__label">Bundled case</p>
+        <strong>sample-cart-pr</strong>
+        <p>5 files / 33 changed lines. Ready for a browser-only preview.</p>
+        <button id="load-sample" class="button button--primary command-button" type="button">Reload sample diff</button>
+      </div>
+
+      <div id="paste-panel" class="input-panel" role="tabpanel" data-input-panel="paste" aria-labelledby="input-mode-paste" aria-hidden="true" hidden>
+        <label for="project-name">Project name</label>
+        <input id="project-name" type="text" value="sample-cart-pr" autocomplete="off">
+        <details class="raw-diff" open>
+          <summary>View raw diff</summary>
+          <label for="diff-input">Unified diff</label>
+          <textarea id="diff-input" spellcheck="false" rows="16" placeholder="diff --git a/src/file.js b/src/file.js"></textarea>
+        </details>
+        <button id="analyze" class="button button--primary command-button" type="button">Analyze diff preview</button>
+      </div>
+
+      <div id="pr-panel" class="input-panel" role="tabpanel" data-input-panel="pr" aria-labelledby="input-mode-pr" aria-hidden="true" hidden>
+        <label for="pr-url">Public GitHub PR URL</label>
+        <input id="pr-url" type="url" inputmode="url" placeholder="https://github.com/org/repo/pull/123" autocomplete="url">
+        <p>Fetched through the local demo backend. Private repositories are not supported here.</p>
+        <button id="fetch-pr" class="button button--primary command-button" type="button">Fetch public PR</button>
+      </div>
+    </section>
+
+    <section id="candidate-queue" class="candidate-pane" aria-labelledby="candidate-heading">
+      <header class="pane-heading candidate-heading">
+        <div>
+          <p class="pane-index">02 / Candidate queue</p>
+          <h2 id="candidate-heading">Likely review noise</h2>
+        </div>
+        <p class="preview-boundary">Browser preview only. No tests run here.</p>
+      </header>
+
+      <div class="reduction-summary" data-demo-scan-stage data-scan-state="complete" aria-label="Pull request reduction preview">
+        <div class="reduction-summary__measure">
+          <span>Input diff</span>
+          <strong><b data-reduction-before>0</b> lines</strong>
+        </div>
+        <div class="reduction-summary__signal" aria-hidden="true"><i></i></div>
+        <div class="reduction-summary__measure reduction-summary__measure--after">
+          <span>Review diff</span>
+          <strong><b data-reduction-after>0</b> lines</strong>
+        </div>
+      </div>
+
+      <div class="metrics" aria-label="Preview metrics">
+        <div><span>Original PR</span><strong><b data-metric="files-before">0</b> files / <b data-metric="lines-before">0</b> lines</strong></div>
+        <div><span>Reviewer PR</span><strong><b data-metric="files-after">0</b> files / <b data-metric="lines-after">0</b> lines</strong></div>
+        <div><span>Review noise</span><strong><b data-judge-noise-inline>0</b>% removed</strong></div>
+        <div><span>Attention saved</span><strong><b data-judge-minutes-inline>0</b>m estimated</strong></div>
+      </div>
+
+      <ul id="candidate-strip" class="candidate-strip" aria-label="Top cleanup candidates"></ul>
+      <div class="candidate-list-heading">
+        <h3>Deletion candidates</h3>
+        <span>Inspect each path before verification</span>
+      </div>
+      <ul id="suggestions" class="suggestions" role="listbox" aria-label="Preview deletion candidates"></ul>
+    </section>
+
+    <aside id="verification-receipt" class="receipt-pane" aria-labelledby="receipt-heading">
+      <header class="pane-heading receipt-heading">
+        <p class="pane-index">03 / Verification receipt</p>
+        <h2 id="receipt-heading">Judge Mode</h2>
+        <strong data-judge-headline>Live PR Liposuction</strong>
+        <p data-judge-hook>AI wrote more. Humans review less.</p>
+      </header>
+
+      <div class="receipt-totals">
+        <div><span>Review noise removed</span><strong><b data-judge-noise>0</b>%</strong></div>
+        <div><span>Human attention saved</span><strong><b data-judge-minutes>0</b>m</strong></div>
+      </div>
+
+      <div id="diet-card" class="diet-card" aria-label="Diet Card preview">
+        <span>PatchDiet / Diet Card</span>
+        <h3><b data-card-saved>0%</b> review noise removed</h3>
+        <p data-card-project>sample-cart-pr</p>
+        <div class="diet-card__measure">
+          <strong data-card-before>0 files / 0 lines</strong>
+          <i aria-hidden="true">-&gt;</i>
+          <strong data-card-after>0 files / 0 lines</strong>
+        </div>
+        <small>Preview first. Verify with configured checks.</small>
+      </div>
+
+      <div class="proof-command">
+        <span>CLI verification command</span>
+        <code data-judge-command>patchdiet shrink --test "npm test"</code>
+        <button class="button button--outline command-button" type="button" data-copy-command>Copy verified CLI command</button>
+        <span class="copy-status" data-proof-copy-status role="status" aria-live="polite"></span>
+      </div>
+
+      <p class="verification-boundary" data-judge-receipt>Browser previews likely noise; the CLI verifies candidate removals by rerunning your configured checks. Passing checks is not semantic equivalence, and human review is still required.</p>
+
+      <nav class="artifact-links" aria-label="Verification artifacts">
+        <a href="/docs/demo.md">Verification guide</a>
+        <a href="/docs/case-studies/sample-cart-pr.md">Sample case study</a>
+      </nav>
+    </aside>
+  </main>
+
+  <script type="module" src="/demo/generated/workspace.js"></script>
+</body>
+</html>

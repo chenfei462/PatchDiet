@@ -1,0 +1,19 @@
+name: False positive
+description: Report a removal suggestion that should have been kept.
+title: "false positive: "
+labels: ["false-positive"]
+body:
+  - type: textarea
+    id: candidate
+    attributes:
+      label: Candidate
+      description: Paste the candidate entry from `.patchdiet/candidates.json` if possible.
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why should it be kept?
+    validations:
+      required: true

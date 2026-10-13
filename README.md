@@ -17,6 +17,13 @@ patchdiet shrink
 
 PatchDiet is built for PRs produced by Claude Code, Codex, Cursor, OpenHands, Devin-like agents, and similar AI coding workflows. It does not replace your agent or reviewer; it sits between "the agent passed tests" and "a human has to review this patch."
 
+## PatchDiet Is / Is Not
+
+- **Is:** a test-verified cleanup layer that shrinks AI-generated PRs before a human reviews them.
+- **Is:** a browser preview (`/demo/`) that surfaces likely review noise before you run the CLI. Sample receipt: `5 files / 33 lines -> 2 files / 14 lines`, `58% review noise removed`, `4m estimated attention saved`.
+- **Is not:** PatchDiet is not an AI reviewer. It never judges whether your feature logic is correct; your tests and reviewers still do.
+- **Is not:** a semantic-equivalence proof. Removals are "verified" only in the sense that your configured checks still pass afterwards.
+
 ## Safety Contract
 
 - **No source upload:** repository contents stay on your machine or runner.
@@ -122,14 +129,19 @@ The Action uses a bundled entrypoint committed under `packages/action/dist/`; it
 
 ## Commands
 
-- `patchdiet init`
+- `patchdiet init` / `patchdiet init --v2`
 - `patchdiet doctor`
 - `patchdiet check`
 - `patchdiet check --json`
+- `patchdiet index` (build the local semantic index; optional `--coverage` input)
+- `patchdiet verify --base origin/main` (read-only Scope Map)
+- `patchdiet explain --base origin/main` (changed-atom evidence)
 - `patchdiet shrink`
 - `patchdiet shrink --json`
 - `patchdiet shrink --base origin/main --head HEAD --test "pnpm test"`
+- `patchdiet shrink --task "one-line task description"` (advisory scope gate)
 - `patchdiet shrink --dry-run`
+- `patchdiet shrink --strategy ddmin --granularity ast` (v2 defaults)
 - `patchdiet shrink --timeout-ms 120000 --retry-flaky-tests 1`
 - `patchdiet shrink --allow-test-file-removal`
 - `patchdiet shrink --create-branch`
@@ -138,6 +150,9 @@ The Action uses a bundled entrypoint committed under `packages/action/dist/`; it
 - `patchdiet report --format github`
 - `patchdiet report --format html`
 - `patchdiet report --format json`
+- `patchdiet card --format svg` (also `html`, `png`, `badge`)
+
+For the complete `version: 2` `patchdiet.yaml` field audit — including fields the schema accepts that this runtime does not compute, and the documented limitations (no advisory semver-bump detector; dependency-manifest human review cannot be disabled) — see [`docs/cli-v02.md`](docs/cli-v02.md).
 
 ## How It Works
 
@@ -174,8 +189,9 @@ The GitHub comment is intentionally short and screenshot-friendly. The HTML repo
 - `packages/cli`: command line interface
 - `packages/action`: GitHub Action wrapper
 - `examples/*`: reproducible demo scenarios
-- `docs/*`: usage, safety, algorithm, benchmark, and release notes
+- `docs/*`: usage, safety, algorithm, benchmark, and release notes — see the
+  [documentation index](docs/README.md) for the full map
 
 ## Status
 
-`v0.1.1` is still conservative. It focuses on local-first, no-upload, test-verified patch reduction for small and medium AI-generated PRs. It does not prove full semantic equivalence, and it does not use an LLM. AST-level atoms, richer dependency reasoning, and public benchmark datasets remain future work.
+Current CLI version is `0.2.0` (workspace sources; not yet published to npm). It keeps the v0.1 safety posture — local-first, no-upload, test-verified patch reduction, no semantic-equivalence proof, no LLM in the decision path — and adds the version 2 configuration surface: AST-granularity ddmin reduction with dependency grouping, the local SQLite knowledge index with targeted-first verification, the read-only `verify`/`explain` scope reports, and the bounded local coverage ingestion described in [`docs/cli-v02.md`](docs/cli-v02.md). The GitHub Action example above still points at the last published `v0.1.1` tag; a published Action tag for 0.2.0 does not exist yet.

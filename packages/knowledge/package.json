@@ -1,0 +1,12 @@
+{
+  "name": "@patchdiet/knowledge",
+  "version": "0.2.0",
+  "description": "Repository semantic index (SQLite) for PatchDiet: git blobs, symbols, edges, rules and coverage provenance.",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "better-sqlite3": "12.9.0",
+    "zod": "^4.6.5",
+    "@patchdiet/parsers": "0.2.0"
+  }
+}

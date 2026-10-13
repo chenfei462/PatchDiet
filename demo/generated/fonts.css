@@ -1,0 +1,74 @@
+/* node_modules/@fontsource/barlow-condensed/latin-400.css */
+@font-face {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("./fonts/barlow-condensed-latin-400-normal-VEKDCNPE.woff2") format("woff2"), url("./fonts/barlow-condensed-latin-400-normal-YIDZXTZU.woff") format("woff");
+}
+
+/* node_modules/@fontsource/barlow-condensed/latin-600.css */
+@font-face {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("./fonts/barlow-condensed-latin-600-normal-WUDKPSWC.woff2") format("woff2"), url("./fonts/barlow-condensed-latin-600-normal-UCXK75QA.woff") format("woff");
+}
+
+/* node_modules/@fontsource/barlow-condensed/latin-700.css */
+@font-face {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url("./fonts/barlow-condensed-latin-700-normal-5GARACM4.woff2") format("woff2"), url("./fonts/barlow-condensed-latin-700-normal-63GBER45.woff") format("woff");
+}
+
+/* node_modules/@fontsource/ibm-plex-sans/latin-400.css */
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("./fonts/ibm-plex-sans-latin-400-normal-COQVXTP6.woff2") format("woff2"), url("./fonts/ibm-plex-sans-latin-400-normal-JC3YNCCZ.woff") format("woff");
+}
+
+/* node_modules/@fontsource/ibm-plex-sans/latin-500.css */
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url("./fonts/ibm-plex-sans-latin-500-normal-JTONHBWS.woff2") format("woff2"), url("./fonts/ibm-plex-sans-latin-500-normal-7DOULDHV.woff") format("woff");
+}
+
+/* node_modules/@fontsource/ibm-plex-sans/latin-600.css */
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("./fonts/ibm-plex-sans-latin-600-normal-DTNZULF4.woff2") format("woff2"), url("./fonts/ibm-plex-sans-latin-600-normal-B3O423MA.woff") format("woff");
+}
+
+/* node_modules/@fontsource/ibm-plex-mono/latin-400.css */
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("./fonts/ibm-plex-mono-latin-400-normal-A2WATXFY.woff2") format("woff2"), url("./fonts/ibm-plex-mono-latin-400-normal-4MWPPJAM.woff") format("woff");
+}
+
+/* node_modules/@fontsource/ibm-plex-mono/latin-600.css */
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("./fonts/ibm-plex-mono-latin-600-normal-IIV3OB4N.woff2") format("woff2"), url("./fonts/ibm-plex-mono-latin-600-normal-BXFNGPE3.woff") format("woff");
+}
+
+/* demo/src/fonts.css */
+/*# sourceMappingURL=fonts.css.map */

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080c09">
+  <title>PatchDiet | Patch Forge</title>
+  <meta name="description" content="PatchDiet shrinks noisy pull requests with configured checks and inspectable cleanup evidence.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/demo/styles.css">
+</head>
+<body class="homepage" data-page="homepage">
+  <a class="skip-link" href="#hero">Skip to Patch Forge</a>
+
+  <canvas id="forge-canvas" aria-hidden="true"></canvas>
+  <div class="forge-fallback" aria-hidden="true">
+    <span class="forge-fallback__rail forge-fallback__rail--left"></span>
+    <span class="forge-fallback__rail forge-fallback__rail--right"></span>
+    <span class="forge-fallback__beam"></span>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#hero" aria-label="PatchDiet home">
+      <span class="brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="brand__name">PatchDiet</span>
+      <span class="brand__mode">Patch Forge</span>
+    </a>
+
+    <nav class="scene-nav" aria-label="Patch Forge scenes">
+      <a href="#hero"><span>01</span> Intake</a>
+      <a href="#cleanup-proof"><span>02</span> Gates</a>
+      <a href="#demo-entry"><span>03</span> Receipt</a>
+      <a href="#evidence-adoption"><span>04</span> Evidence</a>
+      <a href="#final-cta"><span>05</span> Handoff</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="quiet-link" href="/demo/classic/">Classic UI</a>
+      <a class="button button--primary button--compact" href="/demo/workspace.html">Open demo</a>
+    </div>
+  </header>
+
+  <main id="homepage-story">
+    <section id="hero" class="forge-scene hero-scene" data-forge-scene="intake" aria-labelledby="hero-title">
+      <div class="scene-frame hero-frame">
+        <div class="scene-marker" aria-hidden="true"><span>01</span><b>INTAKE</b><i></i></div>
+        <div class="hero-copy">
+          <p class="scene-kicker"><span>Patch Forge / verified fixture</span> Agent-large-pr</p>
+          <h1 id="hero-title">PatchDiet</h1>
+          <p class="hero-thesis">Compress the diff.<br><strong>Keep the proof.</strong></p>
+          <p class="hero-summary">PatchDiet tests candidate removals against your configured checks, then leaves a smaller review surface and an inspectable receipt for human review.</p>
+          <div class="actions">
+            <a class="button button--primary" href="/demo/workspace.html">Open demo</a>
+            <a class="button button--outline" href="#cleanup-proof">Inspect the proof</a>
+          </div>
+          <p class="boundary-note">Configured checks passed. This is not semantic-equivalence proof.</p>
+        </div>
+
+        <div class="hero-metric" aria-label="Verified PatchDiet reduction">
+          <span class="metric-label">Verified reduction</span>
+          <strong class="metric-value">75%</strong>
+          <p><b>4 files / 128 changed lines</b> <i aria-hidden="true">-&gt;</i> <b>2 files / 32 changed lines</b></p>
+          <div class="metric-stamp"><span>CHECKS</span><strong>PASS</strong><small>configured suite</small></div>
+        </div>
+
+        <a class="next-scene" href="#cleanup-proof" data-first-viewport-cue="true">
+          <span>Next scene</span>
+          <strong>How the gate decides</strong>
+          <i aria-hidden="true">&#8595;</i>
+        </a>
+      </div>
+    </section>
+
+    <section id="cleanup-proof" class="forge-scene gates-scene" data-forge-scene="gates" aria-labelledby="gates-title">
+      <div class="scene-frame">
+        <div class="scene-marker" aria-hidden="true"><span>02</span><b>GATES</b><i></i></div>
+        <header class="scene-heading">
+          <p class="scene-kicker"><span>Configured-check pipeline</span> Candidate by candidate</p>
+          <h2 id="gates-title">A removal only counts when the gate stays green.</h2>
+          <p>Each candidate is evaluated away from the working branch. Passing configured checks supports the removal; a failure keeps the code and records the boundary.</p>
+        </header>
+
+        <div class="gate-layout">
+          <ol class="gate-pipeline" aria-label="PatchDiet configured-check pipeline">
+            <li><span>01</span><div><strong>Diff intake</strong><p>Map changed files and candidate review noise.</p></div><b>128 lines</b></li>
+            <li><span>02</span><div><strong>Isolated removal</strong><p>Apply one candidate in a temporary worktree.</p></div><b>candidate</b></li>
+            <li><span>03</span><div><strong>Configured checks</strong><p>Run the repository commands selected by the operator.</p></div><b class="status-pass">PASS</b></li>
+            <li><span>04</span><div><strong>Evidence write</strong><p>Record accepted removals and retained candidates.</p></div><b>receipt</b></li>
+          </ol>
+
+          <aside class="verification-boundary" aria-labelledby="boundary-title">
+            <p class="panel-code">BOUNDARY / WEAK TESTS</p>
+            <h3 id="boundary-title">The gate is only as strong as the configured checks.</h3>
+            <p>A green suite is useful evidence, not a guarantee that behavior is unchanged. Weak or incomplete tests can miss regressions.</p>
+            <dl>
+              <div><dt>PatchDiet proves</dt><dd>The configured checks still pass after the candidate removal.</dd></div>
+              <div><dt>PatchDiet does not prove</dt><dd>Semantic equivalence, complete coverage, or production correctness.</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo-entry" class="forge-scene receipt-scene" data-forge-scene="receipt" aria-labelledby="receipt-title">
+      <div class="scene-frame">
+        <div class="scene-marker" aria-hidden="true"><span>03</span><b>RECEIPT</b><i></i></div>
+        <header class="scene-heading scene-heading--split">
+          <div>
+            <p class="scene-kicker"><span>Browser preview</span> Inspect the reduction</p>
+            <h2 id="receipt-title">Before. After. Receipt.</h2>
+          </div>
+          <p>The browser demo previews a known fixture and its evidence. CLI verification is a separate local step that runs configured checks; the preview does not run tests.</p>
+        </header>
+
+        <div class="receipt-belt" aria-label="Before and after PatchDiet receipt">
+          <article class="receipt-state receipt-state--before">
+            <span class="receipt-state__label">BEFORE / noisy patch</span>
+            <strong>4</strong>
+            <p>files</p>
+            <b>128 changed lines</b>
+            <ul>
+              <li>Generated scaffolding</li>
+              <li>Temporary tracing</li>
+              <li>Scope-drift artifacts</li>
+            </ul>
+          </article>
+          <div class="receipt-transfer" aria-hidden="true"><span>configured checks</span><i></i><b>75%</b></div>
+          <article class="receipt-state receipt-state--after">
+            <span class="receipt-state__label">AFTER / review surface</span>
+            <strong>2</strong>
+            <p>files</p>
+            <b>32 changed lines</b>
+            <ul>
+              <li>Behavioral change retained</li>
+              <li>Focused tests retained</li>
+              <li>Removal evidence attached</li>
+            </ul>
+          </article>
+          <aside class="receipt-ticket" aria-label="PatchDiet cleanup receipt">
+            <p class="panel-code">PATCHDIET / RECEIPT 00032</p>
+            <span>agent-large-pr</span>
+            <strong>PASS</strong>
+            <dl>
+              <div><dt>Reduction</dt><dd>75%</dd></div>
+              <div><dt>Gate</dt><dd>Configured checks</dd></div>
+              <div><dt>Review</dt><dd>Human required</dd></div>
+            </dl>
+            <a class="button button--primary" href="/demo/workspace.html">Open browser preview</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidence-adoption" class="forge-scene evidence-scene" data-forge-scene="evidence" aria-labelledby="evidence-title">
+      <div class="scene-frame">
+        <div class="scene-marker" aria-hidden="true"><span>04</span><b>EVIDENCE</b><i></i></div>
+        <header class="scene-heading scene-heading--split">
+          <div>
+            <p class="scene-kicker"><span>Inspectable output</span> Nothing hidden</p>
+            <h2 id="evidence-title">The forge leaves artifacts behind.</h2>
+          </div>
+          <p>Review the candidate decisions, exact removals, reduced patch, and portable Diet Card before accepting the cleanup.</p>
+        </header>
+
+        <div class="evidence-layout">
+          <figure class="product-capture">
+            <img src="/docs/assets/launch-gif/browser-frames/frame-03-candidates-card.png" width="1265" height="720" loading="lazy" alt="PatchDiet browser preview showing cleanup candidates and a Diet Card receipt">
+            <figcaption><span>ACTUAL PRODUCT CAPTURE</span> Candidate decisions and Diet Card / sample fixture</figcaption>
+          </figure>
+
+          <div class="artifact-ledger">
+            <div class="ledger-heading"><span>Output index</span><b>5 artifacts</b></div>
+            <ol>
+              <li><span>01</span><code>.patchdiet/report.github.md</code><small>Reviewer narrative</small></li>
+              <li><span>02</span><code>.patchdiet/removal.patch</code><small>Tested removals</small></li>
+              <li><span>03</span><code>.patchdiet/reduced.patch</code><small>Remaining patch</small></li>
+              <li><span>04</span><code>.patchdiet/candidates.json</code><small>Machine-readable decisions</small></li>
+              <li><span>05</span><code>.patchdiet/diet-card.svg</code><small>Portable receipt</small></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="final-cta" class="forge-scene handoff-scene" data-forge-scene="handoff" aria-labelledby="handoff-title">
+      <div class="scene-frame handoff-frame">
+        <div class="scene-marker" aria-hidden="true"><span>05</span><b>HANDOFF</b><i></i></div>
+        <div class="handoff-copy">
+          <p class="scene-kicker"><span>Local workflow</span> Proof before merge</p>
+          <h2 id="handoff-title">Put the diff on a diet. Keep human review in the loop.</h2>
+          <p>Install locally, build the CLI, and shrink against the checks your repository already trusts. PatchDiet reduces the surface; human review decides what ships.</p>
+          <a class="button button--primary" href="/demo/workspace.html">Open the PatchDiet demo</a>
+        </div>
+
+        <div class="command-console" aria-label="Local PatchDiet install build and shrink command">
+          <div class="command-console__bar"><span>LOCAL / PATCH FORGE</span><b>READY</b></div>
+          <pre><code><span>$</span> npm ci
+<span>$</span> npm run build
+<span>$</span> node dist/packages/cli/src/index.js shrink --test "npm test"</code></pre>
+          <p><span>OUTPUT</span> Inspect the cleanup artifacts, then complete human review.</p>
+        </div>
+
+        <footer class="site-footer">
+          <a class="brand brand--footer" href="#hero"><span class="brand__name">PatchDiet</span></a>
+          <p>Configured-check evidence for smaller, reviewable patches.</p>
+          <a href="/demo/classic/">Classic UI</a>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="/demo/generated/homepage.js"></script>
+</body>
+</html>

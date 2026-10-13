@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b0a">
+  <title>PatchDiet - PR Reduction Workspace</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="workspace-page">
+  <div class="ambient-grid" aria-hidden="true"></div>
+  <main class="shell">
+    <header class="product-bar">
+      <a class="brand" href="/demo/classic/" aria-label="PatchDiet homepage">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>PatchDiet</span>
+      </a>
+      <div class="product-status" aria-label="System status"><span class="status-pulse" aria-hidden="true"></span>Local engine ready</div>
+      <a class="button button--ghost workspace-back" href="/demo/classic/">Back to proof</a>
+    </header>
+
+    <header class="workspace-hero">
+      <div class="panel-kicker"><span>Demo</span> Full reduction workspace</div>
+      <h1>Bring a diff. Inspect the likely noise.</h1>
+      <p>Browser preview highlights likely review noise. CLI verification reruns your configured checks before a candidate removal counts.</p>
+    </header>
+
+    <section id="workspace" class="workspace" aria-label="PatchDiet demo workspace">
+      <header class="demo-entry">
+        <div>
+          <div class="panel-kicker"><span>05</span> 30-Second Demo</div>
+          <h2>Bring the diff. Keep the proof boundary clear.</h2>
+          <p>Start from the bundled sample, paste a unified diff, or fetch a public GitHub PR URL.</p>
+        </div>
+        <ol class="demo-paths" aria-label="Demo input paths">
+          <li><span>01</span><strong>Sample diff</strong></li>
+          <li><span>02</span><strong>Paste diff</strong></li>
+          <li><span>03</span><strong>Public GitHub PR URL</strong></li>
+        </ol>
+        <a class="button button--primary" href="#workspace-controls">Open the controls</a>
+      </header>
+
+      <section id="judge-receipt" class="judge-receipt" aria-label="Judge Mode cleanup receipt">
+        <div class="panel-kicker"><span>01</span> Result receipt</div>
+        <div class="judge-receipt__header"><span>Judge Mode</span><strong data-judge-headline>Live PR Liposuction</strong></div>
+        <p data-judge-hook>AI wrote more. Humans review less.</p>
+        <div class="judge-receipt__proof">
+          <div><span>Review noise removed</span><strong><b data-judge-noise>0</b>%</strong></div>
+          <div><span>Human attention saved</span><strong><b data-judge-minutes>0</b>m</strong></div>
+          <div><span>CLI proof path</span><code data-judge-command>patchdiet shrink --test "npm test"</code></div>
+        </div>
+        <p class="judge-receipt__receipt" data-judge-receipt>Browser previews likely noise; CLI verifies removals by rerunning tests.</p>
+      </section>
+
+      <div id="result" class="results">
+        <div class="results__header">
+          <div><div class="panel-kicker"><span>02</span> Reduction map</div><h2>Review surface</h2></div>
+          <p class="status" data-status role="status" aria-live="polite">Loading the sample receipt...</p>
+        </div>
+        <aside class="scan-stage" data-scan-state="complete" data-demo-scan-stage aria-label="Pull request reduction preview">
+          <div class="scan-stage__bar"><span><i></i><i></i><i></i></span><code>patchdiet / sample-cart-pr</code><b>ANALYZED</b></div>
+          <div class="scan-stage__code" aria-hidden="true">
+            <span class="code-line code-line--keep"><b>18</b><code>+ export function calculateTotal(items) {</code></span>
+            <span class="code-line code-line--keep"><b>19</b><code>+   return items.reduce(sumPrice, 0);</code></span>
+            <span class="code-line code-line--cut"><b>20</b><code>+ // temporary benchmark notes</code></span>
+            <span class="code-line code-line--cut"><b>21</b><code>+ writeFileSync("debug-output.json", raw);</code></span>
+            <span class="code-line code-line--keep"><b>22</b><code>+ }</code></span>
+          </div>
+          <div class="reduction-track">
+            <div><span>Input diff</span><strong><b data-reduction-before>33</b> lines</strong></div>
+            <div class="reduction-track__beam" aria-hidden="true"><i></i></div>
+            <div><span>Review diff</span><strong><b data-reduction-after>14</b> lines</strong></div>
+          </div>
+        </aside>
+        <div class="metrics">
+          <div><span>Original PR</span><strong><b data-metric="files-before">0</b> files / <b data-metric="lines-before">0</b> lines</strong></div>
+          <div><span>Reviewer PR</span><strong><b data-metric="files-after">0</b> files / <b data-metric="lines-after">0</b> lines</strong></div>
+          <div><span>Review noise</span><strong><b data-judge-noise-inline>0</b>% removed</strong></div>
+          <div><span>Attention saved</span><strong><b data-judge-minutes-inline>0</b>m</strong></div>
+        </div>
+        <ul id="candidate-strip" class="candidate-strip" aria-label="Top cleanup candidates"></ul>
+        <div class="result-focus">
+          <section class="candidate-panel" aria-label="Deletion candidates">
+            <div class="section-heading"><h2>Deletion candidates</h2><span>Hover or focus to inspect</span></div>
+            <ul id="suggestions" class="suggestions"></ul>
+          </section>
+          <aside id="diet-card" class="diet-card" aria-label="Diet Card preview">
+            <div class="diet-card__scan" aria-hidden="true"></div>
+            <span>PatchDiet / receipt</span>
+            <h3><b data-card-saved>0%</b> review noise removed</h3>
+            <p data-card-project>sample-cart-pr</p>
+            <div><strong data-card-before>0 files / 0 lines</strong><i aria-hidden="true">-&gt;</i><strong data-card-after>0 files / 0 lines</strong></div>
+            <small>Preview first. Verify with your checks.</small>
+          </aside>
+        </div>
+        <div class="surgery-rail" aria-label="PatchDiet demo flow">
+          <span class="is-complete"><b>1</b> Judge diff</span><span class="is-complete"><b>2</b> Excise noise</span><span><b>3</b> Print receipt</span>
+        </div>
+      </div>
+
+      <div id="workspace-controls" class="inputs">
+        <div class="panel-kicker"><span>00</span> Source control</div>
+        <div class="actions actions--workspace">
+          <button id="load-sample" class="button button--primary" type="button">Show sample receipt</button>
+          <button id="analyze" class="button button--secondary" type="button">Analyze pasted diff preview</button>
+          <button id="fetch-pr" class="button button--ghost" type="button" data-fetch-pr>Fetch public PR</button>
+          <button id="copy-command" class="button button--ghost" type="button" data-copy-command>Copy verified CLI command</button>
+          <span data-proof-copy-status role="status" aria-live="polite"></span>
+        </div>
+        <div class="input-grid">
+          <label>Project name<input id="project-name" value="sample-cart-pr"></label>
+          <label>Public PR URL<input id="pr-url" placeholder="https://github.com/org/repo/pull/123"></label>
+        </div>
+        <details class="raw-diff">
+          <summary>View raw diff</summary>
+          <label class="diff-label">Unified diff<textarea id="diff-input" spellcheck="false"></textarea></label>
+        </details>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

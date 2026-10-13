@@ -1,0 +1,17 @@
+{
+  "name": "PatchDiet (self-hosted, cleanup branches)",
+  "url": "https://patchdiet.example.com",
+  "hook_attributes": { "active": true },
+  "hook_url": "https://patchdiet.example.com/github/webhook",
+  "public": false,
+  "request_oauth_on_install": false,
+  "description": "Opt-in variant with contents write permission for explicitly requested verified cleanup branches.",
+  "default_events": ["pull_request", "check_run"],
+  "default_permissions": {
+    "contents": "write",
+    "metadata": "read",
+    "pull_requests": "read",
+    "issues": "write",
+    "checks": "write"
+  }
+}

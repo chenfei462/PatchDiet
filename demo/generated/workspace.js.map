@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/workspace-entry.js"],
+  "sourcesContent": ["import * as THREE from \"three\";\n\nglobalThis.__patchDietWorkspaceThreeRevision = THREE.REVISION;\n"],
+  "mappings": ";;;;;AAEA,WAAW,oCAA0C;",
+  "names": []
+}

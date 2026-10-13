@@ -32,6 +32,13 @@ const config = mergeConfigWithFlags(loadedConfig, {
   base: baseRef,
   test: tests
 });
+
+// Trust-boundary annotation: patchdiet.yaml is read from the checked-out PR
+// head, so a PR that modifies it also chooses (unless the workflow sets the
+// `test` input) the commands PatchDiet executes in this run. Flag that loudly
+// without blocking the run.
+await warnIfConfigFromPullRequest(targetCwd, baseRef, headRef);
+
 const report = await runShrink({
   cwd: targetCwd,
   baseRef,
@@ -87,6 +94,46 @@ function writeOutputs(outputPath, workspace) {
 function optionalInput(name) {
   const value = process.env[name]?.trim();
   return value ? value : undefined;
+}
+
+async function warnIfConfigFromPullRequest(cwd, baseRef, headRef) {
+  try {
+    const { stdout } = await execFileAsync(
+      "git",
+      ["diff", "--name-only", `${baseRef}...${headRef}`],
+      { cwd }
+    );
+    const changedFiles = stdout.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+    if (!changedFiles.includes("patchdiet.yaml")) {
+      return;
+    }
+
+    console.error(
+      "[patchdiet] WARNING: patchdiet.yaml was modified in this PR. " +
+        "The commands executed in this run are read from patchdiet.yaml, so they come from the PR rather than the base branch. " +
+        "Review the patchdiet.yaml changes before trusting this report."
+    );
+
+    if (process.env.GITHUB_STEP_SUMMARY) {
+      appendFileSync(
+        process.env.GITHUB_STEP_SUMMARY,
+        [
+          "> [!WARNING]",
+          "> **`patchdiet.yaml` was modified in this pull request.**",
+          "> The commands executed in this run are read from `patchdiet.yaml`, so they come from the PR rather than the base branch.",
+          "> Review the `patchdiet.yaml` changes before trusting this report.",
+          ""
+        ].join("\n") + "\n",
+        "utf8"
+      );
+    }
+  } catch (error) {
+    // The check is advisory: never block the run because the diff could not be read.
+    console.error(
+      "[patchdiet] Could not check whether patchdiet.yaml was modified in this PR: " +
+        (error instanceof Error ? error.message : String(error))
+    );
+  }
 }
 
 async function resolveBaseRef(cwd, configBase) {

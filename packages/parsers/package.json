@@ -1,0 +1,10 @@
+{
+  "name": "@patchdiet/parsers",
+  "version": "0.2.0",
+  "description": "Tree-sitter WASM semantic parsers for PatchDiet (TypeScript/TSX, JavaScript/JSX, Python).",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@vscode/tree-sitter-wasm": "^0.3.1"
+  }
+}

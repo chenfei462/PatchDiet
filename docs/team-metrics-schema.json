@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PatchDiet Team Metrics Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "repo",
+    "pullNumber",
+    "mode",
+    "baseSha",
+    "headSha",
+    "createdAt",
+    "input",
+    "output",
+    "counts"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "repo": { "type": "string" },
+    "pullNumber": { "type": "integer", "minimum": 1 },
+    "mode": { "enum": ["preview", "verified"] },
+    "baseSha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "headSha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "input": { "$ref": "#/$defs/diffSummary" },
+    "output": { "$ref": "#/$defs/diffSummary" },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["removed", "kept", "needsHumanReview"],
+      "properties": {
+        "removed": { "type": "integer", "minimum": 0 },
+        "kept": { "type": "integer", "minimum": 0 },
+        "needsHumanReview": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "durationMs": { "type": "integer", "minimum": 0 },
+    "partial": { "type": "boolean" },
+    "riskCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "low": { "type": "integer", "minimum": 0 },
+        "medium": { "type": "integer", "minimum": 0 },
+        "high": { "type": "integer", "minimum": 0 },
+        "blocked": { "type": "integer", "minimum": 0 }
+      }
+    }
+  },
+  "$defs": {
+    "diffSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fileCount", "hunkCount", "changedLineCount"],
+      "properties": {
+        "fileCount": { "type": "integer", "minimum": 0 },
+        "hunkCount": { "type": "integer", "minimum": 0 },
+        "changedLineCount": { "type": "integer", "minimum": 0 }
+      }
+    }
+  }
+}

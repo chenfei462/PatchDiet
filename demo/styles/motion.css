@@ -1,0 +1,63 @@
+@view-transition {
+  navigation: auto;
+}
+
+.forge-scene .scene-frame {
+  opacity: 1;
+  transform: none;
+}
+
+body[data-active-scene] .forge-scene .scene-frame {
+  opacity: 0.28;
+  transform: translateY(18px);
+  transition: opacity var(--motion-scene) var(--ease-forge), transform var(--motion-scene) var(--ease-forge), color var(--motion-standard) var(--ease-forge);
+}
+
+body[data-active-scene="intake"] .hero-frame,
+body[data-active-scene="gates"] .gates-scene .scene-frame,
+body[data-active-scene="receipt"] .receipt-scene .scene-frame,
+body[data-active-scene="evidence"] .evidence-scene .scene-frame,
+body[data-active-scene="handoff"] .handoff-frame {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body[data-active-scene="intake"] .hero-metric { border-top-color: var(--color-lime); }
+body[data-active-scene="gates"] .gate-pipeline li:nth-child(3) { color: var(--color-lime); }
+body[data-active-scene="receipt"] .receipt-ticket { border-top-color: var(--color-lime); }
+body[data-active-scene="evidence"] .product-capture { border-color: rgba(140, 222, 240, 0.75); }
+body[data-active-scene="handoff"] .command-console { border-color: rgba(185, 255, 102, 0.75); }
+
+.hero-metric { view-transition-name: patch-receipt; }
+
+.no-webgl #forge-canvas { display: none; }
+.no-webgl .forge-fallback { display: block; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  #forge-canvas { display: none; }
+
+  .forge-fallback {
+    display: block;
+    background-color: var(--color-void);
+    background-image:
+      linear-gradient(90deg, transparent 0 12%, rgba(140, 222, 240, 0.05) 12% 12.1%, transparent 12.1% 87.9%, rgba(185, 255, 102, 0.05) 87.9% 88%, transparent 88%),
+      repeating-linear-gradient(0deg, rgba(241, 244, 233, 0.025) 0 1px, transparent 1px 48px),
+      url("/demo/assets/forge-poster.png");
+    background-position: center;
+    background-size: auto, auto, cover;
+  }
+
+  .forge-scene .scene-frame,
+  body[data-active-scene] .forge-scene .scene-frame {
+    opacity: 1;
+    transform: none;
+  }
+}
