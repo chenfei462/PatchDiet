@@ -1,0 +1,68 @@
+name: Perses
+repository: https://github.com/uw-pluverse/perses
+official_site: https://www.swag.uwaterloo.ca/www/publications/perses-syntax-guided-program-reduction.html
+license: GPL-3.0
+languages:
+  - Kotlin
+  - Java
+primary_purpose: Syntax-guided program reduction.
+architecture: Grammar-aware reducer with parser adapters, reduction passes, and oracle-driven search.
+key_modules:
+  - parser adapters
+  - reducer passes
+  - cache
+  - benchmark harness
+algorithms:
+  - syntax-guided-reduction
+  - hierarchical-delta-debugging
+useful_patterns:
+  - syntax-valid candidate generation
+  - explicit interestingness oracle
+  - reducer composition
+patchdiet_mapping:
+  - packages/core/src/reducer.ts
+  - packages/core/src/ast-atomizer.ts
+do_not_copy:
+  - GPL-licensed implementation code
+  - JVM runtime assumptions
+integration_options:
+  - borrow-concept
+  - adapter
+  - external-tool
+  - no-integration
+integration_recommendation: borrow-concept
+reasons: Native TypeScript keeps PatchDiet installable and avoids a new runtime.
+risks: Grammar coverage, parser drift, and license constraints.
+estimated_complexity: medium
+status: RESEARCH_ONLY
+source_refs:
+  - project:perses
+provenance_status: SOURCE_VERIFIED_REPOSITORY
+previous_license_verified_at_commit: 2026-10-26
+license_review_status: ROOT_LICENSE_INSPECTED_AT_COMMIT
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+inspected_commit: 018d33a7364d6c244e86b93c7e0949fc4ba9a254
+license_verified_at_commit: 018d33a7364d6c244e86b93c7e0949fc4ba9a254
+retrieved_at: 2026-10-26
+license_path: LICENSE
+license_type: GPL-3.0
+repository_evidence: evidence/repositories/project-perses.json
+id: project:perses
+claims:
+  - claim:perses:003
+limitations:
+  - Grammar coverage, parser drift, and license constraints.
+gate_justifications:
+  D7: No newly adopted research implementation; existing runtime gets a separate fresh regression.
+  D6: No runtime adoption ticket is authorized in the research-only phase.
+ticket_refs:
+  - PD-R100
+  - PD-R101
+  - PD-R159

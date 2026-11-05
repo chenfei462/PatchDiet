@@ -1,0 +1,79 @@
+name: lpr
+family: program-reduction
+original_sources:
+  - paper:zhang-2024-lpr
+source_version: arXiv:2312.13064v3, 11 May 2024; author PDF Algorithm 1 cross-checked
+evidence_locators:
+  - arXiv v3 section 3.2, Algorithm 1 lines 1–15
+problem: Combine language-generic reduction with language-specific transformation proposals.
+input: Program, prompts, LLM, language-generic reducer and executable property function ψ.
+output: A smaller program for which ψ is observed to hold.
+algorithm: LLM identifies transformation targets and proposes rewrites; ψ checks each proposal, then Perses reduces the
+  accepted candidate. Repeat transformations/reduction while overall size improves.
+pseudocode: |
+  P = Perses(P, property)
+  repeat:
+    prior_best = P
+    for transformation prompt:
+      targets = LLM_identify(P, prompt)
+      for target in targets:
+        Q = LLM_transform(P, target)
+        if property(Q): P = Q
+      P = Perses(P, property)
+  until size(P) >= size(prior_best)
+  return prior_best
+pseudocode_scope: Original paraphrase for research; use cited full algorithm before implementing a reproduction.
+complexity: LLM latency/cost plus reducer and property-test costs; no general bound inferred from selected benchmarks.
+oracle_calls: Only executable property outcomes accept candidates; do not count probability/structure/LLM advice as a
+  successful test.
+termination: Outer loop checks size improvement; executable implementations also need bounded LLM calls, timeouts and search.
+correctness_scope: LLM proposes targets/rewrites. The executable ψ remains authoritative; reducer acceptance does not
+  prove semantic equivalence or requirement completeness.
+assumptions:
+  - property test is meaningful and stable
+  - LLM output treated as untrusted
+  - generic reducer uses same property
+limitations:
+  - Evaluation covers 50 C/Rust/JavaScript compiler-oriented subjects
+  - Can temporarily enlarge programs (e.g. loop unrolling)
+  - Model/prompt/cost dependence
+  - Compiler interestingness is not PatchDiet task correctness
+failure_modes:
+  - unstable or insufficient oracle
+  - invalid serialization
+  - unsupported domain transfer
+patchdiet_current_state: Existing runtime preserved; this correction adds no runtime strategy.
+patchdiet_gap: No controlled PatchDiet comparison establishes benefit.
+patchdiet_mapping: Advisory candidate suggestions only; never summarize as LLM safely removes code. No runtime integration authorized.
+recommended_use: RESEARCH_ONLY until independently reviewed and benchmarked.
+not_recommended_for: Automatic removal authority or semantic correctness claims.
+tests_required:
+  - property polarity adapter
+  - inconclusive oracle
+  - deterministic reconstruction
+  - budget exit does not claim minimality
+benchmark_metrics:
+  - Removal Precision
+  - Removal Recall
+  - oracle calls
+  - runtime
+  - final verification
+  - hidden regression rate
+status: RESEARCH_ONLY
+independent_review: PENDING
+source_evaluation: Author-reported reductions/time comparisons with Vulcan on 50 subjects; those are study-specific
+  results, not PatchDiet gains.
+id: lpr
+claims:
+  - claim:lpr:001
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: No new research-derived runtime work is authorized; no adoption ticket required.
+  D7: Research card only; pre-existing runtime is covered separately by the fresh regression.

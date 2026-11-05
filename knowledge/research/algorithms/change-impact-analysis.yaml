@@ -1,0 +1,58 @@
+name: change-impact-analysis
+family: dependency-analysis
+original_sources: []
+problem: Estimate which tests, symbols, and files may be affected by a change.
+input: Before/after graphs and changed nodes.
+output: Impact set for targeted verification and review routing.
+algorithm: Map changed nodes into the dependency graph and traverse affected relationships.
+pseudocode: |
+  changed = map_diff_to_symbols(diff)
+  impact = closure(changed, dependency_edges)
+  return impact
+complexity: O(V + E) after graph construction.
+oracle_calls: None for analysis; selected and full tests remain executable gates.
+termination: Finite graph closure.
+correctness_scope: Conservative only if graph is complete and edge semantics are sound.
+assumptions:
+  - diff-to-symbol mapping
+  - graph completeness
+failure_modes: &a1
+  - unresolved references
+  - generated code
+  - stale index
+known_variants:
+  - dynamic impact
+  - change propagation
+  - regression selection
+patchdiet_current_state: packages/evidence and packages/scope implement lightweight evidence and scope maps.
+patchdiet_gap: No benchmark against optional SCIP import or hidden regressions.
+recommended_use: Targeted-first verification with mandatory full verification.
+not_recommended_for: Skipping required checks based on an incomplete impact set.
+tests_required:
+  - cross-file edge
+  - deleted symbol
+  - stale index invalidation
+benchmark_metrics:
+  - impact precision/recall
+  - targeted runtime
+  - hidden regression rate
+unverified_legacy_citations:
+  - paper:horwitz-reps-binkley-1990
+provenance_gap: Original primary source not verified; legacy algorithm text is quarantined and may not inform experiments.
+status: NOT_VERIFIED
+independent_review: PENDING
+id: change-impact-analysis
+limitations: *a1
+patchdiet_mapping: packages/evidence and packages/scope implement lightweight evidence and scope maps.
+distillation_gates:
+  D1_SOURCE_VERIFIED: FAIL
+  D2_CLAIMS_EXTRACTED: FAIL
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: No new research-derived runtime work is authorized; no adoption ticket required.
+  D7: Research card only; pre-existing runtime is covered separately by the fresh regression.
+  D1: Original primary source not verified; legacy algorithm text is quarantined and may not inform experiments.

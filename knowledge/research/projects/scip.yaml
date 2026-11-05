@@ -1,0 +1,59 @@
+name: SCIP
+repository: https://github.com/scip-code/scip
+official_site: https://about.sourcegraph.com/handbook/engineering/code-intelligence/scip
+license: Apache-2.0
+languages:
+  - Protocol Buffers
+primary_purpose: Interoperable code intelligence index format.
+architecture: Document, symbol, occurrence, and relationship records with language-specific indexers.
+key_modules:
+  - protocol schema
+  - index readers
+  - language indexers
+useful_patterns:
+  - stable symbol identity
+  - cross-file references
+patchdiet_mapping:
+  - packages/evidence/src
+  - packages/knowledge/src
+  - packages/core/src/symbols.ts
+do_not_copy:
+  - indexer assumptions without compatibility benchmarks
+integration_options:
+  - adapter
+  - external-tool
+  - no-integration
+integration_recommendation: adapter prototype
+reasons: Optional import can be benchmarked against current SQLite graph without replacing it.
+risks: Index generation cost, incomplete language support, Windows setup.
+estimated_complexity: medium
+status: EXPERIMENTAL
+source_refs:
+  - project:scip
+provenance_status: SOURCE_VERIFIED_REPOSITORY
+previous_license_verified_at_commit: 2026-10-26
+license_review_status: ROOT_LICENSE_INSPECTED_AT_COMMIT
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: FAIL
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+inspected_commit: d556dd3c24b3c1787e0b62cd31f25188300e3098
+license_verified_at_commit: d556dd3c24b3c1787e0b62cd31f25188300e3098
+retrieved_at: 2026-10-26
+license_path: LICENSE
+license_type: Apache-2.0
+repository_evidence: evidence/repositories/project-scip.json
+id: project:scip
+algorithm_topics:
+  - symbol-indexing
+  - reference-resolution
+limitations:
+  - Indexing/indexer installation and Windows/CI costs require bounded measurement; protocol presence does not establish
+    precision or recall.
+gate_justifications:
+  D6: No runtime adoption ticket is authorized before independent review.
+  D7: No implementation or experiment was performed in this phase.

@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-06T15:34:51.282Z",
+  "implementation": "D:\\systemDir\\Desktop\\PatchDiet",
+  "fixture": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-v02-review-fixtures-fumwIa\\js-mixed-semantic",
+  "results": [
+    {
+      "name": "AST atoms used by shrink can be explained through the public readonly CLI",
+      "status": "passed",
+      "atomIds": [
+        "atom-5d2c5295e48c4395",
+        "atom-b7dff31054592c2e"
+      ]
+    }
+  ]
+}

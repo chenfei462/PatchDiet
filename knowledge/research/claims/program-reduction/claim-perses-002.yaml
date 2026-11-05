@@ -1,0 +1,22 @@
+id: claim:perses:002
+statement: Grammar-guided reduction can improve reduction effectiveness when the oracle is expensive and the grammar
+  captures useful structure.
+source:
+  id: paper:perses-icse-2018
+evidence_type: peer-reviewed-paper
+scope: program-reduction
+confidence: medium
+assumptions:
+  - oracle cost dominates candidate generation cost
+limitations:
+  - language coverage
+  - parser quality
+  - and workload shape determine whether the overhead pays off
+patchdiet_mapping:
+  affected_components:
+    - packages/core/src/reducer.ts
+possible_action: benchmark syntax-guided ordering as an experiment
+safety_effect: positive
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

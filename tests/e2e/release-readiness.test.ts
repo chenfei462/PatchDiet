@@ -19,7 +19,9 @@ describe("release readiness", () => {
     ]) {
       const workflow = readFileSync(join(process.cwd(), workflowFile), "utf8");
 
-      expect(workflow).toContain("actions/setup-node@v4");
+      // Actions are pinned to commit SHAs (with the version as a trailing comment),
+      // so accept either the pinned or the plain tag form.
+      expect(workflow).toMatch(/actions\/setup-node@(v4|[0-9a-f]{40}\s*#\s*v4)/);
       expect(workflow).toContain("node-version: 22");
     }
   });
@@ -34,10 +36,10 @@ describe("release readiness", () => {
   it("uses current GitHub Actions runtimes in the release workflow", () => {
     const workflow = readFileSync(join(process.cwd(), ".github", "workflows", "publish-npm.yml"), "utf8");
 
-    expect(workflow).toContain("id-token: write");
-    expect(workflow).toContain("actions/checkout@v6");
-    expect(workflow).toContain("actions/setup-node@v6");
-    expect(workflow).toContain("node-version: 24.x");
+      expect(workflow).toContain("id-token: write");
+      expect(workflow).toMatch(/actions\/checkout@(v6|[0-9a-f]{40}\s*#\s*v6)/);
+      expect(workflow).toMatch(/actions\/setup-node@(v6|[0-9a-f]{40}\s*#\s*v6)/);
+      expect(workflow).toContain("node-version: 24.x");
     expect(workflow).toContain("package-manager-cache: false");
     expect(workflow).toContain("npm publish --access public");
   });

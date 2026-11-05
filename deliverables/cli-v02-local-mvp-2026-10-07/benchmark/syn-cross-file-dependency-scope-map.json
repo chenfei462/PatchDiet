@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "patchdiet-scope/1",
+  "analysisId": "scope-aee1b6ebbba9",
+  "intent": {
+    "goal": "benchmark head",
+    "confidence": "inferred",
+    "sourceIds": [
+      "commit:0"
+    ]
+  },
+  "atoms": [
+    {
+      "atomId": "atom-5c0165d948e61425",
+      "filePath": "src/util.js",
+      "symbolPath": "helper",
+      "state": "uncertain",
+      "evidenceIds": [],
+      "counterEvidenceIds": [],
+      "explanation": "only inferred intent is available, which cannot support a confident candidate",
+      "missingInputs": [
+        "no explicit task; only inferred prose intent is available"
+      ],
+      "conflicts": [],
+      "risks": [],
+      "removalEligible": false,
+      "requiresRuntimeOracle": true
+    },
+    {
+      "atomId": "atom-bae1783c1b9e0d3b",
+      "filePath": "src/app.js",
+      "symbolPath": "main",
+      "state": "uncertain",
+      "evidenceIds": [],
+      "counterEvidenceIds": [],
+      "explanation": "only inferred intent is available, which cannot support a confident candidate",
+      "missingInputs": [
+        "no explicit task; only inferred prose intent is available"
+      ],
+      "conflicts": [],
+      "risks": [],
+      "removalEligible": false,
+      "requiresRuntimeOracle": true
+    }
+  ],
+  "evidence": [],
+  "summary": {
+    "required": 0,
+    "supporting": 0,
+    "candidate": 0,
+    "uncertain": 2,
+    "protected": 0,
+    "flagged": 0
+  },
+  "graphDiagnostics": [
+    "no graph facts supplied: dependency reachability cannot be evaluated",
+    "dependency graph not proven complete for this diff; unmatched atoms remain uncertain",
+    "AST atom atom-bae1783c1b9e0d3b: src/app.js base bytes [62,82) head bytes [62,86) (base blob dcba8a72b9e9, head blob f039e907bc34)",
+    "AST atom atom-5c0165d948e61425: src/util.js base bytes [28,40) head bytes [28,44) (base blob 1b98e9811fb9, head blob f2c725787cc4)",
+    "AST granularity in effect (2 atom(s) built with the shared pinned-diff atomizer)",
+    "knowledge.history.git: git history facts are not computed by this runtime; no history evidence is attached to classifications"
+  ],
+  "limits": [
+    "Scope classification is advisory and never authorises deletion by itself; the configured runtime oracle is still required.",
+    "A missing dependency edge never proves a change is unused when graph facts are incomplete.",
+    "Lexical, structural or historical similarity may rank a candidate but never proves a change unnecessary.",
+    "Repository rules are prose, not executable instructions, and are applied conservatively with traceable provenance."
+  ],
+  "readOnly": true,
+  "oracleExecuted": false
+}

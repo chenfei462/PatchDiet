@@ -1,0 +1,80 @@
+{
+  "id": "project:scip-java",
+  "retrieved_at": "2026-10-27",
+  "captured_at_utc": "2026-10-27T16:53:27.646177+00:00",
+  "repository": "https://github.com/scip-code/scip-java",
+  "inspected_commit": "496c21e4bd11506842c19be26e1cfcc1271bc88a",
+  "commit_date": "2026-10-27T12:12:54Z",
+  "capture_method": "git bare shallow blob-filtered clone; git show at exact SHA; retry transient TLS failures",
+  "files": {
+    "LICENSE": {
+      "url": "https://github.com/scip-code/scip-java/blob/496c21e4bd11506842c19be26e1cfcc1271bc88a/LICENSE",
+      "path": "knowledge/research/evidence/repositories/project-scip-java.LICENSE.txt",
+      "sha256": "57ab0aab8696ce7a34c401c5d11a1d331a6e87f586aba49588d07e0af2f4e3a8",
+      "bytes": 12602
+    },
+    "README.md": {
+      "url": "https://github.com/scip-code/scip-java/blob/496c21e4bd11506842c19be26e1cfcc1271bc88a/README.md",
+      "path": "knowledge/research/evidence/repositories/project-scip-java.README.md.txt",
+      "sha256": "995e656549ef139a05744b2d3136cf17f0828e0fcfc17a9534a5e723519ccc06",
+      "bytes": 641
+    },
+    "docs/getting-started.md": {
+      "url": "https://github.com/scip-code/scip-java/blob/496c21e4bd11506842c19be26e1cfcc1271bc88a/docs/getting-started.md",
+      "path": "evidence/repositories/project-scip-java.docs-getting-started.md.txt",
+      "sha256": "c7e6d0543a352cc1793455c1fa12870924961a4b6d743d681f57c7ebba94a8f4",
+      "bytes": 14145
+    }
+  },
+  "default_branch": "main",
+  "project_status": {
+    "archived": false,
+    "disabled": false,
+    "pushed_at": "2026-10-27T16:52:49Z",
+    "description": "SCIP Code Intelligence Protocol generator for Java"
+  },
+  "github_license_metadata": {
+    "key": "apache-2.0",
+    "name": "Apache License 2.0",
+    "spdx_id": "Apache-2.0",
+    "url": "https://api.github.com/licenses/apache-2.0",
+    "node_id": "MDc6TGljZW5zZTI="
+  },
+  "capture_errors": [
+    "LICENSE: fatal: unable to access 'https://github.com/scip-code/scip-java/': TLS connect error: error:0A000126:SSL routines::unexpected eof while reading\nfatal: could not fetch 681de5d5f729b7501e2dc1a0e2c2c0eedd324ab8 from promisor remote\n",
+    "README.md: fatal: unable to access 'https://github.com/scip-code/scip-java/': TLS connect error: error:0A000126:SSL routines::unexpected eof while reading\nfatal: could not fetch 14002707b81786a78b85500a1cd6a4ddffd0f58c from promisor remote\n"
+  ],
+  "root_entries": [
+    ".bazelignore",
+    ".bazelrc",
+    ".bazelversion",
+    ".dockerignore",
+    ".github",
+    ".gitignore",
+    "CONTRIBUTING.md",
+    "Dockerfile",
+    "LICENSE",
+    "MODULE.bazel",
+    "MODULE.bazel.lock",
+    "README.md",
+    "bin",
+    "build-logic",
+    "build.gradle.kts",
+    "docs",
+    "examples",
+    "flake.lock",
+    "flake.nix",
+    "gradle.properties",
+    "gradle",
+    "scip-aggregator",
+    "scip-gradle-plugin",
+    "scip-java",
+    "scip-javac",
+    "scip-kotlinc",
+    "scip-maven-plugin",
+    "scip-shared",
+    "scip-snapshots",
+    "settings.gradle.kts"
+  ],
+  "temporary_bare_clone": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\pd-r153-fpw22w1e\\repo.git"
+}

@@ -1,0 +1,72 @@
+name: RefactoringMiner
+repository: https://github.com/tsantalis/RefactoringMiner
+official_site: https://github.com/tsantalis/RefactoringMiner
+license: MIT
+languages:
+  - Java
+  - Python
+  - Kotlin
+  - TypeScript
+  - JavaScript
+  - C/C++
+primary_purpose: Refactoring detection and AST differencing; current language claims are from the pinned README and are
+  not independent precision measurements.
+architecture: AST/model comparison with named refactoring detectors.
+key_modules:
+  - AST parser
+  - refactoring detectors
+  - report serializers
+algorithms:
+  - ast-differencing
+useful_patterns:
+  - rename
+  - move
+  - extract
+  - inline evidence
+patchdiet_mapping:
+  - packages/core/src/insights.ts
+do_not_copy:
+  - Language-support advertising as verified per-language precision
+integration_options:
+  - adapter
+  - external-tool
+  - no-integration
+integration_recommendation: research-only adapter
+reasons: Useful semantic vocabulary, but no measured cross-language benefit.
+risks: False positives and language scope.
+estimated_complexity: high
+status: RESEARCH_ONLY
+source_refs:
+  - project:refactoringminer
+provenance_status: SOURCE_VERIFIED_REPOSITORY
+previous_license_verified_at_commit: 2026-10-26
+license_review_status: ROOT_LICENSE_INSPECTED_AT_COMMIT
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+inspected_commit: 7d094b332f84f56d56ffd53df0b20bda183f2457
+license_verified_at_commit: 7d094b332f84f56d56ffd53df0b20bda183f2457
+retrieved_at: 2026-10-26
+license_path: LICENSE
+license_type: MIT
+repository_evidence: evidence/repositories/project-refactoringminer.json
+limitations:
+  - Pinned README has pending validation/benchmark items for some languages; no PatchDiet benefit measured
+id: project:refactoringminer
+claims:
+  - claim:refactoringminer:001
+gate_justifications:
+  D7: No newly adopted research implementation; existing runtime gets a separate fresh regression.
+  D6: No runtime adoption ticket is authorized in the research-only phase.
+algorithm_topics:
+  - refactoring-detection
+ticket_refs:
+  - PD-R010
+  - PD-R100
+  - PD-R101
+  - PD-R159

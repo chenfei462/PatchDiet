@@ -1,0 +1,105 @@
+{
+  "source": "C:\\Users\\hacjr\\.paseo\\worktrees\\22ndakoi\\patchdiet-scope-evidence\\docs\\feedback.schema.json",
+  "results": [
+    {
+      "name": "documented example accepted",
+      "status": "passed",
+      "accepted": true
+    },
+    {
+      "name": "unknown property rejected",
+      "status": "passed",
+      "accepted": false
+    },
+    {
+      "name": "bad hash rejected",
+      "status": "passed",
+      "accepted": false
+    },
+    {
+      "name": "bad verdict rejected",
+      "status": "passed",
+      "accepted": false
+    },
+    {
+      "name": "bad date rejected",
+      "status": "passed",
+      "accepted": false
+    },
+    {
+      "name": "oversize note rejected",
+      "status": "passed",
+      "accepted": false
+    },
+    {
+      "name": "repo-relative path '../outside.js'",
+      "status": "passed",
+      "accepted": false
+    },
+    {
+      "name": "repo-relative path '/absolute.js'",
+      "status": "passed",
+      "accepted": false
+    },
+    {
+      "name": "repo-relative path 'C:/absolute.js'",
+      "status": "passed",
+      "accepted": false
+    },
+    {
+      "name": "repo-relative path 'src/../../outside.js'",
+      "status": "passed",
+      "accepted": false
+    },
+    {
+      "name": "repo-relative path 'src\\\\wrong.js'",
+      "status": "passed",
+      "accepted": false
+    },
+    {
+      "name": "repo-relative path 'src/valid.ts'",
+      "status": "passed",
+      "accepted": true
+    },
+    {
+      "name": "repo-relative path 'a:'",
+      "status": "passed",
+      "accepted": false
+    },
+    {
+      "name": "repo-relative path 'a?'",
+      "status": "passed",
+      "accepted": false
+    },
+    {
+      "name": "repo-relative path 'a\\\\'",
+      "status": "passed",
+      "accepted": false
+    },
+    {
+      "name": "repo-relative path 'a\\x00'",
+      "status": "passed",
+      "accepted": false
+    },
+    {
+      "name": "repo-relative path 'a\\x01'",
+      "status": "passed",
+      "accepted": false
+    },
+    {
+      "name": "repo-relative path 'src/unit.ts'",
+      "status": "passed",
+      "accepted": true
+    },
+    {
+      "name": "repo-relative path '.hidden/x.ts'",
+      "status": "passed",
+      "accepted": true
+    },
+    {
+      "name": "repo-relative path 'src/doc..ts'",
+      "status": "passed",
+      "accepted": true
+    }
+  ]
+}

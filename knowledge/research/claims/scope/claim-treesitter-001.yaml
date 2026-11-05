@@ -1,0 +1,21 @@
+id: claim:treesitter:001
+statement: Tree-sitter constructs syntax trees incrementally and can provide useful parse results in the presence of
+  syntax errors; these results are structural evidence.
+source:
+  id: project:tree-sitter
+evidence_type: reference-implementation
+scope: scope
+confidence: medium
+assumptions:
+  - grammar coverage and node ranges are trustworthy for the target language
+limitations:
+  - error-tolerant parsing can create misleading structure; syntax evidence is not behavior evidence
+patchdiet_mapping:
+  affected_components:
+    - packages/core/src/ast-atomizer.ts
+    - packages/parsers/src
+possible_action: keep parser output advisory and require the oracle after every candidate
+safety_effect: positive
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

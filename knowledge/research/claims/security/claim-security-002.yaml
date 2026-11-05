@@ -1,0 +1,21 @@
+id: claim:security:002
+statement: Monitoring runner process and network behavior can expose unexpected egress or supply-chain activity during
+  untrusted verification.
+source:
+  id: project:harden-runner
+evidence_type: reference-implementation
+scope: security
+confidence: medium
+assumptions:
+  - the CI environment exposes useful telemetry
+limitations:
+  - monitoring is defense in depth and can miss activity
+patchdiet_mapping:
+  affected_components:
+    - .github/workflows
+    - packages/core/src/runner.ts
+possible_action: research-only until a CI threat model and benchmark justify integration
+safety_effect: positive
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

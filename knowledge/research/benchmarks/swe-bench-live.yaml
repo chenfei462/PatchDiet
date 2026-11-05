@@ -1,0 +1,38 @@
+id: swe-bench-live
+name: swe-bench-live
+source: benchmark:swe-bench-live
+task_shape: Automated repository/issue/PR curation, executable test-transition validation, RepoLaunch environment setup
+  and later LLM filtering. Original Python lite/verified are frozen; full/test update wording differs across site/card
+  and must be resolved for selected cohort.
+verification: SOURCE_PARTIALLY_VERIFIED; canonical source card holds current evidence and HOLD legal gate.
+patchdiet_use: Study fresh task/environment pipeline; no import and no claim of multi-language coverage for Python split.
+metrics:
+  - freshness
+  - environment reproducibility
+  - sample/license eligibility
+status: RESEARCH_ONLY
+distillation_gates:
+  D1_SOURCE_VERIFIED: FAIL
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: Research-only source assessment; no experiment benefit or runtime adoption has been demonstrated, so no PD-E runtime
+    ticket is permitted.
+  D7: No implementation/integration or experiment performed in this research-only phase; validation is not represented as
+    runtime evidence.
+extracted_claims:
+  - statement: Dedicated Docker execution environments and fail-to-pass/pass-to-pass tests. Current harness also supports
+      separate MultiLang and Windows datasets; those are not the original paper Python snapshot.
+    source: benchmark:swe-bench-live
+limitations:
+  - Refresh reduces exposure risk but cannot prove uncontaminated model training. Frozen splits become public; rollout
+    protocol restricts agent access to problem statement plus image and prohibits gold/test hints.
+  - No data imported; no automatic removal authority.
+patchdiet_mapping:
+  affected_components:
+    - benchmarks
+automatic_removal_authority: false

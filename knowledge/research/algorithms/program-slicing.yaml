@@ -1,0 +1,65 @@
+name: program-slicing
+family: dependency-analysis
+original_sources: []
+problem: Identify code relevant to a selected output, symbol, or behavior criterion.
+input: Program graph and slicing criterion.
+output: Forward or backward slice of nodes and edges.
+algorithm: Traverse dependency edges from the criterion in the chosen direction.
+pseudocode: |
+  work = [criterion]
+  slice = {}
+  while work not empty:
+    node = pop(work)
+    if node in slice: continue
+    add node to slice
+    push unvisited dependency predecessors or successors
+  return slice
+complexity: O(V + E) for a materialized graph.
+oracle_calls: None for analysis; any removal still requires executable verification.
+termination: Graph traversal terminates on visited-node tracking.
+correctness_scope: Graph-relative relevance, not complete semantic dependence for dynamic languages.
+assumptions:
+  - graph precision
+  - criterion selection
+failure_modes: &a1
+  - dynamic dispatch
+  - reflection
+  - generated code
+  - incomplete graph
+known_variants:
+  - context-sensitive
+  - field-sensitive
+  - interprocedural
+patchdiet_current_state: Lightweight symbol and dependency grouping provide partial relevance evidence.
+patchdiet_gap: Dynamic language and monorepo precision are not fully measured.
+recommended_use: Scope evidence and targeted test selection.
+not_recommended_for: Automatic delete authorization.
+tests_required:
+  - direct dependency
+  - transitive dependency
+  - unresolved symbol
+benchmark_metrics:
+  - precision
+  - recall
+  - index time
+  - graph size
+unverified_legacy_citations:
+  - paper:weiser-1984-program-slicing
+provenance_gap: Original primary source not verified; legacy algorithm text is quarantined and may not inform experiments.
+status: NOT_VERIFIED
+independent_review: PENDING
+id: program-slicing
+limitations: *a1
+patchdiet_mapping: Lightweight symbol and dependency grouping provide partial relevance evidence.
+distillation_gates:
+  D1_SOURCE_VERIFIED: FAIL
+  D2_CLAIMS_EXTRACTED: FAIL
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: No new research-derived runtime work is authorized; no adoption ticket required.
+  D7: Research card only; pre-existing runtime is covered separately by the fresh regression.
+  D1: Original primary source not verified; legacy algorithm text is quarantined and may not inform experiments.

@@ -1,0 +1,103 @@
+id: benchmark:codereviewqa
+title: "CodeReviewQA: The Code Review Comprehension Assessment for Large Language Models"
+source_type: benchmark-dataset
+authority_tier: A
+primary_secondary: primary-source-record
+canonical_url: https://aclanthology.org/2025.findings-acl.476/
+retrieved_at: 2026-10-27
+claims: []
+assumptions:
+  - PatchDiet applicability and benefit require separately authorized measured evidence.
+limitations:
+  - No automatic removal authority.
+  - No PatchDiet experiment or benchmark benefit established.
+  - Reformulation mitigates memorization but public underlying reviews/code and released questions can still contaminate
+    training. Static benchmark is not a fresh task lane.
+  - Benchmark evaluation is not a proof of semantic preservation or removal safety.
+patchdiet_relevance:
+  mapping: Review/scope-comprehension research only; cannot establish safe deletion.
+  relevance: research-only
+status:
+  source_verified: false
+  distilled: false
+  decision: RESEARCH_ONLY
+verification_status: SOURCE_PARTIALLY_VERIFIED
+distillation_gates:
+  D1_SOURCE_VERIFIED: FAIL
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: Research-only source assessment; no experiment benefit or runtime adoption has been demonstrated, so no PD-E runtime
+    ticket is permitted.
+  D7: No implementation/integration or experiment performed in this research-only phase; validation is not represented as
+    runtime evidence.
+automatic_removal_authority: false
+independent_review: PENDING
+authors:
+  - Hong Yi Lin
+  - Chunhua Liu
+  - Haoyu Gao
+  - Patanamon Thongtanunam
+  - Christoph Treude
+year: 2025
+venue: "Findings of the Association for Computational Linguistics: ACL 2025, pages 9138-9166"
+doi: 10.18653/v1/2025.findings-acl.476
+paper_version_used: ACL Anthology publisher PDF, 2025.findings-acl.476; arXiv v2 separately checked
+official_source: https://huggingface.co/datasets/Tomo-Melb/CodeReviewQA
+dataset_version: b6f89e6d10f7558bf188ff9bc0bd039947eff8d6
+dataset_snapshot_date: 2026-02-28T13:38:13.000Z
+license: MIT (official dataset card and pinned inference repository LICENSE); upstream examples retain separate
+  provenance concerns
+data_use_constraints: Publisher metadata license is not blanket authorization over included source code, review text,
+  personal data or container dependencies. Per-selected-record license/terms and minimization review required before
+  import.
+redistribution_limits: No raw dataset, patches, review/user text or images redistributed by PatchDiet.
+  Attribution/notices and upstream license compatibility remain unreviewed for any selected sample.
+privacy_constraints: Public availability is not consent for arbitrary reuse. Identity/comment/issue text requires
+  minimization, secret/PII screening, restricted access and a deletion/retention process; no approved record-level
+  privacy review exists.
+sampling_limitations: Human curated GitHub review/code examples across nine languages from prior ACR data, balanced per
+  language; transformed into change type recognition, change localisation and solution identification multiple-choice
+  tasks. Balanced curated examples do not represent natural PR frequency.
+repository_level_code_licensing: Per-repository and per-file at source snapshot must be reviewed; dataset/harness
+  license cannot replace upstream rights.
+environment_methodology: Multiple-choice comprehension/inference scripts; no executable repository correctness oracle or deletion benchmark.
+contamination_freshness_limits: Reformulation mitigates memorization but public underlying reviews/code and released
+  questions can still contaminate training. Static benchmark is not a fresh task lane.
+task_count: Not asserted; paper, snapshot, split and current card may differ. No data rows loaded to recount.
+repository_count: Not asserted; no secondary headline counts adopted.
+evidence_summary: Official publication identity and dataset metadata snapshot captured; selected-record rights,
+  privacy/storage controls and reproducible eligible sampling not closed.
+inspection:
+  url: https://arxiv.org/abs/2503.16167v2
+  evidence:
+    - evidence/pd-r155-r156-2026-10-27/codereviewqa-dataset-meta.json
+    - evidence/pd-r155-r156-2026-10-27/codereviewqa-metadata.html
+    - evidence/pd-r155-r156-2026-10-27/codereviewqa-paper.pdf
+    - evidence/pd-r155-r156-2026-10-27/WEB_OBSERVATIONS.md
+extracted_claims:
+  - statement: Multiple-choice comprehension/inference scripts; no executable repository correctness oracle or deletion benchmark.
+    locator: Official paper methodology and official dataset card; version caveats recorded in this card.
+dataset_usage_gate:
+  status: HOLD
+  import_permitted: false
+  review: reports/DATASET_USAGE_REVIEW.md
+  reason: Per-sample upstream licensing, content/privacy minimization and retention/deletion workflow not approved; no
+    import or redistribution.
+harness_repository:
+  url: https://github.com/hongyi-tom/CodeReviewQA
+  inspected_commit: 6015308c52b63c6f7bc9b3f71ecd3c07d9d45628
+  commit_date: 2026-02-28T13:38:46Z
+  license_path: LICENSE
+  license: MIT
+  license_scope: Repository code/documentation only, not blanket upstream dataset rights.
+  project_status: archived=False; public; no execution tested
+  retrieved_at: 2026-10-27
+  evidence:
+    - evidence/pd-r155-r156-2026-10-27/codereviewqa-code-repo.json
+    - evidence/pd-r155-r156-2026-10-27/codereviewqa-code-commit.json
+    - evidence/pd-r155-r156-2026-10-27/codereviewqa-code-root.json

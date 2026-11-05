@@ -1,0 +1,38 @@
+id: swe-rebench
+name: swe-rebench
+source: benchmark:swe-rebench
+task_shape: Automated GitHub issue/PR collection, test-change and execution filters, environment setup and LLM-based
+  quality screening; Python-oriented original dataset. Filtered tasks and monthly leaderboard cohorts are different
+  populations.
+verification: SOURCE_PARTIALLY_VERIFIED; canonical source card holds current evidence and HOLD legal gate.
+patchdiet_use: Study fresh-task curation only; no imported data.
+metrics:
+  - freshness
+  - environment reproducibility
+  - sample/license eligibility
+status: RESEARCH_ONLY
+distillation_gates:
+  D1_SOURCE_VERIFIED: FAIL
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: Research-only source assessment; no experiment benefit or runtime adoption has been demonstrated, so no PD-E runtime
+    ticket is permitted.
+  D7: No implementation/integration or experiment performed in this research-only phase; validation is not represented as
+    runtime evidence.
+extracted_claims:
+  - statement: Repository/base and environment commits, install configuration, gold/test patches and test-state transitions;
+      Docker-based harness. Docker tags are not pinned image digests here.
+    source: benchmark:swe-rebench
+limitations:
+  - Original fixed dataset is not automatically a fresh monthly holdout; task dates/model cutoff and leakage checks must
+    be pinned. V2 is a separate release/paper and is not silently substituted.
+  - No data imported; no automatic removal authority.
+patchdiet_mapping:
+  affected_components:
+    - benchmarks
+automatic_removal_authority: false

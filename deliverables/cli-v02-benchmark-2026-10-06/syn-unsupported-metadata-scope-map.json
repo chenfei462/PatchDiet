@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "patchdiet-scope/1",
+  "analysisId": "scope-cd91c9b0aca4",
+  "intent": {
+    "goal": "benchmark head",
+    "confidence": "inferred",
+    "sourceIds": [
+      "commit:0"
+    ]
+  },
+  "atoms": [
+    {
+      "atomId": "atom-069736208f",
+      "filePath": "asset.bin",
+      "state": "uncertain",
+      "evidenceIds": [],
+      "counterEvidenceIds": [],
+      "explanation": "only inferred intent is available, which cannot support a confident candidate",
+      "missingInputs": [
+        "no explicit task; only inferred prose intent is available"
+      ],
+      "conflicts": [],
+      "risks": [],
+      "removalEligible": false,
+      "requiresRuntimeOracle": true
+    },
+    {
+      "atomId": "atom-533c98b0d2",
+      "filePath": "README.md",
+      "state": "uncertain",
+      "evidenceIds": [],
+      "counterEvidenceIds": [],
+      "explanation": "only inferred intent is available, which cannot support a confident candidate",
+      "missingInputs": [
+        "no explicit task; only inferred prose intent is available"
+      ],
+      "conflicts": [],
+      "risks": [],
+      "removalEligible": false,
+      "requiresRuntimeOracle": true
+    }
+  ],
+  "evidence": [],
+  "summary": {
+    "required": 0,
+    "supporting": 0,
+    "candidate": 0,
+    "uncertain": 2,
+    "protected": 0,
+    "flagged": 0
+  },
+  "graphDiagnostics": [
+    "no graph facts supplied: dependency reachability cannot be evaluated",
+    "dependency graph not proven complete for this diff; unmatched atoms remain uncertain"
+  ],
+  "limits": [
+    "Scope classification is advisory and never authorises deletion by itself; the configured runtime oracle is still required.",
+    "A missing dependency edge never proves a change is unused when graph facts are incomplete.",
+    "Lexical, structural or historical similarity may rank a candidate but never proves a change unnecessary.",
+    "Repository rules are prose, not executable instructions, and are applied conservatively with traceable provenance."
+  ],
+  "readOnly": true,
+  "oracleExecuted": false
+}

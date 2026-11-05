@@ -1,0 +1,96 @@
+id: PD-R159
+title: Research Cross-Reference Audit
+status: IN_PROGRESS
+research_basis:
+  sources:
+    - standard:sarif-2.1.0
+    - standard:git-diff-format
+    - standard:git-apply
+    - standard:nist-ssdf-1.1
+    - paper:perses-icse-2018
+    - project:perses
+    - project:creduce
+    - project:picire
+    - project:tree-sitter
+    - project:gumtree
+    - project:refactoringminer
+    - project:scip
+    - project:strykerjs
+    - benchmark:swe-bench
+    - paper:rothermel-harrold-1997-safe-regression-test-selection
+    - paper:microsoft-modern-code-review-2013
+    - paper:google-modern-code-review-2018
+    - project:reviewdog
+    - project:harden-runner
+    - project:openssf-scorecard
+    - paper:zeller-hildebrandt-2002-ddmin
+    - paper:misherghi-su-2006-hdd
+    - paper:zhou-2025-wdd
+    - paper:wang-2021-probdd
+    - paper:zhang-2025-cdd
+    - paper:xu-2023-vulcan
+    - paper:zhang-2024-lpr
+    - project:wdd-artifact
+    - project:scip-typescript
+    - project:scip-python
+    - project:scip-java
+    - project:joern
+    - project:ast-grep
+    - project:semgrep
+    - project:codeql
+    - project:pit
+    - paper:mutation-testing-survey-2018
+    - benchmark:swe-rebench
+    - benchmark:swe-bench-live
+    - benchmark:aidev
+    - benchmark:codereviewqa
+    - paper:jin-chen-2026-llm-reviewer-reliability
+    - project:pr-agent
+    - project:alibaba-open-code-review
+    - project:danger-js
+    - project:libgit2
+    - project:gitoxide
+    - standard:openssf-baseline-current
+  claims:
+    - claim:perses:001
+    - claim:perses:002
+    - claim:perses:003
+    - claim:creduce:001
+    - claim:picire:001
+    - claim:git:001
+    - claim:git:002
+    - claim:git:003
+    - claim:treesitter:001
+    - claim:scip:001
+    - claim:mutation:001
+    - claim:mutation:002
+    - claim:swebench:001
+    - claim:sarif:001
+    - claim:rts:001
+    - claim:review:002
+    - claim:review:003
+    - claim:review:001
+    - claim:security:001
+    - claim:security:002
+    - claim:security:003
+    - claim:ddmin:001
+    - claim:hdd:001
+    - claim:wdd:001
+    - claim:probdd:001
+    - claim:cdd:001
+    - claim:vulcan:001
+    - claim:lpr:001
+    - claim:gumtree:001
+    - claim:refactoringminer:001
+    - claim:llm-reviewer-reliability:001
+decision: RESEARCH_ONLY
+automatic_removal_authority: false
+implementation: Research provenance, source/claim/license/data-use and validator evidence only. No runtime adoption or experiments.
+acceptance_criteria:
+  - Primary evidence and limitations recorded separately
+  - D1-D7 explicitly consistent
+  - Independent review V2 assesses remaining blockers
+acceptance_evidence:
+  - reports/RESEARCH_GATE_STATUS.md
+  - reports/RESEARCH_INTEGRITY_VALIDATION.json
+independent_review: PENDING

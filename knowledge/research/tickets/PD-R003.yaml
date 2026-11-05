@@ -1,0 +1,18 @@
+id: PD-R003
+title: Measure syntax-guided candidate filtering
+research_basis:
+  sources: [paper:perses-icse-2018, project:tree-sitter]
+  claims: [claim:perses:001, claim:treesitter:001]
+problem: AST-aware atoms exist but parse filtering benefit is not measured.
+current_repo_evidence: packages/core/src/ast-atomizer.ts and ast-shrink.ts are present.
+proposed_change: Add benchmark-only syntax-guided candidate generation and compare oracle calls and reduction precision.
+files_likely_affected: [benchmarks, packages/core/src/ast-atomizer.ts, packages/core/src/ast-shrink.ts]
+implementation_steps: [select fixtures, record parse rejections, execute the same oracle, compare baseline]
+safety_invariants: [parse success never bypasses oracle, invalid candidates cannot be treated as removals]
+tests: [AST atomizer tests, syntax invalid fixture]
+benchmark: [parse rejection rate, oracle calls, runtime, removal precision]
+acceptance_criteria: [decision recorded as ADOPT, ADAPT, or RESEARCH_ONLY from measured data]
+dependencies: [PD-R001, PD-R002]
+complexity: medium
+do_not_change: [final verification gate]
+status: EXPERIMENTAL

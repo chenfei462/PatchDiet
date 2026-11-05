@@ -1,0 +1,27 @@
+id: claim:probdd:001
+statement: Original ProbDD selects deletions with a relevance-probability/expected-gain model and updates after tests;
+  it is not unconstrained random subset sampling.
+source:
+  id: paper:wang-2021-probdd
+  locators:
+    - Sections 3.1–3.3
+    - Algorithm and Theorem 4.1
+    - Section 5
+evidence_type: peer-reviewed-paper
+scope: program-reduction
+assumptions:
+  - monotonicity/unambiguity for theoretical model
+  - independent Bernoulli relevance approximation
+  - stable binary property oracle
+limitations:
+  - Sequential posterior updates ignore interactions among tests
+  - Dependent/non-monotone real inputs may violate model
+  - Later CDD findings are separate primary evidence about limitations
+patchdiet_mapping:
+  mapping: Research-only learned search policy. Configured checks remain authoritative; INCONCLUSIVE must not become
+    property=true.
+  affected_components:
+    - packages/core/src/reducer.ts
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

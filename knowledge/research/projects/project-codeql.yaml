@@ -1,0 +1,35 @@
+id: project:codeql
+title: CodeQL code analysis
+source_type: project-documentation
+authority_tier: B
+primary_secondary: primary-source-record
+canonical_url: https://codeql.github.com/docs/
+retrieved_at: 2026-10-26
+license: SEE_OFFICIAL_TERMS
+evidence_summary: Official documentation establishes QL query language and code scanning workflow. License and
+  integration terms require separate legal review.
+claims: []
+assumptions:
+  - PatchDiet relevance must be measured separately
+limitations:
+  - No automatic removal authority
+  - No PatchDiet benchmark benefit established
+patchdiet_relevance:
+  mapping: Research-only semantic/dataflow evidence.
+  relevance: research-only
+status:
+  source_verified: false
+  distilled: false
+  decision: RESEARCH_ONLY
+verification_status: SOURCE_PARTIALLY_VERIFIED
+distillation_gates:
+  D1_SOURCE_VERIFIED: FAIL
+  D2_CLAIMS_EXTRACTED: FAIL
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: Research-only provenance/source review; no runtime adoption ticket is required.
+  D7: No implementation or experiment was performed in this phase; runtime validation is not applicable.

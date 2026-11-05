@@ -1,0 +1,41 @@
+id: aidev
+name: aidev
+source: benchmark:aidev
+task_shape: Public GitHub agent attribution via known accounts/signatures and collection heuristics; popular-repository
+  enriched subset differs from all-PR population. Attribution misses unrecognized/private work; star thresholds, agent
+  detection and crawl dates induce selection bias. Current v5 card is later than inspected 2026 v1 paper; do not mix
+  populations.
+verification: SOURCE_PARTIALLY_VERIFIED; canonical source card holds current evidence and HOLD legal gate.
+patchdiet_use: Agent-real lane methodology only; REAL_AGENT_PR_COUNT remains 0.
+metrics:
+  - files touched
+  - diff size
+  - task category
+  - acceptance
+status: RESEARCH_ONLY
+distillation_gates:
+  D1_SOURCE_VERIFIED: FAIL
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: Research-only source assessment; no experiment benefit or runtime adoption has been demonstrated, so no PD-E runtime
+    ticket is permitted.
+  D7: No implementation/integration or experiment performed in this research-only phase; validation is not represented as
+    runtime evidence.
+extracted_claims:
+  - statement: Observational PR/comment/review/commit/user/repository tables, not a ready executable test harness or
+      correctness ground truth.
+    source: benchmark:aidev
+limitations:
+  - Observed collection cutoff is not model training cutoff. Public PR outcomes are confounded by project policy/human
+    work; accepted/merged PRs do not prove safety or PatchDiet performance. v3/v4 sub-resource tables are documented
+    truncated; v5 changes collection.
+  - No data imported; no automatic removal authority.
+patchdiet_mapping:
+  affected_components:
+    - benchmarks
+automatic_removal_authority: false

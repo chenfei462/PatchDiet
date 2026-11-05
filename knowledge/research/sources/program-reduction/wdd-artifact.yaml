@@ -1,0 +1,103 @@
+id: project:wdd-artifact
+title: Official artifact for WDD Weighted Delta Debugging
+authors:
+  - Xintong Zhou
+  - Zhenyang Xu
+  - Mengxiao Zhang
+  - Yongqiang Tian
+  - Chengnian Sun
+year: 2024
+source_type: reference-implementation
+authority_tier: B
+primary_secondary: primary-repository
+canonical_url: https://zenodo.org/records/14270380
+repository: https://github.com/weightdd/WeightDD
+retrieved_at: 2026-10-27
+verification_status: SOURCE_PARTIALLY_VERIFIED
+license: null
+claims: []
+assumptions:
+  - Linux and Docker for original reproduction
+limitations:
+  - GitHub snapshot lacks a root project license; dependency notice cannot license the whole artifact.
+  - Zenodo declares CC-BY-4.0 and supplies GPL-v3 LICENSE without an explicit per-component scope mapping.
+  - v1 and v2 archive checksums differ; v1 is a historical snapshot, not the latest artifact.
+  - "REPRODUCTION_LIMITATION: image digest unestablished; artifact not executed or imported; no paper results
+    reproduced."
+  - No PatchDiet benchmark results or runtime adoption authorized.
+patchdiet_relevance:
+  relevance: high
+  mapping: Reference artifact for future size-weighted partition experiments only
+license_review:
+  status: GITHUB_CODE_LICENSE_UNRESOLVED_AND_ZENODO_SCOPE_AMBIGUOUS
+  code_copy_allowed: false
+  note: Record metadata field license.id declares cc-by-4.0 for the deposited resource; separately uploaded LICENSE is GPL
+    v3. Neither explicitly maps applicability to each archive component. Metadata is CC0 by default under Zenodo terms,
+    not automatically CC-BY-4.0.
+status:
+  source_verified: false
+  distilled: false
+  decision: RESEARCH_ONLY
+distillation_gates:
+  D1_SOURCE_VERIFIED: FAIL
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+inspected_commit: 4a6cdd00f3f136867f23f76057a7104961c2e8e4
+repository_evidence: evidence/repositories/project-wdd-artifact.json
+inspection:
+  url: https://api.github.com/repos/weightdd/WeightDD/git/trees/4a6cdd00f3f136867f23f76057a7104961c2e8e4?recursive=1
+  retrieved_at: 2026-10-27
+  locators:
+    - Commit API author/committer timestamps
+    - Complete recursive tree, truncated=false
+    - Zenodo v1 record and file checksums
+    - Zenodo Terms of Use v1.3 section 7
+  scope: GitHub identity verified but root code license unavailable; separate Zenodo v1 provenance and declared license
+    texts inspected.
+artifact_record: zenodo:14270380
+doi: 10.5281/zenodo.14270380
+inspected_version: Zenodo record 14270380
+record_license: CC-BY-4.0 (deposited-resource declaration, applicability unresolved)
+license_path: null
+license_type: NO_ROOT_LICENSE_FOUND
+license_verified_at_artifact: GPL v3 text separately supplied at zenodo:14270380; no per-component applicability inferred
+artifact_evidence: evidence/repositories/project-wdd-artifact-zenodo.json
+commit_date: 2025-12-08T21:57:06Z
+license_scope: "GitHub snapshot: no repository-wide license grant established; nested xmlresolver notice has dependency-only scope."
+project_status: PUBLIC_RESEARCH_ARTIFACT; pinned README directs current WDD implementations to Perses; long-term
+  maintenance and archive flag not independently established.
+extracted_claims:
+  - Official artifact record identity and declared files are established independently of the GitHub code-license gap.
+gate_justifications:
+  D6: Research-only provenance decision; no runtime implementation ticket is authorized or required.
+  D7: No implementation, reproduction, or experiment was performed; runtime validation is not applicable.
+  D1: GitHub root code license absent; Zenodo record/resource license and supplied GPL LICENSE lack explicit per-component
+    applicability.
+provenance_components:
+  PAPER_LICENSE_ACCESS: See paper:zhou-2025-wdd; accessible accepted preprint, separate distribution license.
+  GITHUB_CODE_LICENSE: UNRESOLVED_NO_ROOT_LICENSE
+  ZENODO_ARTIFACT_LICENSE: DECLARED_CC_BY_4_0_AND_SEPARATE_GPL_V3_TEXT_SCOPE_UNRESOLVED
+  CONTAINER_IMAGE_STATUS: REPRODUCTION_LIMITATION
+zenodo_snapshot:
+  record: zenodo:14270380
+  doi: 10.5281/zenodo.14270380
+  version: v1
+  publication_date: 2024-11-30
+  provenance_verified: true
+  latest_checked_record: zenodo:14301983
+  latest_version: v2
+  latest_publication_date: 2025-12-08
+  scope: Historical immutable v1 remains the inspected file snapshot. v2 exists with a different archive checksum; no
+    equivalence assumed.
+container_image:
+  reference: wddartifact/wdd:latest
+  digest: null
+  status: REPRODUCTION_LIMITATION
+  reason: Mutable tag in official README. Docker Hub web/API retrieval failed; no historical or current immutable digest
+    independently established.
+  reproduction_executed: false
+fresh_verification_report: reports/PD_R151_152_SOURCE_CLOSURE.md

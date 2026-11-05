@@ -1,0 +1,26 @@
+id: claim:cdd:001
+statement: CDD is introduced in section V of the ProbDD analysis paper as a round-counter/subset-size simplification; it
+  is not per-group outcome-counter ranking.
+source:
+  id: paper:zhang-2025-cdd
+  locators:
+    - Section III round/size derivation
+    - Section IV-D minimality limitation
+    - Section V Algorithm 2
+evidence_type: peer-reviewed-paper
+scope: program-reduction
+assumptions:
+  - terminating stable oracle
+  - p0 and ordered partition schedule defined
+  - finite input
+limitations:
+  - Introduced inside a later primary analysis of ProbDD, not a separate standalone CDD paper
+  - Comparable results on 76 study benchmarks do not establish universal equality
+  - Counter is the round count, not historical per-group/pair rewards
+patchdiet_mapping:
+  mapping: Research-only scheduling comparison; no feedback ranking or pair-counter runtime changes.
+  affected_components:
+    - packages/core/src/reducer.ts
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

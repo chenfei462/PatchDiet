@@ -1,0 +1,13 @@
+diff --git a/README.md b/README.md
+index 03763ea..2c476fc 100644
+--- a/README.md
++++ b/README.md
+@@ -1,3 +1,3 @@
+ # fixture
+ 
+-body text
++updated body text
+diff --git a/asset.bin b/asset.bin
+new file mode 100644
+index 0000000..6ae33d5
+Binary files /dev/null and b/asset.bin differ

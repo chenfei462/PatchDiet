@@ -1,0 +1,87 @@
+id: project:picire
+title: Picire
+source_type: reference-implementation
+authority_tier: B
+year: 2016
+canonical_url: https://github.com/renatahodovan/picire
+retrieved_at: 2026-10-26
+repository: https://github.com/renatahodovan/picire
+license: BSD-3-Clause AND LicenseRef-Zeller-legacy-notice
+authors:
+  - Renata Hodovan
+topics:
+  - program-reduction
+  - delta-debugging
+  - parallelism
+problem:
+  summary: Provides practical delta-debugging with complement testing, caching, and parallel execution.
+technique:
+  summary: Partition progression and candidate scheduling around an interestingness test.
+validated_on:
+  - GitHub repository reachable with HTTP 200
+claims:
+  - claim:picire:001
+assumptions:
+  - oracle calls can run in isolated working directories
+limitations:
+  - project implementation details may not match PatchDiet safety and license must be reviewed
+patchdiet_relevance:
+  modules:
+    - packages/core/src/reducer.ts
+    - packages/core/src/runner.ts
+  relevance: medium
+license_review:
+  status: ROOT_LICENSE_INSPECTED_AT_COMMIT
+  code_copy_allowed: false
+  note: BSD three-clause terms followed by a historical Zeller public-domain/patent notice. No patent clearance inferred;
+    no code copied.
+status:
+  source_verified: true
+  distilled: false
+  decision: ADAPT
+primary_secondary: primary-repository
+verification_status: SOURCE_VERIFIED_REPOSITORY
+provenance_audit:
+  ticket: PD-R100
+  previous_status: SOURCE_VERIFIED
+  previous_pin: GitHub repository metadata checked 2026-10-26
+  reason: "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content
+    review."
+  historical_record: reports/PRE_CORRECTION_RECORDS.json
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+inspected_commit: 1e5b25c5aee2bee62f3e0192d591050219eaec22
+license_verified_at_commit: 1e5b25c5aee2bee62f3e0192d591050219eaec22
+license_path: LICENSE.rst
+license_type: BSD-3-Clause AND LicenseRef-Zeller-legacy-notice
+repository_evidence: evidence/repositories/project-picire.json
+inspection:
+  retrieved_at: 2026-10-26
+  url: https://github.com/renatahodovan/picire/blob/1e5b25c5aee2bee62f3e0192d591050219eaec22/LICENSE.rst
+  locators:
+    - LICENSE.rst
+    - https://github.com/renatahodovan/picire/blob/1e5b25c5aee2bee62f3e0192d591050219eaec22/README.rst
+  scope: Repository identity, root license text and README-level architecture. No claims about uninspected implementation
+    correctness.
+commit_date: 2026-08-23T20:42:13+02:00
+license_scope: BSD three-clause terms followed by a historical Zeller public-domain/patent notice. No patent clearance
+  inferred; no code copied.
+project_status:
+  observed: Pinned upstream snapshot accessible
+  commit_timestamp: 2026-08-23T20:42:13+02:00
+  maintenance_assessment: No forward maintenance guarantee; this review preserves the inspected snapshot rather than asserting latest release.
+gate_justifications:
+  D7: Source distillation introduces no implementation in this phase; historical runtime regression is recorded
+    separately. This is not an adoption claim.
+  D6: Research-only provenance/source review; no runtime adoption ticket is required.
+ticket_refs:
+  - PD-R002
+  - PD-R100
+  - PD-R101
+  - PD-R159

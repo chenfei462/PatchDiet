@@ -1,0 +1,58 @@
+id: paper:zhang-2025-cdd
+title: Toward a Better Understanding of Probabilistic Delta Debugging
+authors:
+  - Mengxiao Zhang
+  - Zhenyang Xu
+  - Yongqiang Tian
+  - Xinru Cheng
+  - Chengnian Sun
+year: 2025
+venue: ICSE 2025
+doi: 10.1109/ICSE55347.2025.00117
+canonical_url: https://arxiv.org/abs/2408.04735v4
+source_type: peer-reviewed-paper
+authority_tier: A
+primary_secondary: primary
+retrieved_at: 2026-10-26
+paper_version_used: ICSE 2025 author manuscript, 12 pages; arXiv v4 metadata checked separately
+inspection:
+  url: https://cs.uwaterloo.ca/~cnsun/public/publication/icse25_cdd/icse25_cdd.pdf
+  locators:
+    - Section III round/size derivation
+    - Section IV-D minimality limitation
+    - Section V Algorithm 2
+  retrieved_at: 2026-10-26
+verification_status: SOURCE_VERIFIED_PRIMARY
+claims:
+  - claim:cdd:001
+assumptions:
+  - terminating stable oracle
+  - p0 and ordered partition schedule defined
+  - finite input
+limitations:
+  - Introduced inside a later primary analysis of ProbDD, not a separate standalone CDD paper
+  - Comparable results on 76 study benchmarks do not establish universal equality
+  - Counter is the round count, not historical per-group/pair rewards
+patchdiet_relevance:
+  relevance: high
+  mapping: Research-only scheduling comparison; no feedback ranking or pair-counter runtime changes.
+status:
+  source_verified: true
+  distilled: false
+  decision: RESEARCH_ONLY
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: Research-only source; no runtime adoption or implementation ticket is authorized.
+  D7: No research-derived implementation is introduced by this source-verification phase.
+ticket_refs:
+  - PD-R100
+  - PD-R101
+  - PD-R106
+  - PD-R159

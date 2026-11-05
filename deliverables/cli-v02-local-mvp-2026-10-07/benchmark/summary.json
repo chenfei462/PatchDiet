@@ -1,0 +1,1945 @@
+{
+  "generatedAt": "2026-10-06T15:42:46.687Z",
+  "implementation": {
+    "version": "0.2.0",
+    "workspaceHead": "a57b27eeea6d6d3c7ad581334dba10830b7f4730",
+    "distShrinkSha256": "1dfe52ab19010df6d6b5e1892ae89bba36c1c5c9d454d64b6e767b994d8bcf69",
+    "node": "v24.15.0",
+    "platform": "win32/x64"
+  },
+  "gates": {
+    "precision": 0.98,
+    "fullPipelineDetection": 0.8,
+    "finalOracle": 1,
+    "hiddenRegressions": 0
+  },
+  "stageDefinitions": {
+    "staticDetection": "STAGE 1 (readonly, pre-reduction): public Scope Map ties an explicit task-exclusion intent record (category=intent, polarity=limits, exclusion detail) or a no-risk candidate classification to a prelabelled-unnecessary atom, matched by EXACT stable atom id. Static pre-analysis alone does not identify runtime redundancy; this rate is never advertised as >=80.",
+    "runtimeConfirmed": "STAGE 2: a labelled-unnecessary atom whose removal was actually delivered in an artifact advertised verified AND fully independently re-proven (exact-base apply, producer tree match, whole-tree byte-level delta equal to ONLY the matched unnecessary edits across every tracked HEAD path and Git mode (missing/added/untracked files and mode flips included), oracle after each command with per-command tree identity, held-out oracle). Failed/unverified removals never count.",
+    "deletion": "STAGE 3 (visibility only): fixtures with at least one labelled-unnecessary atom automatically removed, regardless of verification outcome. Never used as a detection gate.",
+    "fullPipelineDetection": "GATE METRIC: per-case UNION of stage 1 and stage 2, deduplicated; denominator = ALL original labelled cases containing unnecessary edits, including conservative misses and failed cases."
+  },
+  "corpus": {
+    "synthetic": {
+      "inputCount": 6,
+      "atomLabelCounts": {
+        "necessary": 3,
+        "unnecessary": 5,
+        "uncertain": 2
+      },
+      "removalPrecision": {
+        "numerator": 3,
+        "denominator": 3,
+        "rate": 1
+      },
+      "stages": {
+        "staticDetection": {
+          "numerator": 0,
+          "denominator": 4,
+          "rate": 0,
+          "missCases": [
+            "syn-redundant-ab",
+            "syn-dependent-edits",
+            "syn-malformed-syntax",
+            "syn-unsupported-metadata"
+          ]
+        },
+        "runtimeConfirmed": {
+          "numerator": 3,
+          "denominator": 4,
+          "rate": 0.75,
+          "missCases": [
+            "syn-malformed-syntax"
+          ]
+        },
+        "fullPipelineDetection": {
+          "numerator": 3,
+          "denominator": 4,
+          "rate": 0.75,
+          "missCases": [
+            "syn-malformed-syntax"
+          ]
+        },
+        "deletion": {
+          "numerator": 3,
+          "denominator": 4,
+          "rate": 0.75,
+          "missCases": [
+            "syn-malformed-syntax"
+          ]
+        }
+      },
+      "cases": [
+        {
+          "id": "syn-redundant-ab",
+          "ok": true,
+          "mode": "verified",
+          "staticDetected": false,
+          "runtimeConfirmed": true,
+          "removedUnnecessary": true,
+          "removedCount": 1
+        },
+        {
+          "id": "syn-dependent-edits",
+          "ok": true,
+          "mode": "verified",
+          "staticDetected": false,
+          "runtimeConfirmed": true,
+          "removedUnnecessary": true,
+          "removedCount": 1
+        },
+        {
+          "id": "syn-flaky-oracle",
+          "ok": true,
+          "mode": "unverified (producer failed closed)",
+          "staticDetected": false,
+          "runtimeConfirmed": false,
+          "removedUnnecessary": false,
+          "removedCount": 0
+        },
+        {
+          "id": "syn-malformed-syntax",
+          "ok": true,
+          "mode": "unverified",
+          "staticDetected": false,
+          "runtimeConfirmed": false,
+          "removedUnnecessary": false,
+          "removedCount": 0
+        },
+        {
+          "id": "syn-unsupported-metadata",
+          "ok": true,
+          "mode": "verified",
+          "staticDetected": false,
+          "runtimeConfirmed": true,
+          "removedUnnecessary": true,
+          "removedCount": 1
+        },
+        {
+          "id": "syn-cross-file-dependency",
+          "ok": true,
+          "mode": "unverified",
+          "staticDetected": false,
+          "runtimeConfirmed": false,
+          "removedUnnecessary": false,
+          "removedCount": 0
+        }
+      ]
+    },
+    "injected": {
+      "inputCount": 10,
+      "atomLabelCounts": {
+        "necessary": 12,
+        "unnecessary": 18,
+        "uncertain": 2
+      },
+      "removalPrecision": {
+        "numerator": 14,
+        "denominator": 14,
+        "rate": 1
+      },
+      "stages": {
+        "staticDetection": {
+          "numerator": 9,
+          "denominator": 10,
+          "rate": 0.9,
+          "missCases": [
+            "inj-targeted-mapping"
+          ]
+        },
+        "runtimeConfirmed": {
+          "numerator": 9,
+          "denominator": 10,
+          "rate": 0.9,
+          "missCases": [
+            "inj-mutating-optional-command"
+          ]
+        },
+        "fullPipelineDetection": {
+          "numerator": 10,
+          "denominator": 10,
+          "rate": 1,
+          "missCases": []
+        },
+        "deletion": {
+          "numerator": 9,
+          "denominator": 10,
+          "rate": 0.9,
+          "missCases": [
+            "inj-mutating-optional-command"
+          ]
+        }
+      },
+      "cases": [
+        {
+          "id": "inj-js-debug",
+          "ok": true,
+          "mode": "verified",
+          "staticDetected": true,
+          "runtimeConfirmed": true,
+          "removedUnnecessary": true,
+          "removedCount": 2
+        },
+        {
+          "id": "inj-python-debug",
+          "ok": true,
+          "mode": "verified",
+          "staticDetected": true,
+          "runtimeConfirmed": true,
+          "removedUnnecessary": true,
+          "removedCount": 2
+        },
+        {
+          "id": "inj-python-two-debug-sites",
+          "ok": true,
+          "mode": "verified",
+          "staticDetected": true,
+          "runtimeConfirmed": true,
+          "removedUnnecessary": true,
+          "removedCount": 3
+        },
+        {
+          "id": "inj-ts-debug",
+          "ok": true,
+          "mode": "verified",
+          "staticDetected": true,
+          "runtimeConfirmed": true,
+          "removedUnnecessary": true,
+          "removedCount": 2
+        },
+        {
+          "id": "inj-coarse-weak-oracle",
+          "ok": true,
+          "mode": "verified",
+          "staticDetected": true,
+          "runtimeConfirmed": true,
+          "removedUnnecessary": true,
+          "removedCount": 1
+        },
+        {
+          "id": "inj-protected-paths",
+          "ok": true,
+          "mode": "verified",
+          "staticDetected": true,
+          "runtimeConfirmed": true,
+          "removedUnnecessary": true,
+          "removedCount": 1
+        },
+        {
+          "id": "inj-dependency-manifest",
+          "ok": true,
+          "mode": "verified",
+          "staticDetected": true,
+          "runtimeConfirmed": true,
+          "removedUnnecessary": true,
+          "removedCount": 1
+        },
+        {
+          "id": "inj-mutating-optional-command",
+          "ok": true,
+          "mode": "unverified",
+          "staticDetected": true,
+          "runtimeConfirmed": false,
+          "removedUnnecessary": false,
+          "removedCount": 0
+        },
+        {
+          "id": "inj-targeted-mapping",
+          "ok": true,
+          "mode": "verified",
+          "staticDetected": false,
+          "runtimeConfirmed": true,
+          "removedUnnecessary": true,
+          "removedCount": 1
+        },
+        {
+          "id": "inj-js-extra-dead-helper",
+          "ok": true,
+          "mode": "verified",
+          "staticDetected": true,
+          "runtimeConfirmed": true,
+          "removedUnnecessary": true,
+          "removedCount": 1
+        }
+      ]
+    },
+    "naturalAgentPRs": {
+      "sampleCount": 0,
+      "status": "NOT VERIFIED",
+      "note": "no human-labelled natural agent PR dataset is available; no substitute corpus may claim production precision"
+    }
+  },
+  "measurements": {
+    "inputCount": 16,
+    "removedTotal": 17,
+    "removedUnnecessary": 17,
+    "removalPrecision": {
+      "numerator": 17,
+      "denominator": 17,
+      "rate": 1,
+      "undefinedWhenZeroDenominator": true
+    },
+    "stages": {
+      "staticDetection": {
+        "numerator": 9,
+        "denominator": 14,
+        "rate": 0.6428571428571429,
+        "missCases": [
+          "inj-targeted-mapping",
+          "syn-redundant-ab",
+          "syn-dependent-edits",
+          "syn-malformed-syntax",
+          "syn-unsupported-metadata"
+        ]
+      },
+      "runtimeConfirmed": {
+        "numerator": 12,
+        "denominator": 14,
+        "rate": 0.8571428571428571,
+        "missCases": [
+          "inj-mutating-optional-command",
+          "syn-malformed-syntax"
+        ]
+      },
+      "fullPipelineDetection": {
+        "numerator": 13,
+        "denominator": 14,
+        "rate": 0.9285714285714286,
+        "missCases": [
+          "syn-malformed-syntax"
+        ]
+      },
+      "deletion": {
+        "numerator": 12,
+        "denominator": 14,
+        "rate": 0.8571428571428571,
+        "missCases": [
+          "inj-mutating-optional-command",
+          "syn-malformed-syntax"
+        ]
+      }
+    },
+    "independentFinalOracle": {
+      "numerator": 12,
+      "denominator": 12,
+      "rate": 1,
+      "undefinedWhenZeroDenominator": true
+    },
+    "hiddenRegressions": 0,
+    "successfulReductionCases": [
+      "inj-js-debug",
+      "inj-python-debug",
+      "inj-python-two-debug-sites",
+      "inj-ts-debug",
+      "inj-coarse-weak-oracle",
+      "inj-protected-paths",
+      "inj-dependency-manifest",
+      "inj-targeted-mapping",
+      "inj-js-extra-dead-helper",
+      "syn-redundant-ab",
+      "syn-dependent-edits",
+      "syn-unsupported-metadata"
+    ],
+    "timingsMs": {
+      "inj-js-debug": 7310,
+      "inj-python-debug": 6823,
+      "inj-python-two-debug-sites": 8599,
+      "inj-ts-debug": 7180,
+      "inj-coarse-weak-oracle": 6911,
+      "inj-protected-paths": 7178,
+      "inj-dependency-manifest": 7975,
+      "inj-mutating-optional-command": 7574,
+      "inj-targeted-mapping": 8660,
+      "inj-js-extra-dead-helper": 7058,
+      "syn-redundant-ab": 9081,
+      "syn-dependent-edits": 9471,
+      "syn-flaky-oracle": 3778,
+      "syn-malformed-syntax": 5769,
+      "syn-unsupported-metadata": 6056,
+      "syn-cross-file-dependency": 10222
+    }
+  },
+  "perCase": [
+    {
+      "id": "inj-js-debug",
+      "class": "injected",
+      "language": "javascript",
+      "ok": true,
+      "checks": [
+        {
+          "name": "no-necessary-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "no-uncertain-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "mode-matches-expectation",
+          "passed": true,
+          "detail": "mode=verified partial=false"
+        },
+        {
+          "name": "independent-apply-clean",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-tree-matches-producer",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "artifact-delta-equals-matched-unnecessary-edits",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-oracle-passes",
+          "passed": true,
+          "detail": "[{\"command\":\"\\\"C:\\\\Program Files\\\\nodejs\\\\node.exe\\\" -e \\\"import {total} from './src/total.js'; process.exit(total(4)===8?0:1)\\\"\",\"exitCode\":0}]"
+        },
+        {
+          "name": "independent-tree-unchanged-by-commands",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "held-out-necessary-behavior",
+          "passed": true,
+          "detail": "exit 0"
+        }
+      ],
+      "baseSha": "cfa599f601a638046f351fe0402646b514b9077b",
+      "headSha": "0562493548f767e8b81ee5233e5ce6864bde2f6a",
+      "labelCounts": {
+        "necessary": 1,
+        "unnecessary": 2,
+        "uncertain": 0
+      },
+      "hasUnnecessaryLabel": true,
+      "scopeDetection": {
+        "unnecessaryAtoms": 2,
+        "detected": 2,
+        "perAtom": [
+          {
+            "identity": "atom-3ec492be35620e6a",
+            "filePath": "src/total.js",
+            "found": true,
+            "detected": true,
+            "state": "uncertain",
+            "exclusionEvidence": true
+          },
+          {
+            "identity": "atom-b42623bb1d636558",
+            "filePath": "src/total.js",
+            "found": true,
+            "detected": true,
+            "state": "uncertain",
+            "exclusionEvidence": true
+          }
+        ]
+      },
+      "staticDetected": true,
+      "shrinkDurationMs": 4784,
+      "wallClockMs": 7310,
+      "mode": "verified",
+      "partial": false,
+      "removedCount": 2,
+      "removedLabels": [
+        "unnecessary",
+        "unnecessary"
+      ],
+      "independent": {
+        "advertisedVerified": true,
+        "attempted": true,
+        "appliedClean": true,
+        "oracleExitCodes": [
+          {
+            "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"import {total} from './src/total.js'; process.exit(total(4)===8?0:1)\"",
+            "exitCode": 0
+          }
+        ],
+        "treeMatchesProducer": true,
+        "treeUnchangedByCommands": true,
+        "heldOutRun": true,
+        "heldOutExitCode": 0,
+        "artifactDeltaOk": true,
+        "artifactDeltaFailures": []
+      },
+      "runtimeConfirmed": true,
+      "removedUnnecessary": true,
+      "necessaryRemovals": 0
+    },
+    {
+      "id": "inj-python-debug",
+      "class": "injected",
+      "language": "python",
+      "ok": true,
+      "checks": [
+        {
+          "name": "no-necessary-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "no-uncertain-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "mode-matches-expectation",
+          "passed": true,
+          "detail": "mode=verified partial=false"
+        },
+        {
+          "name": "independent-apply-clean",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-tree-matches-producer",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "artifact-delta-equals-matched-unnecessary-edits",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-oracle-passes",
+          "passed": true,
+          "detail": "[{\"command\":\"\\\"C:/Users/hacjr/AppData/Local/Programs/Python/Python311/python.exe\\\" check_total.py\",\"exitCode\":0}]"
+        },
+        {
+          "name": "independent-tree-unchanged-by-commands",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "held-out-necessary-behavior",
+          "passed": true,
+          "detail": "exit 0"
+        }
+      ],
+      "baseSha": "b0d923593887ba7730b568298a5d8782f2d23a83",
+      "headSha": "55eba9d6b863c133a2d3b9f45cac1f5beef7882d",
+      "labelCounts": {
+        "necessary": 1,
+        "unnecessary": 2,
+        "uncertain": 1
+      },
+      "hasUnnecessaryLabel": true,
+      "scopeDetection": {
+        "unnecessaryAtoms": 2,
+        "detected": 2,
+        "perAtom": [
+          {
+            "identity": "atom-0e9888bf57d5bc6b",
+            "filePath": "src/total.py",
+            "found": true,
+            "detected": true,
+            "state": "uncertain",
+            "exclusionEvidence": true
+          },
+          {
+            "identity": "atom-6d36d117090a093d",
+            "filePath": "src/total.py",
+            "found": true,
+            "detected": true,
+            "state": "uncertain",
+            "exclusionEvidence": true
+          }
+        ]
+      },
+      "staticDetected": true,
+      "shrinkDurationMs": 4456,
+      "wallClockMs": 6823,
+      "mode": "verified",
+      "partial": false,
+      "removedCount": 2,
+      "removedLabels": [
+        "unnecessary",
+        "unnecessary"
+      ],
+      "independent": {
+        "advertisedVerified": true,
+        "attempted": true,
+        "appliedClean": true,
+        "oracleExitCodes": [
+          {
+            "command": "\"C:/Users/hacjr/AppData/Local/Programs/Python/Python311/python.exe\" check_total.py",
+            "exitCode": 0
+          }
+        ],
+        "treeMatchesProducer": true,
+        "treeUnchangedByCommands": true,
+        "heldOutRun": true,
+        "heldOutExitCode": 0,
+        "artifactDeltaOk": true,
+        "artifactDeltaFailures": []
+      },
+      "runtimeConfirmed": true,
+      "removedUnnecessary": true,
+      "necessaryRemovals": 0
+    },
+    {
+      "id": "inj-python-two-debug-sites",
+      "class": "injected",
+      "language": "python",
+      "ok": true,
+      "checks": [
+        {
+          "name": "no-necessary-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "no-uncertain-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "mode-matches-expectation",
+          "passed": true,
+          "detail": "mode=verified partial=false"
+        },
+        {
+          "name": "independent-apply-clean",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-tree-matches-producer",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "artifact-delta-equals-matched-unnecessary-edits",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-oracle-passes",
+          "passed": true,
+          "detail": "[{\"command\":\"\\\"C:/Users/hacjr/AppData/Local/Programs/Python/Python311/python.exe\\\" check_total.py\",\"exitCode\":0},{\"command\":\"\\\"C:/Users/hacjr/AppData/Local/Programs/Python/Python311/python.exe\\\" check_util.py\",\"exitCode\":0}]"
+        },
+        {
+          "name": "independent-tree-unchanged-by-commands",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "held-out-necessary-behavior",
+          "passed": true,
+          "detail": "exit 0"
+        }
+      ],
+      "baseSha": "a48a0771b321a4b85cb9292f639cec1966ce59ff",
+      "headSha": "06cc381375df54d3c13d8ac7d892cf72ed2c68f9",
+      "labelCounts": {
+        "necessary": 1,
+        "unnecessary": 3,
+        "uncertain": 1
+      },
+      "hasUnnecessaryLabel": true,
+      "scopeDetection": {
+        "unnecessaryAtoms": 3,
+        "detected": 3,
+        "perAtom": [
+          {
+            "identity": "atom-0e9888bf57d5bc6b",
+            "filePath": "src/total.py",
+            "found": true,
+            "detected": true,
+            "state": "uncertain",
+            "exclusionEvidence": true
+          },
+          {
+            "identity": "atom-6d36d117090a093d",
+            "filePath": "src/total.py",
+            "found": true,
+            "detected": true,
+            "state": "uncertain",
+            "exclusionEvidence": true
+          },
+          {
+            "identity": "atom-b00f80433d72f75c",
+            "filePath": "src/util.py",
+            "found": true,
+            "detected": true,
+            "state": "uncertain",
+            "exclusionEvidence": true
+          }
+        ]
+      },
+      "staticDetected": true,
+      "shrinkDurationMs": 6000,
+      "wallClockMs": 8599,
+      "mode": "verified",
+      "partial": false,
+      "removedCount": 3,
+      "removedLabels": [
+        "unnecessary",
+        "unnecessary",
+        "unnecessary"
+      ],
+      "independent": {
+        "advertisedVerified": true,
+        "attempted": true,
+        "appliedClean": true,
+        "oracleExitCodes": [
+          {
+            "command": "\"C:/Users/hacjr/AppData/Local/Programs/Python/Python311/python.exe\" check_total.py",
+            "exitCode": 0
+          },
+          {
+            "command": "\"C:/Users/hacjr/AppData/Local/Programs/Python/Python311/python.exe\" check_util.py",
+            "exitCode": 0
+          }
+        ],
+        "treeMatchesProducer": true,
+        "treeUnchangedByCommands": true,
+        "heldOutRun": true,
+        "heldOutExitCode": 0,
+        "artifactDeltaOk": true,
+        "artifactDeltaFailures": []
+      },
+      "runtimeConfirmed": true,
+      "removedUnnecessary": true,
+      "necessaryRemovals": 0
+    },
+    {
+      "id": "inj-ts-debug",
+      "class": "injected",
+      "language": "typescript",
+      "ok": true,
+      "checks": [
+        {
+          "name": "no-necessary-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "no-uncertain-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "mode-matches-expectation",
+          "passed": true,
+          "detail": "mode=verified partial=false"
+        },
+        {
+          "name": "independent-apply-clean",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-tree-matches-producer",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "artifact-delta-equals-matched-unnecessary-edits",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-oracle-passes",
+          "passed": true,
+          "detail": "[{\"command\":\"\\\"C:\\\\Program Files\\\\nodejs\\\\node.exe\\\" --experimental-strip-types -e \\\"import {total} from './src/total.ts'; process.exit(total(4)===8?0:1)\\\"\",\"exitCode\":0}]"
+        },
+        {
+          "name": "independent-tree-unchanged-by-commands",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "held-out-necessary-behavior",
+          "passed": true,
+          "detail": "exit 0"
+        }
+      ],
+      "baseSha": "9c8a519bc6ad43be7b8f83baf829224183b23db5",
+      "headSha": "48a51f89427af4ac46b01036e6a5911513522aa6",
+      "labelCounts": {
+        "necessary": 1,
+        "unnecessary": 2,
+        "uncertain": 0
+      },
+      "hasUnnecessaryLabel": true,
+      "scopeDetection": {
+        "unnecessaryAtoms": 2,
+        "detected": 2,
+        "perAtom": [
+          {
+            "identity": "atom-5d5b3829ae9b49d6",
+            "filePath": "src/total.ts",
+            "found": true,
+            "detected": true,
+            "state": "uncertain",
+            "exclusionEvidence": true
+          },
+          {
+            "identity": "atom-25a0cd360f34b396",
+            "filePath": "src/total.ts",
+            "found": true,
+            "detected": true,
+            "state": "uncertain",
+            "exclusionEvidence": true
+          }
+        ]
+      },
+      "staticDetected": true,
+      "shrinkDurationMs": 4757,
+      "wallClockMs": 7180,
+      "mode": "verified",
+      "partial": false,
+      "removedCount": 2,
+      "removedLabels": [
+        "unnecessary",
+        "unnecessary"
+      ],
+      "independent": {
+        "advertisedVerified": true,
+        "attempted": true,
+        "appliedClean": true,
+        "oracleExitCodes": [
+          {
+            "command": "\"C:\\Program Files\\nodejs\\node.exe\" --experimental-strip-types -e \"import {total} from './src/total.ts'; process.exit(total(4)===8?0:1)\"",
+            "exitCode": 0
+          }
+        ],
+        "treeMatchesProducer": true,
+        "treeUnchangedByCommands": true,
+        "heldOutRun": true,
+        "heldOutExitCode": 0,
+        "artifactDeltaOk": true,
+        "artifactDeltaFailures": []
+      },
+      "runtimeConfirmed": true,
+      "removedUnnecessary": true,
+      "necessaryRemovals": 0
+    },
+    {
+      "id": "inj-coarse-weak-oracle",
+      "class": "injected",
+      "language": "javascript",
+      "ok": true,
+      "checks": [
+        {
+          "name": "no-necessary-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "no-uncertain-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "coarse-mixed-evidence-retained",
+          "passed": true,
+          "detail": "coarse required change not retained"
+        },
+        {
+          "name": "mode-matches-expectation",
+          "passed": true,
+          "detail": "mode=verified partial=false"
+        },
+        {
+          "name": "independent-apply-clean",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-tree-matches-producer",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "artifact-delta-equals-matched-unnecessary-edits",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-oracle-passes",
+          "passed": true,
+          "detail": "[{\"command\":\"\\\"C:\\\\Program Files\\\\nodejs\\\\node.exe\\\" -e \\\"process.exit(0)\\\"\",\"exitCode\":0}]"
+        },
+        {
+          "name": "independent-tree-unchanged-by-commands",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "held-out-necessary-behavior",
+          "passed": true,
+          "detail": "exit 0"
+        }
+      ],
+      "baseSha": "45d94fee805bb77a75e26d49bd59cd8505ba8751",
+      "headSha": "ffa58987edd95054a2f3d19b71fe73be76915b48",
+      "labelCounts": {
+        "necessary": 1,
+        "unnecessary": 1,
+        "uncertain": 0
+      },
+      "hasUnnecessaryLabel": true,
+      "scopeDetection": {
+        "unnecessaryAtoms": 1,
+        "detected": 1,
+        "perAtom": [
+          {
+            "identity": "atom-350acdb2de2e34b5",
+            "filePath": "src/other.js",
+            "found": true,
+            "detected": true,
+            "state": "uncertain",
+            "exclusionEvidence": true
+          }
+        ]
+      },
+      "staticDetected": true,
+      "shrinkDurationMs": 4515,
+      "wallClockMs": 6911,
+      "mode": "verified",
+      "partial": false,
+      "removedCount": 1,
+      "removedLabels": [
+        "unnecessary"
+      ],
+      "independent": {
+        "advertisedVerified": true,
+        "attempted": true,
+        "appliedClean": true,
+        "oracleExitCodes": [
+          {
+            "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"process.exit(0)\"",
+            "exitCode": 0
+          }
+        ],
+        "treeMatchesProducer": true,
+        "treeUnchangedByCommands": true,
+        "heldOutRun": true,
+        "heldOutExitCode": 0,
+        "artifactDeltaOk": true,
+        "artifactDeltaFailures": []
+      },
+      "runtimeConfirmed": true,
+      "removedUnnecessary": true,
+      "necessaryRemovals": 0
+    },
+    {
+      "id": "inj-protected-paths",
+      "class": "injected",
+      "language": "javascript",
+      "ok": true,
+      "checks": [
+        {
+          "name": "no-necessary-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "no-uncertain-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "retained:db/migrations/002.sql",
+          "passed": true,
+          "detail": "missing from cleanup patch"
+        },
+        {
+          "name": "mode-matches-expectation",
+          "passed": true,
+          "detail": "mode=verified partial=false"
+        },
+        {
+          "name": "independent-apply-clean",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-tree-matches-producer",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "artifact-delta-equals-matched-unnecessary-edits",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-oracle-passes",
+          "passed": true,
+          "detail": "[{\"command\":\"\\\"C:\\\\Program Files\\\\nodejs\\\\node.exe\\\" -e \\\"process.exit(0)\\\"\",\"exitCode\":0}]"
+        },
+        {
+          "name": "independent-tree-unchanged-by-commands",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "held-out-necessary-behavior",
+          "passed": true,
+          "detail": "exit 0"
+        }
+      ],
+      "baseSha": "b0a390a33911696cd0062e8b8eaaf4495dbcc4e2",
+      "headSha": "93a9e5c548068ef5179734437f41d29ec30d3084",
+      "labelCounts": {
+        "necessary": 2,
+        "unnecessary": 2,
+        "uncertain": 0
+      },
+      "hasUnnecessaryLabel": true,
+      "scopeDetection": {
+        "unnecessaryAtoms": 2,
+        "detected": 1,
+        "perAtom": [
+          {
+            "identity": "atom-3ec492be35620e6a",
+            "filePath": "src/total.js",
+            "found": true,
+            "detected": false,
+            "state": "required",
+            "exclusionEvidence": false
+          },
+          {
+            "identity": "atom-b42623bb1d636558",
+            "filePath": "src/total.js",
+            "found": true,
+            "detected": true,
+            "state": "uncertain",
+            "exclusionEvidence": true
+          }
+        ]
+      },
+      "staticDetected": true,
+      "shrinkDurationMs": 4858,
+      "wallClockMs": 7178,
+      "mode": "verified",
+      "partial": false,
+      "removedCount": 1,
+      "removedLabels": [
+        "unnecessary"
+      ],
+      "independent": {
+        "advertisedVerified": true,
+        "attempted": true,
+        "appliedClean": true,
+        "oracleExitCodes": [
+          {
+            "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"process.exit(0)\"",
+            "exitCode": 0
+          }
+        ],
+        "treeMatchesProducer": true,
+        "treeUnchangedByCommands": true,
+        "heldOutRun": true,
+        "heldOutExitCode": 0,
+        "artifactDeltaOk": true,
+        "artifactDeltaFailures": []
+      },
+      "runtimeConfirmed": true,
+      "removedUnnecessary": true,
+      "necessaryRemovals": 0
+    },
+    {
+      "id": "inj-dependency-manifest",
+      "class": "injected",
+      "language": "javascript",
+      "ok": true,
+      "checks": [
+        {
+          "name": "no-necessary-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "no-uncertain-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "retained:package.json",
+          "passed": true,
+          "detail": "missing from cleanup patch"
+        },
+        {
+          "name": "mode-matches-expectation",
+          "passed": true,
+          "detail": "mode=verified partial=false"
+        },
+        {
+          "name": "independent-apply-clean",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-tree-matches-producer",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "artifact-delta-equals-matched-unnecessary-edits",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-oracle-passes",
+          "passed": true,
+          "detail": "[{\"command\":\"\\\"C:\\\\Program Files\\\\nodejs\\\\node.exe\\\" -e \\\"process.exit(0)\\\"\",\"exitCode\":0}]"
+        },
+        {
+          "name": "independent-tree-unchanged-by-commands",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "held-out-necessary-behavior",
+          "passed": true,
+          "detail": "exit 0"
+        }
+      ],
+      "baseSha": "08097cb14e5336c55b8efa90350c78694c46c2e6",
+      "headSha": "13628a29e18d99966c89b6a9b2bcf688b7e9b930",
+      "labelCounts": {
+        "necessary": 2,
+        "unnecessary": 2,
+        "uncertain": 0
+      },
+      "hasUnnecessaryLabel": true,
+      "scopeDetection": {
+        "unnecessaryAtoms": 2,
+        "detected": 1,
+        "perAtom": [
+          {
+            "identity": "atom-3ec492be35620e6a",
+            "filePath": "src/total.js",
+            "found": true,
+            "detected": false,
+            "state": "required",
+            "exclusionEvidence": false
+          },
+          {
+            "identity": "atom-b42623bb1d636558",
+            "filePath": "src/total.js",
+            "found": true,
+            "detected": true,
+            "state": "uncertain",
+            "exclusionEvidence": true
+          }
+        ]
+      },
+      "staticDetected": true,
+      "shrinkDurationMs": 5635,
+      "wallClockMs": 7975,
+      "mode": "verified",
+      "partial": false,
+      "removedCount": 1,
+      "removedLabels": [
+        "unnecessary"
+      ],
+      "independent": {
+        "advertisedVerified": true,
+        "attempted": true,
+        "appliedClean": true,
+        "oracleExitCodes": [
+          {
+            "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"process.exit(0)\"",
+            "exitCode": 0
+          }
+        ],
+        "treeMatchesProducer": true,
+        "treeUnchangedByCommands": true,
+        "heldOutRun": true,
+        "heldOutExitCode": 0,
+        "artifactDeltaOk": true,
+        "artifactDeltaFailures": []
+      },
+      "runtimeConfirmed": true,
+      "removedUnnecessary": true,
+      "necessaryRemovals": 0
+    },
+    {
+      "id": "inj-mutating-optional-command",
+      "class": "injected",
+      "language": "javascript",
+      "ok": true,
+      "checks": [
+        {
+          "name": "no-necessary-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "no-uncertain-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "zero-removals-when-disallowed",
+          "passed": true,
+          "detail": "removed 0"
+        },
+        {
+          "name": "mode-matches-expectation",
+          "passed": true,
+          "detail": "mode=unverified partial=true"
+        }
+      ],
+      "baseSha": "4f3f719a31c7a62137077602ac9c5a437ca39f1c",
+      "headSha": "c5c74ad2db23442b344963807dd74e75dc71c590",
+      "labelCounts": {
+        "necessary": 1,
+        "unnecessary": 2,
+        "uncertain": 0
+      },
+      "hasUnnecessaryLabel": true,
+      "scopeDetection": {
+        "unnecessaryAtoms": 2,
+        "detected": 1,
+        "perAtom": [
+          {
+            "identity": "atom-3ec492be35620e6a",
+            "filePath": "src/total.js",
+            "found": true,
+            "detected": false,
+            "state": "required",
+            "exclusionEvidence": false
+          },
+          {
+            "identity": "atom-b42623bb1d636558",
+            "filePath": "src/total.js",
+            "found": true,
+            "detected": true,
+            "state": "uncertain",
+            "exclusionEvidence": true
+          }
+        ]
+      },
+      "staticDetected": true,
+      "shrinkDurationMs": 5307,
+      "wallClockMs": 7574,
+      "mode": "unverified",
+      "partial": true,
+      "removedCount": 0,
+      "removedLabels": [],
+      "independent": {
+        "advertisedVerified": false,
+        "attempted": false,
+        "appliedClean": false,
+        "oracleExitCodes": [],
+        "treeMatchesProducer": false,
+        "treeUnchangedByCommands": false,
+        "heldOutRun": false,
+        "heldOutExitCode": null,
+        "artifactDeltaOk": false
+      },
+      "runtimeConfirmed": false,
+      "removedUnnecessary": false,
+      "necessaryRemovals": 0
+    },
+    {
+      "id": "inj-targeted-mapping",
+      "class": "injected",
+      "language": "javascript",
+      "ok": true,
+      "checks": [
+        {
+          "name": "no-necessary-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "no-uncertain-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "mode-matches-expectation",
+          "passed": true,
+          "detail": "mode=verified partial=false"
+        },
+        {
+          "name": "independent-apply-clean",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-tree-matches-producer",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "artifact-delta-equals-matched-unnecessary-edits",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-oracle-passes",
+          "passed": true,
+          "detail": "[{\"command\":\"\\\"C:\\\\Program Files\\\\nodejs\\\\node.exe\\\" check.cjs\",\"exitCode\":0}]"
+        },
+        {
+          "name": "independent-tree-unchanged-by-commands",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "held-out-necessary-behavior",
+          "passed": true,
+          "detail": "exit 0"
+        }
+      ],
+      "baseSha": "5a3764464b5d5bf0fab3405d6b39304dbc443826",
+      "headSha": "b172d5f736c4a7c63ac911beea9911178afad9be",
+      "labelCounts": {
+        "necessary": 1,
+        "unnecessary": 1,
+        "uncertain": 0
+      },
+      "hasUnnecessaryLabel": true,
+      "scopeDetection": {
+        "unnecessaryAtoms": 1,
+        "detected": 0,
+        "perAtom": [
+          {
+            "identity": "atom-528605b5dd",
+            "filePath": "targeted.cjs",
+            "found": true,
+            "detected": false,
+            "state": "uncertain",
+            "exclusionEvidence": false
+          }
+        ]
+      },
+      "staticDetected": false,
+      "shrinkDurationMs": 6845,
+      "wallClockMs": 8660,
+      "mode": "verified",
+      "partial": false,
+      "removedCount": 1,
+      "removedLabels": [
+        "unnecessary"
+      ],
+      "independent": {
+        "advertisedVerified": true,
+        "attempted": true,
+        "appliedClean": true,
+        "oracleExitCodes": [
+          {
+            "command": "\"C:\\Program Files\\nodejs\\node.exe\" check.cjs",
+            "exitCode": 0
+          }
+        ],
+        "treeMatchesProducer": true,
+        "treeUnchangedByCommands": true,
+        "heldOutRun": true,
+        "heldOutExitCode": 0,
+        "artifactDeltaOk": true,
+        "artifactDeltaFailures": []
+      },
+      "runtimeConfirmed": true,
+      "removedUnnecessary": true,
+      "necessaryRemovals": 0
+    },
+    {
+      "id": "inj-js-extra-dead-helper",
+      "class": "injected",
+      "language": "javascript",
+      "ok": true,
+      "checks": [
+        {
+          "name": "no-necessary-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "no-uncertain-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "mode-matches-expectation",
+          "passed": true,
+          "detail": "mode=verified partial=false"
+        },
+        {
+          "name": "independent-apply-clean",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-tree-matches-producer",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "artifact-delta-equals-matched-unnecessary-edits",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-oracle-passes",
+          "passed": true,
+          "detail": "[{\"command\":\"\\\"C:\\\\Program Files\\\\nodejs\\\\node.exe\\\" -e \\\"import {total} from './src/total.js'; process.exit(total(4)===8?0:1)\\\"\",\"exitCode\":0}]"
+        },
+        {
+          "name": "independent-tree-unchanged-by-commands",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "held-out-necessary-behavior",
+          "passed": true,
+          "detail": "exit 0"
+        }
+      ],
+      "baseSha": "7dec9e1e777694b77873f8f70527f77fdad19b20",
+      "headSha": "8f9a215f0c4b8989f5149415d00f53e0ad63d910",
+      "labelCounts": {
+        "necessary": 1,
+        "unnecessary": 1,
+        "uncertain": 0
+      },
+      "hasUnnecessaryLabel": true,
+      "scopeDetection": {
+        "unnecessaryAtoms": 1,
+        "detected": 1,
+        "perAtom": [
+          {
+            "identity": "atom-1156831c39084929",
+            "filePath": "src/extra.js",
+            "found": true,
+            "detected": true,
+            "state": "uncertain",
+            "exclusionEvidence": true
+          }
+        ]
+      },
+      "staticDetected": true,
+      "shrinkDurationMs": 4600,
+      "wallClockMs": 7058,
+      "mode": "verified",
+      "partial": false,
+      "removedCount": 1,
+      "removedLabels": [
+        "unnecessary"
+      ],
+      "independent": {
+        "advertisedVerified": true,
+        "attempted": true,
+        "appliedClean": true,
+        "oracleExitCodes": [
+          {
+            "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"import {total} from './src/total.js'; process.exit(total(4)===8?0:1)\"",
+            "exitCode": 0
+          }
+        ],
+        "treeMatchesProducer": true,
+        "treeUnchangedByCommands": true,
+        "heldOutRun": true,
+        "heldOutExitCode": 0,
+        "artifactDeltaOk": true,
+        "artifactDeltaFailures": []
+      },
+      "runtimeConfirmed": true,
+      "removedUnnecessary": true,
+      "necessaryRemovals": 0
+    },
+    {
+      "id": "syn-redundant-ab",
+      "class": "synthetic",
+      "language": "javascript",
+      "ok": true,
+      "checks": [
+        {
+          "name": "no-necessary-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "no-uncertain-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "removed-count-bounds",
+          "passed": true,
+          "detail": "removed 1, expected 1..1"
+        },
+        {
+          "name": "mode-matches-expectation",
+          "passed": true,
+          "detail": "mode=verified partial=false"
+        },
+        {
+          "name": "independent-apply-clean",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-tree-matches-producer",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "artifact-delta-equals-matched-unnecessary-edits",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-oracle-passes",
+          "passed": true,
+          "detail": "[{\"command\":\"\\\"C:\\\\Program Files\\\\nodejs\\\\node.exe\\\" -e \\\"import * as u1 from './src/util1.js'; import * as u2 from './src/util2.js'; const d = u1.double ?? u2.double; process.exit(d(4)===8?0:1)\\\"\",\"exitCode\":0}]"
+        },
+        {
+          "name": "independent-tree-unchanged-by-commands",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "held-out-necessary-behavior",
+          "passed": true,
+          "detail": "exit 0"
+        }
+      ],
+      "baseSha": "898fd79bd739d5eaf9dd33260c1e8d5efc6b79f3",
+      "headSha": "4eb0eec85cb6166b89435036283d238ccb5cf5f3",
+      "labelCounts": {
+        "necessary": 0,
+        "unnecessary": 2,
+        "uncertain": 0
+      },
+      "hasUnnecessaryLabel": true,
+      "scopeDetection": {
+        "unnecessaryAtoms": 2,
+        "detected": 0,
+        "perAtom": [
+          {
+            "identity": "atom-d09d5c8c37f0977e",
+            "filePath": "src/util1.js",
+            "found": true,
+            "detected": false,
+            "state": "uncertain",
+            "exclusionEvidence": false
+          },
+          {
+            "identity": "atom-c1b17236fcca4a66",
+            "filePath": "src/util2.js",
+            "found": true,
+            "detected": false,
+            "state": "uncertain",
+            "exclusionEvidence": false
+          }
+        ]
+      },
+      "staticDetected": false,
+      "shrinkDurationMs": 6809,
+      "wallClockMs": 9081,
+      "mode": "verified",
+      "partial": false,
+      "removedCount": 1,
+      "removedLabels": [
+        "unnecessary"
+      ],
+      "independent": {
+        "advertisedVerified": true,
+        "attempted": true,
+        "appliedClean": true,
+        "oracleExitCodes": [
+          {
+            "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"import * as u1 from './src/util1.js'; import * as u2 from './src/util2.js'; const d = u1.double ?? u2.double; process.exit(d(4)===8?0:1)\"",
+            "exitCode": 0
+          }
+        ],
+        "treeMatchesProducer": true,
+        "treeUnchangedByCommands": true,
+        "heldOutRun": true,
+        "heldOutExitCode": 0,
+        "artifactDeltaOk": true,
+        "artifactDeltaFailures": []
+      },
+      "runtimeConfirmed": true,
+      "removedUnnecessary": true,
+      "necessaryRemovals": 0
+    },
+    {
+      "id": "syn-dependent-edits",
+      "class": "synthetic",
+      "language": "javascript",
+      "ok": true,
+      "checks": [
+        {
+          "name": "no-necessary-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "no-uncertain-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "mode-matches-expectation",
+          "passed": true,
+          "detail": "mode=verified partial=false"
+        },
+        {
+          "name": "independent-apply-clean",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-tree-matches-producer",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "artifact-delta-equals-matched-unnecessary-edits",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-oracle-passes",
+          "passed": true,
+          "detail": "[{\"command\":\"\\\"C:\\\\Program Files\\\\nodejs\\\\node.exe\\\" -e \\\"import {main} from './src/app.js'; process.exit(main(2)===6?0:1)\\\"\",\"exitCode\":0}]"
+        },
+        {
+          "name": "independent-tree-unchanged-by-commands",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "held-out-necessary-behavior",
+          "passed": true,
+          "detail": "exit 0"
+        }
+      ],
+      "baseSha": "4651a1ea841c4671d9ca8766c30745c52361795a",
+      "headSha": "afd94ab66374f1a360b7a9b44e40340970297143",
+      "labelCounts": {
+        "necessary": 1,
+        "unnecessary": 1,
+        "uncertain": 0
+      },
+      "hasUnnecessaryLabel": true,
+      "scopeDetection": {
+        "unnecessaryAtoms": 1,
+        "detected": 0,
+        "perAtom": [
+          {
+            "identity": "atom-1610ec24b55efece",
+            "filePath": "src/app.js",
+            "found": true,
+            "detected": false,
+            "state": "uncertain",
+            "exclusionEvidence": false
+          }
+        ]
+      },
+      "staticDetected": false,
+      "shrinkDurationMs": 6941,
+      "wallClockMs": 9471,
+      "mode": "verified",
+      "partial": false,
+      "removedCount": 1,
+      "removedLabels": [
+        "unnecessary"
+      ],
+      "independent": {
+        "advertisedVerified": true,
+        "attempted": true,
+        "appliedClean": true,
+        "oracleExitCodes": [
+          {
+            "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"import {main} from './src/app.js'; process.exit(main(2)===6?0:1)\"",
+            "exitCode": 0
+          }
+        ],
+        "treeMatchesProducer": true,
+        "treeUnchangedByCommands": true,
+        "heldOutRun": true,
+        "heldOutExitCode": 0,
+        "artifactDeltaOk": true,
+        "artifactDeltaFailures": []
+      },
+      "runtimeConfirmed": true,
+      "removedUnnecessary": true,
+      "necessaryRemovals": 0
+    },
+    {
+      "id": "syn-flaky-oracle",
+      "class": "synthetic",
+      "language": "javascript",
+      "ok": true,
+      "checks": [
+        {
+          "name": "producer-failure-matches-expectation",
+          "passed": true,
+          "detail": "required command failed: \"C:\\Program Files\\nodejs\\node.exe\" -e \"const f=require('fs');const k=Number(f.readFileSync('.flaky','utf8')||'0')+1;f.writeFileSync('.flaky',String(k));process.exit(k%2===0?0:1)\" (baseline on pinned HEAD 11096ce66e937ccf7736bd4fe9e1795d9ada8cae)"
+        }
+      ],
+      "baseSha": "dfe75c75c2c0432dd9d6dca27c7ef540d0b79355",
+      "headSha": "11096ce66e937ccf7736bd4fe9e1795d9ada8cae",
+      "labelCounts": {
+        "necessary": 0,
+        "unnecessary": 0,
+        "uncertain": 1
+      },
+      "hasUnnecessaryLabel": false,
+      "scopeDetection": {
+        "unnecessaryAtoms": 0,
+        "detected": 0,
+        "perAtom": []
+      },
+      "staticDetected": false,
+      "shrinkDurationMs": 1887,
+      "wallClockMs": 3778,
+      "removedCount": 0,
+      "mode": "unverified (producer failed closed)",
+      "removedUnnecessary": false,
+      "runtimeConfirmed": false
+    },
+    {
+      "id": "syn-malformed-syntax",
+      "class": "synthetic",
+      "language": "javascript",
+      "ok": true,
+      "checks": [
+        {
+          "name": "no-necessary-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "no-uncertain-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "mode-matches-expectation",
+          "passed": true,
+          "detail": "mode=unverified partial=true"
+        },
+        {
+          "name": "partial-flagged",
+          "passed": true,
+          "detail": "partial=true"
+        }
+      ],
+      "baseSha": "30af6de71150d9b516ff1ced442902ab75c881df",
+      "headSha": "c4622d212179042ba6fff34b6f7d1be63385b1d4",
+      "labelCounts": {
+        "necessary": 0,
+        "unnecessary": 1,
+        "uncertain": 0
+      },
+      "hasUnnecessaryLabel": true,
+      "scopeDetection": {
+        "unnecessaryAtoms": 1,
+        "detected": 0,
+        "perAtom": [
+          {
+            "identity": "atom-de0f913055",
+            "filePath": "src/broken.js",
+            "found": false,
+            "detected": false,
+            "state": null,
+            "exclusionEvidence": false
+          }
+        ]
+      },
+      "staticDetected": false,
+      "shrinkDurationMs": 3485,
+      "wallClockMs": 5769,
+      "mode": "unverified",
+      "partial": true,
+      "removedCount": 0,
+      "removedLabels": [],
+      "independent": {
+        "advertisedVerified": false,
+        "attempted": false,
+        "appliedClean": false,
+        "oracleExitCodes": [],
+        "treeMatchesProducer": false,
+        "treeUnchangedByCommands": false,
+        "heldOutRun": false,
+        "heldOutExitCode": null,
+        "artifactDeltaOk": false
+      },
+      "runtimeConfirmed": false,
+      "removedUnnecessary": false,
+      "necessaryRemovals": 0
+    },
+    {
+      "id": "syn-unsupported-metadata",
+      "class": "synthetic",
+      "language": "javascript",
+      "ok": true,
+      "checks": [
+        {
+          "name": "no-necessary-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "no-uncertain-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "mode-matches-expectation",
+          "passed": true,
+          "detail": "mode=verified partial=false"
+        },
+        {
+          "name": "independent-apply-clean",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-tree-matches-producer",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "artifact-delta-equals-matched-unnecessary-edits",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "name": "independent-oracle-passes",
+          "passed": true,
+          "detail": "[{\"command\":\"\\\"C:\\\\Program Files\\\\nodejs\\\\node.exe\\\" check.cjs\",\"exitCode\":0}]"
+        },
+        {
+          "name": "independent-tree-unchanged-by-commands",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "baseSha": "fde7f21ed345e10ec99a5c41e53cc683bb9ab54d",
+      "headSha": "f887c4ae9d01f0c01da312dc921faa1b4d337e8f",
+      "labelCounts": {
+        "necessary": 0,
+        "unnecessary": 1,
+        "uncertain": 1
+      },
+      "hasUnnecessaryLabel": true,
+      "scopeDetection": {
+        "unnecessaryAtoms": 1,
+        "detected": 0,
+        "perAtom": [
+          {
+            "identity": "atom-533c98b0d2",
+            "filePath": "README.md",
+            "found": true,
+            "detected": false,
+            "state": "uncertain",
+            "exclusionEvidence": false
+          }
+        ]
+      },
+      "staticDetected": false,
+      "shrinkDurationMs": 4143,
+      "wallClockMs": 6056,
+      "mode": "verified",
+      "partial": false,
+      "removedCount": 1,
+      "removedLabels": [
+        "unnecessary"
+      ],
+      "independent": {
+        "advertisedVerified": true,
+        "attempted": true,
+        "appliedClean": true,
+        "oracleExitCodes": [
+          {
+            "command": "\"C:\\Program Files\\nodejs\\node.exe\" check.cjs",
+            "exitCode": 0
+          }
+        ],
+        "treeMatchesProducer": true,
+        "treeUnchangedByCommands": true,
+        "heldOutRun": false,
+        "heldOutExitCode": null,
+        "artifactDeltaOk": true,
+        "artifactDeltaFailures": []
+      },
+      "runtimeConfirmed": true,
+      "removedUnnecessary": true,
+      "necessaryRemovals": 0
+    },
+    {
+      "id": "syn-cross-file-dependency",
+      "class": "synthetic",
+      "language": "javascript",
+      "ok": true,
+      "checks": [
+        {
+          "name": "no-necessary-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "no-uncertain-automatic-removal",
+          "passed": true,
+          "detail": "[]"
+        },
+        {
+          "name": "removed-count-bounds",
+          "passed": true,
+          "detail": "removed 0, expected 0..0"
+        },
+        {
+          "name": "mode-matches-expectation",
+          "passed": true,
+          "detail": "mode=unverified partial=true"
+        }
+      ],
+      "baseSha": "18d416aaabeebe2997df5c2bc5cf996e9e156c22",
+      "headSha": "9cbf976be8959cee96f6d155a0e19da89cea8cc8",
+      "labelCounts": {
+        "necessary": 2,
+        "unnecessary": 0,
+        "uncertain": 0
+      },
+      "hasUnnecessaryLabel": false,
+      "scopeDetection": {
+        "unnecessaryAtoms": 0,
+        "detected": 0,
+        "perAtom": []
+      },
+      "staticDetected": false,
+      "shrinkDurationMs": 7666,
+      "wallClockMs": 10222,
+      "mode": "unverified",
+      "partial": true,
+      "removedCount": 0,
+      "removedLabels": [],
+      "independent": {
+        "advertisedVerified": false,
+        "attempted": false,
+        "appliedClean": false,
+        "oracleExitCodes": [],
+        "treeMatchesProducer": false,
+        "treeUnchangedByCommands": false,
+        "heldOutRun": false,
+        "heldOutExitCode": null,
+        "artifactDeltaOk": false
+      },
+      "runtimeConfirmed": false,
+      "removedUnnecessary": false,
+      "necessaryRemovals": 0
+    }
+  ]
+}

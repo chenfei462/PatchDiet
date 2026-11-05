@@ -1,0 +1,84 @@
+id: project:reviewdog
+title: reviewdog
+source_type: reference-implementation
+authority_tier: B
+year: 2015
+canonical_url: https://github.com/reviewdog/reviewdog
+retrieved_at: 2026-10-26
+repository: https://github.com/reviewdog/reviewdog
+license: MIT
+authors:
+  - reviewdog contributors
+topics:
+  - code-review
+  - ci
+  - sarif-adjacent
+problem:
+  summary: Converts CI tool findings into diff-filtered review annotations for code hosts.
+technique:
+  summary: Provider adapters, diff filtering, and line-level findings.
+validated_on:
+  - GitHub repository reachable with HTTP 200
+claims:
+  - claim:review:001
+assumptions:
+  - findings can be mapped to changed lines
+limitations:
+  - annotation transport does not establish finding correctness
+patchdiet_relevance:
+  modules:
+    - packages/report/src
+    - packages/github-app/src
+  relevance: medium
+license_review:
+  status: ROOT_LICENSE_INSPECTED_AT_COMMIT
+  code_copy_allowed: false
+  note: Research summaries only. Dependencies, subcomponents and any future copied files require their own notices review.
+status:
+  source_verified: true
+  distilled: false
+  decision: ADAPT
+primary_secondary: primary-repository
+verification_status: SOURCE_VERIFIED_REPOSITORY
+provenance_audit:
+  ticket: PD-R100
+  previous_status: SOURCE_VERIFIED
+  previous_pin: repository metadata default branch master checked 2026-10-26
+  reason: "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content
+    review."
+  historical_record: reports/PRE_CORRECTION_RECORDS.json
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+inspected_commit: 97de34b5b8a6eb20fa7c5a768c10b81c7671d689
+license_verified_at_commit: 97de34b5b8a6eb20fa7c5a768c10b81c7671d689
+license_path: LICENSE
+license_type: MIT
+repository_evidence: evidence/repositories/project-reviewdog.json
+inspection:
+  retrieved_at: 2026-10-26
+  url: https://github.com/reviewdog/reviewdog/blob/97de34b5b8a6eb20fa7c5a768c10b81c7671d689/LICENSE
+  locators:
+    - LICENSE
+    - https://github.com/reviewdog/reviewdog/blob/97de34b5b8a6eb20fa7c5a768c10b81c7671d689/README.md
+  scope: Repository identity, root license text and README-level architecture. No claims about uninspected implementation
+    correctness.
+commit_date: 2026-10-27T02:51:38Z
+license_scope: Research summaries only. Dependencies, subcomponents and any future copied files require their own notices review.
+project_status:
+  observed: Pinned upstream snapshot accessible
+  commit_timestamp: 2026-10-27T02:51:38Z
+  maintenance_assessment: No forward maintenance guarantee; this review preserves the inspected snapshot rather than asserting latest release.
+gate_justifications:
+  D7: Source distillation introduces no implementation in this phase; historical runtime regression is recorded
+    separately. This is not an adoption claim.
+  D6: Research-only provenance/source review; no runtime adoption ticket is required.
+ticket_refs:
+  - PD-R100
+  - PD-R101
+  - PD-R159

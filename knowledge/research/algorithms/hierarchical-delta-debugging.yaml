@@ -1,0 +1,78 @@
+name: hierarchical-delta-debugging
+family: program-reduction
+original_sources:
+  - paper:misherghi-su-2006-hdd
+source_version: ICSE 2006 author manuscript, 10 pages
+evidence_locators:
+  - Section 3.2 Algorithm 1
+  - Sections 3.3–3.4
+  - Section 4 and Tables 1–2
+problem: Reduce tree-structured failure-inducing inputs using hierarchical decomposition.
+input: Parse tree, unparser and stable executable interestingness test.
+output: A property-preserving pruned tree.
+algorithm: Run ddmin over nodes at one depth, prune rejected nodes/subtrees, then advance to the next depth of the
+  surviving tree (breadth-first).
+pseudocode: |
+  level = 0
+  while nodes_at_level(tree, level) is not empty:
+    nodes = nodes_at_level(tree, level)
+    keep = ddmin(nodes, S => test(unparse(tree retaining S at level)))
+    prune(tree, level, keep)
+    level += 1
+  return tree
+pseudocode_scope: Original paraphrase for research; use cited full algorithm before implementing a reproduction.
+complexity: O(n²) worst-case test count for HDD; shape affects practical cost. HDD* repeated passes have a separate
+  worst-case bound.
+oracle_calls: Only executable property outcomes accept candidates; do not count probability/structure/LLM advice as a
+  successful test.
+termination: Finite levels, terminating inner ddmin calls; HDD* repeats until no reduction.
+correctness_scope: One HDD traversal does not in general ensure 1-tree-minimality. HDD+ and HDD* are distinct variants
+  with that guarantee (Proposition 3.7).
+assumptions:
+  - faithful tree serialization
+  - stable executable oracle
+  - meaningful hierarchy
+limitations:
+  - Tree constraints do not guarantee all variants parse or typecheck
+  - Cross-level dependencies can make earlier nodes removable later
+  - Original GCC/XML examples are not PatchDiet benchmarks
+failure_modes:
+  - unstable or insufficient oracle
+  - invalid serialization
+  - unsupported domain transfer
+patchdiet_current_state: Existing runtime preserved; this correction adds no runtime strategy.
+patchdiet_gap: No controlled PatchDiet comparison establishes benefit.
+patchdiet_mapping: "Hypothesis: file → symbol → AST node → token/atom hierarchy may improve candidate grouping. Do not
+  implement before comparison."
+recommended_use: RESEARCH_ONLY until independently reviewed and benchmarked.
+not_recommended_for: Automatic removal authority or semantic correctness claims.
+tests_required:
+  - property polarity adapter
+  - inconclusive oracle
+  - deterministic reconstruction
+  - budget exit does not claim minimality
+benchmark_metrics:
+  - Removal Precision
+  - Removal Recall
+  - oracle calls
+  - runtime
+  - final verification
+  - hidden regression rate
+status: RESEARCH_ONLY
+independent_review: PENDING
+source_evaluation: Original study compares ddmin, HDD and HDD* on GCC C inputs and Mozilla XML/XSL inputs, reporting
+  fewer tests for its selected structured cases.
+id: hierarchical-delta-debugging
+claims:
+  - claim:hdd:001
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: No new research-derived runtime work is authorized; no adoption ticket required.
+  D7: Research card only; pre-existing runtime is covered separately by the fresh regression.

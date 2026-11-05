@@ -1,0 +1,63 @@
+name: reviewdog
+repository: https://github.com/reviewdog/reviewdog
+official_site: https://reviewdog.github.io/reviewdog/
+license: MIT
+languages:
+  - Go
+primary_purpose: CI finding to code-review annotation transport.
+architecture: Tool parsers, diff filters, and provider adapters.
+key_modules:
+  - parser adapters
+  - diff filter
+  - GitHub/GitLab reporters
+algorithms: []
+useful_patterns:
+  - line mapping
+  - provider abstraction
+  - neutral reporting
+patchdiet_mapping:
+  - packages/report/src
+  - packages/github-app/src
+do_not_copy:
+  - correctness assumptions
+integration_options:
+  - borrow-concept
+  - adapter
+integration_recommendation: borrow-concept
+reasons: Existing PatchDiet report and app layers need evidence transport patterns.
+risks: Finding correctness remains external to transport.
+estimated_complexity: low
+status: DISTILLED
+source_refs:
+  - project:reviewdog
+provenance_status: SOURCE_VERIFIED_REPOSITORY
+previous_license_verified_at_commit: 2026-10-26
+license_review_status: ROOT_LICENSE_INSPECTED_AT_COMMIT
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+inspected_commit: 97de34b5b8a6eb20fa7c5a768c10b81c7671d689
+license_verified_at_commit: 97de34b5b8a6eb20fa7c5a768c10b81c7671d689
+retrieved_at: 2026-10-26
+license_path: LICENSE
+license_type: MIT
+repository_evidence: evidence/repositories/project-reviewdog.json
+id: project:reviewdog
+claims:
+  - claim:review:001
+limitations:
+  - Finding correctness remains external to transport.
+gate_justifications:
+  D7: No newly adopted research implementation; existing runtime gets a separate fresh regression.
+  D6: No runtime adoption ticket is authorized in the research-only phase.
+algorithm_topics:
+  - diff-filtering
+ticket_refs:
+  - PD-R100
+  - PD-R101
+  - PD-R159

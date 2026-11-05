@@ -1,0 +1,107 @@
+id: benchmark:aidev
+title: "AIDev: Studying AI Coding Agents on GitHub"
+source_type: benchmark-dataset
+authority_tier: A
+primary_secondary: primary-source-record
+canonical_url: https://arxiv.org/abs/2602.09185v1
+retrieved_at: 2026-10-27
+claims: []
+assumptions:
+  - PatchDiet applicability and benefit require separately authorized measured evidence.
+limitations:
+  - No automatic removal authority.
+  - No PatchDiet experiment or benchmark benefit established.
+  - Observed collection cutoff is not model training cutoff. Public PR outcomes are confounded by project policy/human
+    work; accepted/merged PRs do not prove safety or PatchDiet performance. v3/v4 sub-resource tables are documented
+    truncated; v5 changes collection.
+  - Benchmark evaluation is not a proof of semantic preservation or removal safety.
+patchdiet_relevance:
+  mapping: Agent-real lane methodology only; REAL_AGENT_PR_COUNT remains 0.
+  relevance: research-only
+status:
+  source_verified: false
+  distilled: false
+  decision: RESEARCH_ONLY
+verification_status: SOURCE_PARTIALLY_VERIFIED
+distillation_gates:
+  D1_SOURCE_VERIFIED: FAIL
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: Research-only source assessment; no experiment benefit or runtime adoption has been demonstrated, so no PD-E runtime
+    ticket is permitted.
+  D7: No implementation/integration or experiment performed in this research-only phase; validation is not represented as
+    runtime evidence.
+automatic_removal_authority: false
+independent_review: PENDING
+authors:
+  - Hao Li
+  - Haoxiang Zhang
+  - Ahmed E. Hassan
+year: 2026
+venue: Proceedings of the 23rd International Conference on Mining Software Repositories (MSR 2026)
+doi: 10.1145/3793302.3797249
+paper_version_used: 2602.09185v1
+official_source: https://huggingface.co/datasets/hao-li/AIDev
+dataset_version: b8dc67df93e7c11f6f20c84129db7232eb1ec253
+dataset_snapshot_date: 2026-10-21T23:21:54.000Z
+license: CC-BY-4.0 dataset-card metadata; explicit original repository/file licenses retained
+data_use_constraints: Publisher metadata license is not blanket authorization over included source code, review text,
+  personal data or container dependencies. Per-selected-record license/terms and minimization review required before
+  import. Official card explicitly says original files/patches retain repository licenses and users must verify specific
+  repository/file licenses.
+redistribution_limits: No raw dataset, patches, review/user text or images redistributed by PatchDiet.
+  Attribution/notices and upstream license compatibility remain unreviewed for any selected sample.
+privacy_constraints: Public availability is not consent for arbitrary reuse. Identity/comment/issue text requires
+  minimization, secret/PII screening, restricted access and a deletion/retention process; no approved record-level
+  privacy review exists. Card reports PII removed from user table, but usernames, PR/review bodies and linkage still
+  require downstream reidentification/content review.
+sampling_limitations: Public GitHub agent attribution via known accounts/signatures and collection heuristics;
+  popular-repository enriched subset differs from all-PR population. Attribution misses unrecognized/private work; star
+  thresholds, agent detection and crawl dates induce selection bias. Current v5 card is later than inspected 2026 v1
+  paper; do not mix populations.
+repository_level_code_licensing: Per-repository and per-file at source snapshot must be reviewed; dataset/harness
+  license cannot replace upstream rights.
+environment_methodology: Observational PR/comment/review/commit/user/repository tables, not a ready executable test
+  harness or correctness ground truth.
+contamination_freshness_limits: Observed collection cutoff is not model training cutoff. Public PR outcomes are
+  confounded by project policy/human work; accepted/merged PRs do not prove safety or PatchDiet performance. v3/v4
+  sub-resource tables are documented truncated; v5 changes collection.
+task_count: Not asserted; paper, snapshot, split and current card may differ. No data rows loaded to recount.
+repository_count: Not asserted; no secondary headline counts adopted.
+evidence_summary: Official publication identity and dataset metadata snapshot captured; selected-record rights,
+  privacy/storage controls and reproducible eligible sampling not closed.
+inspection:
+  url: https://arxiv.org/abs/2602.09185v1
+  evidence:
+    - evidence/pd-r155-r156-2026-10-27/aidev-dataset-meta.json
+    - evidence/pd-r155-r156-2026-10-27/aidev-metadata.html
+    - evidence/pd-r155-r156-2026-10-27/aidev-paper.html
+    - evidence/pd-r155-r156-2026-10-27/WEB_OBSERVATIONS.md
+extracted_claims:
+  - statement: Observational PR/comment/review/commit/user/repository tables, not a ready executable test harness or
+      correctness ground truth.
+    locator: Official paper methodology and official dataset card; version caveats recorded in this card.
+dataset_usage_gate:
+  status: HOLD
+  import_permitted: false
+  review: reports/DATASET_USAGE_REVIEW.md
+  reason: Per-sample upstream licensing, content/privacy minimization and retention/deletion workflow not approved; no
+    import or redistribution.
+harness_repository:
+  url: https://github.com/SAILResearch/AI_Teammates_in_SE3
+  inspected_commit: 1ea6cd4f07a12bb7a2d2b59a7ebcfa34c329cd57
+  commit_date: 2026-10-21T23:37:19Z
+  license_path: null
+  license: No root LICENSE in inspected root listing; dataset declaration does not license collection scripts.
+  license_scope: Repository code/documentation only, not blanket upstream dataset rights.
+  project_status: archived=False; public; no execution tested
+  retrieved_at: 2026-10-27
+  evidence:
+    - evidence/pd-r155-r156-2026-10-27/aidev-code-repo.json
+    - evidence/pd-r155-r156-2026-10-27/aidev-code-commit.json
+    - evidence/pd-r155-r156-2026-10-27/aidev-code-root.json

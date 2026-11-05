@@ -1,0 +1,70 @@
+id: paper:microsoft-modern-code-review-2013
+title: Expectations, Outcomes, and Challenges of Modern Code Review
+source_type: peer-reviewed-paper
+authority_tier: A
+year: 2013
+venue: ICSE
+canonical_url: https://www.microsoft.com/en-us/research/publication/expectations-outcomes-and-challenges-of-modern-code-review/
+doi: 10.1109/ICSE.2013.6606589
+retrieved_at: 2026-10-26
+authors:
+  - Alberto Bacchelli
+  - Christian Bird
+topics:
+  - code-review
+  - review-comprehension
+problem:
+  summary: Studies motivations, outcomes, and challenges of tool-based code review.
+technique:
+  summary: Mixed observation, interviews, surveys, and manual classification of review comments.
+validated_on:
+  - Microsoft Research publication page
+claims:
+  - claim:review:002
+assumptions:
+  - study context is treated as empirical evidence within its organization and period
+limitations:
+  - results may not generalize to PatchDiet users or AI-generated changes
+patchdiet_relevance:
+  modules:
+    - packages/report/src
+    - docs/diet-card.md
+  relevance: medium
+license_review:
+  status: paper metadata only
+  code_copy_allowed: false
+status:
+  source_verified: true
+  distilled: false
+  decision: ADAPT
+paper_version_used: ICSE 2013 author manuscript, 10 pages
+inspection:
+  retrieved_at: 2026-10-26
+  url: https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/ICSE202013-codereview.pdf
+  locators:
+    - Title page author order and abstract; organizational case study, no deletion correctness claim
+  scope: Only recorded, bounded claims; independent review pending
+primary_secondary: primary
+verification_status: SOURCE_VERIFIED_PRIMARY
+provenance_audit:
+  ticket: PD-R100
+  previous_status: SOURCE_VERIFIED
+  previous_pin: null
+  reason: Primary content inspected at listed locators; not merely a webpage existence check.
+  historical_record: reports/PRE_CORRECTION_RECORDS.json
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D7: Source distillation introduces no implementation in this phase; historical runtime regression is recorded
+    separately. This is not an adoption claim.
+  D6: Research-only provenance/source review; no runtime adoption ticket is required.
+ticket_refs:
+  - PD-R100
+  - PD-R101
+  - PD-R159

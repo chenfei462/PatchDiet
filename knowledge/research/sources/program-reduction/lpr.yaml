@@ -1,0 +1,60 @@
+id: paper:zhang-2024-lpr
+title: "LPR: Large Language Models-Aided Program Reduction"
+authors:
+  - Mengxiao Zhang
+  - Yongqiang Tian
+  - Zhenyang Xu
+  - Yiwen Dong
+  - Shin Hwei Tan
+  - Chengnian Sun
+year: 2024
+venue: ISSTA 2024
+doi: 10.1145/3650212.3652126
+canonical_url: https://arxiv.org/abs/2312.13064v3
+source_type: peer-reviewed-paper
+authority_tier: A
+primary_secondary: primary
+retrieved_at: 2026-10-26
+paper_version_used: arXiv:2312.13064v3, 11 May 2024; section 3.2 Algorithm 1
+inspection:
+  url: https://arxiv.org/html/2312.13064v3
+  locators:
+    - Section 3.2 Algorithm 1 and workflow
+    - Section 3.3 prompts
+    - Evaluation and limitations
+  retrieved_at: 2026-10-26
+verification_status: SOURCE_VERIFIED_PRIMARY
+claims:
+  - claim:lpr:001
+assumptions:
+  - property test is meaningful and stable
+  - LLM output treated as untrusted
+  - generic reducer uses same property
+limitations:
+  - Evaluation covers 50 C/Rust/JavaScript compiler-oriented subjects
+  - Can temporarily enlarge programs (e.g. loop unrolling)
+  - Model/prompt/cost dependence
+  - Compiler interestingness is not PatchDiet task correctness
+patchdiet_relevance:
+  relevance: high
+  mapping: Advisory candidate suggestions only; never summarize as LLM safely removes code. No runtime integration authorized.
+status:
+  source_verified: true
+  distilled: false
+  decision: RESEARCH_ONLY
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: Research-only source; no runtime adoption or implementation ticket is authorized.
+  D7: No research-derived implementation is introduced by this source-verification phase.
+ticket_refs:
+  - PD-R100
+  - PD-R101
+  - PD-R108
+  - PD-R159

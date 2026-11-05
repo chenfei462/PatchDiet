@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#0c100e"/>
+  <path d="M0 80H960M0 180H960M0 280H960M0 380H960M120 0V540M300 0V540M480 0V540M660 0V540M840 0V540" stroke="#1d2b22" stroke-width="1"/>
+  <text x="48" y="72" fill="#9cf36b" font-family="Consolas, monospace" font-size="22">PatchDiet / PR Auto-Cleaner</text>
+  <text x="48" y="210" fill="#f5f1e8" font-family="Georgia, serif" font-size="70" font-weight="700">128 changed lines</text>
+  <text x="48" y="291" fill="#f5f1e8" font-family="Georgia, serif" font-size="70" font-weight="700">became 32.</text>
+  <text x="48" y="338" fill="#f5f1e8" font-family="Georgia, serif" font-size="38" font-weight="700">Tests still passed.</text>
+  <rect x="48" y="374" width="760" height="72" fill="#111814" stroke="#314138"/>
+  <text x="76" y="420" fill="#a9b4ac" font-family="Consolas, monospace" font-size="26" font-weight="normal">PatchDiet / PR Auto-Cleaner</text>
+</svg>

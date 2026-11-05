@@ -1,0 +1,80 @@
+{
+  "id": "project:pr-agent",
+  "retrieved_at": "2026-10-27",
+  "captured_at_utc": "2026-10-27T16:57:54.540725+00:00",
+  "repository": "https://github.com/The-PR-Agent/pr-agent",
+  "default_branch": "main",
+  "inspected_commit": "dff634a9ed1832970f6322ff5e0b6236934a0ba4",
+  "commit_date": "2026-10-27T16:16:28Z",
+  "project_status": {
+    "archived": false,
+    "disabled": false,
+    "pushed_at": "2026-10-27T16:21:30Z",
+    "description": "\ud83d\ude80 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier."
+  },
+  "api_repository_url": "https://api.github.com/repos/The-PR-Agent/pr-agent",
+  "api_commit_url": "https://api.github.com/repos/The-PR-Agent/pr-agent/commits/dff634a9ed1832970f6322ff5e0b6236934a0ba4",
+  "github_license_metadata": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit",
+    "node_id": "MDc6TGljZW5zZTEz"
+  },
+  "files": {
+    "LICENSE": {
+      "url": "https://github.com/The-PR-Agent/pr-agent/blob/dff634a9ed1832970f6322ff5e0b6236934a0ba4/LICENSE",
+      "path": "knowledge/research/evidence/repositories/project-pr-agent.LICENSE.txt",
+      "sha256": "ea19f3b6bfd70ce0bf8d60fc5b15cdb789fcf86a63c0d6542977f888519f5788",
+      "bytes": 1069
+    },
+    "README.md": {
+      "url": "https://github.com/The-PR-Agent/pr-agent/blob/dff634a9ed1832970f6322ff5e0b6236934a0ba4/README.md",
+      "path": "knowledge/research/evidence/repositories/project-pr-agent.README.md.txt",
+      "sha256": "47903df85332f845ef43bd64b20cb1af027241170036d4844a0a1bc5bfbfd401",
+      "bytes": 9269
+    }
+  },
+  "capture_errors": [
+    "LICENSE: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+    "LICENSE.md: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+    "LICENSE.txt: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+    "LICENSE-MIT: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+    "LICENSE-APACHE: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+    "COPYING: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+    "README.md: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>"
+  ],
+  "capture_method": "git bare shallow blob-filtered clone; git show at exact SHA; retry transient TLS failures",
+  "metadata_error": "HTTP Error 403: rate limit exceeded",
+  "root_entries": [
+    ".dockerignore",
+    ".github",
+    ".gitignore",
+    ".pr_agent.toml",
+    ".pre-commit-config.yaml",
+    ".python-version",
+    "AGENTS.md",
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "Dockerfile.github_action_dockerhub",
+    "LICENSE",
+    "MANIFEST.in",
+    "README.md",
+    "RELEASE_NOTES.md",
+    "SECURITY.md",
+    "action.yaml",
+    "codecov.yml",
+    "docker",
+    "docs",
+    "github_action",
+    "pr_agent",
+    "pr_compliance_checklist.yaml",
+    "pyproject.toml",
+    "scripts",
+    "setup.py",
+    "tests",
+    "uv.lock"
+  ],
+  "temporary_bare_clone": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\pd-r153-dd4xpveo\\repo.git"
+}

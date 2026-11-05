@@ -1,0 +1,21 @@
+{
+  "case": "inj-targeted-mapping",
+  "labels": [
+    {
+      "filePath": "source.cjs",
+      "identity": "atom-50aa83ce92",
+      "kind": "hunk",
+      "label": "necessary",
+      "header": "@@ -1,5 +1,5 @@",
+      "atomId": "atom-50aa83ce92"
+    },
+    {
+      "filePath": "targeted.cjs",
+      "identity": "atom-528605b5dd",
+      "kind": "hunk",
+      "label": "unnecessary",
+      "header": "@@ -0,0 +1,2 @@",
+      "atomId": "atom-528605b5dd"
+    }
+  ]
+}

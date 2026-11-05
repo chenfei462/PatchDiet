@@ -1,0 +1,47 @@
+name: PatchDiet benchmark design
+source:
+  - benchmark:swe-bench
+  - project:strykerjs
+fixtures:
+  - synthetic injected noise
+  - real human patches
+  - real agent patches
+  - fresh repository tasks
+ground_truth:
+  - NECESSARY
+  - UNNECESSARY
+  - UNCERTAIN
+metrics:
+  - removal precision
+  - removal recall
+  - scope precision
+  - scope recall
+  - final validation pass rate
+  - hidden regression rate
+  - human review rate
+  - diff reduction
+  - semantic change reduction
+  - oracle calls
+  - runtime
+  - cache hit rate
+reporting_rule: Report fixture families separately; Removal Precision is the highest-priority safety metric.
+status: DISTILLED
+id: patchdiet-benchmark-design
+claims:
+  - claim:swebench:001
+  - claim:mutation:001
+  - claim:mutation:002
+limitations:
+  - No PatchDiet experiment benefit is established; configured verification is not semantic proof.
+patchdiet_mapping: Research-only benchmark design; no external data imported and no runtime change adopted.
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: No new research-derived runtime work is authorized; no adoption ticket required.
+  D7: Research card only; pre-existing runtime is covered separately by the fresh regression.

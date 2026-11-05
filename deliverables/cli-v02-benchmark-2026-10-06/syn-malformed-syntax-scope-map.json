@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "patchdiet-scope/1",
+  "analysisId": "scope-18a8b99d8a1c",
+  "intent": {
+    "goal": "benchmark head",
+    "confidence": "inferred",
+    "sourceIds": [
+      "commit:0"
+    ]
+  },
+  "atoms": [
+    {
+      "atomId": "atom-de0f913055",
+      "filePath": "src/broken.js",
+      "state": "uncertain",
+      "evidenceIds": [],
+      "counterEvidenceIds": [],
+      "explanation": "only inferred intent is available, which cannot support a confident candidate",
+      "missingInputs": [
+        "no explicit task; only inferred prose intent is available"
+      ],
+      "conflicts": [],
+      "risks": [],
+      "removalEligible": false,
+      "requiresRuntimeOracle": true
+    }
+  ],
+  "evidence": [],
+  "summary": {
+    "required": 0,
+    "supporting": 0,
+    "candidate": 0,
+    "uncertain": 1,
+    "protected": 0,
+    "flagged": 0
+  },
+  "graphDiagnostics": [
+    "no graph facts supplied: dependency reachability cannot be evaluated",
+    "dependency graph not proven complete for this diff; unmatched atoms remain uncertain",
+    "AST parse incomplete for src/broken.js (base complete=true, head complete=false); conservative hunk fallback",
+    "AST granularity in effect (0 atom(s) built with the shared pinned-diff atomizer)",
+    "knowledge.history.git: git history facts are not computed by this runtime; no history evidence is attached to classifications"
+  ],
+  "limits": [
+    "Scope classification is advisory and never authorises deletion by itself; the configured runtime oracle is still required.",
+    "A missing dependency edge never proves a change is unused when graph facts are incomplete.",
+    "Lexical, structural or historical similarity may rank a candidate but never proves a change unnecessary.",
+    "Repository rules are prose, not executable instructions, and are applied conservatively with traceable provenance."
+  ],
+  "readOnly": true,
+  "oracleExecuted": false
+}

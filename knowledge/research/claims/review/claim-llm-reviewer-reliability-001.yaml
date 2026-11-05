@@ -1,0 +1,27 @@
+id: claim:llm-reviewer-reliability:001
+statement: In the evaluated requirement-conformance benchmarks, richer explanation/repair prompts can increase
+  false rejection while reducing false acceptance; rationale reliability varies.
+source:
+  id: paper:jin-chen-2026-llm-reviewer-reliability
+  locators:
+    - Sections 3.2-3.3 evaluated datasets/models
+    - Sections 5-6 error tradeoffs and rationale evaluation
+    - Section 7 filtering; Section 8 limitations
+evidence_type: peer-reviewed-paper
+scope: review
+assumptions:
+  - Canonical/buggy benchmark labels are valid proxies for requirement conformance
+  - Results are bounded to the evaluated models, benchmarks and prompts
+limitations:
+  - Small benchmark functions; label/test adequacy; GPT-4o evaluator and augmentation dependence.
+  - No industrial PR generalization or exhaustive correctness proof.
+patchdiet_mapping:
+  mapping: PatchDiet retains independent executable verification as its own safety policy; this study supplies
+    bounded advisory evidence, not removal or semantic-equivalence authority.
+  affected_components:
+    - packages/report/src
+    - packages/core/src/shrink.ts
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: RECHECKED_PRIMARY_REVIEW_PENDING
+verified_at: 2026-10-27

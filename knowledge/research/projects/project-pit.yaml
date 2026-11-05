@@ -1,0 +1,65 @@
+id: project:pit
+title: PIT mutation testing
+source_type: repository
+authority_tier: B
+primary_secondary: primary-source-record
+canonical_url: https://github.com/hcoles/pitest
+retrieved_at: 2026-10-27
+claims: []
+assumptions:
+  - PatchDiet applicability and benefit require separately authorized measured evidence.
+limitations:
+  - No automatic removal authority.
+  - No PatchDiet experiment or benchmark benefit established.
+  - JVM implementation does not provide TypeScript mutation operators or establish suitability for PatchDiet.
+  - Equivalent mutants can survive despite adequate tests; selected operators bias the measured fault population.
+  - Mutation score is not semantic adequacy or a proof of safe deletion.
+patchdiet_relevance:
+  mapping: Optional JVM oracle-strength research reference only; no installation, execution, normal-shrink dependency or
+    runtime ticket.
+  relevance: research-only
+status:
+  source_verified: true
+  distilled: true
+  decision: RESEARCH_ONLY
+verification_status: SOURCE_VERIFIED_REPOSITORY
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: Research-only source assessment; no experiment benefit or runtime adoption has been demonstrated, so no PD-E runtime
+    ticket is permitted.
+  D7: No implementation/integration or experiment performed in this research-only phase; validation is not represented as
+    runtime evidence.
+automatic_removal_authority: false
+independent_review: PENDING
+repository: https://github.com/hcoles/pitest
+inspected_commit: f7fe5adfa5fb6e727c12d2403a48f5e4e9dd2fc6
+commit_date: 2026-10-14T07:18:34Z
+license: Apache-2.0
+license_path: LICENSE.txt
+license_scope: Root license for hcoles/pitest code at inspected commit. Does not establish rights for commercial
+  extensions, third-party plugins, dependencies or mutated target programs.
+project_status: Public; archived=False; default branch master; inspected commit only, no release/runtime test.
+repository_evidence:
+  - evidence/pd-r155-r156-2026-10-27/pit-repo.json
+  - evidence/pd-r155-r156-2026-10-27/pit-commit.json
+  - evidence/pd-r155-r156-2026-10-27/pit-root.json
+inspection:
+  url: https://github.com/hcoles/pitest/blob/f7fe5adfa5fb6e727c12d2403a48f5e4e9dd2fc6/LICENSE.txt
+  evidence: evidence/pd-r155-r156-2026-10-27/WEB_OBSERVATIONS.md
+  method: Pinned root license inspected using web; repository metadata/commit/root listing locally captured. License
+    excerpt observation is not a byte-identical license archive.
+documentation:
+  - https://pitest.org/quickstart/basic_concepts/
+evidence_summary: PIT is a Java bytecode mutation implementation, separate from academic surveys and mutation
+  hypotheses. Root LICENSE.txt is Apache-2.0 at the exact inspected commit.
+extracted_claims:
+  - statement: PIT executes tests against mutants and distinguishes detection from survival and execution failures.
+    locator: "Official basic concepts: Mutation testing; Mutation status"
+    evidence: evidence/pd-r155-r156-2026-10-27/pit-concepts.html

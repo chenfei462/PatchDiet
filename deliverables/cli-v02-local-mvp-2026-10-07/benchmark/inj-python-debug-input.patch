@@ -1,0 +1,10 @@
+diff --git a/src/total.py b/src/total.py
+index 2d1b28c..fc10688 100644
+--- a/src/total.py
++++ b/src/total.py
+@@ -1,2 +1,4 @@
+ def total(n):
+-    return n
++    trace = {'n': n}
++    print('injected-debug', trace)
++    return n * 2

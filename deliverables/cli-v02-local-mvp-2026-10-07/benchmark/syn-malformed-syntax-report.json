@@ -1,0 +1,125 @@
+{
+  "baseRef": "main",
+  "headRef": "agent",
+  "input": {
+    "fileCount": 1,
+    "hunkCount": 1,
+    "addedLineCount": 2,
+    "removedLineCount": 0,
+    "changedLineCount": 2
+  },
+  "output": {
+    "fileCount": 1,
+    "hunkCount": 1,
+    "addedLineCount": 2,
+    "removedLineCount": 0,
+    "changedLineCount": 2
+  },
+  "testCommand": {
+    "command": "\"C:\\Program Files\\nodejs\\node.exe\" check.cjs",
+    "status": "passed",
+    "durationMs": 453,
+    "attempts": 1
+  },
+  "mode": "unverified",
+  "verification": {
+    "baseline": {
+      "stage": "baseline",
+      "status": "passed",
+      "commands": [
+        {
+          "command": "\"C:\\Program Files\\nodejs\\node.exe\" check.cjs",
+          "status": "passed",
+          "durationMs": 321,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 175
+            }
+          ]
+        }
+      ],
+      "durationMs": 453,
+      "baseCommitSha": "30af6de71150d9b516ff1ced442902ab75c881df",
+      "headCommitSha": "c4622d212179042ba6fff34b6f7d1be63385b1d4"
+    },
+    "final": {
+      "stage": "final",
+      "status": "passed",
+      "commands": [
+        {
+          "command": "\"C:\\Program Files\\nodejs\\node.exe\" check.cjs",
+          "status": "passed",
+          "durationMs": 313,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 168
+            }
+          ]
+        }
+      ],
+      "durationMs": 881,
+      "baseCommitSha": "30af6de71150d9b516ff1ced442902ab75c881df",
+      "headCommitSha": "c4622d212179042ba6fff34b6f7d1be63385b1d4",
+      "expectedTreeSha": "52d4118bba9c89af1efd1209ba16db14ff9bd81d",
+      "artifactTreeSha": "52d4118bba9c89af1efd1209ba16db14ff9bd81d",
+      "treesMatch": true
+    }
+  },
+  "reduction": {
+    "strategy": "ddmin",
+    "selectedGroupIds": [],
+    "attempts": [],
+    "atomGranularity": "ast",
+    "dependencyGroups": []
+  },
+  "candidates": [
+    {
+      "filePath": "src/broken.js",
+      "hunkHeader": "@@ -1,3 +1,5 @@",
+      "category": "unknown",
+      "verdict": "needs-human-review",
+      "reason": "downgraded to keep-only: individually verified, but the cleanup run is partial; every removal was retained for human review during combined removal verification"
+    }
+  ],
+  "removals": [],
+  "kept": [],
+  "needsHumanReview": [
+    {
+      "filePath": "src/broken.js",
+      "hunkHeader": "@@ -1,3 +1,5 @@",
+      "category": "unknown",
+      "reason": "downgraded to keep-only: individually verified, but the cleanup run is partial; every removal was retained for human review during combined removal verification",
+      "confidence": "needs-human-review"
+    }
+  ],
+  "artifacts": [
+    ".patchdiet/cleanup.diff",
+    ".patchdiet/report.md",
+    ".patchdiet/run.json",
+    ".patchdiet/report.html",
+    ".patchdiet/report.github.md"
+  ],
+  "patchPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-6HLuED\\syn-malformed-syntax-yjqrym\\.patchdiet\\cleanup.diff",
+  "startedAt": "2026-10-06T15:42:24.622Z",
+  "patchdietVersion": "0.2.0",
+  "baseCommitSha": "30af6de71150d9b516ff1ced442902ab75c881df",
+  "headCommitSha": "c4622d212179042ba6fff34b6f7d1be63385b1d4",
+  "mergeBaseCommitSha": "30af6de71150d9b516ff1ced442902ab75c881df",
+  "commandLineArgs": [],
+  "partial": true,
+  "partialReason": "AST fallback: AST parse incomplete (base complete=true, head complete=false); hunk fallback",
+  "durationMs": 3352,
+  "finishedAt": "2026-10-06T15:42:27.974Z",
+  "reportPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-6HLuED\\syn-malformed-syntax-yjqrym\\.patchdiet\\report.md",
+  "reportJsonPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-6HLuED\\syn-malformed-syntax-yjqrym\\.patchdiet\\run.json"
+}

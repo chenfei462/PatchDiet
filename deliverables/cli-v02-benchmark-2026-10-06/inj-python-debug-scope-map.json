@@ -1,0 +1,136 @@
+{
+  "schemaVersion": "patchdiet-scope/1",
+  "analysisId": "scope-6068003bd5f3",
+  "intent": {
+    "goal": "Fix total(n) to return twice n.",
+    "confidence": "explicit",
+    "sourceIds": [
+      "cli:task",
+      "commit:0"
+    ]
+  },
+  "atoms": [
+    {
+      "atomId": "atom-08a46b3ef96b9592",
+      "filePath": "src/total.py",
+      "state": "uncertain",
+      "evidenceIds": [],
+      "counterEvidenceIds": [],
+      "explanation": "graph facts are incomplete, so absent dependency evidence cannot be trusted",
+      "missingInputs": [
+        "graph/index facts are incomplete",
+        "no dependency graph supplied"
+      ],
+      "conflicts": [],
+      "risks": [],
+      "removalEligible": false,
+      "requiresRuntimeOracle": true
+    },
+    {
+      "atomId": "atom-0e9888bf57d5bc6b",
+      "filePath": "src/total.py",
+      "symbolPath": "total",
+      "state": "uncertain",
+      "evidenceIds": [
+        "ev-f05a2a5106"
+      ],
+      "counterEvidenceIds": [],
+      "explanation": "graph facts are incomplete, so absent dependency evidence cannot be trusted",
+      "missingInputs": [
+        "graph/index facts are incomplete",
+        "no dependency graph supplied"
+      ],
+      "conflicts": [],
+      "risks": [],
+      "removalEligible": false,
+      "requiresRuntimeOracle": true
+    },
+    {
+      "atomId": "atom-6d36d117090a093d",
+      "filePath": "src/total.py",
+      "symbolPath": "total",
+      "state": "uncertain",
+      "evidenceIds": [
+        "ev-82f94b9919"
+      ],
+      "counterEvidenceIds": [],
+      "explanation": "graph facts are incomplete, so absent dependency evidence cannot be trusted",
+      "missingInputs": [
+        "graph/index facts are incomplete",
+        "no dependency graph supplied"
+      ],
+      "conflicts": [],
+      "risks": [],
+      "removalEligible": false,
+      "requiresRuntimeOracle": true
+    },
+    {
+      "atomId": "atom-f66426eb5fb91f20",
+      "filePath": "src/total.py",
+      "state": "uncertain",
+      "evidenceIds": [],
+      "counterEvidenceIds": [],
+      "explanation": "graph facts are incomplete, so absent dependency evidence cannot be trusted",
+      "missingInputs": [
+        "graph/index facts are incomplete",
+        "no dependency graph supplied"
+      ],
+      "conflicts": [],
+      "risks": [],
+      "removalEligible": false,
+      "requiresRuntimeOracle": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-82f94b9919",
+      "category": "intent",
+      "polarity": "limits",
+      "confidence": 0.6,
+      "sourceId": "cli:task",
+      "atomId": "atom-6d36d117090a093d",
+      "detail": "task exclusion statement matches this atom (terms: debug)",
+      "limits": [
+        "an exclusion prevents required classification; removal still requires the runtime oracle"
+      ]
+    },
+    {
+      "id": "ev-f05a2a5106",
+      "category": "intent",
+      "polarity": "limits",
+      "confidence": 0.6,
+      "sourceId": "cli:task",
+      "atomId": "atom-0e9888bf57d5bc6b",
+      "detail": "task exclusion statement matches this atom (debug-only local declaration)",
+      "limits": [
+        "an exclusion prevents required classification; removal still requires the runtime oracle"
+      ]
+    }
+  ],
+  "summary": {
+    "required": 0,
+    "supporting": 0,
+    "candidate": 0,
+    "uncertain": 4,
+    "protected": 0,
+    "flagged": 0
+  },
+  "graphDiagnostics": [
+    "no graph facts supplied: dependency reachability cannot be evaluated",
+    "dependency graph not proven complete for this diff; unmatched atoms remain uncertain",
+    "AST atom atom-08a46b3ef96b9592: src/total.py base bytes [14,27) head bytes [14,14) (base blob 2d1b28ccc2d1, head blob fc106885df86)",
+    "AST atom atom-0e9888bf57d5bc6b: src/total.py base bytes [27,27) head bytes [14,34) (base blob 2d1b28ccc2d1, head blob fc106885df86)",
+    "AST atom atom-6d36d117090a093d: src/total.py base bytes [27,27) head bytes [34,69) (base blob 2d1b28ccc2d1, head blob fc106885df86)",
+    "AST atom atom-f66426eb5fb91f20: src/total.py base bytes [27,27) head bytes [69,87) (base blob 2d1b28ccc2d1, head blob fc106885df86)",
+    "AST granularity in effect (4 atom(s) built with the shared pinned-diff atomizer)",
+    "knowledge.history.git: git history facts are not computed by this runtime; no history evidence is attached to classifications"
+  ],
+  "limits": [
+    "Scope classification is advisory and never authorises deletion by itself; the configured runtime oracle is still required.",
+    "A missing dependency edge never proves a change is unused when graph facts are incomplete.",
+    "Lexical, structural or historical similarity may rank a candidate but never proves a change unnecessary.",
+    "Repository rules are prose, not executable instructions, and are applied conservatively with traceable provenance."
+  ],
+  "readOnly": true,
+  "oracleExecuted": false
+}

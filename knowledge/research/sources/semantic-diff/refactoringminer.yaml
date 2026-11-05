@@ -1,0 +1,85 @@
+id: project:refactoringminer
+title: RefactoringMiner
+source_type: reference-implementation
+authority_tier: B
+year: 2018
+canonical_url: https://github.com/tsantalis/RefactoringMiner
+retrieved_at: 2026-10-26
+repository: https://github.com/tsantalis/RefactoringMiner
+license: MIT
+authors:
+  - Tsantalis lab contributors
+topics:
+  - semantic-diff
+  - refactoring-detection
+problem:
+  summary: Detect refactoring and AST changes through language-specific frontends; pinned README reports Java, Python,
+    Kotlin, TypeScript, JavaScript and C/C++ support.
+technique:
+  summary: AST and model comparisons produce named refactoring evidence.
+validated_on:
+  - GitHub repository reachable with HTTP 200
+claims:
+  - claim:refactoringminer:001
+assumptions:
+  - Suitable language frontend and model available
+  - Per-language accuracy must be evaluated independently
+limitations:
+  - language scope and detector false positives limit direct PatchDiet use
+patchdiet_relevance:
+  modules:
+    - packages/core/src/insights.ts
+  relevance: low
+license_review:
+  status: ROOT_LICENSE_INSPECTED_AT_COMMIT
+  code_copy_allowed: false
+  note: Research summaries only. Dependencies, subcomponents and any future copied files require their own notices review.
+status:
+  source_verified: true
+  distilled: false
+  decision: RESEARCH_ONLY
+primary_secondary: primary-repository
+verification_status: SOURCE_VERIFIED_REPOSITORY
+provenance_audit:
+  ticket: PD-R100
+  previous_status: SOURCE_VERIFIED
+  previous_pin: repository metadata default branch master checked 2026-10-26
+  reason: "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content
+    review."
+  historical_record: reports/PRE_CORRECTION_RECORDS.json
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+inspected_commit: 7d094b332f84f56d56ffd53df0b20bda183f2457
+license_verified_at_commit: 7d094b332f84f56d56ffd53df0b20bda183f2457
+license_path: LICENSE
+license_type: MIT
+repository_evidence: evidence/repositories/project-refactoringminer.json
+inspection:
+  retrieved_at: 2026-10-26
+  url: https://github.com/tsantalis/RefactoringMiner/blob/7d094b332f84f56d56ffd53df0b20bda183f2457/LICENSE
+  locators:
+    - LICENSE
+    - https://github.com/tsantalis/RefactoringMiner/blob/7d094b332f84f56d56ffd53df0b20bda183f2457/README.md
+  scope: Repository identity, root license text and README-level architecture. No claims about uninspected implementation
+    correctness.
+commit_date: 2026-10-26T17:44:23-04:00
+license_scope: Research summaries only. Dependencies, subcomponents and any future copied files require their own notices review.
+project_status:
+  observed: Pinned upstream snapshot accessible
+  commit_timestamp: 2026-10-26T17:44:23-04:00
+  maintenance_assessment: No forward maintenance guarantee; this review preserves the inspected snapshot rather than asserting latest release.
+gate_justifications:
+  D7: Source distillation introduces no implementation in this phase; historical runtime regression is recorded
+    separately. This is not an adoption claim.
+  D6: Research-only provenance/source review; no runtime adoption ticket is required.
+ticket_refs:
+  - PD-R010
+  - PD-R100
+  - PD-R101
+  - PD-R159

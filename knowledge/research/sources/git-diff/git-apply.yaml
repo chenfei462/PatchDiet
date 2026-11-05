@@ -1,0 +1,70 @@
+id: standard:git-apply
+title: git-apply documentation
+source_type: normative-documentation
+authority_tier: A
+year: 2026
+canonical_url: https://git-scm.com/docs/git-apply
+retrieved_at: 2026-10-26
+authors:
+  - Git project
+topics:
+  - git-fidelity
+  - patch-application
+problem:
+  summary: Defines how Git validates and applies patch text, including path, mode, binary, and whitespace behavior.
+technique:
+  summary: Normative command contract used as the external application oracle.
+validated_on:
+  - Git documentation reachable with HTTP 200
+claims:
+  - claim:git:003
+assumptions:
+  - PatchDiet must preserve enough information for Git-compatible application
+limitations:
+  - Successful application does not imply tests or task intent are correct
+patchdiet_relevance:
+  modules:
+    - packages/core/src/git.ts
+    - packages/core/src/patch-encoder.ts
+  relevance: high
+license_review:
+  status: normative-documentation
+  code_copy_allowed: false
+status:
+  source_verified: true
+  distilled: false
+  decision: ADAPT
+paper_version_used: Git git-apply 2.51.0
+inspection:
+  retrieved_at: 2026-10-26
+  url: https://git-scm.com/docs/git-apply/2.51.0
+  locators:
+    - DESCRIPTION; --check; --index; SUBMODULES; application is distinct from behavioral validation
+  scope: Only recorded, bounded claims; independent review pending
+primary_secondary: primary
+verification_status: SOURCE_VERIFIED_PRIMARY
+provenance_audit:
+  ticket: PD-R100
+  previous_status: SOURCE_VERIFIED
+  previous_pin: null
+  reason: Primary content inspected at listed locators; not merely a webpage existence check.
+  historical_record: reports/PRE_CORRECTION_RECORDS.json
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+venue: Git official reference manual
+gate_justifications:
+  D7: Source distillation introduces no implementation in this phase; historical runtime regression is recorded
+    separately. This is not an adoption claim.
+  D6: Research-only provenance/source review; no runtime adoption ticket is required.
+ticket_refs:
+  - PD-R050
+  - PD-R100
+  - PD-R101
+  - PD-R158
+  - PD-R159

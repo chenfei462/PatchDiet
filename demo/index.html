@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>PatchDiet | Compress the diff</title>
+  <meta name="description" content="PatchDiet shrinks noisy pull requests with configured checks and inspectable cleanup evidence.">
+  <link rel="icon" href="data:,">
+  <link rel="preload" as="image" href="/demo/assets/hero-poster.jpg">
+  <link rel="stylesheet" href="/demo/styles.css">
+</head>
+<body class="homepage" data-page="homepage">
+  <a class="skip-link" href="#hero">Skip to PatchDiet</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-mark" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round"><rect x="1.5" y="1.5" width="29" height="29" rx="9" stroke-width="1.5" opacity="0.55"/><path d="M9 11h14M9 16h9.5M9 21h5.5" stroke-width="2.4"/></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+      <symbol id="i-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+      <symbol id="i-arrow-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+      <symbol id="i-wand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72"/><path d="m14 7 3 3"/><path d="M5 6v4"/><path d="M19 14v4"/><path d="M10 2v2"/><path d="M7 8H3"/><path d="M21 16h-4"/><path d="M11 3H9"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v16"/><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+      <symbol id="i-pr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" x2="6" y1="9" y2="21"/></symbol>
+      <symbol id="i-terminal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19h8"/><path d="m4 17 6-6-6-6"/></symbol>
+      <symbol id="i-layout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></symbol>
+      <symbol id="i-scissors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></symbol>
+      <symbol id="i-flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M6.453 15h11.094"/><path d="M8.5 2h7"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-receipt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17V7"/><path d="M16 8h-6a2 2 0 0 0 0 4h4a2 2 0 0 1 0 4H8"/><path d="M4 3a1 1 0 0 1 1-1 1.3 1.3 0 0 1 .7.2l.933.6a1.3 1.3 0 0 0 1.4 0l.934-.6a1.3 1.3 0 0 1 1.4 0l.933.6a1.3 1.3 0 0 0 1.4 0l.933-.6a1.3 1.3 0 0 1 1.4 0l.934.6a1.3 1.3 0 0 0 1.4 0l.933-.6A1.3 1.3 0 0 1 19 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1 1.3 1.3 0 0 1-.7-.2l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.934.6a1.3 1.3 0 0 1-1.4 0l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-1.4 0l-.934-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-.7.2 1 1 0 0 1-1-1z"/></symbol>
+      <symbol id="i-folder-git" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 19a5 5 0 0 1-5-5v8"/><path d="M9 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v5"/><circle cx="13" cy="12" r="2"/><circle cx="20" cy="19" r="2"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="backdrop" aria-hidden="true">
+    <video id="hero-video" class="backdrop__video" autoplay muted loop playsinline preload="auto" poster="/demo/assets/hero-poster.jpg" src="/demo/assets/hero-loop.mp4"></video>
+    <div class="backdrop__shade"></div>
+  </div>
+
+  <main id="homepage-story" class="story">
+    <section id="hero" class="scene hero" data-scene="intake" aria-labelledby="hero-title">
+      <div class="hero__left">
+        <div class="hero__glass liquid-glass-strong" aria-hidden="true"></div>
+
+        <header class="hero__nav">
+          <a class="brand pressable" href="#hero" aria-label="PatchDiet home">
+            <svg class="brand__mark" aria-hidden="true"><use href="#i-mark"/></svg>
+            <span class="brand__name">patchdiet</span>
+          </a>
+          <details class="menu" data-menu>
+            <summary class="menu__toggle liquid-glass pill pressable">
+              <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+              <span>Menu</span>
+            </summary>
+            <nav class="menu__panel liquid-glass-strong" aria-label="PatchDiet scenes">
+              <a href="#cleanup-proof"><span>01</span> Gates</a>
+              <a href="#demo-entry"><span>02</span> Receipt</a>
+              <a href="#evidence-adoption"><span>03</span> Evidence</a>
+              <a href="#final-cta"><span>04</span> Handoff</a>
+              <a href="/demo/forge/"><span>--</span> 3D Forge UI</a>
+              <a href="/demo/classic/"><span>--</span> Classic UI</a>
+            </nav>
+          </details>
+        </header>
+
+        <div class="hero__center">
+          <svg class="hero__mark" aria-hidden="true"><use href="#i-mark"/></svg>
+          <h1 id="hero-title" class="hero__title">Compress the diff,<br><em>keep the proof.</em></h1>
+          <p class="hero__summary">PatchDiet tests candidate removals against your configured checks, then leaves a smaller review surface and an inspectable receipt for human review.</p>
+          <a class="button liquid-glass-strong pressable hero__cta" href="/demo/workspace.html">
+            <span>Open the demo</span>
+            <span class="button__dot"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+          </a>
+          <ul class="hero__pills" aria-label="What PatchDiet does">
+            <li class="pill liquid-glass">Configured checks</li>
+            <li class="pill liquid-glass">Tested removals</li>
+            <li class="pill liquid-glass">Cleanup receipts</li>
+          </ul>
+        </div>
+
+        <footer class="hero__quote">
+          <p class="label">Verified fixture</p>
+          <blockquote>
+            <p><span>128 changed lines became 32.</span> <em>The checks stayed green.</em></p>
+          </blockquote>
+          <p class="hero__author"><i aria-hidden="true"></i><span>agent-large-pr</span><i aria-hidden="true"></i></p>
+          <p class="hero__boundary">Configured checks passed. This is not semantic-equivalence proof.</p>
+          <a class="next-scene liquid-glass pressable" href="#cleanup-proof" data-first-viewport-cue="true">
+            <span class="sr-only">Next scene: how the gate decides</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+          </a>
+        </footer>
+      </div>
+
+      <div class="hero__right">
+        <div class="hero__topbar">
+          <div class="socials liquid-glass">
+            <a class="socials__link" href="https://github.com/chenfei462/PatchDiet" aria-label="PatchDiet on GitHub"><svg class="icon" aria-hidden="true"><use href="#i-pr"/></svg></a>
+            <a class="socials__link" href="#final-cta" aria-label="Local CLI workflow"><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg></a>
+            <a class="socials__link" href="/demo/classic/" aria-label="Classic UI"><svg class="icon" aria-hidden="true"><use href="#i-layout"/></svg></a>
+            <span class="socials__arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow-right"/></svg></span>
+          </div>
+          <a class="pill pill--strong liquid-glass pressable" href="/demo/workspace.html">Workspace</a>
+          <a class="icon-button liquid-glass pressable" href="/demo/workspace.html" aria-label="Open the reduction workspace"><svg class="icon" aria-hidden="true"><use href="#i-sparkles"/></svg></a>
+        </div>
+
+        <aside class="metric-card liquid-glass" aria-label="Verified PatchDiet reduction">
+          <p class="label">Verified reduction</p>
+          <strong class="metric-card__value">75%</strong>
+          <p class="metric-card__measure"><b>4 files / 128 changed lines</b> <i aria-hidden="true">-&gt;</i> <b>2 files / 32 changed lines</b></p>
+          <p class="metric-card__note">Configured suite: PASS</p>
+        </aside>
+
+        <div class="features liquid-glass">
+          <div class="features__row">
+            <article class="feature liquid-glass">
+              <span class="icon-dot"><svg class="icon" aria-hidden="true"><use href="#i-wand"/></svg></span>
+              <h3>Isolated removal</h3>
+              <p>Each candidate is tried in a temporary worktree, away from your branch.</p>
+            </article>
+            <article class="feature liquid-glass">
+              <span class="icon-dot"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg></span>
+              <h3>Evidence archive</h3>
+              <p>Accepted and retained candidates are written to <code>.patchdiet/</code>.</p>
+            </article>
+          </div>
+          <article class="feature feature--wide liquid-glass">
+            <img class="feature__thumb" src="/demo/assets/hero-thumb.jpg" width="96" height="64" alt="">
+            <div>
+              <h3>Diet Card receipt</h3>
+              <p>A portable summary reviewers can check before they accept the cleanup.</p>
+            </div>
+            <a class="icon-button liquid-glass pressable" href="#demo-entry" aria-label="See the receipt"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="cleanup-proof" class="scene" data-scene="gates" aria-labelledby="gates-title">
+      <div class="panel liquid-glass-strong" data-reveal>
+        <header class="scene__heading">
+          <p class="label">01 / Configured-check pipeline</p>
+          <h2 id="gates-title">A removal only counts <em>when the gate stays green.</em></h2>
+          <p>Each candidate is evaluated away from the working branch. Passing configured checks supports the removal; a failure keeps the code and records the boundary.</p>
+        </header>
+
+        <ol class="pipeline" aria-label="PatchDiet configured-check pipeline">
+          <li class="liquid-glass"><span class="icon-dot"><svg class="icon" aria-hidden="true"><use href="#i-pr"/></svg></span><strong>Diff intake</strong><p>Map changed files and candidate review noise.</p><b class="pill liquid-glass">128 lines</b></li>
+          <li class="liquid-glass"><span class="icon-dot"><svg class="icon" aria-hidden="true"><use href="#i-scissors"/></svg></span><strong>Isolated removal</strong><p>Apply one candidate in a temporary worktree.</p><b class="pill liquid-glass">candidate</b></li>
+          <li class="liquid-glass"><span class="icon-dot"><svg class="icon" aria-hidden="true"><use href="#i-flask"/></svg></span><strong>Configured checks</strong><p>Run the repository commands selected by the operator.</p><b class="pill liquid-glass pill--on">PASS</b></li>
+          <li class="liquid-glass"><span class="icon-dot"><svg class="icon" aria-hidden="true"><use href="#i-receipt"/></svg></span><strong>Evidence write</strong><p>Record accepted removals and retained candidates.</p><b class="pill liquid-glass">receipt</b></li>
+        </ol>
+
+        <aside class="boundary liquid-glass" aria-labelledby="boundary-title">
+          <div>
+            <p class="label">Boundary / weak tests</p>
+            <h3 id="boundary-title">The gate is only as strong as <em>the configured checks.</em></h3>
+            <p>A green suite is useful evidence, not a guarantee that behavior is unchanged. Weak or incomplete tests can miss regressions.</p>
+          </div>
+          <dl>
+            <div><dt>PatchDiet proves</dt><dd>The configured checks still pass after the candidate removal.</dd></div>
+            <div><dt>PatchDiet does not prove</dt><dd>Semantic equivalence, complete coverage, or production correctness.</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section id="demo-entry" class="scene" data-scene="receipt" aria-labelledby="receipt-title">
+      <div class="panel liquid-glass-strong" data-reveal>
+        <header class="scene__heading scene__heading--split">
+          <div>
+            <p class="label">02 / Browser preview</p>
+            <h2 id="receipt-title">Before. After. <em>Receipt.</em></h2>
+          </div>
+          <p>The browser demo previews a known fixture and its evidence. CLI verification is a separate local step that runs configured checks; the preview does not run tests.</p>
+        </header>
+
+        <div class="receipt">
+          <article class="receipt__state liquid-glass">
+            <p class="label">Before / noisy patch</p>
+            <strong>4</strong><span>files</span>
+            <b>128 changed lines</b>
+            <ul><li>Generated scaffolding</li><li>Temporary tracing</li><li>Scope-drift artifacts</li></ul>
+          </article>
+          <div class="receipt__transfer" aria-hidden="true"><span class="icon-dot"><svg class="icon"><use href="#i-arrow-right"/></svg></span><b>75%</b></div>
+          <article class="receipt__state receipt__state--after liquid-glass">
+            <p class="label">After / review surface</p>
+            <strong>2</strong><span>files</span>
+            <b>32 changed lines</b>
+            <ul><li>Behavioral change retained</li><li>Focused tests retained</li><li>Removal evidence attached</li></ul>
+          </article>
+          <aside class="receipt__ticket liquid-glass" aria-label="PatchDiet cleanup receipt">
+            <p class="label">PatchDiet / receipt 00032</p>
+            <span class="receipt__fixture">agent-large-pr</span>
+            <strong>PASS</strong>
+            <dl>
+              <div><dt>Reduction</dt><dd>75%</dd></div>
+              <div><dt>Gate</dt><dd>Configured checks</dd></div>
+              <div><dt>Review</dt><dd>Human required</dd></div>
+            </dl>
+            <a class="button liquid-glass-strong pressable" href="/demo/workspace.html">
+              <span>Open browser preview</span>
+              <span class="button__dot"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span>
+            </a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidence-adoption" class="scene" data-scene="evidence" aria-labelledby="evidence-title">
+      <div class="panel liquid-glass-strong" data-reveal>
+        <header class="scene__heading scene__heading--split">
+          <div>
+            <p class="label">03 / Inspectable output</p>
+            <h2 id="evidence-title">Nothing hidden. <em>Every cut leaves a record.</em></h2>
+          </div>
+          <p>Review the candidate decisions, exact removals, reduced patch, and portable Diet Card before accepting the cleanup.</p>
+        </header>
+
+        <div class="evidence">
+          <figure class="capture liquid-glass">
+            <img src="/docs/assets/launch-gif/browser-frames/frame-03-candidates-card.png" width="1265" height="720" loading="lazy" alt="PatchDiet browser preview showing cleanup candidates and a Diet Card receipt">
+            <figcaption><span class="label">Actual product capture</span> Candidate decisions and Diet Card / sample fixture</figcaption>
+          </figure>
+
+          <div class="ledger liquid-glass">
+            <div class="ledger__heading"><span class="icon-dot"><svg class="icon" aria-hidden="true"><use href="#i-folder-git"/></svg></span><strong>Output index</strong><span class="pill liquid-glass">5 artifacts</span></div>
+            <ol>
+              <li><span>01</span><code>.patchdiet/report.github.md</code><small>Reviewer narrative</small></li>
+              <li><span>02</span><code>.patchdiet/removal.patch</code><small>Tested removals</small></li>
+              <li><span>03</span><code>.patchdiet/reduced.patch</code><small>Remaining patch</small></li>
+              <li><span>04</span><code>.patchdiet/candidates.json</code><small>Machine-readable decisions</small></li>
+              <li><span>05</span><code>.patchdiet/diet-card.svg</code><small>Portable receipt</small></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="final-cta" class="scene" data-scene="handoff" aria-labelledby="handoff-title">
+      <div class="panel liquid-glass-strong" data-reveal>
+        <div class="handoff">
+          <div class="handoff__copy">
+            <p class="label">04 / Local workflow</p>
+            <h2 id="handoff-title">Put the diff on a diet. <em>Keep human review in the loop.</em></h2>
+            <p>Install locally, build the CLI, and shrink against the checks your repository already trusts. PatchDiet reduces the surface; human review decides what ships.</p>
+            <a class="button liquid-glass-strong pressable" href="/demo/workspace.html">
+              <span>Open the PatchDiet demo</span>
+              <span class="button__dot"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+            </a>
+          </div>
+
+          <div class="console liquid-glass" aria-label="Local PatchDiet install build and shrink command">
+            <div class="console__bar"><span class="icon-dot"><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg></span><span>Local / PatchDiet</span><b class="pill liquid-glass pill--on">Ready</b></div>
+            <pre><code><span>$</span> npm ci
+<span>$</span> npm run build
+<span>$</span> node dist/packages/cli/src/index.js shrink --test "npm test"</code></pre>
+            <p><span class="label">Output</span> Inspect the cleanup artifacts, then complete human review.</p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <a class="brand pressable" href="#hero"><svg class="brand__mark" aria-hidden="true"><use href="#i-mark"/></svg><span class="brand__name">patchdiet</span></a>
+        <p>Configured-check evidence for smaller, reviewable patches.</p>
+        <a class="pill liquid-glass pressable" href="/demo/classic/">Classic UI</a>
+      </footer>
+    </section>
+  </main>
+
+  <script type="module" src="/demo/generated/homepage.js"></script>
+</body>
+</html>

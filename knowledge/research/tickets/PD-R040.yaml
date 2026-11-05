@@ -1,0 +1,18 @@
+id: PD-R040
+title: Audit oracle strength with mutation testing
+research_basis:
+  sources: [project:strykerjs]
+  claims: [claim:mutation:001, claim:mutation:002]
+problem: Configured checks may miss representative behavior changes.
+current_repo_evidence: packages/testing and benchmark fixtures exist, but no mutation confidence report is part of normal shrink.
+proposed_change: Add a benchmark-only mutation audit with WEAK_ORACLE wording.
+files_likely_affected: [benchmarks, packages/testing, packages/report/src]
+implementation_steps: [define mutants, run tests, classify survivors, report confidence limits]
+safety_invariants: [mutation score never authorizes or blocks deletion alone]
+tests: [killed/survived/equivalent fixture tests]
+benchmark: [mutation score, survivor categories, runtime]
+acceptance_criteria: [report uses configured-check wording and preserves oracle boundary]
+dependencies: [PD-R001]
+complexity: medium
+do_not_change: [normal shrink path]
+status: RESEARCH_ONLY

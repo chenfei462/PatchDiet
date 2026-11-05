@@ -1,0 +1,244 @@
+<p align="center">
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="images/harden-runner-new.png" width="400">
+  <img alt="Dark Banner" src="images/harden-runner-new.png" width="400">
+</picture>
+</p>
+
+<div align="center">
+
+[![Maintained by stepsecurity.io](https://img.shields.io/badge/maintained%20by-stepsecurity.io-blueviolet)](https://stepsecurity.io/?utm_source=github&utm_medium=organic_oss&utm_campaign=harden-runner)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/step-security/harden-runner/badge)](https://api.securityscorecards.dev/projects/github.com/step-security/harden-runner)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://raw.githubusercontent.com/step-security/harden-runner/main/LICENSE)
+
+</div>
+
+# Harden-Runner
+
+Corporate laptops and production servers typically have robust security monitoring in place to reduce risk and meet compliance requirements. However, CI/CD runners, which handle sensitive information like secrets for cloud environments and create production builds, often lack such security measures. This oversight has led to significant supply chain attacks, including the SolarWinds and Codecov breaches.
+
+Traditional security monitoring and EDR solutions are ineffective for CI/CD runners due to their ephemeral nature. These tools also lack the necessary context to correlate events with specific workflow runs in a CI/CD environment.
+
+StepSecurity Harden-Runner addresses this gap by providing security monitoring tailored for CI/CD runners, with support for Linux, Windows, and macOS runners. This approach brings CI/CD runners under the same level of security scrutiny as other critical systems, addressing a significant gap in the software supply chain.
+### Harden-Runner: Security Incidents Detected
+
+- [Harden-Runner Detected the Compromised axios npm Package Dropping a Remote Access Trojan](https://www.stepsecurity.io/blog/axios-compromised-on-npm-malicious-versions-drop-remote-access-trojan) ([backstage/backstage#33693](https://github.com/backstage/backstage/issues/33693), [block/elasticgraph#1103](https://github.com/block/elasticgraph/issues/1103))
+- [Harden-Runner Detected the Trivy Compromise with Malicious v0.69.4 Release](https://www.stepsecurity.io/blog/trivy-compromised-a-second-time---malicious-v0-69-4-release) ([k8gb-io/k8gb#2294](https://github.com/k8gb-io/k8gb/issues/2294))
+- [Harden-Runner Detected the tj-actions/changed-files compromise](https://www.stepsecurity.io/blog/harden-runner-detection-tj-actions-changed-files-action-is-compromised) ([CVE-2025-30066](https://github.com/advisories/GHSA-mrrh-fwg8-r2c3))
+- [Harden Runner Detected the Sha1-Hulud Supply Chain Attack in CNCF’s Backstage Repository](https://www.stepsecurity.io/blog/how-harden-runner-detected-the-sha1-hulud-supply-chain-attack-in-cncfs-backstage-repository)
+- [Harden-Runner Detected the NX Build System compromise](https://www.stepsecurity.io/blog/supply-chain-security-alert-popular-nx-build-system-package-compromised-with-data-stealing-malware)
+- [Harden-Runner Detected a CI/CD Supply Chain Attack in Google’s Open-Source Project Flank](https://www.stepsecurity.io/case-studies/flank)
+- [Harden-Runner Detected a CI/CD Supply Chain Attack in Microsoft’s Open-Source Project Azure Karpenter Provider in Real-Time](https://www.stepsecurity.io/case-studies/azure-karpenter-provider)
+- [Harden-Runner Detected Anomalous Traffic to api.ipify.org Across Multiple Customers](https://www.stepsecurity.io/blog/harden-runner-detects-anomalous-traffic-to-api-ipify-org-across-multiple-customers)
+- [Harden-Runner Detected an Unexpected Microsoft Defender Installation on GitHub-Hosted Ubuntu Runners](https://www.stepsecurity.io/blog/how-stepsecurity-harden-runner-detected-unexpected-microsoft-defender-installation-on-github-hosted-ubuntu-runners)
+- [Harden-Runner Flagged an Anomalous Outbound Call, Leading to a Docker Documentation Update](https://www.stepsecurity.io/blog/harden-runner-flags-anomalous-outbound-call-leading-to-docker-documentation-update)
+
+### See It in Action
+Harden-Runner secures over **25 million CI/CD workflow runs every week**, protecting thousands of pipelines, including those from popular open-source projects by **Microsoft, Google, and CISA**. See how top projects are using Harden-Runner and explore the insights:
+➡️ [Who's using Harden-Runner?](https://docs.stepsecurity.io/whos-using-harden-runner)
+
+## Quick Links
+- [Getting Started Guide](#getting-started)
+- [Why Choose Harden-Runner](#why-choose-harden-runner)
+- [Features and Pricing Tiers](#features-and-pricing-tiers)
+- [StepSecurity Maintained Actions (Free for Public Repos)](#stepsecurity-maintained-actions)
+- [Case Studies and Trusted Projects](#trusted-by-and-case-studies)
+- [Environment Compatibility Matrix](#environment-compatibility-matrix)
+- [How It Works](docs/how-it-works.md)
+- [Known Limitations](docs/limitations.md)
+- [Join the Discussions](#discussions)
+- [Official Documentation](https://docs.stepsecurity.io/harden-runner)
+
+---
+
+## Introduction
+
+Learn how Harden-Runner works through the video below, which shows how it detected the tj-actions/changed-files compromise.  [View the interactive demo here](https://app.storylane.io/share/679y2zgzljov).
+
+<a href="https://www.youtube.com/watch?v=oTAJ7Hy7nPU" target="_blank">
+  <img src="images/case-study.png" alt="Harden-Runner detected the tj-actions/changed-files Breach" title="This case study video shows how StepSecurity Harden-Runner detected the tj-actions/changed-files Breach">
+</a>
+
+---
+## Getting Started
+
+This guide walks you through the steps to set up and use Harden-Runner in your CI/CD workflows. For more details, refer to the [official documentation](https://docs.stepsecurity.io/harden-runner).
+
+> [!NOTE]
+> The Community tier is free for **public repositories on GitHub-hosted runners** and includes the core feature set. Advanced features, private repositories, and self-hosted runners (including ARC) require the Enterprise tier. See [Features and Pricing Tiers](#features-and-pricing-tiers) for what is in each tier.
+
+### **Step 1: Add Harden-Runner to Your Workflow**
+
+To integrate Harden-Runner, follow these steps:
+
+- Open your GitHub Actions workflow file (e.g., `.github/workflows/<workflow-name>.yml`).
+- Add the following code as the first step in each job:
+   ```yaml
+   steps:
+     - name: Harden Runner
+       uses: step-security/harden-runner@05e31511f85b41b11d1cf0ef85d0992719546e2c # v2.21.0
+       with:
+         egress-policy: audit
+
+**Tip**: Automate this step by pasting your workflow into the [StepSecurity online tool](https://app.stepsecurity.io/secure-workflow)
+<details>
+<summary>Click to view the full Getting Started Guide</summary>
+
+### **Step 2: Access Security Insights**
+
+Run your workflow. Once completed:
+- Review the **workflow logs** and the **job markdown summary**.
+- Look for a link to **security insights and recommendations**.
+  <p align="left">
+      <img src="images/buildlog1.png" alt="Link in workflow log" >
+    </p>
+- Click on the provided link (e.g., [example link](https://app.stepsecurity.io/github/step-security/github-actions-goat/actions/runs/7704454287?jobid=20996777560&tab=network-events)) to access the **Process Monitor View**, which displays:
+   - **Network events**: Outbound network calls correlated with each step.
+   - **File events**: File writes tracked during the job.
+     <p align="left">
+      <img src="images/network-events.png" alt="Link in network events" >
+    </p>
+
+</details>
+
+---
+## Why Choose Harden-Runner?
+
+- **Prevent Exfiltration:** Prevent the exfiltration of CI/CD secrets and source code.
+- **Detect Tampering:** Identify source code modifications during builds.
+- **Anomaly Detection:** Spot unusual dependencies and workflow behaviors.
+- **Simplify Permissions:** Determine the minimum required `GITHUB_TOKEN` permissions.
+
+
+---
+
+## Features and Pricing Tiers
+
+Harden-Runner offers a comprehensive suite of features to enhance the security of your CI/CD workflows, available in two tiers: **Community** (free) and **Enterprise** (paid). Two things determine what you get: **where your workflows run** decides whether the free tier is available at all, and **your tier** decides which features you get. The feature lists below show what is in each tier.
+
+| Where your workflows run | What's available |
+|--------------------------|------------------|
+| Public repositories on GitHub-hosted runners | **Community** features free; **Enterprise** features require a paid plan |
+| Private repositories (any runner type) | **Enterprise** (paid) only |
+| Self-hosted runners, including ARC and bare metal (public or private repositories) | **Enterprise** (paid) only |
+
+> [!IMPORTANT]
+> **Self-hosted runners require an Enterprise subscription, even for public repositories.** Without a subscription, the Harden-Runner action is a no-op on self-hosted runners: the step succeeds and your workflow passes, but nothing is monitored and no insights are generated. To enable Harden-Runner on your self-hosted runners, [start a free trial](https://www.stepsecurity.io/start-free).
+
+### Community (Free)
+
+Available for public repositories running on GitHub-hosted runners:
+
+- **CI/CD-Aware Event Correlation:** Each outbound network connection, file operation, and process execution is mapped to the exact step, job, and workflow where it occurs.
+- **Automated Baseline Creation:** Harden-Runner builds a baseline for each job based on past outbound network connections.
+- **Anomaly Detection:** Once the baseline is created, any future outbound calls not in the baseline trigger a detection.
+- **Block Network Egress Traffic with Domain Allowlist:** Optionally use the automatically created baseline to control outbound network traffic by specifying allowed domains, preventing unauthorized data exfiltration.
+- **Global Block List:** Block known-malicious domains and IP addresses tied to active supply chain attacks, maintained by StepSecurity's 24x7 SOC. No configuration required, new indicators apply automatically without an action version bump, and it is enforced even in `egress-policy: audit` mode.
+- **Detect Modification of Source Code:** Monitor and alert on unauthorized changes to your source code during the CI/CD pipeline.
+
+### Enterprise (Paid)
+
+Includes all features in the **Community** tier, plus:
+
+- **Support for Private Repositories:** Extend Harden-Runner's security capabilities to your private GitHub repositories.
+- **Support for Self-Hosted Runners:** Apply security controls and monitoring to self-hosted GitHub Actions runners (VM, bare metal, and ARC), for both public and private repositories.
+- **GitHub Checks Integration:** Enable GitHub Checks for Harden-Runner. If the baseline remains unchanged, the check passes; if it changes, the check fails, showing new outbound connections.
+- **View Outbound GitHub API calls at the Job Level:** Monitor HTTPS requests to GitHub APIs
+- **Determine Minimum GITHUB_TOKEN Permissions:** Monitor outbound HTTPS requests to GitHub APIs to recommend the least-privilege permissions needed for your workflows, enhancing security by reducing unnecessary access.
+- **View the Name and Path of Every File Written During the Build Process:** Gain visibility into every file written to the build environment, including the ability to correlate file writes with processes, ensuring complete transparency.
+- **View Process Names and Arguments:** Monitor every process executed during the build process, along with its arguments, and navigate the process tree to detect suspicious activities.
+- **Centralized Policy Store:** Manage egress policies centrally from the StepSecurity dashboard instead of editing each workflow file. Learn more in the [Policy Store documentation](https://docs.stepsecurity.io/github-actions/harden-runner/policy-store).
+- **Baselines at Repository, Organization, and Cluster Level:** Create and manage baselines beyond the per-job level. Learn more in the [Baseline documentation](https://docs.stepsecurity.io/github-actions/harden-runner/baseline).
+- **Suppression Rules:** Suppress expected detections to reduce alert noise. Learn more in the [Suppression Rules documentation](https://docs.stepsecurity.io/github-actions/harden-runner/suppression-rules).
+- **Alert Notifications and SIEM Integration:** Receive alerts via email, Slack, and Microsoft Teams, and integrate detections with your SIEM solution.
+
+For a detailed comparison and more information, please visit our [Pricing Page](https://www.stepsecurity.io/pricing).
+
+Explore the full feature set in the [Features Documentation](https://docs.stepsecurity.io/harden-runner).
+
+---
+
+## StepSecurity Maintained Actions
+
+Many popular third-party GitHub Actions are abandoned or stuck on outdated runtimes. StepSecurity publishes [Maintained Actions](https://docs.stepsecurity.io/github-actions/actions/stepsecurity-maintained-actions): drop-in replacements that are actively maintained, security-reviewed, and kept current, including updates to the Node 24 runtime.
+
+- **Free for public repositories**, no subscription required. Read the [announcement](https://www.stepsecurity.io/blog/stepsecurity-maintained-actions-are-now-free-for-public-repos).
+- **~500 actions and growing.** [Browse the full catalog](https://app.stepsecurity.io/action-advisor?tab=maintained).
+- **Actively maintained:** dependency updates, runtime upgrades (such as Node 24), and defined SLAs for patching vulnerabilities.
+- **Hardened release process:** manual secure code review before onboarding, signed commits, mandatory peer review, and tag protection.
+
+---
+
+## Trusted By and Case Studies
+
+Harden-Runner is trusted by over 11,000 leading open-source projects and enterprises, including Microsoft, Google, Kubernetes, and more.
+
+### Trusted by
+
+
+| [![CISA](https://avatars.githubusercontent.com/u/18539691?s=60&v=4)](https://app.stepsecurity.io/github/cisagov/skeleton-generic/actions/runs/9947319332?jobid=27479776091&tab=network-events) | [![Microsoft](https://avatars.githubusercontent.com/u/6154722?s=60&v=4)](https://app.stepsecurity.io/github/microsoft/ebpf-for-windows/actions/runs/7587031851) | [![Google](https://avatars.githubusercontent.com/u/2810941?s=60&v=4)](https://app.stepsecurity.io/github/GoogleCloudPlatform/functions-framework-ruby/actions/runs/7576989995) | [![DataDog](https://avatars.githubusercontent.com/u/365230?s=60&v=4)](https://app.stepsecurity.io/github/DataDog/stratus-red-team/actions/runs/7446169664) | [![Intel](https://avatars.githubusercontent.com/u/17888862?s=60&v=4)](https://app.stepsecurity.io/github/intel/cve-bin-tool/actions/runs/7590975903) | [![Kubernetes](https://avatars.githubusercontent.com/u/36015203?s=60&v=4)](https://app.stepsecurity.io/github/kubernetes-sigs/cluster-api-provider-azure/actions/runs/7591172950) | [![Node.js](https://avatars.githubusercontent.com/u/9950313?s=60&v=4)](https://app.stepsecurity.io/github/nodejs/node/actions/runs/7591405720) | [![AWS](https://avatars.githubusercontent.com/u/2232217?s=60&v=4)](https://app.stepsecurity.io/github/aws/aperf/actions/runs/7631366761) |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **CISA**<br>[Explore](https://app.stepsecurity.io/github/cisagov/skeleton-generic/actions/runs/9947319332?jobid=27479776091&tab=network-events)                                                | **Microsoft**<br>[Explore](https://app.stepsecurity.io/github/microsoft/ebpf-for-windows/actions/runs/7587031851)                                               | **Google**<br>[Explore](https://app.stepsecurity.io/github/GoogleCloudPlatform/functions-framework-ruby/actions/runs/7576989995)                                               | **DataDog**<br>[Explore](https://app.stepsecurity.io/github/DataDog/stratus-red-team/actions/runs/7446169664)                                              | **Intel**<br>[Explore](https://app.stepsecurity.io/github/intel/cve-bin-tool/actions/runs/7590975903)                                                | **Kubernetes**<br>[Explore](https://app.stepsecurity.io/github/kubernetes-sigs/cluster-api-provider-azure/actions/runs/7591172950)                                                | **Node.js**<br>[Explore](https://app.stepsecurity.io/github/nodejs/node/actions/runs/7591405720)                                               | **AWS**<br>[Explore](https://app.stepsecurity.io/github/aws/aperf/actions/runs/7631366761)                                               |
+
+### Enterprise Case Studies
+
+- [How Mercari Secures GitHub Actions with StepSecurity](https://www.stepsecurity.io/case-studies/mercari)
+- [How Omnissa Secures GitHub Actions with StepSecurity](https://www.stepsecurity.io/case-studies/omnissa)
+- [Chainguard Secures GitHub Actions with StepSecurity](https://www.stepsecurity.io/case-studies/chainguard)
+- [How Coveo Strengthened GitHub Actions Security with StepSecurity](https://www.stepsecurity.io/case-studies/coveo)
+- [Hashgraph Achieves Comprehensive CI/CD Security Without Compromising Development Speed](https://www.stepsecurity.io/case-studies/hashgraph)
+
+---
+
+## Environment Compatibility Matrix
+
+Harden-Runner is designed to work seamlessly across a variety of runner environments, providing consistent security insights and protections regardless of where your workflows execute. For self-hosted runners, audit mode is deployed directly to the runner infrastructure without requiring any changes to your existing workflows. For more details, refer to the [official documentation](https://docs.stepsecurity.io/harden-runner).
+
+| Environment Type | Compatibility | Audit Mode Deployment | Workflow Changes for Audit/Block Mode | Free Community Tier |
+|------------------|---------------|--------------------------|-------------------|---------------------|
+| GitHub-hosted runners (Linux) | ✅ Full support | Add Harden-Runner Action to workflow | Yes | ✅ Public repos ([Community features](#community-free) only) |
+| GitHub-hosted runners (Windows, macOS) | ✅ Audit mode only | Add Harden-Runner Action to workflow | Yes | ✅ Public repos ([Community features](#community-free) only) |
+| Self-hosted VM runners | ✅ Full support | Include agent in runner image | No | ❌ Enterprise subscription required |
+| Self-hosted bare-metal runners | ✅ Full support | Install agent as a service | No | ❌ Enterprise subscription required |
+| Actions Runner Controller (ARC) | ✅ Full support | Deploy as DaemonSet | No | ❌ Enterprise subscription required |
+| RunsOn Runners | ✅ Full support | Pre-integrated | No | ❌ Enterprise subscription required |
+
+> [!NOTE]
+> If you use GitHub Enterprise Server (GHES), set `customer` and `server-name` for TLS checks and policy fetching.
+
+For an ephemeral Linux VM without the agent already installed, add this as the first job step, using the customer and server names registered with StepSecurity:
+
+```yaml
+- uses: step-security/harden-runner@v2
+  with:
+    deploy-on-self-hosted-vm: true
+    customer: your-stepsecurity-customer
+    server-name: your-ghes-server
+    egress-policy: audit
+```
+
+This requires a StepSecurity subscription with TLS inspection and self-hosted VM support enabled. The action uploads the job's events and prints agent logs during its post step.
+
+## How It Works
+
+Want to know the technical details? Dive into the architecture of Harden-Runner and its integrations for GitHub-hosted and self-hosted runners in our [How Harden-Runner Works Documentation](docs/how-it-works.md).
+
+---
+
+## Limitations
+
+While Harden-Runner offers powerful features, there are certain limitations. See the complete list in [Known Limitations](docs/limitations.md).
+
+---
+
+## Discussions
+
+Join the conversation! For questions, ideas, or feedback, visit our [Discussions Page](https://github.com/step-security/harden-runner/discussions).
+
+For enterprise support, email support@stepsecurity.io. Interested in using Harden-Runner in other CI/CD platforms? Reach out to interest@stepsecurity.io.
+
+---
+
+## License
+
+Harden-Runner is open source. See the [LICENSE](LICENSE) file for details.

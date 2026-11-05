@@ -1,0 +1,85 @@
+id: project:strykerjs
+title: StrykerJS
+source_type: reference-implementation
+authority_tier: B
+year: 2016
+canonical_url: https://github.com/stryker-mutator/stryker-js
+retrieved_at: 2026-10-26
+repository: https://github.com/stryker-mutator/stryker-js
+license: Apache-2.0
+authors:
+  - Stryker contributors
+topics:
+  - mutation-testing
+  - testing
+problem:
+  summary: Measures test suite sensitivity by generating and executing code mutants.
+technique:
+  summary: Mutant generation, killed/survived classification, and mutation score reporting.
+validated_on:
+  - GitHub repository reachable with HTTP 200
+claims:
+  - claim:mutation:001
+  - claim:mutation:002
+assumptions:
+  - tests are repeatable and mutants can be isolated
+limitations:
+  - equivalent mutants and surviving mutants do not directly authorize deletions
+patchdiet_relevance:
+  modules:
+    - packages/testing
+    - benchmarks
+  relevance: medium
+license_review:
+  status: ROOT_LICENSE_INSPECTED_AT_COMMIT
+  code_copy_allowed: false
+  note: Research summaries only. Dependencies, subcomponents and any future copied files require their own notices review.
+status:
+  source_verified: true
+  distilled: false
+  decision: RESEARCH_ONLY
+primary_secondary: primary-repository
+verification_status: SOURCE_VERIFIED_REPOSITORY
+provenance_audit:
+  ticket: PD-R100
+  previous_status: SOURCE_VERIFIED
+  previous_pin: repository metadata default branch master checked 2026-10-26
+  reason: "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content
+    review."
+  historical_record: reports/PRE_CORRECTION_RECORDS.json
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+inspected_commit: abf560c94601c2dac7deb084d8053cd8504da8e2
+license_verified_at_commit: abf560c94601c2dac7deb084d8053cd8504da8e2
+license_path: LICENSE
+license_type: Apache-2.0
+repository_evidence: evidence/repositories/project-strykerjs.json
+inspection:
+  retrieved_at: 2026-10-26
+  url: https://github.com/stryker-mutator/stryker-js/blob/abf560c94601c2dac7deb084d8053cd8504da8e2/LICENSE
+  locators:
+    - LICENSE
+    - https://github.com/stryker-mutator/stryker-js/blob/abf560c94601c2dac7deb084d8053cd8504da8e2/README.md
+  scope: Repository identity, root license text and README-level architecture. No claims about uninspected implementation
+    correctness.
+commit_date: 2026-10-27T02:16:07Z
+license_scope: Research summaries only. Dependencies, subcomponents and any future copied files require their own notices review.
+project_status:
+  observed: Pinned upstream snapshot accessible
+  commit_timestamp: 2026-10-27T02:16:07Z
+  maintenance_assessment: No forward maintenance guarantee; this review preserves the inspected snapshot rather than asserting latest release.
+gate_justifications:
+  D7: Source distillation introduces no implementation in this phase; historical runtime regression is recorded
+    separately. This is not an adoption claim.
+  D6: Research-only provenance/source review; no runtime adoption ticket is required.
+ticket_refs:
+  - PD-R040
+  - PD-R100
+  - PD-R101
+  - PD-R159

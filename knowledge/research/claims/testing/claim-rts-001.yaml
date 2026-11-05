@@ -1,0 +1,20 @@
+id: claim:rts:001
+statement: Change-based regression selection can reduce test work when its analysis is safe for the controlled program model.
+source:
+  id: paper:rothermel-harrold-1997-safe-regression-test-selection
+evidence_type: peer-reviewed-paper
+scope: testing
+confidence: high
+assumptions:
+  - change and coverage mappings are complete enough for the model
+limitations:
+  - PatchDiet repositories may violate model assumptions; full required verification remains mandatory
+patchdiet_mapping:
+  affected_components:
+    - packages/core/src/targeted.ts
+    - packages/scope/src
+possible_action: use targeted tests for search and retain full-suite final gate
+safety_effect: positive
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

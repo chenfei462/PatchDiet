@@ -1,0 +1,74 @@
+id: paper:jin-chen-2026-llm-reviewer-reliability
+title: Are LLMs reliable code reviewers? systematic overcorrection in requirement conformance judgement
+source_type: peer-reviewed-paper
+authority_tier: A
+primary_secondary: primary
+canonical_url: https://doi.org/10.1007/s10515-026-00638-5
+retrieved_at: 2026-10-27
+license: CC-BY-4.0
+evidence_summary: Fresh publisher version-of-record and arXiv checks confirm the existing registered Jin/Chen citation.
+  The stale unidentified filename and summary were corrected; the source remains in the evidence chain.
+claims:
+  - claim:llm-reviewer-reliability:001
+assumptions:
+  - Canonical/buggy benchmark labels are valid proxies for requirement conformance
+  - Results are bounded to the evaluated models, benchmarks and prompts
+limitations:
+  - Benchmarks use paired canonical/buggy implementations and may not represent PatchDiet PRs
+  - Requirement conformance without tests is distinct from executable patch verification
+  - False-positive/false-negative rates do not authorize code removal
+patchdiet_relevance:
+  mapping: Advisory motivation for independent executable checks; requirement-conformance judgments provide no deletion
+    authority. This is a PatchDiet policy mapping, not a proof established by the study.
+  relevance: high
+status:
+  source_verified: true
+  distilled: false
+  decision: RESEARCH_ONLY
+verification_status: SOURCE_VERIFIED_PRIMARY
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+authors:
+  - Haolin Jin
+  - Huaming Chen
+year: 2026
+venue: Automated Software Engineering 33, Article 90 (2026)
+doi: 10.1007/s10515-026-00638-5
+paper_version_used: Publisher version of record, 26 June 2026; arXiv:2603.00539v1, 28 February 2026 separately cross-checked
+inspection:
+  url: https://link.springer.com/article/10.1007/s10515-026-00638-5
+  retrieved_at: 2026-10-27
+  locators:
+    - Publisher bibliographic metadata and rights
+    - Section 3.2 datasets and construction
+    - Section 3.3 models
+    - Sections 5-7 findings and filter
+    - Section 8 threats to validity
+disposition: SOURCE_IDENTIFIED_RETAINED_IN_EVIDENCE_CHAIN
+gate_justifications:
+  D6: Research-only provenance decision; no runtime implementation ticket is authorized or required.
+  D7: No implementation, reproduction, or experiment was performed; runtime validation is not applicable.
+study:
+  question: Do models judge natural-language requirement conformance reliably, and how do prompting, rationales and
+    executable filtering affect errors?
+  datasets:
+    - HumanEval-X-Bugs paired canonical/buggy Python functions
+    - MBPP paired with reconstructed buggy variants
+    - QuixBugs corrected/defective pairs
+  models:
+    - GPT-4o
+    - Claude-4.5-sonnet
+    - Google Gemini-2.0-flash
+    - meta-llama/llama-3.1-8b-instruct
+    - mistralai/mistral-small-3.1-24b-instruct
+  findings: Richer prompts can increase false rejections while reducing false acceptance. Rationale consistency and fault
+    awareness vary. Executable filtering reduces false rejections but can increase false acceptance.
+  limitations: Small benchmark functions; label and test adequacy; GPT-4o rationale evaluator and augmented tests; no
+    industrial PR generalization or exhaustive correctness proof.
+evidence: evidence/papers/reviewer-reliability-2026-primary-check.json

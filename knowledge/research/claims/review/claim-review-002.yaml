@@ -1,0 +1,24 @@
+id: claim:review:002
+statement: The Microsoft case study reports comprehension, knowledge transfer and defect finding as aspects of modern code review.
+source:
+  id: paper:microsoft-modern-code-review-2013
+  locators:
+    - Original author PDF, abstract and findings
+evidence_type: peer-reviewed-paper
+scope: review
+confidence: medium
+assumptions:
+  - review effort can be measured with human or repository signals
+limitations:
+  - study context predates current coding agents and does not prove PatchDiet impact
+patchdiet_mapping:
+  affected_components:
+    - packages/report/src
+    - docs/diet-card.md
+possible_action: benchmark human review effort separately from removal metrics
+safety_effect: neutral
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+patchdiet_hypothesis: Reducing unnecessary diff surface might lower review effort; this is untested by this study and
+  requires a separate human evaluation.
+independent_review: PENDING

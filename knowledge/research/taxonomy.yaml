@@ -1,0 +1,57 @@
+authority_tiers:
+  A: normative specifications and original peer-reviewed research
+  B: reference implementations and official project documentation
+  C: empirical datasets, benchmarks, and replication studies
+  D: vendor or product claims; never sole evidence for scientific claims
+
+statuses:
+  - SOURCE_VERIFIED_PRIMARY
+  - SOURCE_VERIFIED_REPOSITORY
+  - SOURCE_PARTIALLY_VERIFIED
+  - SOURCE_UNVERIFIED
+  - SOURCE_INVALID
+  - SOURCE_SUPERSEDED
+  - DISTILLED_AND_APPLIED
+  - RESEARCH_ONLY
+  - DISTILLED
+  - ALREADY_IMPLEMENTED
+  - EXPERIMENTAL
+  - IMPLEMENTED
+  - BENCHMARKED
+  - REJECTED
+  - BLOCKED
+  - NOT_VERIFIED
+
+decisions:
+  - ADOPT
+  - ADAPT
+  - EXPERIMENT
+  - RESEARCH_ONLY
+  - REJECT
+  - ALREADY_IMPLEMENTED
+
+evidence_types:
+  - normative-specification
+  - peer-reviewed-paper
+  - project-documentation
+  - reference-implementation
+  - empirical-evaluation
+  - benchmark-dataset
+  - PatchDiet-benchmark
+  - repository-observation
+  - engineering-inference
+
+scopes:
+  - program-reduction
+  - scope
+  - verification
+  - testing
+  - review
+  - security
+  - git-fidelity
+  - code-intelligence
+  - benchmarks
+
+safety:
+  automatic_removal_authority: false
+  deletion_authority: configured-executable-verification-only

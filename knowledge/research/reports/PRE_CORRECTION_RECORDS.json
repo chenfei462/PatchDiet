@@ -1,0 +1,3392 @@
+{
+  "registry": {
+    "registry_version": 1,
+    "retrieved_at": "2026-10-26",
+    "repository": {
+      "name": "PatchDiet",
+      "url": "https://github.com/chenfei462/PatchDiet",
+      "observed_head": "a57b27eeea6d6d3c7ad581334dba10830b7f4730",
+      "protocol_baseline": "2a02dad9cd1859c9b7c232c5a4b67446bf004d89"
+    },
+    "sources": [
+      {
+        "id": "standard:sarif-2.1.0",
+        "path": "sources/standards/sarif-2.1.0.yaml",
+        "authority_tier": "A",
+        "status": "SOURCE_VERIFIED",
+        "retrieved_at": "2026-10-26"
+      },
+      {
+        "id": "standard:git-diff-format",
+        "path": "sources/git-diff/git-diff-format.yaml",
+        "authority_tier": "A",
+        "status": "SOURCE_VERIFIED",
+        "retrieved_at": "2026-10-26"
+      },
+      {
+        "id": "standard:git-apply",
+        "path": "sources/git-diff/git-apply.yaml",
+        "authority_tier": "A",
+        "status": "SOURCE_VERIFIED",
+        "retrieved_at": "2026-10-26"
+      },
+      {
+        "id": "standard:nist-ssdf-1.1",
+        "path": "sources/security/nist-ssdf.yaml",
+        "authority_tier": "A",
+        "status": "SOURCE_VERIFIED",
+        "retrieved_at": "2026-10-26"
+      },
+      {
+        "id": "paper:perses-icse-2018",
+        "path": "sources/program-reduction/perses-paper.yaml",
+        "authority_tier": "A",
+        "status": "SOURCE_VERIFIED",
+        "retrieved_at": "2026-10-26"
+      },
+      {
+        "id": "project:perses",
+        "path": "sources/program-reduction/perses-repo.yaml",
+        "authority_tier": "B",
+        "status": "SOURCE_VERIFIED",
+        "retrieved_at": "2026-10-26"
+      },
+      {
+        "id": "project:creduce",
+        "path": "sources/program-reduction/creduce.yaml",
+        "authority_tier": "B",
+        "status": "SOURCE_VERIFIED",
+        "retrieved_at": "2026-10-26"
+      },
+      {
+        "id": "project:picire",
+        "path": "sources/program-reduction/picire.yaml",
+        "authority_tier": "B",
+        "status": "SOURCE_VERIFIED",
+        "retrieved_at": "2026-10-26"
+      },
+      {
+        "id": "project:tree-sitter",
+        "path": "sources/code-intelligence/tree-sitter.yaml",
+        "authority_tier": "B",
+        "status": "SOURCE_VERIFIED",
+        "retrieved_at": "2026-10-26"
+      },
+      {
+        "id": "project:gumtree",
+        "path": "sources/semantic-diff/gumtree.yaml",
+        "authority_tier": "B",
+        "status": "SOURCE_VERIFIED",
+        "retrieved_at": "2026-10-26"
+      },
+      {
+        "id": "project:refactoringminer",
+        "path": "sources/semantic-diff/refactoringminer.yaml",
+        "authority_tier": "B",
+        "status": "SOURCE_VERIFIED",
+        "retrieved_at": "2026-10-26"
+      },
+      {
+        "id": "project:scip",
+        "path": "sources/code-intelligence/scip.yaml",
+        "authority_tier": "B",
+        "status": "SOURCE_VERIFIED",
+        "retrieved_at": "2026-10-26"
+      },
+      {
+        "id": "project:strykerjs",
+        "path": "sources/mutation-testing/strykerjs.yaml",
+        "authority_tier": "B",
+        "status": "SOURCE_VERIFIED",
+        "retrieved_at": "2026-10-26"
+      },
+      {
+        "id": "benchmark:swe-bench",
+        "path": "sources/benchmarks/swe-bench.yaml",
+        "authority_tier": "C",
+        "status": "SOURCE_VERIFIED",
+        "retrieved_at": "2026-10-26"
+      },
+      {
+        "id": "paper:rothermel-harrold-1997-safe-regression-test-selection",
+        "path": "sources/regression-testing/rothermel-harrold-1997.yaml",
+        "authority_tier": "A",
+        "status": "SOURCE_VERIFIED",
+        "retrieved_at": "2026-10-26"
+      },
+      {
+        "id": "paper:microsoft-modern-code-review-2013",
+        "path": "sources/code-review/microsoft-modern-code-review.yaml",
+        "authority_tier": "A",
+        "status": "SOURCE_VERIFIED",
+        "retrieved_at": "2026-10-26"
+      },
+      {
+        "id": "paper:google-modern-code-review-2018",
+        "path": "sources/code-review/google-modern-code-review.yaml",
+        "authority_tier": "A",
+        "status": "SOURCE_VERIFIED",
+        "retrieved_at": "2026-10-26"
+      },
+      {
+        "id": "project:reviewdog",
+        "path": "sources/code-review/reviewdog.yaml",
+        "authority_tier": "B",
+        "status": "SOURCE_VERIFIED",
+        "retrieved_at": "2026-10-26"
+      },
+      {
+        "id": "project:harden-runner",
+        "path": "sources/security/harden-runner.yaml",
+        "authority_tier": "B",
+        "status": "SOURCE_VERIFIED",
+        "retrieved_at": "2026-10-26"
+      },
+      {
+        "id": "project:openssf-scorecard",
+        "path": "sources/security/scorecard.yaml",
+        "authority_tier": "B",
+        "status": "SOURCE_VERIFIED",
+        "retrieved_at": "2026-10-26"
+      }
+    ],
+    "claims": [
+      {
+        "id": "claim:perses:001",
+        "path": "claims/program-reduction/claim-perses-001.yaml",
+        "source": "paper:perses-icse-2018"
+      },
+      {
+        "id": "claim:perses:002",
+        "path": "claims/program-reduction/claim-perses-002.yaml",
+        "source": "paper:perses-icse-2018"
+      },
+      {
+        "id": "claim:perses:003",
+        "path": "claims/program-reduction/claim-perses-003.yaml",
+        "source": "project:perses"
+      },
+      {
+        "id": "claim:creduce:001",
+        "path": "claims/program-reduction/claim-creduce-001.yaml",
+        "source": "project:creduce"
+      },
+      {
+        "id": "claim:picire:001",
+        "path": "claims/program-reduction/claim-picire-001.yaml",
+        "source": "project:picire"
+      },
+      {
+        "id": "claim:git:001",
+        "path": "claims/verification/claim-git-001.yaml",
+        "source": "standard:git-diff-format"
+      },
+      {
+        "id": "claim:git:002",
+        "path": "claims/verification/claim-git-002.yaml",
+        "source": "standard:git-diff-format"
+      },
+      {
+        "id": "claim:git:003",
+        "path": "claims/verification/claim-git-003.yaml",
+        "source": "standard:git-apply"
+      },
+      {
+        "id": "claim:treesitter:001",
+        "path": "claims/scope/claim-treesitter-001.yaml",
+        "source": "project:tree-sitter"
+      },
+      {
+        "id": "claim:scip:001",
+        "path": "claims/scope/claim-scip-001.yaml",
+        "source": "project:scip"
+      },
+      {
+        "id": "claim:mutation:001",
+        "path": "claims/testing/claim-mutation-001.yaml",
+        "source": "project:strykerjs"
+      },
+      {
+        "id": "claim:mutation:002",
+        "path": "claims/testing/claim-mutation-002.yaml",
+        "source": "project:strykerjs"
+      },
+      {
+        "id": "claim:swebench:001",
+        "path": "claims/testing/claim-swebench-001.yaml",
+        "source": "benchmark:swe-bench"
+      },
+      {
+        "id": "claim:sarif:001",
+        "path": "claims/review/claim-sarif-001.yaml",
+        "source": "standard:sarif-2.1.0"
+      },
+      {
+        "id": "claim:rts:001",
+        "path": "claims/testing/claim-rts-001.yaml",
+        "source": "paper:rothermel-harrold-1997-safe-regression-test-selection"
+      },
+      {
+        "id": "claim:review:002",
+        "path": "claims/review/claim-review-002.yaml",
+        "source": "paper:microsoft-modern-code-review-2013"
+      },
+      {
+        "id": "claim:review:003",
+        "path": "claims/review/claim-review-003.yaml",
+        "source": "paper:google-modern-code-review-2018"
+      },
+      {
+        "id": "claim:review:001",
+        "path": "claims/review/claim-review-001.yaml",
+        "source": "project:reviewdog"
+      },
+      {
+        "id": "claim:security:001",
+        "path": "claims/security/claim-security-001.yaml",
+        "source": "standard:nist-ssdf-1.1"
+      },
+      {
+        "id": "claim:security:002",
+        "path": "claims/security/claim-security-002.yaml",
+        "source": "project:harden-runner"
+      },
+      {
+        "id": "claim:security:003",
+        "path": "claims/security/claim-security-003.yaml",
+        "source": "project:openssf-scorecard"
+      }
+    ],
+    "algorithms": [
+      {
+        "id": "ddmin",
+        "path": "algorithms/ddmin.yaml",
+        "status": "DISTILLED"
+      },
+      {
+        "id": "hierarchical-delta-debugging",
+        "path": "algorithms/hierarchical-delta-debugging.yaml",
+        "status": "DISTILLED"
+      },
+      {
+        "id": "syntax-guided-reduction",
+        "path": "algorithms/syntax-guided-reduction.yaml",
+        "status": "DISTILLED"
+      },
+      {
+        "id": "weighted-delta-debugging",
+        "path": "algorithms/weighted-delta-debugging.yaml",
+        "status": "DISTILLED"
+      },
+      {
+        "id": "probabilistic-delta-debugging",
+        "path": "algorithms/probabilistic-delta-debugging.yaml",
+        "status": "DISTILLED"
+      },
+      {
+        "id": "counter-based-delta-debugging",
+        "path": "algorithms/counter-based-delta-debugging.yaml",
+        "status": "DISTILLED"
+      },
+      {
+        "id": "program-slicing",
+        "path": "algorithms/program-slicing.yaml",
+        "status": "DISTILLED"
+      },
+      {
+        "id": "change-impact-analysis",
+        "path": "algorithms/change-impact-analysis.yaml",
+        "status": "DISTILLED"
+      },
+      {
+        "id": "regression-test-selection",
+        "path": "algorithms/regression-test-selection.yaml",
+        "status": "DISTILLED"
+      },
+      {
+        "id": "mutation-testing",
+        "path": "algorithms/mutation-testing.yaml",
+        "status": "DISTILLED"
+      },
+      {
+        "id": "ast-differencing",
+        "path": "algorithms/ast-differencing.yaml",
+        "status": "DISTILLED"
+      }
+    ],
+    "projects": [
+      {
+        "id": "project:perses",
+        "path": "projects/perses.yaml",
+        "status": "RESEARCH_ONLY"
+      },
+      {
+        "id": "project:creduce",
+        "path": "projects/creduce.yaml",
+        "status": "DISTILLED"
+      },
+      {
+        "id": "project:picire",
+        "path": "projects/picire.yaml",
+        "status": "DISTILLED"
+      },
+      {
+        "id": "project:tree-sitter",
+        "path": "projects/tree-sitter.yaml",
+        "status": "ALREADY_IMPLEMENTED"
+      },
+      {
+        "id": "project:gumtree",
+        "path": "projects/gumtree.yaml",
+        "status": "RESEARCH_ONLY"
+      },
+      {
+        "id": "project:refactoringminer",
+        "path": "projects/refactoringminer.yaml",
+        "status": "RESEARCH_ONLY"
+      },
+      {
+        "id": "project:scip",
+        "path": "projects/scip.yaml",
+        "status": "EXPERIMENTAL"
+      },
+      {
+        "id": "project:strykerjs",
+        "path": "projects/strykerjs.yaml",
+        "status": "RESEARCH_ONLY"
+      },
+      {
+        "id": "benchmark:swe-bench",
+        "path": "projects/swe-bench.yaml",
+        "status": "DISTILLED"
+      },
+      {
+        "id": "project:reviewdog",
+        "path": "projects/reviewdog.yaml",
+        "status": "DISTILLED"
+      }
+    ],
+    "adrs": [
+      {
+        "id": "ADR-REDUCER-001",
+        "path": "adr/ADR-REDUCER-001.md",
+        "status": "ACCEPTED"
+      },
+      {
+        "id": "ADR-SEMANTIC-CHANGE-001",
+        "path": "adr/ADR-SEMANTIC-CHANGE-001.md",
+        "status": "ACCEPTED"
+      },
+      {
+        "id": "ADR-CODE-INTELLIGENCE-001",
+        "path": "adr/ADR-CODE-INTELLIGENCE-001.md",
+        "status": "ACCEPTED"
+      },
+      {
+        "id": "ADR-MUTATION-ORACLE-001",
+        "path": "adr/ADR-MUTATION-ORACLE-001.md",
+        "status": "ACCEPTED"
+      }
+    ],
+    "benchmarks": [
+      {
+        "id": "swe-bench",
+        "path": "benchmarks/swe-bench.yaml",
+        "status": "DISTILLED"
+      },
+      {
+        "id": "swe-rebench",
+        "path": "benchmarks/swe-rebench.yaml",
+        "status": "NOT_VERIFIED"
+      },
+      {
+        "id": "swe-bench-live",
+        "path": "benchmarks/swe-bench-live.yaml",
+        "status": "NOT_VERIFIED"
+      },
+      {
+        "id": "aidev",
+        "path": "benchmarks/aidev.yaml",
+        "status": "NOT_VERIFIED"
+      },
+      {
+        "id": "mutation-testing",
+        "path": "benchmarks/mutation-testing.yaml",
+        "status": "DISTILLED"
+      },
+      {
+        "id": "patchdiet-benchmark-design",
+        "path": "benchmarks/patchdiet-benchmark-design.yaml",
+        "status": "DISTILLED"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "PD-R001",
+        "path": "tickets/PD-R001.yaml",
+        "status": "IMPLEMENTED"
+      },
+      {
+        "id": "PD-R002",
+        "path": "tickets/PD-R002.yaml",
+        "status": "EXPERIMENTAL"
+      },
+      {
+        "id": "PD-R003",
+        "path": "tickets/PD-R003.yaml",
+        "status": "EXPERIMENTAL"
+      },
+      {
+        "id": "PD-R010",
+        "path": "tickets/PD-R010.yaml",
+        "status": "RESEARCH_ONLY"
+      },
+      {
+        "id": "PD-R020",
+        "path": "tickets/PD-R020.yaml",
+        "status": "EXPERIMENTAL"
+      },
+      {
+        "id": "PD-R040",
+        "path": "tickets/PD-R040.yaml",
+        "status": "RESEARCH_ONLY"
+      },
+      {
+        "id": "PD-R050",
+        "path": "tickets/PD-R050.yaml",
+        "status": "EXPERIMENTAL"
+      }
+    ]
+  },
+  "records": {
+    "sources/standards/sarif-2.1.0.yaml": {
+      "id": "standard:sarif-2.1.0",
+      "title": "Static Analysis Results Interchange Format (SARIF) Version 2.1.0",
+      "source_type": "normative-standard",
+      "authority_tier": "A",
+      "year": 2020,
+      "canonical_url": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/os/sarif-v2.1.0-os.html",
+      "retrieved_at": "2026-10-26",
+      "authors": [
+        "Michael C. Fanning",
+        "Laurence J. Golding"
+      ],
+      "topics": [
+        "standards",
+        "review",
+        "findings"
+      ],
+      "problem": {
+        "summary": "Defines a portable JSON format for static-analysis and other tool results."
+      },
+      "technique": {
+        "summary": "Structured runs, rules, results, locations, and artifacts."
+      },
+      "validated_on": [
+        "OASIS Standard approved 2020-03-27"
+      ],
+      "claims": [
+        "claim:sarif:001"
+      ],
+      "assumptions": [
+        "PatchDiet findings can map to SARIF locations and rule metadata"
+      ],
+      "limitations": [
+        "format support does not make static-analysis findings correct or authorize deletion"
+      ],
+      "patchdiet_relevance": {
+        "modules": [
+          "packages/report/src",
+          "packages/github-app/src"
+        ],
+        "relevance": "medium"
+      },
+      "license_review": {
+        "status": "normative OASIS standard; implementation licensing requires separate review",
+        "code_copy_allowed": false
+      },
+      "status": {
+        "source_verified": true,
+        "distilled": true,
+        "decision": "ADAPT"
+      }
+    },
+    "sources/git-diff/git-diff-format.yaml": {
+      "id": "standard:git-diff-format",
+      "title": "Git diff-format documentation",
+      "source_type": "normative-documentation",
+      "authority_tier": "A",
+      "year": 2026,
+      "canonical_url": "https://git-scm.com/docs/diff-format",
+      "retrieved_at": "2026-10-26",
+      "authors": [
+        "Git project"
+      ],
+      "topics": [
+        "git-fidelity",
+        "patch-format"
+      ],
+      "problem": {
+        "summary": "Defines the machine-readable and patch forms emitted by Git, including metadata and merge formats."
+      },
+      "technique": {
+        "summary": "Normative description of raw, patch, combined, and extended-header formats."
+      },
+      "validated_on": [
+        "Git 2.55.0 documentation"
+      ],
+      "claims": [
+        "claim:git:001",
+        "claim:git:002"
+      ],
+      "assumptions": [
+        "Git output is the input contract for PatchDiet diff parsing"
+      ],
+      "limitations": [
+        "Documentation describes Git behavior; it does not prove a parser implementation is complete"
+      ],
+      "patchdiet_relevance": {
+        "modules": [
+          "packages/core/src/diff.ts",
+          "packages/core/src/patch-encoder.ts"
+        ],
+        "relevance": "high"
+      },
+      "license_review": {
+        "status": "normative-documentation",
+        "code_copy_allowed": false
+      },
+      "status": {
+        "source_verified": true,
+        "distilled": true,
+        "decision": "ADAPT"
+      }
+    },
+    "sources/git-diff/git-apply.yaml": {
+      "id": "standard:git-apply",
+      "title": "git-apply documentation",
+      "source_type": "normative-documentation",
+      "authority_tier": "A",
+      "year": 2026,
+      "canonical_url": "https://git-scm.com/docs/git-apply",
+      "retrieved_at": "2026-10-26",
+      "authors": [
+        "Git project"
+      ],
+      "topics": [
+        "git-fidelity",
+        "patch-application"
+      ],
+      "problem": {
+        "summary": "Defines how Git validates and applies patch text, including path, mode, binary, and whitespace behavior."
+      },
+      "technique": {
+        "summary": "Normative command contract used as the external application oracle."
+      },
+      "validated_on": [
+        "Git documentation reachable with HTTP 200"
+      ],
+      "claims": [
+        "claim:git:003"
+      ],
+      "assumptions": [
+        "PatchDiet must preserve enough information for Git-compatible application"
+      ],
+      "limitations": [
+        "Successful application does not imply tests or task intent are correct"
+      ],
+      "patchdiet_relevance": {
+        "modules": [
+          "packages/core/src/git.ts",
+          "packages/core/src/patch-encoder.ts"
+        ],
+        "relevance": "high"
+      },
+      "license_review": {
+        "status": "normative-documentation",
+        "code_copy_allowed": false
+      },
+      "status": {
+        "source_verified": true,
+        "distilled": true,
+        "decision": "ADAPT"
+      }
+    },
+    "sources/security/nist-ssdf.yaml": {
+      "id": "standard:nist-ssdf-1.1",
+      "title": "Secure Software Development Framework (SSDF) Version 1.1",
+      "source_type": "normative-standard",
+      "authority_tier": "A",
+      "year": 2022,
+      "canonical_url": "https://csrc.nist.gov/pubs/sp/800/218/final",
+      "doi": "https://doi.org/10.6028/NIST.SP.800-218",
+      "retrieved_at": "2026-10-26",
+      "authors": [
+        "Murugiah Souppaya",
+        "Karen Scarfone",
+        "Donna Dodson"
+      ],
+      "topics": [
+        "security",
+        "supply-chain"
+      ],
+      "problem": {
+        "summary": "Provides high-level secure software development practices for reducing vulnerability risk."
+      },
+      "technique": {
+        "summary": "SSDF practice groups for preparing organizations, protecting software, producing well-secured software, and responding to vulnerabilities."
+      },
+      "validated_on": [
+        "NIST final publication page"
+      ],
+      "claims": [
+        "claim:security:001"
+      ],
+      "assumptions": [
+        "PatchDiet runs code and must make execution provenance visible"
+      ],
+      "limitations": [
+        "SSDF is a process framework",
+        "not a deletion algorithm or correctness proof"
+      ],
+      "patchdiet_relevance": {
+        "modules": [
+          "packages/core/src/runner.ts",
+          "packages/monitoring/src/logger.ts",
+          "docs/security-model.md"
+        ],
+        "relevance": "medium"
+      },
+      "license_review": {
+        "status": "public NIST publication",
+        "code_copy_allowed": false
+      },
+      "status": {
+        "source_verified": true,
+        "distilled": true,
+        "decision": "ADAPT"
+      }
+    },
+    "sources/program-reduction/perses-paper.yaml": {
+      "id": "paper:perses-icse-2018",
+      "title": "Perses: Syntax-Guided Program Reduction",
+      "source_type": "peer-reviewed-paper",
+      "authority_tier": "A",
+      "year": 2018,
+      "venue": "ICSE",
+      "canonical_url": "https://web.cs.ucdavis.edu/~su/publications/perses.pdf",
+      "doi": "10.1145/3180155.3180236",
+      "retrieved_at": "2026-10-26",
+      "authors": [
+        "Chengnian Sun",
+        "Yuanbo Li",
+        "Qirun Zhang",
+        "Tianxiao Gu",
+        "Zhendong Su"
+      ],
+      "topics": [
+        "program-reduction",
+        "syntax-guided-reduction",
+        "ast"
+      ],
+      "problem": {
+        "summary": "Unconstrained reducers spend oracle calls on invalid or low-value program variants."
+      },
+      "technique": {
+        "summary": "Syntax-guided reduction constrains candidates using grammar structure and Perses Normal Form."
+      },
+      "validated_on": [
+        "ICSE 2018 paper"
+      ],
+      "claims": [
+        "claim:perses:001",
+        "claim:perses:002"
+      ],
+      "assumptions": [
+        "a grammar or parser is available",
+        "an executable interestingness oracle exists"
+      ],
+      "limitations": [
+        "syntax preservation does not prove semantic equivalence",
+        "results depend on oracle quality and language support"
+      ],
+      "patchdiet_relevance": {
+        "modules": [
+          "packages/core/src/ast-atomizer.ts",
+          "packages/core/src/ast-shrink.ts",
+          "packages/core/src/reducer.ts"
+        ],
+        "relevance": "high"
+      },
+      "license_review": {
+        "status": "paper metadata only; repository license tracked separately",
+        "code_copy_allowed": false
+      },
+      "status": {
+        "source_verified": true,
+        "distilled": true,
+        "decision": "EXPERIMENT"
+      }
+    },
+    "sources/program-reduction/perses-repo.yaml": {
+      "id": "project:perses",
+      "title": "Perses reference implementation",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "year": 2018,
+      "canonical_url": "https://github.com/uw-pluverse/perses",
+      "retrieved_at": "2026-10-26",
+      "repository": "https://github.com/uw-pluverse/perses",
+      "license": "GPL-3.0",
+      "license_verified_at_commit": "repository metadata default branch master checked 2026-10-26",
+      "authors": [
+        "UW PLUVERSE"
+      ],
+      "topics": [
+        "program-reduction",
+        "syntax-guided-reduction"
+      ],
+      "problem": {
+        "summary": "Implements syntax-aware reduction and reducer composition for multiple languages."
+      },
+      "technique": {
+        "summary": "Grammar-driven candidate generation, caching, and reduction orchestration."
+      },
+      "validated_on": [
+        "GitHub repository reachable with HTTP 200"
+      ],
+      "claims": [
+        "claim:perses:003"
+      ],
+      "assumptions": [
+        "an external JVM toolchain is acceptable for experiments"
+      ],
+      "limitations": [
+        "GPL-3.0 and JVM dependency make direct MVP embedding costly"
+      ],
+      "patchdiet_relevance": {
+        "modules": [
+          "packages/core/src/reducer.ts"
+        ],
+        "relevance": "high"
+      },
+      "license_review": {
+        "status": "GPL-3.0",
+        "code_copy_allowed": false
+      },
+      "status": {
+        "source_verified": true,
+        "distilled": true,
+        "decision": "RESEARCH_ONLY"
+      }
+    },
+    "sources/program-reduction/creduce.yaml": {
+      "id": "project:creduce",
+      "title": "C-Reduce",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "year": 2011,
+      "canonical_url": "https://github.com/csmith-project/creduce",
+      "retrieved_at": "2026-10-26",
+      "repository": "https://github.com/csmith-project/creduce",
+      "license": "NOASSERTION",
+      "license_verified_at_commit": "GitHub repository metadata checked 2026-10-26",
+      "authors": [
+        "Csmith project contributors"
+      ],
+      "topics": [
+        "program-reduction",
+        "interestingness-testing"
+      ],
+      "problem": {
+        "summary": "Reduces C/C++ test cases while preserving an interestingness predicate."
+      },
+      "technique": {
+        "summary": "Independent reduction passes, temporary candidate isolation, and repeated oracle execution."
+      },
+      "validated_on": [
+        "GitHub repository reachable with HTTP 200"
+      ],
+      "claims": [
+        "claim:creduce:001"
+      ],
+      "assumptions": [
+        "candidate transformation passes can be isolated and rerun"
+      ],
+      "limitations": [
+        "language-specific passes and unclear repository license prevent code reuse without review"
+      ],
+      "patchdiet_relevance": {
+        "modules": [
+          "packages/core/src/reducer.ts",
+          "packages/core/src/runner.ts"
+        ],
+        "relevance": "medium"
+      },
+      "license_review": {
+        "status": "NOASSERTION; inspect repository LICENSE before any reuse",
+        "code_copy_allowed": false
+      },
+      "status": {
+        "source_verified": true,
+        "distilled": true,
+        "decision": "ADAPT"
+      }
+    },
+    "sources/program-reduction/picire.yaml": {
+      "id": "project:picire",
+      "title": "Picire",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "year": 2016,
+      "canonical_url": "https://github.com/renatahodovan/picire",
+      "retrieved_at": "2026-10-26",
+      "repository": "https://github.com/renatahodovan/picire",
+      "license": "NOASSERTION",
+      "license_verified_at_commit": "GitHub repository metadata checked 2026-10-26",
+      "authors": [
+        "Renata Hodovan"
+      ],
+      "topics": [
+        "program-reduction",
+        "delta-debugging",
+        "parallelism"
+      ],
+      "problem": {
+        "summary": "Provides practical delta-debugging with complement testing, caching, and parallel execution."
+      },
+      "technique": {
+        "summary": "Partition progression and candidate scheduling around an interestingness test."
+      },
+      "validated_on": [
+        "GitHub repository reachable with HTTP 200"
+      ],
+      "claims": [
+        "claim:picire:001"
+      ],
+      "assumptions": [
+        "oracle calls can run in isolated working directories"
+      ],
+      "limitations": [
+        "project implementation details may not match PatchDiet safety and license must be reviewed"
+      ],
+      "patchdiet_relevance": {
+        "modules": [
+          "packages/core/src/reducer.ts",
+          "packages/core/src/runner.ts"
+        ],
+        "relevance": "medium"
+      },
+      "license_review": {
+        "status": "NOASSERTION; inspect repository LICENSE before any reuse",
+        "code_copy_allowed": false
+      },
+      "status": {
+        "source_verified": true,
+        "distilled": true,
+        "decision": "ADAPT"
+      }
+    },
+    "sources/code-intelligence/tree-sitter.yaml": {
+      "id": "project:tree-sitter",
+      "title": "Tree-sitter",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "year": 2018,
+      "canonical_url": "https://github.com/tree-sitter/tree-sitter",
+      "retrieved_at": "2026-10-26",
+      "repository": "https://github.com/tree-sitter/tree-sitter",
+      "license": "MIT",
+      "license_verified_at_commit": "repository metadata default branch master checked 2026-10-26",
+      "authors": [
+        "Tree-sitter contributors"
+      ],
+      "topics": [
+        "parsing",
+        "incremental-parsing",
+        "cst"
+      ],
+      "problem": {
+        "summary": "Provides fast incremental parsing with error-tolerant concrete syntax trees."
+      },
+      "technique": {
+        "summary": "Incremental parser, grammar-driven nodes, and changed ranges."
+      },
+      "validated_on": [
+        "GitHub repository reachable with HTTP 200"
+      ],
+      "claims": [
+        "claim:treesitter:001"
+      ],
+      "assumptions": [
+        "language grammar and WASM/runtime support are available"
+      ],
+      "limitations": [
+        "parse success is syntax evidence only and does not establish behavior"
+      ],
+      "patchdiet_relevance": {
+        "modules": [
+          "packages/core/src/ast-atomizer.ts",
+          "packages/parsers/src"
+        ],
+        "relevance": "high"
+      },
+      "license_review": {
+        "status": "MIT",
+        "code_copy_allowed": true
+      },
+      "status": {
+        "source_verified": true,
+        "distilled": true,
+        "decision": "ALREADY_IMPLEMENTED"
+      }
+    },
+    "sources/semantic-diff/gumtree.yaml": {
+      "id": "project:gumtree",
+      "title": "GumTree Diff",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "year": 2014,
+      "canonical_url": "https://github.com/GumTreeDiff/gumtree",
+      "retrieved_at": "2026-10-26",
+      "repository": "https://github.com/GumTreeDiff/gumtree",
+      "license": "LGPL-3.0",
+      "license_verified_at_commit": "repository metadata default branch main checked 2026-10-26",
+      "authors": [
+        "GumTree contributors"
+      ],
+      "topics": [
+        "semantic-diff",
+        "ast-differencing"
+      ],
+      "problem": {
+        "summary": "Finds fine-grained structural edits between syntax trees."
+      },
+      "technique": {
+        "summary": "Tree matching with insert, delete, update, and move actions."
+      },
+      "validated_on": [
+        "GitHub repository reachable with HTTP 200"
+      ],
+      "claims": [
+        "claim:gumtree:001"
+      ],
+      "assumptions": [
+        "both versions can be parsed into compatible trees"
+      ],
+      "limitations": [
+        "matching heuristics are semantic evidence",
+        "not proof; JVM integration is additional operational complexity"
+      ],
+      "patchdiet_relevance": {
+        "modules": [
+          "packages/core/src/diff.ts",
+          "packages/core/src/insights.ts"
+        ],
+        "relevance": "medium"
+      },
+      "license_review": {
+        "status": "LGPL-3.0",
+        "code_copy_allowed": false
+      },
+      "status": {
+        "source_verified": true,
+        "distilled": true,
+        "decision": "RESEARCH_ONLY"
+      }
+    },
+    "sources/semantic-diff/refactoringminer.yaml": {
+      "id": "project:refactoringminer",
+      "title": "RefactoringMiner",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "year": 2018,
+      "canonical_url": "https://github.com/tsantalis/RefactoringMiner",
+      "retrieved_at": "2026-10-26",
+      "repository": "https://github.com/tsantalis/RefactoringMiner",
+      "license": "MIT",
+      "license_verified_at_commit": "repository metadata default branch master checked 2026-10-26",
+      "authors": [
+        "Tsantalis lab contributors"
+      ],
+      "topics": [
+        "semantic-diff",
+        "refactoring-detection"
+      ],
+      "problem": {
+        "summary": "Detects refactorings such as rename, move, extract, inline, and API changes across Java code."
+      },
+      "technique": {
+        "summary": "AST and model comparisons produce named refactoring evidence."
+      },
+      "validated_on": [
+        "GitHub repository reachable with HTTP 200"
+      ],
+      "claims": [
+        "claim:refactoringminer:001"
+      ],
+      "assumptions": [
+        "Java semantic model is available"
+      ],
+      "limitations": [
+        "language scope and detector false positives limit direct PatchDiet use"
+      ],
+      "patchdiet_relevance": {
+        "modules": [
+          "packages/core/src/insights.ts"
+        ],
+        "relevance": "low"
+      },
+      "license_review": {
+        "status": "MIT",
+        "code_copy_allowed": true
+      },
+      "status": {
+        "source_verified": true,
+        "distilled": true,
+        "decision": "RESEARCH_ONLY"
+      }
+    },
+    "sources/code-intelligence/scip.yaml": {
+      "id": "project:scip",
+      "title": "SCIP code intelligence protocol",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "year": 2021,
+      "canonical_url": "https://github.com/scip-code/scip",
+      "retrieved_at": "2026-10-26",
+      "repository": "https://github.com/scip-code/scip",
+      "license": "Apache-2.0",
+      "license_verified_at_commit": "repository metadata default branch main checked 2026-10-26",
+      "authors": [
+        "SCIP contributors"
+      ],
+      "topics": [
+        "code-intelligence",
+        "symbols",
+        "references"
+      ],
+      "problem": {
+        "summary": "Defines a language-agnostic index format for definitions, references, implementations, and documents."
+      },
+      "technique": {
+        "summary": "Stable symbol and occurrence records serialized for cross-tool consumption."
+      },
+      "validated_on": [
+        "GitHub repository reachable with HTTP 200"
+      ],
+      "claims": [
+        "claim:scip:001"
+      ],
+      "assumptions": [
+        "an indexer exists for the language and build can afford its runtime"
+      ],
+      "limitations": [
+        "index generation and Windows/CI installation cost need measurement"
+      ],
+      "patchdiet_relevance": {
+        "modules": [
+          "packages/evidence/src",
+          "packages/knowledge/src",
+          "packages/core/src/symbols.ts"
+        ],
+        "relevance": "high"
+      },
+      "license_review": {
+        "status": "Apache-2.0",
+        "code_copy_allowed": true
+      },
+      "status": {
+        "source_verified": true,
+        "distilled": true,
+        "decision": "EXPERIMENT"
+      }
+    },
+    "sources/mutation-testing/strykerjs.yaml": {
+      "id": "project:strykerjs",
+      "title": "StrykerJS",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "year": 2016,
+      "canonical_url": "https://github.com/stryker-mutator/stryker-js",
+      "retrieved_at": "2026-10-26",
+      "repository": "https://github.com/stryker-mutator/stryker-js",
+      "license": "Apache-2.0",
+      "license_verified_at_commit": "repository metadata default branch master checked 2026-10-26",
+      "authors": [
+        "Stryker contributors"
+      ],
+      "topics": [
+        "mutation-testing",
+        "testing"
+      ],
+      "problem": {
+        "summary": "Measures test suite sensitivity by generating and executing code mutants."
+      },
+      "technique": {
+        "summary": "Mutant generation, killed/survived classification, and mutation score reporting."
+      },
+      "validated_on": [
+        "GitHub repository reachable with HTTP 200"
+      ],
+      "claims": [
+        "claim:mutation:001",
+        "claim:mutation:002"
+      ],
+      "assumptions": [
+        "tests are repeatable and mutants can be isolated"
+      ],
+      "limitations": [
+        "equivalent mutants and surviving mutants do not directly authorize deletions"
+      ],
+      "patchdiet_relevance": {
+        "modules": [
+          "packages/testing",
+          "benchmarks"
+        ],
+        "relevance": "medium"
+      },
+      "license_review": {
+        "status": "Apache-2.0",
+        "code_copy_allowed": true
+      },
+      "status": {
+        "source_verified": true,
+        "distilled": true,
+        "decision": "RESEARCH_ONLY"
+      }
+    },
+    "sources/benchmarks/swe-bench.yaml": {
+      "id": "benchmark:swe-bench",
+      "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+      "source_type": "benchmark-paper-and-repository",
+      "authority_tier": "C",
+      "year": 2024,
+      "canonical_url": "https://github.com/SWE-bench/SWE-bench",
+      "paper_url": "https://arxiv.org/abs/2310.06770",
+      "retrieved_at": "2026-10-26",
+      "repository": "https://github.com/SWE-bench/SWE-bench",
+      "license": "MIT",
+      "license_verified_at_commit": "repository metadata default branch main checked 2026-10-26",
+      "authors": [
+        "John Yang",
+        "Carlos E. Jimenez",
+        "Alexander Wettig",
+        "Kilian Lieret",
+        "Shunyu Yao",
+        "Karthik Narasimhan",
+        "Ofir Press"
+      ],
+      "topics": [
+        "benchmarks",
+        "ai-coding-agents"
+      ],
+      "problem": {
+        "summary": "Evaluates repository-level issue resolution using real GitHub issues, patches, and tests."
+      },
+      "technique": {
+        "summary": "Containerized repository environments and test-based grading per task instance."
+      },
+      "validated_on": [
+        "official repository and paper page"
+      ],
+      "claims": [
+        "claim:swebench:001"
+      ],
+      "assumptions": [
+        "task environments and grading tests are reproducible"
+      ],
+      "limitations": [
+        "benchmark distribution and contamination can limit generalization to PatchDiet cleanup"
+      ],
+      "patchdiet_relevance": {
+        "modules": [
+          "benchmarks",
+          "docs/benchmark-schema.json"
+        ],
+        "relevance": "medium"
+      },
+      "license_review": {
+        "status": "MIT",
+        "code_copy_allowed": true
+      },
+      "status": {
+        "source_verified": true,
+        "distilled": true,
+        "decision": "ADAPT"
+      }
+    },
+    "sources/regression-testing/rothermel-harrold-1997.yaml": {
+      "id": "paper:rothermel-harrold-1997-safe-regression-test-selection",
+      "title": "A Safe, Efficient Regression Test Selection Technique",
+      "source_type": "peer-reviewed-paper",
+      "authority_tier": "A",
+      "year": 1997,
+      "venue": "ACM TOSEM",
+      "canonical_url": "https://dl.acm.org/doi/10.1145/248233.248262",
+      "doi": "10.1145/248233.248262",
+      "retrieved_at": "2026-10-26",
+      "authors": [
+        "Gregg Rothermel",
+        "Mary Jean Harrold"
+      ],
+      "topics": [
+        "regression-testing",
+        "change-impact"
+      ],
+      "problem": {
+        "summary": "Select tests that safely exercise changed behavior while reducing regression cost."
+      },
+      "technique": {
+        "summary": "Coverage and change-based selection with a safety criterion for controlled settings."
+      },
+      "validated_on": [
+        "paper metadata and title verified"
+      ],
+      "claims": [
+        "claim:rts:001"
+      ],
+      "assumptions": [
+        "coverage and changed-program mappings are available"
+      ],
+      "limitations": [
+        "safety depends on analysis assumptions and does not remove the need for full verification in PatchDiet"
+      ],
+      "patchdiet_relevance": {
+        "modules": [
+          "packages/core/src/targeted.ts",
+          "packages/scope/src"
+        ],
+        "relevance": "high"
+      },
+      "license_review": {
+        "status": "paper metadata only",
+        "code_copy_allowed": false
+      },
+      "status": {
+        "source_verified": true,
+        "distilled": true,
+        "decision": "ADAPT"
+      }
+    },
+    "sources/code-review/microsoft-modern-code-review.yaml": {
+      "id": "paper:microsoft-modern-code-review-2013",
+      "title": "Expectations, Outcomes, and Challenges of Modern Code Review",
+      "source_type": "peer-reviewed-paper",
+      "authority_tier": "A",
+      "year": 2013,
+      "venue": "ICSE",
+      "canonical_url": "https://www.microsoft.com/en-us/research/publication/expectations-outcomes-and-challenges-of-modern-code-review/",
+      "doi": "10.1109/ICSE.2013.6606589",
+      "retrieved_at": "2026-10-26",
+      "authors": [
+        "Christian Bird",
+        "Alberto Bacchelli"
+      ],
+      "topics": [
+        "code-review",
+        "review-comprehension"
+      ],
+      "problem": {
+        "summary": "Studies motivations, outcomes, and challenges of tool-based code review."
+      },
+      "technique": {
+        "summary": "Mixed observation, interviews, surveys, and manual classification of review comments."
+      },
+      "validated_on": [
+        "Microsoft Research publication page"
+      ],
+      "claims": [
+        "claim:review:002"
+      ],
+      "assumptions": [
+        "study context is treated as empirical evidence within its organization and period"
+      ],
+      "limitations": [
+        "results may not generalize to PatchDiet users or AI-generated changes"
+      ],
+      "patchdiet_relevance": {
+        "modules": [
+          "packages/report/src",
+          "docs/diet-card.md"
+        ],
+        "relevance": "medium"
+      },
+      "license_review": {
+        "status": "paper metadata only",
+        "code_copy_allowed": false
+      },
+      "status": {
+        "source_verified": true,
+        "distilled": true,
+        "decision": "ADAPT"
+      }
+    },
+    "sources/code-review/google-modern-code-review.yaml": {
+      "id": "paper:google-modern-code-review-2018",
+      "title": "Modern Code Review: A Case Study at Google",
+      "source_type": "peer-reviewed-paper",
+      "authority_tier": "A",
+      "year": 2018,
+      "venue": "ICSE SEIP",
+      "canonical_url": "https://research.google/pubs/modern-code-review-a-case-study-at-google/",
+      "retrieved_at": "2026-10-26",
+      "authors": [
+        "Caitlin Sadowski",
+        "Emma Söderberg",
+        "Luke Church",
+        "Michal Sipko",
+        "Alberto Bacchelli"
+      ],
+      "topics": [
+        "code-review",
+        "review-tooling"
+      ],
+      "problem": {
+        "summary": "Examines modern code review practices, motivations, and challenges at Google."
+      },
+      "technique": {
+        "summary": "Interviews, survey responses, and review-log analysis across millions of changes."
+      },
+      "validated_on": [
+        "Google Research publication page"
+      ],
+      "claims": [
+        "claim:review:003"
+      ],
+      "assumptions": [
+        "Google's process is a case study",
+        "not a universal product requirement"
+      ],
+      "limitations": [
+        "organizational scale and tooling differ from PatchDiet users"
+      ],
+      "patchdiet_relevance": {
+        "modules": [
+          "packages/report/src",
+          "packages/github-app/src"
+        ],
+        "relevance": "medium"
+      },
+      "license_review": {
+        "status": "paper metadata only",
+        "code_copy_allowed": false
+      },
+      "status": {
+        "source_verified": true,
+        "distilled": true,
+        "decision": "RESEARCH_ONLY"
+      }
+    },
+    "sources/code-review/reviewdog.yaml": {
+      "id": "project:reviewdog",
+      "title": "reviewdog",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "year": 2015,
+      "canonical_url": "https://github.com/reviewdog/reviewdog",
+      "retrieved_at": "2026-10-26",
+      "repository": "https://github.com/reviewdog/reviewdog",
+      "license": "MIT",
+      "license_verified_at_commit": "repository metadata default branch master checked 2026-10-26",
+      "authors": [
+        "reviewdog contributors"
+      ],
+      "topics": [
+        "code-review",
+        "ci",
+        "sarif-adjacent"
+      ],
+      "problem": {
+        "summary": "Converts CI tool findings into diff-filtered review annotations for code hosts."
+      },
+      "technique": {
+        "summary": "Provider adapters, diff filtering, and line-level findings."
+      },
+      "validated_on": [
+        "GitHub repository reachable with HTTP 200"
+      ],
+      "claims": [
+        "claim:review:001"
+      ],
+      "assumptions": [
+        "findings can be mapped to changed lines"
+      ],
+      "limitations": [
+        "annotation transport does not establish finding correctness"
+      ],
+      "patchdiet_relevance": {
+        "modules": [
+          "packages/report/src",
+          "packages/github-app/src"
+        ],
+        "relevance": "medium"
+      },
+      "license_review": {
+        "status": "MIT",
+        "code_copy_allowed": true
+      },
+      "status": {
+        "source_verified": true,
+        "distilled": true,
+        "decision": "ADAPT"
+      }
+    },
+    "sources/security/harden-runner.yaml": {
+      "id": "project:harden-runner",
+      "title": "StepSecurity Harden-Runner",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "year": 2021,
+      "canonical_url": "https://github.com/step-security/harden-runner",
+      "retrieved_at": "2026-10-26",
+      "repository": "https://github.com/step-security/harden-runner",
+      "license": "Apache-2.0",
+      "license_verified_at_commit": "repository metadata default branch main checked 2026-10-26",
+      "authors": [
+        "StepSecurity contributors"
+      ],
+      "topics": [
+        "security",
+        "ci",
+        "supply-chain"
+      ],
+      "problem": {
+        "summary": "Observes runner process behavior and network egress to reduce CI supply-chain risk."
+      },
+      "technique": {
+        "summary": "Runtime monitoring and policy-oriented telemetry in CI jobs."
+      },
+      "validated_on": [
+        "GitHub repository reachable with HTTP 200"
+      ],
+      "claims": [
+        "claim:security:002"
+      ],
+      "assumptions": [
+        "verification may execute untrusted code"
+      ],
+      "limitations": [
+        "monitoring is defense in depth and can miss or block legitimate behavior"
+      ],
+      "patchdiet_relevance": {
+        "modules": [
+          ".github/workflows",
+          "packages/core/src/runner.ts"
+        ],
+        "relevance": "medium"
+      },
+      "license_review": {
+        "status": "Apache-2.0",
+        "code_copy_allowed": false
+      },
+      "status": {
+        "source_verified": true,
+        "distilled": true,
+        "decision": "RESEARCH_ONLY"
+      }
+    },
+    "sources/security/scorecard.yaml": {
+      "id": "project:openssf-scorecard",
+      "title": "OpenSSF Scorecard",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "year": 2020,
+      "canonical_url": "https://github.com/ossf/scorecard",
+      "retrieved_at": "2026-10-26",
+      "repository": "https://github.com/ossf/scorecard",
+      "license": "Apache-2.0",
+      "license_verified_at_commit": "repository metadata default branch main checked 2026-10-26",
+      "authors": [
+        "OpenSSF contributors"
+      ],
+      "topics": [
+        "security",
+        "supply-chain"
+      ],
+      "problem": {
+        "summary": "Produces evidence-based checks for open-source project security practices."
+      },
+      "technique": {
+        "summary": "Heuristic checks with score and evidence output."
+      },
+      "validated_on": [
+        "GitHub repository reachable with HTTP 200"
+      ],
+      "claims": [
+        "claim:security:003"
+      ],
+      "assumptions": [
+        "heuristic evidence is interpreted with its scope and limitations"
+      ],
+      "limitations": [
+        "scores are heuristics and cannot prove absence of vulnerabilities or correctness"
+      ],
+      "patchdiet_relevance": {
+        "modules": [
+          "docs/security-model.md",
+          "packages/report/src"
+        ],
+        "relevance": "low"
+      },
+      "license_review": {
+        "status": "Apache-2.0",
+        "code_copy_allowed": false
+      },
+      "status": {
+        "source_verified": true,
+        "distilled": true,
+        "decision": "RESEARCH_ONLY"
+      }
+    },
+    "algorithms/ddmin.yaml": {
+      "name": "ddmin",
+      "family": "delta-debugging",
+      "original_sources": [
+        "paper:zikirov-1999-ddmin"
+      ],
+      "problem": "Find a small failing or interesting subset of change groups with an executable oracle.",
+      "input": "Ordered reduction groups and an oracle returning PASS, FAIL, or INCONCLUSIVE.",
+      "output": "A locally minimal selected set under the observed oracle.",
+      "algorithm": "Test the full set, partition into complements and subsets, reduce granularity, and retry until no candidate passes.",
+      "pseudocode": "current = all_groups\ngranularity = 2\nwhile size(current) >= 2:\n  candidates = complements_and_subsets(current, granularity)\n  passing = first candidate where oracle(candidate) == PASS\n  if passing exists: current = passing; granularity = max(granularity - 1, 2)\n  else if granularity < size(current): granularity = min(size(current), granularity * 2)\n  else: break\nreturn current\n",
+      "complexity": "O(n log n) oracle calls in the classic best case; worst case depends on inconclusive and non-monotone outcomes.",
+      "oracle_calls": "Every candidate requires the configured executable verification path; cache keys must include repository and environment context.",
+      "termination": "Stop when no partition candidate passes at maximum granularity or a configured budget is exhausted.",
+      "correctness_scope": "Local minimality for a deterministic, monotone oracle; not global minimum and not semantic equivalence.",
+      "assumptions": [
+        "candidate isolation",
+        "stable oracle",
+        "deterministic serialization"
+      ],
+      "failure_modes": [
+        "non-monotone oracle",
+        "flaky tests",
+        "shared state",
+        "inconclusive executions"
+      ],
+      "known_variants": [
+        "hierarchical-delta-debugging",
+        "parallel delta-debugging",
+        "weighted ordering"
+      ],
+      "patchdiet_current_state": "packages/core/src/reducer.ts implements a deterministic group reducer with cache and explicit INCONCLUSIVE state.",
+      "patchdiet_gap": "No benchmark evidence yet compares the current search against classic ddmin on representative PatchDiet workloads.",
+      "recommended_use": "Keep as the safety baseline and benchmark reference.",
+      "not_recommended_for": "Automatic deletion without the executable oracle.",
+      "tests_required": [
+        "empty group list",
+        "duplicate ids",
+        "cache hit",
+        "inconclusive oracle",
+        "deterministic ordering"
+      ],
+      "benchmark_metrics": [
+        "removal precision",
+        "removal recall",
+        "oracle calls",
+        "runtime",
+        "cache hit rate"
+      ]
+    },
+    "algorithms/hierarchical-delta-debugging.yaml": {
+      "name": "hierarchical-delta-debugging",
+      "family": "hierarchical-reduction",
+      "original_sources": [
+        "paper:hdd-2005"
+      ],
+      "problem": "Reduce structured changes at coarse and fine levels while preserving a valid oracle outcome.",
+      "input": "A tree or hierarchy of change groups and executable oracle.",
+      "output": "A reduced hierarchy whose removable nodes were accepted by the oracle.",
+      "algorithm": "Reduce parent nodes first, then recursively reduce children that remain.",
+      "pseudocode": "reduce(node):\n  if oracle(remove(node)) == PASS: return removed\n  for child in children(node): reduce(child)\n  return node\n",
+      "complexity": "Depends on tree shape; avoids many combinations when hierarchy aligns with behavior.",
+      "oracle_calls": "At least one per candidate node, plus retries for child reductions.",
+      "termination": "Tree traversal ends when every retained node and descendant has been attempted or budget is exhausted.",
+      "correctness_scope": "Local minimality in a chosen hierarchy; hierarchy can hide cross-branch combinations.",
+      "assumptions": [
+        "meaningful parent-child grouping"
+      ],
+      "failure_modes": [
+        "bad hierarchy",
+        "cross-branch dependencies",
+        "flaky oracle"
+      ],
+      "known_variants": [
+        "syntax-guided reduction",
+        "recursive partitioning"
+      ],
+      "patchdiet_current_state": "AST and dependency groups exist, but reducer selection is not hierarchy-adaptive.",
+      "patchdiet_gap": "No workload benchmark proves hierarchy reduces oracle calls without lowering removal precision.",
+      "recommended_use": "Experiment after a benchmark fixture proves useful hierarchy.",
+      "not_recommended_for": "Treating a hierarchy as proof of semantic independence.",
+      "tests_required": [
+        "nested groups",
+        "cross-branch dependency",
+        "failure recovery"
+      ],
+      "benchmark_metrics": [
+        "oracle calls",
+        "precision",
+        "recall",
+        "runtime"
+      ]
+    },
+    "algorithms/syntax-guided-reduction.yaml": {
+      "name": "syntax-guided-reduction",
+      "family": "syntax-aware-program-reduction",
+      "original_sources": [
+        "paper:perses-icse-2018",
+        "project:tree-sitter"
+      ],
+      "problem": "Avoid candidates that cannot be parsed or violate grammar-level invariants.",
+      "input": "Parsed syntax tree or CST, reduction atoms, executable oracle.",
+      "output": "Syntax-valid candidate patches accepted by the oracle.",
+      "algorithm": "Choose removable syntax atoms, rebuild the source, reject parse-invalid candidates before oracle execution, then verify accepted candidates.",
+      "pseudocode": "for atom in syntax_atoms:\n  candidate = rebuild_without(atom)\n  if parse(candidate) has fatal errors: continue\n  if oracle(candidate) == PASS: keep removal\nreturn source\n",
+      "complexity": "O(a * (parse_cost + oracle_cost)) for a atoms; oracle dominates when tests are expensive.",
+      "oracle_calls": "One executable oracle call for each parse-valid candidate, with cache keyed by content and context.",
+      "termination": "Atom list exhausted or budget reached.",
+      "correctness_scope": "Syntax validity plus configured oracle outcome; no semantic equivalence guarantee.",
+      "assumptions": [
+        "parser grammar",
+        "stable source reconstruction"
+      ],
+      "failure_modes": [
+        "error-tolerant parser ambiguity",
+        "hidden generated files",
+        "parser/runtime drift"
+      ],
+      "known_variants": [
+        "Perses Normal Form",
+        "AST shrinking",
+        "grammar-aware ddmin"
+      ],
+      "patchdiet_current_state": "Tree-sitter-related atomization and AST shrink files are present.",
+      "patchdiet_gap": "Current workload evidence does not quantify parse filtering versus oracle overhead.",
+      "recommended_use": "Keep as an opt-in candidate generator and benchmark.",
+      "not_recommended_for": "Allowing parser success to bypass verification.",
+      "tests_required": [
+        "syntax invalid candidate",
+        "comment/string preservation",
+        "parse-valid candidate",
+        "oracle failure"
+      ],
+      "benchmark_metrics": [
+        "parse rejection rate",
+        "oracle calls",
+        "reduction size",
+        "precision"
+      ]
+    },
+    "algorithms/weighted-delta-debugging.yaml": {
+      "name": "weighted-delta-debugging",
+      "family": "prioritized-delta-debugging",
+      "original_sources": [
+        "project:picire",
+        "paper:weighted-dd"
+      ],
+      "problem": "Try high-value or low-risk groups earlier when oracle calls have unequal expected value.",
+      "input": "Groups with weights, executable oracle, deterministic tie-breaker.",
+      "output": "Locally minimal selected groups under weighted ordering.",
+      "algorithm": "Sort candidates by weight and feed the ordered sequence to a delta-debugging search.",
+      "pseudocode": "ordered = stable_sort(groups, descending_weight_then_id)\nreturn ddmin(ordered, oracle)\n",
+      "complexity": "Same asymptotic search as the underlying reducer plus sorting.",
+      "oracle_calls": "Same candidates as baseline unless ordering improves early acceptance.",
+      "termination": "Underlying reducer termination or budget.",
+      "correctness_scope": "Ordering affects search cost, not the oracle's authority or outcome.",
+      "assumptions": [
+        "weights are advisory and deterministic"
+      ],
+      "failure_modes": [
+        "misleading weights",
+        "starvation of low-weight groups"
+      ],
+      "known_variants": [
+        "risk-weighted ordering",
+        "cost-aware scheduling"
+      ],
+      "patchdiet_current_state": "Feedback and risk evidence exist but are not an explicit reducer strategy.",
+      "patchdiet_gap": "No measured relationship between current risk signals and removal precision.",
+      "recommended_use": "Research-only ordering experiment with fixed baseline comparison.",
+      "not_recommended_for": "Using weight as removal permission.",
+      "tests_required": [
+        "stable tie-break",
+        "weight update",
+        "baseline equivalence"
+      ],
+      "benchmark_metrics": [
+        "oracle calls",
+        "time to first passing candidate",
+        "precision"
+      ]
+    },
+    "algorithms/probabilistic-delta-debugging.yaml": {
+      "name": "probabilistic-delta-debugging",
+      "family": "stochastic-reduction",
+      "original_sources": [
+        "project:perses"
+      ],
+      "problem": "Explore a large candidate space when deterministic ordering is too costly.",
+      "input": "Candidate generator, random seed, oracle, budget.",
+      "output": "A candidate accepted by the oracle and a reproducible trace.",
+      "algorithm": "Sample candidate subsets according to a configured distribution and verify each sample.",
+      "pseudocode": "rng = seed(seed_value)\nbest = initial\nrepeat until budget:\n  candidate = sample(best, rng)\n  if oracle(candidate) == PASS: best = candidate\nreturn best\n",
+      "complexity": "O(budget * (generation_cost + oracle_cost)).",
+      "oracle_calls": "Bounded by the configured budget; every accepted candidate still needs verification.",
+      "termination": "Explicit budget or convergence policy.",
+      "correctness_scope": "Empirical search result; no minimality guarantee and reproducibility requires recorded seed.",
+      "assumptions": [
+        "randomness is isolated and traceable"
+      ],
+      "failure_modes": [
+        "seed drift",
+        "flaky oracle",
+        "poor sampling distribution"
+      ],
+      "known_variants": [
+        "adaptive sampling",
+        "simulated annealing"
+      ],
+      "patchdiet_current_state": "No stochastic reducer is part of the runtime path.",
+      "patchdiet_gap": "No evidence that stochastic search improves PatchDiet precision or cost.",
+      "recommended_use": "Benchmark-only experiment.",
+      "not_recommended_for": "Default CI cleanup or unrecorded deletion decisions.",
+      "tests_required": [
+        "seed reproducibility",
+        "budget enforcement",
+        "oracle exception"
+      ],
+      "benchmark_metrics": [
+        "best reduction",
+        "variance",
+        "oracle calls",
+        "runtime"
+      ]
+    },
+    "algorithms/counter-based-delta-debugging.yaml": {
+      "name": "counter-based-delta-debugging",
+      "family": "search-with-counters",
+      "original_sources": [
+        "paper:counter-based-dd"
+      ],
+      "problem": "Use historical candidate outcomes to prioritize future combinations.",
+      "input": "Groups, outcome counters, executable oracle, deterministic policy.",
+      "output": "A reduction trace with counter updates.",
+      "algorithm": "Maintain per-group and pair counters; prioritize candidates with favorable observed outcomes, then verify.",
+      "pseudocode": "counters = zeroed(groups)\nwhile budget remains:\n  candidate = choose_by_counters(counters)\n  verdict = oracle(candidate)\n  update(counters, candidate, verdict)\n  if verdict == PASS: best = candidate\nreturn best\n",
+      "complexity": "O(budget * choose_cost + budget * oracle_cost).",
+      "oracle_calls": "One per selected candidate; all counters are advisory.",
+      "termination": "Explicit budget.",
+      "correctness_scope": "Empirical heuristic with no minimality guarantee.",
+      "assumptions": [
+        "outcomes are informative across nearby candidates"
+      ],
+      "failure_modes": [
+        "distribution shift",
+        "sparse evidence",
+        "feedback loops"
+      ],
+      "known_variants": [
+        "bandit scheduling",
+        "adaptive ddmin"
+      ],
+      "patchdiet_current_state": "No counter-guided strategy is implemented.",
+      "patchdiet_gap": "No benchmark evidence for this workload.",
+      "recommended_use": "Research-only.",
+      "not_recommended_for": "Replacing deterministic verification or claiming proof.",
+      "tests_required": [
+        "counter reset",
+        "deterministic seed",
+        "inconclusive update"
+      ],
+      "benchmark_metrics": [
+        "oracle calls",
+        "runtime",
+        "precision",
+        "variance"
+      ]
+    },
+    "algorithms/program-slicing.yaml": {
+      "name": "program-slicing",
+      "family": "dependency-analysis",
+      "original_sources": [
+        "paper:weiser-1984-program-slicing"
+      ],
+      "problem": "Identify code relevant to a selected output, symbol, or behavior criterion.",
+      "input": "Program graph and slicing criterion.",
+      "output": "Forward or backward slice of nodes and edges.",
+      "algorithm": "Traverse dependency edges from the criterion in the chosen direction.",
+      "pseudocode": "work = [criterion]\nslice = {}\nwhile work not empty:\n  node = pop(work)\n  if node in slice: continue\n  add node to slice\n  push unvisited dependency predecessors or successors\nreturn slice\n",
+      "complexity": "O(V + E) for a materialized graph.",
+      "oracle_calls": "None for analysis; any removal still requires executable verification.",
+      "termination": "Graph traversal terminates on visited-node tracking.",
+      "correctness_scope": "Graph-relative relevance, not complete semantic dependence for dynamic languages.",
+      "assumptions": [
+        "graph precision",
+        "criterion selection"
+      ],
+      "failure_modes": [
+        "dynamic dispatch",
+        "reflection",
+        "generated code",
+        "incomplete graph"
+      ],
+      "known_variants": [
+        "context-sensitive",
+        "field-sensitive",
+        "interprocedural"
+      ],
+      "patchdiet_current_state": "Lightweight symbol and dependency grouping provide partial relevance evidence.",
+      "patchdiet_gap": "Dynamic language and monorepo precision are not fully measured.",
+      "recommended_use": "Scope evidence and targeted test selection.",
+      "not_recommended_for": "Automatic delete authorization.",
+      "tests_required": [
+        "direct dependency",
+        "transitive dependency",
+        "unresolved symbol"
+      ],
+      "benchmark_metrics": [
+        "precision",
+        "recall",
+        "index time",
+        "graph size"
+      ]
+    },
+    "algorithms/change-impact-analysis.yaml": {
+      "name": "change-impact-analysis",
+      "family": "dependency-analysis",
+      "original_sources": [
+        "paper:horwitz-reps-binkley-1990"
+      ],
+      "problem": "Estimate which tests, symbols, and files may be affected by a change.",
+      "input": "Before/after graphs and changed nodes.",
+      "output": "Impact set for targeted verification and review routing.",
+      "algorithm": "Map changed nodes into the dependency graph and traverse affected relationships.",
+      "pseudocode": "changed = map_diff_to_symbols(diff)\nimpact = closure(changed, dependency_edges)\nreturn impact\n",
+      "complexity": "O(V + E) after graph construction.",
+      "oracle_calls": "None for analysis; selected and full tests remain executable gates.",
+      "termination": "Finite graph closure.",
+      "correctness_scope": "Conservative only if graph is complete and edge semantics are sound.",
+      "assumptions": [
+        "diff-to-symbol mapping",
+        "graph completeness"
+      ],
+      "failure_modes": [
+        "unresolved references",
+        "generated code",
+        "stale index"
+      ],
+      "known_variants": [
+        "dynamic impact",
+        "change propagation",
+        "regression selection"
+      ],
+      "patchdiet_current_state": "packages/evidence and packages/scope implement lightweight evidence and scope maps.",
+      "patchdiet_gap": "No benchmark against optional SCIP import or hidden regressions.",
+      "recommended_use": "Targeted-first verification with mandatory full verification.",
+      "not_recommended_for": "Skipping required checks based on an incomplete impact set.",
+      "tests_required": [
+        "cross-file edge",
+        "deleted symbol",
+        "stale index invalidation"
+      ],
+      "benchmark_metrics": [
+        "impact precision/recall",
+        "targeted runtime",
+        "hidden regression rate"
+      ]
+    },
+    "algorithms/regression-test-selection.yaml": {
+      "name": "regression-test-selection",
+      "family": "test-selection",
+      "original_sources": [
+        "paper:rothermel-harrold-1997-safe-regression-test-selection"
+      ],
+      "problem": "Select tests likely to exercise changed behavior while preserving a full verification fallback.",
+      "input": "Change impact, coverage or mapping data, test inventory.",
+      "output": "Ordered targeted test set plus required full suite.",
+      "algorithm": "Map changed entities to tests, prioritize high-confidence candidates, then run the complete required verification before final status.",
+      "pseudocode": "targeted = rank_tests(map_change_to_tests(change, evidence))\nrun(targeted)\nrun(required_full_suite)\nreturn targeted_results, full_results\n",
+      "complexity": "O(mapping + test_count log test_count) after evidence exists.",
+      "oracle_calls": "Targeted runs plus the mandatory full-suite run.",
+      "termination": "Both targeted and full required commands complete or fail.",
+      "correctness_scope": "Targeting optimizes search cost; only the required full suite supports final configured verification.",
+      "assumptions": [
+        "test mapping is conservative",
+        "full suite is known"
+      ],
+      "failure_modes": [
+        "missing coverage",
+        "stale mapping",
+        "flaky tests"
+      ],
+      "known_variants": [
+        "coverage-based",
+        "change-based",
+        "prioritization",
+        "minimization"
+      ],
+      "patchdiet_current_state": "packages/core/src/targeted.ts and config test_selection support targeted-first execution.",
+      "patchdiet_gap": "Hidden-regression rate needs benchmark evidence across real and synthetic fixtures.",
+      "recommended_use": "Keep targeted-first behavior with explicit full-verification gate.",
+      "not_recommended_for": "Labeling a candidate VERIFIED after targeted tests alone.",
+      "tests_required": [
+        "targeted mapping",
+        "full-suite enforcement",
+        "empty impact fallback"
+      ],
+      "benchmark_metrics": [
+        "targeted runtime",
+        "full runtime",
+        "hidden regression rate",
+        "human review rate"
+      ]
+    },
+    "algorithms/mutation-testing.yaml": {
+      "name": "mutation-testing",
+      "family": "oracle-strength-audit",
+      "original_sources": [
+        "project:strykerjs",
+        "paper:mutation-survey"
+      ],
+      "problem": "Audit whether tests detect representative behavior changes.",
+      "input": "Source, mutation operators, configured tests.",
+      "output": "Killed/survived/equivalent counts and mutation score.",
+      "algorithm": "Generate mutants, run configured tests, classify each outcome, and report confidence limits.",
+      "pseudocode": "for mutant in generate_mutants(source):\n  result = run_tests(mutant)\n  classify(result)\nreport(score, survivors, equivalent_estimates)\n",
+      "complexity": "O(m * test_suite_cost) for m mutants.",
+      "oracle_calls": "One test run per mutant, often with optimization and caching.",
+      "termination": "Mutant inventory exhausted or research budget reached.",
+      "correctness_scope": "Evidence about test sensitivity, not proof of semantic equivalence.",
+      "assumptions": [
+        "repeatable tests",
+        "representative mutation operators"
+      ],
+      "failure_modes": [
+        "equivalent mutants",
+        "flaky tests",
+        "environment sensitivity"
+      ],
+      "known_variants": [
+        "weak mutation",
+        "strong mutation",
+        "selective mutation"
+      ],
+      "patchdiet_current_state": "No normal-shrink mutation mode; benchmark artifacts exist for injected fixtures.",
+      "patchdiet_gap": "No oracle-strength report connects surviving mutants to PatchDiet confidence wording.",
+      "recommended_use": "Benchmark and design-partner research mode.",
+      "not_recommended_for": "Blocking or authorizing cleanup solely from mutation score.",
+      "tests_required": [
+        "killed mutant",
+        "survived mutant",
+        "equivalent mutant handling"
+      ],
+      "benchmark_metrics": [
+        "mutation score",
+        "survivor categories",
+        "runtime",
+        "confidence labeling"
+      ]
+    },
+    "algorithms/ast-differencing.yaml": {
+      "name": "ast-differencing",
+      "family": "semantic-diff",
+      "original_sources": [
+        "project:gumtree",
+        "project:refactoringminer"
+      ],
+      "problem": "Represent structural edits separately from textual line churn.",
+      "input": "Before/after syntax trees.",
+      "output": "Insert, delete, update, move, and domain-specific refactoring evidence.",
+      "algorithm": "Match nodes using stable labels and structure, then emit edit actions and confidence.",
+      "pseudocode": "old_tree = parse(old_source)\nnew_tree = parse(new_source)\nmatches = match(old_tree, new_tree)\nreturn actions_from_unmatched_and_changed_nodes(matches)\n",
+      "complexity": "Depends on matcher; typically superlinear in tree size for robust matching.",
+      "oracle_calls": "None for analysis; candidates still require executable verification.",
+      "termination": "Matcher terminates on finite trees and configured limits.",
+      "correctness_scope": "Structural evidence and refactoring hypotheses, not semantic proof.",
+      "assumptions": [
+        "compatible parsers",
+        "stable node identity heuristics"
+      ],
+      "failure_modes": [
+        "ambiguous matches",
+        "generated code",
+        "parser differences"
+      ],
+      "known_variants": [
+        "tree matching",
+        "refactoring detection",
+        "token differencing"
+      ],
+      "patchdiet_current_state": "Diff and insight modules expose textual and lightweight structural evidence.",
+      "patchdiet_gap": "No measured value for a JVM semantic-diff adapter on PatchDiet workloads.",
+      "recommended_use": "Research-only adapter experiment.",
+      "not_recommended_for": "Converting a detected refactoring into delete permission.",
+      "tests_required": [
+        "rename",
+        "move",
+        "insert/delete/update",
+        "parser failure"
+      ],
+      "benchmark_metrics": [
+        "matching precision",
+        "runtime",
+        "semantic reduction",
+        "review effort"
+      ]
+    },
+    "projects/perses.yaml": {
+      "name": "Perses",
+      "repository": "https://github.com/uw-pluverse/perses",
+      "official_site": "https://www.swag.uwaterloo.ca/www/publications/perses-syntax-guided-program-reduction.html",
+      "license": "GPL-3.0",
+      "license_verified_at_commit": "2026-10-26",
+      "languages": [
+        "Kotlin",
+        "Java"
+      ],
+      "primary_purpose": "Syntax-guided program reduction.",
+      "architecture": "Grammar-aware reducer with parser adapters, reduction passes, and oracle-driven search.",
+      "key_modules": [
+        "parser adapters",
+        "reducer passes",
+        "cache",
+        "benchmark harness"
+      ],
+      "algorithms": [
+        "syntax-guided-reduction",
+        "hierarchical-delta-debugging"
+      ],
+      "useful_patterns": [
+        "syntax-valid candidate generation",
+        "explicit interestingness oracle",
+        "reducer composition"
+      ],
+      "patchdiet_mapping": [
+        "packages/core/src/reducer.ts",
+        "packages/core/src/ast-atomizer.ts"
+      ],
+      "do_not_copy": [
+        "GPL-licensed implementation code",
+        "JVM runtime assumptions"
+      ],
+      "integration_options": [
+        "borrow-concept",
+        "adapter",
+        "external-tool",
+        "no-integration"
+      ],
+      "integration_recommendation": "borrow-concept",
+      "reasons": "Native TypeScript keeps PatchDiet installable and avoids a new runtime.",
+      "risks": "Grammar coverage, parser drift, and license constraints.",
+      "estimated_complexity": "medium",
+      "status": "RESEARCH_ONLY"
+    },
+    "projects/creduce.yaml": {
+      "name": "C-Reduce",
+      "repository": "https://github.com/csmith-project/creduce",
+      "official_site": "https://embed.cs.utah.edu/creduce/",
+      "license": "NOASSERTION",
+      "license_verified_at_commit": "2026-10-26",
+      "languages": [
+        "Perl",
+        "C++"
+      ],
+      "primary_purpose": "C and C++ test-case reduction.",
+      "architecture": "Pipeline of independent transformation passes driven by an interestingness test.",
+      "key_modules": [
+        "pass manager",
+        "test harness",
+        "temporary files",
+        "parallel execution"
+      ],
+      "algorithms": [
+        "delta-debugging"
+      ],
+      "useful_patterns": [
+        "oracle abstraction",
+        "isolated candidates",
+        "pass composition"
+      ],
+      "patchdiet_mapping": [
+        "packages/core/src/reducer.ts",
+        "packages/core/src/runner.ts"
+      ],
+      "do_not_copy": [
+        "code until license is manually reviewed",
+        "C/C++-specific passes"
+      ],
+      "integration_options": [
+        "borrow-concept",
+        "external-tool",
+        "no-integration"
+      ],
+      "integration_recommendation": "borrow-concept",
+      "reasons": "Candidate isolation and explicit oracle boundaries match PatchDiet safety needs.",
+      "risks": "License ambiguity and language-specific assumptions.",
+      "estimated_complexity": "medium",
+      "status": "DISTILLED"
+    },
+    "projects/picire.yaml": {
+      "name": "Picire",
+      "repository": "https://github.com/renatahodovan/picire",
+      "official_site": "https://github.com/renatahodovan/picire",
+      "license": "NOASSERTION",
+      "license_verified_at_commit": "2026-10-26",
+      "languages": [
+        "Python"
+      ],
+      "primary_purpose": "Practical delta debugging and parallel reduction.",
+      "architecture": "Partitioned subset/complement testing with caching and configurable parallelism.",
+      "key_modules": [
+        "ddmin engine",
+        "cache",
+        "worker scheduling"
+      ],
+      "algorithms": [
+        "ddmin",
+        "parallel-delta-debugging"
+      ],
+      "useful_patterns": [
+        "complement testing",
+        "granularity progression",
+        "cache keys"
+      ],
+      "patchdiet_mapping": [
+        "packages/core/src/reducer.ts",
+        "packages/core/src/runner.ts"
+      ],
+      "do_not_copy": [
+        "source code without license verification"
+      ],
+      "integration_options": [
+        "borrow-concept",
+        "adapter",
+        "external-tool"
+      ],
+      "integration_recommendation": "borrow-concept",
+      "reasons": "Existing worker pool and cache provide a local comparison baseline.",
+      "risks": "Parallel resource pressure and nondeterministic timing.",
+      "estimated_complexity": "low",
+      "status": "DISTILLED"
+    },
+    "projects/tree-sitter.yaml": {
+      "name": "Tree-sitter",
+      "repository": "https://github.com/tree-sitter/tree-sitter",
+      "official_site": "https://tree-sitter.github.io/tree-sitter/",
+      "license": "MIT",
+      "license_verified_at_commit": "2026-10-26",
+      "languages": [
+        "C",
+        "JavaScript",
+        "Rust"
+      ],
+      "primary_purpose": "Incremental error-tolerant parsing.",
+      "architecture": "Generated parsers and concrete syntax trees with incremental updates.",
+      "key_modules": [
+        "parser runtime",
+        "grammar compiler",
+        "node ranges"
+      ],
+      "algorithms": [
+        "incremental-parsing"
+      ],
+      "useful_patterns": [
+        "changed ranges",
+        "syntax nodes",
+        "error-tolerant structure"
+      ],
+      "patchdiet_mapping": [
+        "packages/core/src/ast-atomizer.ts",
+        "packages/parsers/src"
+      ],
+      "do_not_copy": [
+        "language grammar assets without individual license review"
+      ],
+      "integration_options": [
+        "already-implemented",
+        "adapter"
+      ],
+      "integration_recommendation": "already-implemented",
+      "reasons": "Repository already depends on Tree-sitter WASM-related functionality.",
+      "risks": "Parser error recovery can create misleading grouping evidence.",
+      "estimated_complexity": "low",
+      "status": "ALREADY_IMPLEMENTED"
+    },
+    "projects/gumtree.yaml": {
+      "name": "GumTree",
+      "repository": "https://github.com/GumTreeDiff/gumtree",
+      "official_site": "https://github.com/GumTreeDiff/gumtree",
+      "license": "LGPL-3.0",
+      "license_verified_at_commit": "2026-10-26",
+      "languages": [
+        "Java"
+      ],
+      "primary_purpose": "Fine-grained AST differencing.",
+      "architecture": "Tree generators, matchers, and edit-action scripts.",
+      "key_modules": [
+        "tree generators",
+        "matchers",
+        "action generator"
+      ],
+      "algorithms": [
+        "ast-differencing"
+      ],
+      "useful_patterns": [
+        "move detection",
+        "edit actions",
+        "matcher confidence"
+      ],
+      "patchdiet_mapping": [
+        "packages/core/src/diff.ts",
+        "packages/core/src/insights.ts"
+      ],
+      "do_not_copy": [
+        "LGPL code and JVM service integration"
+      ],
+      "integration_options": [
+        "adapter",
+        "external-tool",
+        "no-integration"
+      ],
+      "integration_recommendation": "research-only adapter",
+      "reasons": "Semantic evidence may improve grouping but value is unmeasured.",
+      "risks": "Operational complexity and false matches.",
+      "estimated_complexity": "high",
+      "status": "RESEARCH_ONLY"
+    },
+    "projects/refactoringminer.yaml": {
+      "name": "RefactoringMiner",
+      "repository": "https://github.com/tsantalis/RefactoringMiner",
+      "official_site": "https://github.com/tsantalis/RefactoringMiner",
+      "license": "MIT",
+      "license_verified_at_commit": "2026-10-26",
+      "languages": [
+        "Java"
+      ],
+      "primary_purpose": "Detect refactorings in Java changes.",
+      "architecture": "AST/model comparison with named refactoring detectors.",
+      "key_modules": [
+        "AST parser",
+        "refactoring detectors",
+        "report serializers"
+      ],
+      "algorithms": [
+        "ast-differencing",
+        "refactoring-detection"
+      ],
+      "useful_patterns": [
+        "rename",
+        "move",
+        "extract",
+        "inline evidence"
+      ],
+      "patchdiet_mapping": [
+        "packages/core/src/insights.ts"
+      ],
+      "do_not_copy": [
+        "Java-only assumptions"
+      ],
+      "integration_options": [
+        "adapter",
+        "external-tool",
+        "no-integration"
+      ],
+      "integration_recommendation": "research-only adapter",
+      "reasons": "Useful semantic vocabulary, but no measured cross-language benefit.",
+      "risks": "False positives and language scope.",
+      "estimated_complexity": "high",
+      "status": "RESEARCH_ONLY"
+    },
+    "projects/scip.yaml": {
+      "name": "SCIP",
+      "repository": "https://github.com/scip-code/scip",
+      "official_site": "https://about.sourcegraph.com/handbook/engineering/code-intelligence/scip",
+      "license": "Apache-2.0",
+      "license_verified_at_commit": "2026-10-26",
+      "languages": [
+        "Protocol Buffers"
+      ],
+      "primary_purpose": "Interoperable code intelligence index format.",
+      "architecture": "Document, symbol, occurrence, and relationship records with language-specific indexers.",
+      "key_modules": [
+        "protocol schema",
+        "index readers",
+        "language indexers"
+      ],
+      "algorithms": [
+        "symbol-indexing",
+        "reference-resolution"
+      ],
+      "useful_patterns": [
+        "stable symbol identity",
+        "cross-file references"
+      ],
+      "patchdiet_mapping": [
+        "packages/evidence/src",
+        "packages/knowledge/src",
+        "packages/core/src/symbols.ts"
+      ],
+      "do_not_copy": [
+        "indexer assumptions without compatibility benchmarks"
+      ],
+      "integration_options": [
+        "adapter",
+        "external-tool",
+        "no-integration"
+      ],
+      "integration_recommendation": "adapter prototype",
+      "reasons": "Optional import can be benchmarked against current SQLite graph without replacing it.",
+      "risks": "Index generation cost, incomplete language support, Windows setup.",
+      "estimated_complexity": "medium",
+      "status": "EXPERIMENTAL"
+    },
+    "projects/strykerjs.yaml": {
+      "name": "StrykerJS",
+      "repository": "https://github.com/stryker-mutator/stryker-js",
+      "official_site": "https://stryker-mutator.io/",
+      "license": "Apache-2.0",
+      "license_verified_at_commit": "2026-10-26",
+      "languages": [
+        "TypeScript",
+        "JavaScript"
+      ],
+      "primary_purpose": "Mutation testing for JavaScript and TypeScript.",
+      "architecture": "Mutant generators, test runners, reporters, and score aggregation.",
+      "key_modules": [
+        "mutant operators",
+        "test runner",
+        "reporters"
+      ],
+      "algorithms": [
+        "mutation-testing"
+      ],
+      "useful_patterns": [
+        "survivor classification",
+        "incremental test execution",
+        "confidence reporting"
+      ],
+      "patchdiet_mapping": [
+        "packages/testing",
+        "benchmarks"
+      ],
+      "do_not_copy": [
+        "full runtime integration into normal shrink"
+      ],
+      "integration_options": [
+        "external-tool",
+        "adapter",
+        "no-integration"
+      ],
+      "integration_recommendation": "external-tool in benchmark mode",
+      "reasons": "Mutation score can audit oracle strength without changing deletion authority.",
+      "risks": "Runtime cost and equivalent mutants.",
+      "estimated_complexity": "medium",
+      "status": "RESEARCH_ONLY"
+    },
+    "projects/swe-bench.yaml": {
+      "name": "SWE-bench",
+      "repository": "https://github.com/SWE-bench/SWE-bench",
+      "official_site": "https://www.swebench.com/",
+      "license": "MIT",
+      "license_verified_at_commit": "2026-10-26",
+      "languages": [
+        "Python",
+        "Docker"
+      ],
+      "primary_purpose": "Repository-level coding-agent benchmark.",
+      "architecture": "Task instances, base commits, patches, containers, and test-based grading.",
+      "key_modules": [
+        "instance schema",
+        "environment builder",
+        "evaluator",
+        "leaderboard"
+      ],
+      "algorithms": [
+        "benchmark-evaluation"
+      ],
+      "useful_patterns": [
+        "reproducible task bundle",
+        "hidden grading tests",
+        "environment isolation"
+      ],
+      "patchdiet_mapping": [
+        "benchmarks",
+        "docs/benchmark-schema.json"
+      ],
+      "do_not_copy": [
+        "leaderboard numbers as PatchDiet evidence"
+      ],
+      "integration_options": [
+        "borrow-concept",
+        "adapter"
+      ],
+      "integration_recommendation": "borrow-concept",
+      "reasons": "PatchDiet needs separate ground truth for necessary and unnecessary changes.",
+      "risks": "Contamination, distribution shift, and mismatch with cleanup tasks.",
+      "estimated_complexity": "medium",
+      "status": "DISTILLED"
+    },
+    "projects/reviewdog.yaml": {
+      "name": "reviewdog",
+      "repository": "https://github.com/reviewdog/reviewdog",
+      "official_site": "https://reviewdog.github.io/reviewdog/",
+      "license": "MIT",
+      "license_verified_at_commit": "2026-10-26",
+      "languages": [
+        "Go"
+      ],
+      "primary_purpose": "CI finding to code-review annotation transport.",
+      "architecture": "Tool parsers, diff filters, and provider adapters.",
+      "key_modules": [
+        "parser adapters",
+        "diff filter",
+        "GitHub/GitLab reporters"
+      ],
+      "algorithms": [
+        "diff-filtering"
+      ],
+      "useful_patterns": [
+        "line mapping",
+        "provider abstraction",
+        "neutral reporting"
+      ],
+      "patchdiet_mapping": [
+        "packages/report/src",
+        "packages/github-app/src"
+      ],
+      "do_not_copy": [
+        "correctness assumptions"
+      ],
+      "integration_options": [
+        "borrow-concept",
+        "adapter"
+      ],
+      "integration_recommendation": "borrow-concept",
+      "reasons": "Existing PatchDiet report and app layers need evidence transport patterns.",
+      "risks": "Finding correctness remains external to transport.",
+      "estimated_complexity": "low",
+      "status": "DISTILLED"
+    },
+    "claims/program-reduction/claim-perses-001.yaml": {
+      "id": "claim:perses:001",
+      "statement": "Generating syntax-valid reduction candidates avoids oracle executions on variants rejected solely for syntax.",
+      "source": {
+        "id": "paper:perses-icse-2018"
+      },
+      "evidence_type": "peer-reviewed-paper",
+      "scope": "program-reduction",
+      "confidence": "high",
+      "assumptions": [
+        "grammar or parser is available"
+      ],
+      "limitations": [
+        "syntax validity does not establish semantic equivalence or task relevance"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          "packages/core/src/ast-atomizer.ts",
+          "packages/core/src/ast-shrink.ts"
+        ]
+      },
+      "possible_action": "keep AST-aware candidate generation and measure oracle-call savings",
+      "safety_effect": "positive",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "claims/program-reduction/claim-perses-002.yaml": {
+      "id": "claim:perses:002",
+      "statement": "Grammar-guided reduction can improve reduction effectiveness when the oracle is expensive and the grammar captures useful structure.",
+      "source": {
+        "id": "paper:perses-icse-2018"
+      },
+      "evidence_type": "peer-reviewed-paper",
+      "scope": "program-reduction",
+      "confidence": "medium",
+      "assumptions": [
+        "oracle cost dominates candidate generation cost"
+      ],
+      "limitations": [
+        "language coverage",
+        "parser quality",
+        "and workload shape determine whether the overhead pays off"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          "packages/core/src/reducer.ts"
+        ]
+      },
+      "possible_action": "benchmark syntax-guided ordering as an experiment",
+      "safety_effect": "positive",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "claims/program-reduction/claim-perses-003.yaml": {
+      "id": "claim:perses:003",
+      "statement": "Perses is a reference implementation whose reducer composition and caching patterns can inform a native adapter without embedding its JVM runtime.",
+      "source": {
+        "id": "project:perses"
+      },
+      "evidence_type": "reference-implementation",
+      "scope": "program-reduction",
+      "confidence": "medium",
+      "assumptions": [
+        "clean-room design is used and GPL obligations are respected"
+      ],
+      "limitations": [
+        "implementation architecture is not scientific proof and repository license prevents casual code reuse"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          "packages/core/src/reducer.ts"
+        ]
+      },
+      "possible_action": "borrow concepts only; keep runtime dependency-free",
+      "safety_effect": "neutral",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "claims/program-reduction/claim-creduce-001.yaml": {
+      "id": "claim:creduce:001",
+      "statement": "An explicit interestingness-test abstraction and isolated candidate execution make reduction passes composable and auditable.",
+      "source": {
+        "id": "project:creduce"
+      },
+      "evidence_type": "reference-implementation",
+      "scope": "verification",
+      "confidence": "medium",
+      "assumptions": [
+        "candidate worktrees or equivalent isolation are reliable"
+      ],
+      "limitations": [
+        "the reference targets C/C++ and its license state requires review"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          "packages/core/src/runner.ts",
+          "packages/core/src/reducer.ts"
+        ]
+      },
+      "possible_action": "preserve explicit oracle boundaries and candidate isolation",
+      "safety_effect": "positive",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "claims/program-reduction/claim-picire-001.yaml": {
+      "id": "claim:picire:001",
+      "statement": "Complement testing, cache keys, and bounded parallelism can reduce wall-clock time for delta-debugging while preserving oracle decisions.",
+      "source": {
+        "id": "project:picire"
+      },
+      "evidence_type": "reference-implementation",
+      "scope": "verification",
+      "confidence": "medium",
+      "assumptions": [
+        "oracle executions are isolated and deterministic enough for caching"
+      ],
+      "limitations": [
+        "parallelism can amplify resource pressure and nondeterminism"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          "packages/core/src/reducer.ts",
+          "packages/core/src/runner.ts"
+        ]
+      },
+      "possible_action": "benchmark existing cache and worker pool before adding new strategies",
+      "safety_effect": "positive",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "claims/verification/claim-git-001.yaml": {
+      "id": "claim:git:001",
+      "statement": "Git patch output can include extended headers for modes, renames, copies, similarity, binary content, and quoted paths.",
+      "source": {
+        "id": "standard:git-diff-format"
+      },
+      "evidence_type": "normative-specification",
+      "scope": "git-fidelity",
+      "confidence": "high",
+      "assumptions": [
+        "Git output is the compatibility contract"
+      ],
+      "limitations": [
+        "a parser still needs fixtures for every format and merge-specific cases"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          "packages/core/src/diff.ts",
+          "packages/core/src/patch-encoder.ts"
+        ]
+      },
+      "possible_action": "retain round-trip fixtures for all documented headers",
+      "safety_effect": "positive",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "claims/verification/claim-git-002.yaml": {
+      "id": "claim:git:002",
+      "statement": "A combined diff describes a merge relative to multiple parents and cannot be treated as a sequence of independent two-way patches.",
+      "source": {
+        "id": "standard:git-diff-format"
+      },
+      "evidence_type": "normative-specification",
+      "scope": "git-fidelity",
+      "confidence": "high",
+      "assumptions": [
+        "PatchDiet accepts merge diffs or rejects them explicitly"
+      ],
+      "limitations": [
+        "current parser support must be verified with a fixture"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          "packages/core/src/diff.ts"
+        ]
+      },
+      "possible_action": "document unsupported combined-diff behavior or add an explicit parse status",
+      "safety_effect": "positive",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "claims/verification/claim-git-003.yaml": {
+      "statement": "Git-compatible patch application validates patch context and file metadata but does not prove required behavior.",
+      "source": {
+        "id": "standard:git-apply"
+      },
+      "evidence_type": "normative-specification",
+      "scope": "verification",
+      "confidence": "high",
+      "assumptions": [
+        "Git is the application oracle"
+      ],
+      "limitations": [
+        "application success is necessary for patch fidelity but insufficient for correctness"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          "packages/core/src/git.ts",
+          "packages/core/src/runner.ts"
+        ]
+      },
+      "possible_action": "keep patch application and configured tests as separate gates",
+      "safety_effect": "positive",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "claims/scope/claim-treesitter-001.yaml": {
+      "id": "claim:treesitter:001",
+      "statement": "Incremental, error-tolerant syntax trees provide stable structural units for candidate grouping even when source is temporarily incomplete.",
+      "source": {
+        "id": "project:tree-sitter"
+      },
+      "evidence_type": "reference-implementation",
+      "scope": "scope",
+      "confidence": "medium",
+      "assumptions": [
+        "grammar coverage and node ranges are trustworthy for the target language"
+      ],
+      "limitations": [
+        "error-tolerant parsing can create misleading structure; syntax evidence is not behavior evidence"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          "packages/core/src/ast-atomizer.ts",
+          "packages/parsers/src"
+        ]
+      },
+      "possible_action": "keep parser output advisory and require the oracle after every candidate",
+      "safety_effect": "positive",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "claims/scope/claim-scip-001.yaml": {
+      "id": "claim:scip:001",
+      "statement": "A language-agnostic index can normalize symbol definitions and references across tools, but its value depends on indexer coverage and update cost.",
+      "source": {
+        "id": "project:scip"
+      },
+      "evidence_type": "reference-implementation",
+      "scope": "code-intelligence",
+      "confidence": "medium",
+      "assumptions": [
+        "supported indexers are available in CI and Windows environments"
+      ],
+      "limitations": [
+        "protocol adoption alone does not improve precision; benchmark evidence is required"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          "packages/evidence/src",
+          "packages/knowledge/src",
+          "packages/core/src/symbols.ts"
+        ]
+      },
+      "possible_action": "prototype optional import and compare with SQLite graph",
+      "safety_effect": "neutral",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "claims/testing/claim-mutation-001.yaml": {
+      "id": "claim:mutation:001",
+      "statement": "Mutation testing measures whether configured tests detect selected behavior changes through killed and survived mutants.",
+      "source": {
+        "id": "project:strykerjs"
+      },
+      "evidence_type": "reference-implementation",
+      "scope": "testing",
+      "confidence": "high",
+      "assumptions": [
+        "mutants are isolated and tests are repeatable"
+      ],
+      "limitations": [
+        "mutation score is sample-dependent and equivalent mutants distort interpretation"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          "packages/testing",
+          "benchmarks"
+        ]
+      },
+      "possible_action": "use mutation mode to audit oracle strength in benchmark runs",
+      "safety_effect": "positive",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "claims/testing/claim-mutation-002.yaml": {
+      "id": "claim:mutation:002",
+      "statement": "Surviving mutants identify a verification confidence limitation, not permission to block or authorize cleanup by themselves.",
+      "source": {
+        "id": "project:strykerjs"
+      },
+      "evidence_type": "engineering-inference",
+      "scope": "verification",
+      "confidence": "high",
+      "assumptions": [
+        "PatchDiet reports configured checks accurately"
+      ],
+      "limitations": [
+        "the audit cannot enumerate all untested behavior"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          "packages/core/src/runner.ts",
+          "packages/report/src"
+        ]
+      },
+      "possible_action": "surface WEAK_ORACLE evidence without changing deletion authority",
+      "safety_effect": "positive",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "claims/testing/claim-swebench-001.yaml": {
+      "id": "claim:swebench:001",
+      "statement": "Repository-level agent benchmarks are most useful when issue, base commit, patch, environment, and grading tests are recorded as one reproducible instance.",
+      "source": {
+        "id": "benchmark:swe-bench"
+      },
+      "evidence_type": "benchmark-dataset",
+      "scope": "benchmarks",
+      "confidence": "high",
+      "assumptions": [
+        "container or equivalent environment is reproducible"
+      ],
+      "limitations": [
+        "agent repair success does not directly measure unnecessary-change removal"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          "benchmarks",
+          "docs/benchmark-schema.json"
+        ]
+      },
+      "possible_action": "keep PatchDiet benchmark labels and validation gates separate from agent success rates",
+      "safety_effect": "positive",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "claims/review/claim-sarif-001.yaml": {
+      "id": "claim:sarif:001",
+      "statement": "SARIF provides a portable structure for tool findings, rules, locations, and artifacts that can support evidence transport.",
+      "source": {
+        "id": "standard:sarif-2.1.0"
+      },
+      "evidence_type": "normative-specification",
+      "scope": "review",
+      "confidence": "high",
+      "assumptions": [
+        "PatchDiet findings can map to SARIF result and location fields"
+      ],
+      "limitations": [
+        "serialization does not make findings correct or authorize removal"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          "packages/report/src",
+          "packages/github-app/src"
+        ]
+      },
+      "possible_action": "prototype `--format sarif` only after mapping and consumer value are measured",
+      "safety_effect": "positive",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "claims/testing/claim-rts-001.yaml": {
+      "id": "claim:rts:001",
+      "statement": "Change-based regression selection can reduce test work when its analysis is safe for the controlled program model.",
+      "source": {
+        "id": "paper:rothermel-harrold-1997-safe-regression-test-selection"
+      },
+      "evidence_type": "peer-reviewed-paper",
+      "scope": "testing",
+      "confidence": "high",
+      "assumptions": [
+        "change and coverage mappings are complete enough for the model"
+      ],
+      "limitations": [
+        "PatchDiet repositories may violate model assumptions; full required verification remains mandatory"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          "packages/core/src/targeted.ts",
+          "packages/scope/src"
+        ]
+      },
+      "possible_action": "use targeted tests for search and retain full-suite final gate",
+      "safety_effect": "positive",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "claims/review/claim-review-002.yaml": {
+      "id": "claim:review:002",
+      "statement": "Code review serves comprehension, knowledge transfer, and defect finding, so reducing unnecessary diff surface can lower review effort when evidence remains trustworthy.",
+      "source": {
+        "id": "paper:microsoft-modern-code-review-2013"
+      },
+      "evidence_type": "peer-reviewed-paper",
+      "scope": "review",
+      "confidence": "medium",
+      "assumptions": [
+        "review effort can be measured with human or repository signals"
+      ],
+      "limitations": [
+        "study context predates current coding agents and does not prove PatchDiet impact"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          "packages/report/src",
+          "docs/diet-card.md"
+        ]
+      },
+      "possible_action": "benchmark human review effort separately from removal metrics",
+      "safety_effect": "neutral",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "claims/review/claim-review-003.yaml": {
+      "id": "claim:review:003",
+      "statement": "Review-tool integration and lightweight workflows can scale review routing, but organizational case-study findings do not establish correctness.",
+      "source": {
+        "id": "paper:google-modern-code-review-2018"
+      },
+      "evidence_type": "peer-reviewed-paper",
+      "scope": "review",
+      "confidence": "medium",
+      "assumptions": [
+        "routing and review metadata are observable"
+      ],
+      "limitations": [
+        "Google's scale and tooling differ from PatchDiet deployments"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          "packages/report/src",
+          "packages/github-app/src"
+        ]
+      },
+      "possible_action": "use as context for review routing experiments only",
+      "safety_effect": "neutral",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "claims/review/claim-review-001.yaml": {
+      "id": "claim:review:001",
+      "statement": "Diff-filtered line annotations improve review routing but the transport layer cannot establish that a finding is correct.",
+      "source": {
+        "id": "project:reviewdog"
+      },
+      "evidence_type": "reference-implementation",
+      "scope": "review",
+      "confidence": "high",
+      "assumptions": [
+        "finding locations can be mapped to the current diff"
+      ],
+      "limitations": [
+        "line mapping and tool findings can both be wrong"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          "packages/report/src",
+          "packages/github-app/src"
+        ]
+      },
+      "possible_action": "preserve evidence labels and human-review routing",
+      "safety_effect": "positive",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "claims/security/claim-security-001.yaml": {
+      "id": "claim:security:001",
+      "statement": "Secure development frameworks require documented provenance, protected build processes, and response practices around software changes.",
+      "source": {
+        "id": "standard:nist-ssdf-1.1"
+      },
+      "evidence_type": "normative-specification",
+      "scope": "security",
+      "confidence": "high",
+      "assumptions": [
+        "PatchDiet may run in CI over untrusted changes"
+      ],
+      "limitations": [
+        "SSDF controls are process guidance and do not replace sandboxing or tests"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          "packages/core/src/runner.ts",
+          "docs/security-model.md"
+        ]
+      },
+      "possible_action": "retain provenance and runner isolation evidence in reports",
+      "safety_effect": "positive",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "claims/security/claim-security-002.yaml": {
+      "id": "claim:security:002",
+      "statement": "Monitoring runner process and network behavior can expose unexpected egress or supply-chain activity during untrusted verification.",
+      "source": {
+        "id": "project:harden-runner"
+      },
+      "evidence_type": "reference-implementation",
+      "scope": "security",
+      "confidence": "medium",
+      "assumptions": [
+        "the CI environment exposes useful telemetry"
+      ],
+      "limitations": [
+        "monitoring is defense in depth and can miss activity"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          ".github/workflows",
+          "packages/core/src/runner.ts"
+        ]
+      },
+      "possible_action": "research-only until a CI threat model and benchmark justify integration",
+      "safety_effect": "positive",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "claims/security/claim-security-003.yaml": {
+      "id": "claim:security:003",
+      "statement": "Heuristic supply-chain checks are evidence about project posture and cannot prove repository safety or patch correctness.",
+      "source": {
+        "id": "project:openssf-scorecard"
+      },
+      "evidence_type": "reference-implementation",
+      "scope": "security",
+      "confidence": "high",
+      "assumptions": [
+        "scores are displayed with their evidence and scope"
+      ],
+      "limitations": [
+        "heuristics can be stale",
+        "incomplete",
+        "or misclassified"
+      ],
+      "patchdiet_mapping": {
+        "affected_components": [
+          "packages/report/src",
+          "docs/security-model.md"
+        ]
+      },
+      "possible_action": "keep as optional evidence, never a deletion gate",
+      "safety_effect": "positive",
+      "automatic_removal_authority": false,
+      "status": "DISTILLED"
+    },
+    "tickets/PD-R001.yaml": {
+      "id": "PD-R001",
+      "title": "Build research registry and source verification contract",
+      "research_basis": {
+        "sources": [
+          "standard:git-diff-format",
+          "standard:nist-ssdf-1.1",
+          "paper:perses-icse-2018"
+        ],
+        "claims": [
+          "claim:git:001",
+          "claim:security:001",
+          "claim:perses:001"
+        ]
+      },
+      "problem": "Research notes were not represented as reviewable, source-linked records.",
+      "current_repo_evidence": "knowledge/research did not exist at the observed HEAD.",
+      "proposed_change": "Add registry, taxonomy, source records, atomic claims, cards, ADRs, and validation test.",
+      "files_likely_affected": [
+        "knowledge/research",
+        "tests/unit/research-registry.test.ts"
+      ],
+      "implementation_steps": [
+        "create trust-domain layout",
+        "verify seed sources",
+        "atomize claims",
+        "add cards and ADRs",
+        "validate references"
+      ],
+      "safety_invariants": [
+        "automatic_removal_authority remains false for every claim",
+        "research is separate from runtime knowledge"
+      ],
+      "tests": [
+        "tests/unit/research-registry.test.ts"
+      ],
+      "benchmark": "none; registry integrity is the acceptance evidence",
+      "acceptance_criteria": [
+        "all registered paths exist",
+        "required source/algorithm IDs are present",
+        "claims cannot authorize removal"
+      ],
+      "dependencies": [
+        "yaml",
+        "vitest"
+      ],
+      "complexity": "low",
+      "do_not_change": [
+        "runtime deletion authority",
+        ".patchdiet/knowledge.sqlite"
+      ],
+      "status": "IMPLEMENTED"
+    },
+    "tickets/PD-R002.yaml": {
+      "id": "PD-R002",
+      "title": "Benchmark current reducer against ddmin baseline",
+      "research_basis": {
+        "sources": [
+          "paper:perses-icse-2018",
+          "project:picire"
+        ],
+        "claims": [
+          "claim:picire:001",
+          "claim:creduce:001"
+        ]
+      },
+      "problem": "Current reducer behavior is implemented but strategy cost and precision are not measured against named baselines.",
+      "current_repo_evidence": "packages/core/src/reducer.ts provides deterministic search, cache, and inconclusive handling.",
+      "proposed_change": "Add a benchmark fixture set comparing current behavior to a minimal ddmin baseline without changing runtime defaults.",
+      "files_likely_affected": [
+        "benchmarks",
+        "packages/core/src/reducer.ts",
+        "tests/e2e/shrink-ddmin.test.ts"
+      ],
+      "implementation_steps": [
+        "define fixtures",
+        "measure oracle calls/runtime/cache",
+        "report precision/recall",
+        "review results"
+      ],
+      "safety_invariants": [
+        "same executable oracle for all strategies",
+        "no heuristic deletion authority"
+      ],
+      "tests": [
+        "reducer unit suite",
+        "benchmark smoke"
+      ],
+      "benchmark": [
+        "removal precision",
+        "removal recall",
+        "oracle calls",
+        "runtime",
+        "cache hit rate"
+      ],
+      "acceptance_criteria": [
+        "baseline report exists",
+        "strategy choice is evidence-backed",
+        "no regressions in final validation"
+      ],
+      "dependencies": [
+        "PD-R001"
+      ],
+      "complexity": "medium",
+      "do_not_change": [
+        "default reducer strategy until evidence exists"
+      ],
+      "status": "EXPERIMENTAL"
+    },
+    "tickets/PD-R003.yaml": {
+      "id": "PD-R003",
+      "title": "Measure syntax-guided candidate filtering",
+      "research_basis": {
+        "sources": [
+          "paper:perses-icse-2018",
+          "project:tree-sitter"
+        ],
+        "claims": [
+          "claim:perses:001",
+          "claim:treesitter:001"
+        ]
+      },
+      "problem": "AST-aware atoms exist but parse filtering benefit is not measured.",
+      "current_repo_evidence": "packages/core/src/ast-atomizer.ts and ast-shrink.ts are present.",
+      "proposed_change": "Add benchmark-only syntax-guided candidate generation and compare oracle calls and reduction precision.",
+      "files_likely_affected": [
+        "benchmarks",
+        "packages/core/src/ast-atomizer.ts",
+        "packages/core/src/ast-shrink.ts"
+      ],
+      "implementation_steps": [
+        "select fixtures",
+        "record parse rejections",
+        "execute the same oracle",
+        "compare baseline"
+      ],
+      "safety_invariants": [
+        "parse success never bypasses oracle",
+        "invalid candidates cannot be treated as removals"
+      ],
+      "tests": [
+        "AST atomizer tests",
+        "syntax invalid fixture"
+      ],
+      "benchmark": [
+        "parse rejection rate",
+        "oracle calls",
+        "runtime",
+        "removal precision"
+      ],
+      "acceptance_criteria": [
+        "decision recorded as ADOPT",
+        "ADAPT",
+        "or RESEARCH_ONLY from measured data"
+      ],
+      "dependencies": [
+        "PD-R001",
+        "PD-R002"
+      ],
+      "complexity": "medium",
+      "do_not_change": [
+        "final verification gate"
+      ],
+      "status": "EXPERIMENTAL"
+    },
+    "tickets/PD-R010.yaml": {
+      "id": "PD-R010",
+      "title": "Evaluate semantic change evidence adapters",
+      "research_basis": {
+        "sources": [
+          "project:gumtree",
+          "project:refactoringminer",
+          "project:tree-sitter"
+        ],
+        "claims": [
+          "claim:treesitter:001"
+        ]
+      },
+      "problem": "Textual size does not always match structural change size.",
+      "current_repo_evidence": "packages/core/src/diff.ts and insights.ts expose textual and lightweight evidence.",
+      "proposed_change": "Prototype an adapter or fixture corpus for rename, move, extract, inline, and API changes.",
+      "files_likely_affected": [
+        "packages/core/src/insights.ts",
+        "benchmarks",
+        "knowledge/research/adr/ADR-SEMANTIC-CHANGE-001.md"
+      ],
+      "implementation_steps": [
+        "define vocabulary",
+        "build labeled fixtures",
+        "measure matcher precision and runtime",
+        "decide"
+      ],
+      "safety_invariants": [
+        "semantic evidence is advisory and cannot authorize deletion"
+      ],
+      "tests": [
+        "semantic fixture parser tests"
+      ],
+      "benchmark": [
+        "matching precision",
+        "runtime",
+        "semantic change reduction",
+        "review effort"
+      ],
+      "acceptance_criteria": [
+        "ADR updated with measured decision"
+      ],
+      "dependencies": [
+        "PD-R001"
+      ],
+      "complexity": "high",
+      "do_not_change": [
+        "Git fidelity contract"
+      ],
+      "status": "RESEARCH_ONLY"
+    },
+    "tickets/PD-R020.yaml": {
+      "id": "PD-R020",
+      "title": "Benchmark lightweight graph against optional SCIP import",
+      "research_basis": {
+        "sources": [
+          "project:scip",
+          "project:tree-sitter"
+        ],
+        "claims": [
+          "claim:scip:001"
+        ]
+      },
+      "problem": "SCIP may improve cross-file symbol evidence, but added indexer cost is unmeasured.",
+      "current_repo_evidence": "packages/evidence and knowledge use a lightweight local graph.",
+      "proposed_change": "Build an optional importer prototype and compare it without replacing the current graph.",
+      "files_likely_affected": [
+        "packages/evidence",
+        "packages/knowledge",
+        "benchmarks"
+      ],
+      "implementation_steps": [
+        "choose fixture repos",
+        "import supported indexes",
+        "measure precision/recall and cost",
+        "decide"
+      ],
+      "safety_invariants": [
+        "missing graph edges mean unknown",
+        "never unused"
+      ],
+      "tests": [
+        "graph schema tests",
+        "import fixture tests"
+      ],
+      "benchmark": [
+        "index time",
+        "size",
+        "symbol precision",
+        "reference precision",
+        "incremental update",
+        "Windows/CI setup"
+      ],
+      "acceptance_criteria": [
+        "measured comparison and explicit decision"
+      ],
+      "dependencies": [
+        "PD-R001"
+      ],
+      "complexity": "medium",
+      "do_not_change": [
+        "default SQLite graph until benchmark evidence"
+      ],
+      "status": "EXPERIMENTAL"
+    },
+    "tickets/PD-R040.yaml": {
+      "id": "PD-R040",
+      "title": "Audit oracle strength with mutation testing",
+      "research_basis": {
+        "sources": [
+          "project:strykerjs"
+        ],
+        "claims": [
+          "claim:mutation:001",
+          "claim:mutation:002"
+        ]
+      },
+      "problem": "Configured checks may miss representative behavior changes.",
+      "current_repo_evidence": "packages/testing and benchmark fixtures exist, but no mutation confidence report is part of normal shrink.",
+      "proposed_change": "Add a benchmark-only mutation audit with WEAK_ORACLE wording.",
+      "files_likely_affected": [
+        "benchmarks",
+        "packages/testing",
+        "packages/report/src"
+      ],
+      "implementation_steps": [
+        "define mutants",
+        "run tests",
+        "classify survivors",
+        "report confidence limits"
+      ],
+      "safety_invariants": [
+        "mutation score never authorizes or blocks deletion alone"
+      ],
+      "tests": [
+        "killed/survived/equivalent fixture tests"
+      ],
+      "benchmark": [
+        "mutation score",
+        "survivor categories",
+        "runtime"
+      ],
+      "acceptance_criteria": [
+        "report uses configured-check wording and preserves oracle boundary"
+      ],
+      "dependencies": [
+        "PD-R001"
+      ],
+      "complexity": "medium",
+      "do_not_change": [
+        "normal shrink path"
+      ],
+      "status": "RESEARCH_ONLY"
+    },
+    "tickets/PD-R050.yaml": {
+      "id": "PD-R050",
+      "title": "Complete Git diff fidelity audit",
+      "research_basis": {
+        "sources": [
+          "standard:git-diff-format",
+          "standard:git-apply"
+        ],
+        "claims": [
+          "claim:git:001",
+          "claim:git:002",
+          "claim:git:003"
+        ]
+      },
+      "problem": "PatchDiet must preserve Git metadata across all supported patch forms.",
+      "current_repo_evidence": "packages/core/src/diff.ts already handles many extended headers and binary sections.",
+      "proposed_change": "Add fixtures and an explicit support matrix for modified, new, deleted, rename, copy, binary, mode, symlink, submodule, combined diff, and quoted paths.",
+      "files_likely_affected": [
+        "packages/core/src/diff.ts",
+        "packages/core/src/patch-encoder.ts",
+        "tests/unit/diff.test.ts"
+      ],
+      "implementation_steps": [
+        "generate Git fixtures",
+        "round-trip",
+        "apply with Git",
+        "record unsupported cases"
+      ],
+      "safety_invariants": [
+        "Git normative behavior wins",
+        "unsupported input is explicit"
+      ],
+      "tests": [
+        "diff unit tests",
+        "git apply integration"
+      ],
+      "benchmark": [
+        "round-trip fidelity",
+        "apply success",
+        "parse time"
+      ],
+      "acceptance_criteria": [
+        "support matrix and failures are documented"
+      ],
+      "dependencies": [
+        "PD-R001"
+      ],
+      "complexity": "medium",
+      "do_not_change": [
+        "verification authority"
+      ],
+      "status": "EXPERIMENTAL"
+    }
+  }
+}

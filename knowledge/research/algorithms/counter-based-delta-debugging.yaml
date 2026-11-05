@@ -1,0 +1,79 @@
+name: counter-based-delta-debugging
+family: program-reduction
+original_sources:
+  - paper:zhang-2025-cdd
+source_version: ICSE 2025 author manuscript, 12 pages; arXiv v4 metadata checked separately
+evidence_locators:
+  - Section III round/size derivation
+  - Section IV-D minimality limitation
+  - Section V Algorithm 2
+problem: Simplify ProbDD by replacing element probabilities with a round-based subset schedule.
+input: Ordered list, binary property oracle, initial probability p0.
+output: Property-preserving retained list after scheduled deletion rounds.
+algorithm: Compute subset size from round r and p0; partition current list into contiguous subsets, test each complement
+  once, increment round, stop after the size-one round.
+pseudocode: |
+  r=0
+  do:
+    s=ComputeSize(r,p0)  // Algorithm 2; maximize expected gain using round-derived probability
+    subsets=Partition(L,s)
+    for S in subsets:
+      if property(L-S): L=L-S
+    r=r+1
+  while s>1
+  return L
+pseudocode_scope: Original paraphrase for research; use cited full algorithm before implementing a reproduction.
+complexity: A round-based decreasing subset schedule removes the probability sort/update machinery; no PatchDiet cost
+  measurement exists.
+oracle_calls: Only executable property outcomes accept candidates; do not count probability/structure/LLM advice as a
+  successful test.
+termination: Subset size decreases until a size-one round has executed. This is not a fixed-point cleanup.
+correctness_scope: Retains the tested property; skipping revisits can miss opportunities exposed by later deletions, so
+  do not claim unconditional 1-minimality.
+assumptions:
+  - terminating stable oracle
+  - p0 and ordered partition schedule defined
+  - finite input
+limitations:
+  - Introduced inside a later primary analysis of ProbDD, not a separate standalone CDD paper
+  - Comparable results on 76 study benchmarks do not establish universal equality
+  - Counter is the round count, not historical per-group/pair rewards
+failure_modes:
+  - unstable or insufficient oracle
+  - invalid serialization
+  - unsupported domain transfer
+patchdiet_current_state: Existing runtime preserved; this correction adds no runtime strategy.
+patchdiet_gap: No controlled PatchDiet comparison establishes benefit.
+patchdiet_mapping: Research-only scheduling comparison; no feedback ranking or pair-counter runtime changes.
+recommended_use: RESEARCH_ONLY until independently reviewed and benchmarked.
+not_recommended_for: Automatic removal authority or semantic correctness claims.
+tests_required:
+  - property polarity adapter
+  - inconclusive oracle
+  - deterministic reconstruction
+  - budget exit does not claim minimality
+benchmark_metrics:
+  - Removal Precision
+  - Removal Recall
+  - oracle calls
+  - runtime
+  - final verification
+  - hidden regression rate
+status: RESEARCH_ONLY
+independent_review: PENDING
+source_evaluation: Primary paper analyzes ddmin/ProbDD queries and compares CDD on test-input minimization and
+  debloating benchmarks; wrappers can recover some missed reductions.
+id: counter-based-delta-debugging
+claims:
+  - claim:cdd:001
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: No new research-derived runtime work is authorized; no adoption ticket required.
+  D7: Research card only; pre-existing runtime is covered separately by the fresh regression.

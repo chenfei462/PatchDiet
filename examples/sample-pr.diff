@@ -1,0 +1,70 @@
+diff --git a/src/cart.ts b/src/cart.ts
+index 1111111..2222222 100644
+--- a/src/cart.ts
++++ b/src/cart.ts
+@@ -1,7 +1,18 @@
+ export interface CartItem {
+   price: number;
+   quantity: number;
+ }
+ 
+ export function total(items: CartItem[]): number {
+-  return items.reduce((sum, item) => sum + item.price, 0);
++  return items.reduce((sum, item) => sum + item.price * item.quantity, 0);
++}
++
++export function formatTotal(total: number): string {
++  return `$${total.toFixed(2)}`;
++}
++
++export function debugCart(items: CartItem[]): void {
++  console.log("cart debug", items);
+ }
+diff --git a/src/cart.test.ts b/src/cart.test.ts
+index 3333333..4444444 100644
+--- a/src/cart.test.ts
++++ b/src/cart.test.ts
+@@ -1,6 +1,11 @@
+ import { total } from "./cart";
+ 
+ test("total adds item prices", () => {
+   expect(total([{ price: 2, quantity: 1 }, { price: 3, quantity: 1 }])).toBe(5);
+ });
++
++test("total multiplies by quantity", () => {
++  expect(total([{ price: 2, quantity: 4 }])).toBe(8);
++});
+diff --git a/README.md b/README.md
+index 5555555..6666666 100644
+--- a/README.md
++++ b/README.md
+@@ -0,0 +1,6 @@
++# Cart spike notes
++
++Temporary notes from the agent run.
++- tried a discount system
++- abandoned a coupon parser
++- left this in the PR by accident
+diff --git a/docs/agent-plan.md b/docs/agent-plan.md
+index 7777777..8888888 100644
+--- a/docs/agent-plan.md
++++ b/docs/agent-plan.md
+@@ -0,0 +1,5 @@
++# Agent plan
++
++1. Change totals.
++2. Maybe add coupons.
++3. Maybe rewrite checkout later.
+diff --git a/dist/cart.generated.js b/dist/cart.generated.js
+index 9999999..aaaaaaa 100644
+--- a/dist/cart.generated.js
++++ b/dist/cart.generated.js
+@@ -0,0 +1,8 @@
++// generated artifact copied into the PR
++export function total(items) {
++  return items.reduce((sum, item) => sum + item.price * item.quantity, 0);
++}
++
++export function debugCart(items) {
++  console.log("cart debug", items);
++}

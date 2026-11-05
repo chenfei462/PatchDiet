@@ -1,0 +1,7 @@
+diff --git a/value.txt b/value.txt
+index df967b9..564b12f 100644
+--- a/value.txt
++++ b/value.txt
+@@ -1 +1 @@
+-base
++head

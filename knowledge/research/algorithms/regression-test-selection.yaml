@@ -1,0 +1,62 @@
+name: regression-test-selection
+family: test-selection
+original_sources:
+  - paper:rothermel-harrold-1997-safe-regression-test-selection
+problem: Select tests likely to exercise changed behavior while preserving a full verification fallback.
+input: Change impact, coverage or mapping data, test inventory.
+output: Ordered targeted test set plus required full suite.
+algorithm: Map changed entities to tests, prioritize high-confidence candidates, then run the complete required
+  verification before final status.
+pseudocode: |
+  targeted = rank_tests(map_change_to_tests(change, evidence))
+  run(targeted)
+  run(required_full_suite)
+  return targeted_results, full_results
+complexity: O(mapping + test_count log test_count) after evidence exists.
+oracle_calls: Targeted runs plus the mandatory full-suite run.
+termination: Both targeted and full required commands complete or fail.
+correctness_scope: Targeting optimizes search cost; only the required full suite supports final configured verification.
+assumptions:
+  - test mapping is conservative
+  - full suite is known
+failure_modes: &a1
+  - missing coverage
+  - stale mapping
+  - flaky tests
+known_variants:
+  - coverage-based
+  - change-based
+  - prioritization
+  - minimization
+patchdiet_current_state: packages/core/src/targeted.ts and config test_selection support targeted-first execution.
+patchdiet_gap: Hidden-regression rate needs benchmark evidence across real and synthetic fixtures.
+recommended_use: Keep targeted-first behavior with explicit full-verification gate.
+not_recommended_for: Labeling a candidate VERIFIED after targeted tests alone.
+tests_required:
+  - targeted mapping
+  - full-suite enforcement
+  - empty impact fallback
+benchmark_metrics:
+  - targeted runtime
+  - full runtime
+  - hidden regression rate
+  - human review rate
+status: NOT_VERIFIED
+independent_review: PENDING
+id: regression-test-selection
+claims:
+  - claim:rts:001
+limitations: *a1
+patchdiet_mapping: packages/core/src/targeted.ts and config test_selection support targeted-first execution.
+distillation_gates:
+  D1_SOURCE_VERIFIED: FAIL
+  D2_CLAIMS_EXTRACTED: FAIL
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: No new research-derived runtime work is authorized; no adoption ticket required.
+  D7: Research card only; pre-existing runtime is covered separately by the fresh regression.
+  D1: Algorithm-specific primary distillation has not been independently established; this schematic remains quarantined.

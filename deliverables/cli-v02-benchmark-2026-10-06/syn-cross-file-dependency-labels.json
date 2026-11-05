@@ -1,0 +1,47 @@
+{
+  "case": "syn-cross-file-dependency",
+  "labels": [
+    {
+      "filePath": "src/app.js",
+      "identity": "atom-bae1783c1b9e0d3b",
+      "kind": "ast",
+      "label": "necessary",
+      "spans": {
+        "baseBlobSha": "08a3ff0b0fb9",
+        "headBlobSha": "7da6041ddfe9",
+        "baseBytes": [
+          62,
+          82
+        ],
+        "headBytes": [
+          62,
+          86
+        ]
+      },
+      "baseSlice": "  return helper(n);\n",
+      "headSlice": "  return helper(n) * 2;\n",
+      "header": "ast: replace return_statement -> return_statement"
+    },
+    {
+      "filePath": "src/util.js",
+      "identity": "atom-5c0165d948e61425",
+      "kind": "ast",
+      "label": "necessary",
+      "spans": {
+        "baseBlobSha": "ed62324e4f2c",
+        "headBlobSha": "a099cccfcc8e",
+        "baseBytes": [
+          28,
+          40
+        ],
+        "headBytes": [
+          28,
+          44
+        ]
+      },
+      "baseSlice": "  return n;\n",
+      "headSlice": "  return n * 5;\n",
+      "header": "ast: replace return_statement -> return_statement"
+    }
+  ]
+}

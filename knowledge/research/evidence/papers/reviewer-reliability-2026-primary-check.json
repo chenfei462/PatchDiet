@@ -1,0 +1,29 @@
+{
+  "id": "paper:jin-chen-2026-llm-reviewer-reliability",
+  "retrieved_at": "2026-10-27",
+  "verification_status": "SOURCE_VERIFIED_PRIMARY",
+  "disposition": "SOURCE_IDENTIFIED_RETAINED_IN_EVIDENCE_CHAIN",
+  "title": "Are LLMs reliable code reviewers? systematic overcorrection in requirement conformance judgement",
+  "authors": [
+    "Haolin Jin",
+    "Huaming Chen"
+  ],
+  "year": 2026,
+  "venue": "Automated Software Engineering 33, Article 90",
+  "doi": "10.1007/s10515-026-00638-5",
+  "version_of_record": "2026-06-26",
+  "publisher_primary": "https://link.springer.com/article/10.1007/s10515-026-00638-5",
+  "cross_check": "https://arxiv.org/html/2603.00539v1",
+  "preprint_version": "arXiv:2603.00539v1, 28 February 2026",
+  "paper_license": "CC-BY-4.0",
+  "inspection_locators": [
+    "Publisher article title/authors, About this article and Rights and permissions",
+    "Sections 3.2/3.3: paired HumanEval-X-Bugs, reconstructed buggy MBPP, QuixBugs; five evaluated models",
+    "Sections 5-8: error tradeoffs, rationale reliability, filter, validity limitations"
+  ],
+  "dataset_repository_declared_by_paper": "https://github.com/HollinJ3177/Are-LLMs-Reliable-Code-Reviewers-Systematic-Overcorrection-in-Requirement-Conformance-Judgement",
+  "dataset_import_status": "NOT_IMPORTED_NOT_AUTHORIZED",
+  "dataset_rights": "Paper license does not establish rights in all benchmark/data/code components; dataset repository license/snapshot not audited in this paper-only resolution.",
+  "reproduction_executed": false,
+  "independent_review_status": "PENDING_FRESH_REVIEW"
+}

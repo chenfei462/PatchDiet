@@ -1,0 +1,19 @@
+id: PD-R155
+title: Mutation Research Verification
+status: IN_PROGRESS
+research_basis:
+  sources:
+    - project:pit
+    - paper:mutation-testing-survey-2018
+  claims: []
+decision: RESEARCH_ONLY
+automatic_removal_authority: false
+implementation: Research provenance, source/claim/license/data-use and validator evidence only. No runtime adoption or experiments.
+acceptance_criteria:
+  - Primary evidence and limitations recorded separately
+  - D1-D7 explicitly consistent
+  - Independent review V2 assesses remaining blockers
+acceptance_evidence:
+  - reports/RESEARCH_GATE_STATUS.md
+  - reports/RESEARCH_INTEGRITY_VALIDATION.json
+independent_review: PENDING

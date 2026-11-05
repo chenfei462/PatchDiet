@@ -1,0 +1,12 @@
+{
+  "root": "D:\\systemDir\\Desktop\\PatchDiet\\.patchdiet\\review-2026-10-04\\node20-ast-tarball-a870c28c-8127-4186-b412-a3801125ec0c",
+  "results": [
+    {
+      "name": "fresh production Node20 tarball with native SQLite, real index and AST exact artifact",
+      "status": "passed",
+      "tarballSha256": "a5f718d78fef76de9524275c812c8576c28361276482b183e2864f217c1147a0",
+      "version": "0.2.0",
+      "removals": 2
+    }
+  ]
+}

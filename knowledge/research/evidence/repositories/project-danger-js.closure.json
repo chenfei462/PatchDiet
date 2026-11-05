@@ -1,0 +1,82 @@
+{
+  "id": "project:danger-js",
+  "retrieved_at": "2026-10-27",
+  "captured_at_utc": "2026-10-27T16:49:35.605834+00:00",
+  "repository": "https://github.com/danger/danger-js",
+  "inspected_commit": "72540533c4f99bad772ba303be0eb4af6eddbdc4",
+  "commit_date": "2026-10-26T14:25:54Z",
+  "capture_method": "git bare shallow blob-filtered clone; git show at exact SHA; retry transient TLS failures",
+  "files": {
+    "LICENSE": {
+      "url": "https://github.com/danger/danger-js/blob/72540533c4f99bad772ba303be0eb4af6eddbdc4/LICENSE",
+      "path": "knowledge/research/evidence/repositories/project-danger-js.LICENSE.txt",
+      "sha256": "f9977805389b12e631db8b389c761249856488f9fa52a34f4cead4152b6c68c8",
+      "bytes": 1076
+    },
+    "README.md": {
+      "url": "https://github.com/danger/danger-js/blob/72540533c4f99bad772ba303be0eb4af6eddbdc4/README.md",
+      "path": "knowledge/research/evidence/repositories/project-danger-js.README.md.txt",
+      "sha256": "9029b75535b9a25168066543987a03c78e2d61411e50e5954f37aa06a03d5a72",
+      "bytes": 5523
+    }
+  },
+  "default_branch": "main",
+  "project_status": {
+    "archived": false,
+    "disabled": false,
+    "pushed_at": "2026-10-26T14:26:18Z",
+    "description": "\u26a0\ufe0f Stop saying \"you forgot to \u2026\" in code review"
+  },
+  "github_license_metadata": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit",
+    "node_id": "MDc6TGljZW5zZTEz"
+  },
+  "capture_errors": [
+    "LICENSE: fatal: unable to access 'https://github.com/danger/danger-js/': TLS connect error: error:0A000126:SSL routines::unexpected eof while reading\nfatal: could not fetch 663165d00da19dc197044df2a99568d3a578d1c1 from promisor remote\n",
+    "README.md: fatal: unable to access 'https://github.com/danger/danger-js/': TLS connect error: error:0A000126:SSL routines::unexpected eof while reading\nfatal: could not fetch 148c2bf86b39766dae8472b5b0fa811d80b53471 from promisor remote\n"
+  ],
+  "root_entries": [
+    ".babelrc",
+    ".editorconfig",
+    ".eslintignore",
+    ".eslintrc.js",
+    ".flowconfig",
+    ".gitattributes",
+    ".github",
+    ".gitignore",
+    ".husky",
+    ".npmignore",
+    ".pre-commit-config.yaml",
+    ".prettierignore",
+    ".release-it.json",
+    ".vscode",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "Dockerfile",
+    "LICENSE",
+    "README.md",
+    "SECURITY.md",
+    "VISION.md",
+    "appveyor.yml",
+    "dangerfile.circle.js",
+    "dangerfile.flow.js",
+    "dangerfile.lite.ts",
+    "dangerfile.ts",
+    "docs",
+    "env",
+    "package.json",
+    "scripts",
+    "source",
+    "tsconfig.json",
+    "tsconfig.production.json",
+    "tsconfig.spec.json",
+    "tslint.json",
+    "types",
+    "wallaby.js",
+    "yarn.lock"
+  ],
+  "temporary_bare_clone": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\pd-r153-ok3bz5vv\\repo.git"
+}

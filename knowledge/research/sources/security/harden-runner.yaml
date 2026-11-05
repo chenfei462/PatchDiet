@@ -1,0 +1,84 @@
+id: project:harden-runner
+title: StepSecurity Harden-Runner
+source_type: reference-implementation
+authority_tier: B
+year: 2021
+canonical_url: https://github.com/step-security/harden-runner
+retrieved_at: 2026-10-26
+repository: https://github.com/step-security/harden-runner
+license: Apache-2.0
+authors:
+  - StepSecurity contributors
+topics:
+  - security
+  - ci
+  - supply-chain
+problem:
+  summary: Observes runner process behavior and network egress to reduce CI supply-chain risk.
+technique:
+  summary: Runtime monitoring and policy-oriented telemetry in CI jobs.
+validated_on:
+  - GitHub repository reachable with HTTP 200
+claims:
+  - claim:security:002
+assumptions:
+  - verification may execute untrusted code
+limitations:
+  - monitoring is defense in depth and can miss or block legitimate behavior
+patchdiet_relevance:
+  modules:
+    - .github/workflows
+    - packages/core/src/runner.ts
+  relevance: medium
+license_review:
+  status: ROOT_LICENSE_INSPECTED_AT_COMMIT
+  code_copy_allowed: false
+  note: Research summaries only. Dependencies, subcomponents and any future copied files require their own notices review.
+status:
+  source_verified: true
+  distilled: false
+  decision: RESEARCH_ONLY
+primary_secondary: primary-repository
+verification_status: SOURCE_VERIFIED_REPOSITORY
+provenance_audit:
+  ticket: PD-R100
+  previous_status: SOURCE_VERIFIED
+  previous_pin: repository metadata default branch main checked 2026-10-26
+  reason: "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content
+    review."
+  historical_record: reports/PRE_CORRECTION_RECORDS.json
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+inspected_commit: dc2769abcc0fcfbadfc1df54081c1608579ef6b2
+license_verified_at_commit: dc2769abcc0fcfbadfc1df54081c1608579ef6b2
+license_path: LICENSE
+license_type: Apache-2.0
+repository_evidence: evidence/repositories/project-harden-runner.json
+inspection:
+  retrieved_at: 2026-10-26
+  url: https://github.com/step-security/harden-runner/blob/dc2769abcc0fcfbadfc1df54081c1608579ef6b2/LICENSE
+  locators:
+    - LICENSE
+    - https://github.com/step-security/harden-runner/blob/dc2769abcc0fcfbadfc1df54081c1608579ef6b2/README.md
+  scope: Repository identity, root license text and README-level architecture. No claims about uninspected implementation
+    correctness.
+commit_date: 2026-10-19T09:33:06-07:00
+license_scope: Research summaries only. Dependencies, subcomponents and any future copied files require their own notices review.
+project_status:
+  observed: Pinned upstream snapshot accessible
+  commit_timestamp: 2026-10-19T09:33:06-07:00
+  maintenance_assessment: No forward maintenance guarantee; this review preserves the inspected snapshot rather than asserting latest release.
+gate_justifications:
+  D7: Source distillation introduces no implementation in this phase; historical runtime regression is recorded
+    separately. This is not an adoption claim.
+  D6: Research-only provenance/source review; no runtime adoption ticket is required.
+ticket_refs:
+  - PD-R100
+  - PD-R101
+  - PD-R159

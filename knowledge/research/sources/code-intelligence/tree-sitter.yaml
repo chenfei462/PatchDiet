@@ -1,0 +1,87 @@
+id: project:tree-sitter
+title: Tree-sitter
+source_type: reference-implementation
+authority_tier: B
+year: 2018
+canonical_url: https://github.com/tree-sitter/tree-sitter
+retrieved_at: 2026-10-26
+repository: https://github.com/tree-sitter/tree-sitter
+license: MIT
+authors:
+  - Tree-sitter contributors
+topics:
+  - parsing
+  - incremental-parsing
+  - cst
+problem:
+  summary: Provides fast incremental parsing with error-tolerant concrete syntax trees.
+technique:
+  summary: Incremental parser, grammar-driven nodes, and changed ranges.
+validated_on:
+  - GitHub repository reachable with HTTP 200
+claims:
+  - claim:treesitter:001
+assumptions:
+  - language grammar and WASM/runtime support are available
+limitations:
+  - parse success is syntax evidence only and does not establish behavior
+patchdiet_relevance:
+  modules:
+    - packages/core/src/ast-atomizer.ts
+    - packages/parsers/src
+  relevance: high
+license_review:
+  status: ROOT_LICENSE_INSPECTED_AT_COMMIT
+  code_copy_allowed: false
+  note: Research summaries only. Dependencies, subcomponents and any future copied files require their own notices review.
+status:
+  source_verified: true
+  distilled: false
+  decision: ALREADY_IMPLEMENTED
+primary_secondary: primary-repository
+verification_status: SOURCE_VERIFIED_REPOSITORY
+provenance_audit:
+  ticket: PD-R100
+  previous_status: SOURCE_VERIFIED
+  previous_pin: repository metadata default branch master checked 2026-10-26
+  reason: "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content
+    review."
+  historical_record: reports/PRE_CORRECTION_RECORDS.json
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+inspected_commit: dfe770858e3cfd8e8b29a79ea17da390a6f60319
+license_verified_at_commit: dfe770858e3cfd8e8b29a79ea17da390a6f60319
+license_path: LICENSE
+license_type: MIT
+repository_evidence: evidence/repositories/project-tree-sitter.json
+inspection:
+  retrieved_at: 2026-10-26
+  url: https://github.com/tree-sitter/tree-sitter/blob/dfe770858e3cfd8e8b29a79ea17da390a6f60319/LICENSE
+  locators:
+    - LICENSE
+    - https://github.com/tree-sitter/tree-sitter/blob/dfe770858e3cfd8e8b29a79ea17da390a6f60319/README.md
+  scope: Repository identity, root license text and README-level architecture. No claims about uninspected implementation
+    correctness.
+commit_date: 2026-10-24T19:04:12-04:00
+license_scope: Research summaries only. Dependencies, subcomponents and any future copied files require their own notices review.
+project_status:
+  observed: Pinned upstream snapshot accessible
+  commit_timestamp: 2026-10-24T19:04:12-04:00
+  maintenance_assessment: No forward maintenance guarantee; this review preserves the inspected snapshot rather than asserting latest release.
+gate_justifications:
+  D7: Source distillation introduces no implementation in this phase; historical runtime regression is recorded
+    separately. This is not an adoption claim.
+  D6: Research-only provenance/source review; no runtime adoption ticket is required.
+ticket_refs:
+  - PD-R003
+  - PD-R010
+  - PD-R020
+  - PD-R100
+  - PD-R101
+  - PD-R159

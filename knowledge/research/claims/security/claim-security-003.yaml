@@ -1,0 +1,23 @@
+id: claim:security:003
+statement: Heuristic supply-chain checks are evidence about project posture and cannot prove repository safety or patch
+  correctness.
+source:
+  id: project:openssf-scorecard
+evidence_type: reference-implementation
+scope: security
+confidence: high
+assumptions:
+  - scores are displayed with their evidence and scope
+limitations:
+  - heuristics can be stale
+  - incomplete
+  - or misclassified
+patchdiet_mapping:
+  affected_components:
+    - packages/report/src
+    - docs/security-model.md
+possible_action: keep as optional evidence, never a deletion gate
+safety_effect: positive
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

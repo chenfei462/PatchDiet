@@ -1,0 +1,88 @@
+{
+  "name": "patchdiet-vscode",
+  "displayName": "PatchDiet",
+  "description": "PR Auto-Cleaner suggestions inside VS Code.",
+  "version": "0.1.0",
+  "publisher": "patchdiet",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:patchdiet.analyzeDiff",
+    "onView:patchdiet.candidates"
+  ],
+  "main": "./dist/extension.mjs",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "patchdiet",
+          "title": "PatchDiet",
+          "icon": "media/patchdiet.svg"
+        }
+      ]
+    },
+    "views": {
+      "patchdiet": [
+        {
+          "id": "patchdiet.candidates",
+          "name": "Cleanup Candidates"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "patchdiet.analyzeDiff",
+        "title": "PatchDiet: Analyze Current Git Diff"
+      },
+      {
+        "command": "patchdiet.copyReport",
+        "title": "PatchDiet: Copy Last Report"
+      },
+      {
+        "command": "patchdiet.openCandidate",
+        "title": "PatchDiet: Open Candidate"
+      },
+      {
+        "command": "patchdiet.copySuggestion",
+        "title": "PatchDiet: Copy Suggestion"
+      },
+      {
+        "command": "patchdiet.runDryRunJson",
+        "title": "PatchDiet: Run Dry-Run JSON"
+      }
+    ],
+    "configuration": {
+      "title": "PatchDiet",
+      "properties": {
+        "patchdiet.baseRef": {
+          "type": "string",
+          "default": "origin/main",
+          "description": "Base ref used for git diff."
+        },
+        "patchdiet.testCommand": {
+          "type": "string",
+          "default": "npm test",
+          "description": "Test command used by PatchDiet dry-run JSON."
+        },
+        "patchdiet.diffCommand": {
+          "type": "string",
+          "default": "git diff origin/main...HEAD",
+          "description": "Command used by the extension preview."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "bundle": "esbuild extension.mjs --bundle --platform=node --format=esm --external:vscode --outfile=dist/extension.mjs",
+    "package": "npm run bundle && node ../../scripts/package-vscode-extension.mjs"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "esbuild": "^0.27.7"
+  }
+}

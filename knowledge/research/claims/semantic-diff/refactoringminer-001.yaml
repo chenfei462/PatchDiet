@@ -1,0 +1,21 @@
+id: claim:refactoringminer:001
+statement: RefactoringMiner exposes refactoring/AST-difference capabilities; its pinned README advertises several
+  languages with some validation work still pending.
+source:
+  id: project:refactoringminer
+  locators:
+    - Pinned README in evidence/repositories/project-refactoringminer.readme.txt
+evidence_type: project-documentation
+scope: scope
+assumptions:
+  - compatible language frontend and parser input
+limitations:
+  - A detected structural match is not semantic equivalence
+  - No measured PatchDiet precision, recall or integration benefit
+patchdiet_mapping:
+  affected_components:
+    - packages/core/src/insights.ts
+  mapping: Advisory structural evidence only; no deletion authority
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

@@ -17,3 +17,11 @@ report:
   html: true
   markdown: true
   github_comment: true
+safety:
+  mode: local
+  allow_upload: false
+intelligence:
+  mode: local-only
+performance:
+  max_parallel_worktrees: 1
+  cache_tests: false

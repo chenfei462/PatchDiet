@@ -1,0 +1,21 @@
+{
+  "id": "project:picire",
+  "retrieved_at": "2026-10-26",
+  "captured_at_utc": "2026-10-27T04:18:41.723Z",
+  "repository": "https://github.com/renatahodovan/picire",
+  "default_branch": "master",
+  "inspected_commit": "1e5b25c5aee2bee62f3e0192d591050219eaec22",
+  "commit_date": "2026-08-23T20:42:13+02:00",
+  "license_path": "LICENSE.rst",
+  "license_type": "BSD-3-Clause AND LicenseRef-Zeller-legacy-notice",
+  "license_url": "https://github.com/renatahodovan/picire/blob/1e5b25c5aee2bee62f3e0192d591050219eaec22/LICENSE.rst",
+  "license_sha256": "6a649bafc95c5c8d0637839c0a6b3fff7a92ec95a9b210a705701fb164361587",
+  "license_text": "Copyright (c) 2016-2026 Renata Hodovan, Akos Kiss.\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\n1. Redistributions of source code must retain the above copyright notice, this\n   list of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright notice,\n   this list of conditions and the following disclaimer in the documentation\n   and/or other materials provided with the distribution.\n\n3. Neither the name of the copyright holder nor the names of its contributors\n   may be used to endorse or promote products derived from this software\n   without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\nSERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\nCAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\nOR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n-----\n\nThis software is based on work under the following copyright and permission\nnotice:\n\nEnhanced Delta Debugging class\nCopyright (c) 1999, 2000, 2001 Andreas Zeller.\n\nThis file is in the public domain; feel free to copy, modify, use\nand distribute this software as you wish - with one exception.\nPassau University has filed a patent for the use of delta debugging\non program states (A. Zeller: `Isolating cause-effect chains',\nSaarland University, 2001).  The fact that this file is publicly\navailable does not imply that I or anyone else grants you any rights\nrelated to this patent.\n",
+  "readme_url": "https://github.com/renatahodovan/picire/blob/1e5b25c5aee2bee62f3e0192d591050219eaec22/README.rst",
+  "readme_status": "CAPTURED",
+  "readme_sha256": "8e9f32352297d80836b7cf75e13c566f8a1534b7cb3e521f476f747a4e980d4a",
+  "capture_method": "git bare shallow blob-filtered clone; git show at fixed SHA",
+  "previous_pin": "1e5b25c5aee2bee62f3e0192d591050219eaec22",
+  "note": "Captured repository artifacts only. Human/independent review determines verification and claim support.",
+  "manual_license_note": "BSD three-clause terms followed by a historical Zeller public-domain/patent notice. No patent clearance inferred; no code copied."
+}

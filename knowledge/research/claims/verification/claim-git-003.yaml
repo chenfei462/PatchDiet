@@ -1,0 +1,20 @@
+statement: Git-compatible patch application validates patch context and file metadata but does not prove required behavior.
+source:
+  id: standard:git-apply
+evidence_type: normative-specification
+scope: verification
+confidence: high
+assumptions:
+  - Git is the application oracle
+limitations:
+  - application success is necessary for patch fidelity but insufficient for correctness
+patchdiet_mapping:
+  affected_components:
+    - packages/core/src/git.ts
+    - packages/core/src/runner.ts
+possible_action: keep patch application and configured tests as separate gates
+safety_effect: positive
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING
+id: claim:git:003

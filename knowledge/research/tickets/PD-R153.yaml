@@ -1,0 +1,22 @@
+id: PD-R153
+title: SCIP Family Verification
+status: IN_PROGRESS
+research_basis:
+  sources:
+    - project:scip
+    - project:scip-typescript
+    - project:scip-python
+    - project:scip-java
+  claims:
+    - claim:scip:001
+decision: RESEARCH_ONLY
+automatic_removal_authority: false
+implementation: Research provenance, source/claim/license/data-use and validator evidence only. No runtime adoption or experiments.
+acceptance_criteria:
+  - Primary evidence and limitations recorded separately
+  - D1-D7 explicitly consistent
+  - Independent review V2 assesses remaining blockers
+acceptance_evidence:
+  - reports/RESEARCH_GATE_STATUS.md
+  - reports/RESEARCH_INTEGRITY_VALIDATION.json
+independent_review: PENDING

@@ -1,0 +1,59 @@
+{
+  "id": "project:wdd-artifact",
+  "artifact": "Zenodo record 14270380",
+  "doi": "10.5281/zenodo.14270380",
+  "canonical_url": "https://zenodo.org/records/14270380",
+  "retrieved_at": "2026-10-27",
+  "immutable_record": "zenodo:14270380",
+  "record_created": "2024-12-06T08:05:06.225907-08:00",
+  "publication_date": "2024-11-30",
+  "record_license": "CC-BY-4.0 (deposit resource declaration; component applicability unresolved)",
+  "license_path": "LICENSE",
+  "license_type": "GPL v3 text supplied separately as LICENSE",
+  "license_sha256": "8b1ba204bb69a0ade2bfcf65ef294a920f6bb361b317dba43c7ef29d96332b9b",
+  "license_scope": "API license.id cc-by-4.0 describes the deposit resource license declaration. Separate LICENSE file contains GPL v3. Per-component applicability is not explained by the inspected record. Zenodo metadata defaults to CC0 under Terms v1.3 section 7; the previous metadata-only CC-BY interpretation was unsupported.",
+  "readme_path": "README.md",
+  "readme_sha256": "02ba6ca232762da86104be09bbbdc6bc5aab824c4ac69eb26b68b710f1fc5dc9",
+  "files": [
+    {
+      "key": "wdd-artifact.tar.gz",
+      "size": 433944236,
+      "checksum": "md5:5fb52bbe1e42a8b13eaf6f1be579e6c8"
+    },
+    {
+      "key": "LICENSE",
+      "size": 35148,
+      "checksum": "md5:e49f4652534af377a713df3d9dec60cb"
+    },
+    {
+      "key": "README.md",
+      "size": 7769,
+      "checksum": "md5:287e0e72f5d198fab1fef593bda01e7a"
+    },
+    {
+      "key": "wdd-icse25.pdf",
+      "size": 628512,
+      "checksum": "md5:5576e986b5c4b6835e0fda95b749b058"
+    }
+  ],
+  "environment": "Linux plus Docker; docker image wddartifact/wdd:latest; exact image digest not recorded",
+  "benchmark_suites": {
+    "c": 32,
+    "xml": 30
+  },
+  "limitations": [
+    "Docker image digest is not pinned",
+    "Full 433.9 MB archive was not imported into PatchDiet",
+    "Artifact reproduction was not executed",
+    "Bundled source dependencies require their own notices review"
+  ],
+  "note": "v1 provenance and file checksums freshly confirmed. LICENSE endpoint text independently rehashed. Full archive not inspected/imported; no claim that the LICENSE file occurs inside it or covers every dependency. v2 archive checksum differs. No reproduction.",
+  "record_api_evidence": "evidence/repositories/wdd-zenodo-v1-2026-10-27.json",
+  "latest_check_evidence": "evidence/repositories/wdd-zenodo-latest-check-2026-10-27.json",
+  "latest_record": "zenodo:14301983",
+  "latest_version": "v2",
+  "latest_publication_date": "2025-12-08",
+  "license_scope_status": "UNRESOLVED_FOR_CODE_REUSE",
+  "readme_evidence": "evidence/repositories/wdd-zenodo-README.md",
+  "readme_verification": "Existing saved README bytes match freshly retrieved v1 API MD5 287e0e72f5d198fab1fef593bda01e7a; SHA-256 independently computed 2026-10-27."
+}

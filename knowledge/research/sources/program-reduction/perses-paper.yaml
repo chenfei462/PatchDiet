@@ -1,0 +1,81 @@
+id: paper:perses-icse-2018
+title: "Perses: Syntax-Guided Program Reduction"
+source_type: peer-reviewed-paper
+authority_tier: A
+year: 2018
+venue: ICSE
+canonical_url: https://web.cs.ucdavis.edu/~su/publications/perses.pdf
+doi: 10.1145/3180155.3180236
+retrieved_at: 2026-10-26
+authors:
+  - Chengnian Sun
+  - Yuanbo Li
+  - Qirun Zhang
+  - Tianxiao Gu
+  - Zhendong Su
+topics:
+  - program-reduction
+  - syntax-guided-reduction
+  - ast
+problem:
+  summary: Unconstrained reducers spend oracle calls on invalid or low-value program variants.
+technique:
+  summary: Syntax-guided reduction constrains candidates using grammar structure and Perses Normal Form.
+validated_on:
+  - ICSE 2018 paper
+claims:
+  - claim:perses:001
+  - claim:perses:002
+assumptions:
+  - a grammar or parser is available
+  - an executable interestingness oracle exists
+limitations:
+  - syntax preservation does not prove semantic equivalence
+  - results depend on oracle quality and language support
+patchdiet_relevance:
+  modules:
+    - packages/core/src/ast-atomizer.ts
+    - packages/core/src/ast-shrink.ts
+    - packages/core/src/reducer.ts
+  relevance: high
+license_review:
+  status: paper metadata only; repository license tracked separately
+  code_copy_allowed: false
+status:
+  source_verified: true
+  distilled: false
+  decision: EXPERIMENT
+paper_version_used: ICSE 2018 author manuscript, 11 pages
+inspection:
+  retrieved_at: 2026-10-26
+  url: https://web.cs.ucdavis.edu/~su/publications/perses.pdf
+  locators:
+    - Title page; sections 2–4 syntax guidance; section 5 C/Java evaluation only
+  scope: Only recorded, bounded claims; independent review pending
+primary_secondary: primary
+verification_status: SOURCE_VERIFIED_PRIMARY
+provenance_audit:
+  ticket: PD-R100
+  previous_status: SOURCE_VERIFIED
+  previous_pin: null
+  reason: Primary content inspected at listed locators; not merely a webpage existence check.
+  historical_record: reports/PRE_CORRECTION_RECORDS.json
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D7: Source distillation introduces no implementation in this phase; historical runtime regression is recorded
+    separately. This is not an adoption claim.
+  D6: Research-only provenance/source review; no runtime adoption ticket is required.
+ticket_refs:
+  - PD-R001
+  - PD-R002
+  - PD-R003
+  - PD-R100
+  - PD-R101
+  - PD-R159

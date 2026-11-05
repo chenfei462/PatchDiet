@@ -1,0 +1,42 @@
+id: PD-R100
+title: Source Registry Forensic Audit
+status: CORRECTED_PENDING_INDEPENDENT_REVIEW
+research_basis:
+  sources:
+    - standard:sarif-2.1.0
+    - standard:git-diff-format
+    - standard:git-apply
+    - standard:nist-ssdf-1.1
+    - paper:perses-icse-2018
+    - project:perses
+    - project:creduce
+    - project:picire
+    - project:tree-sitter
+    - project:gumtree
+    - project:refactoringminer
+    - project:scip
+    - project:strykerjs
+    - benchmark:swe-bench
+    - paper:rothermel-harrold-1997-safe-regression-test-selection
+    - paper:microsoft-modern-code-review-2013
+    - paper:google-modern-code-review-2018
+    - project:reviewdog
+    - project:harden-runner
+    - project:openssf-scorecard
+    - paper:zeller-hildebrandt-2002-ddmin
+    - paper:misherghi-su-2006-hdd
+    - paper:zhou-2025-wdd
+    - paper:wang-2021-probdd
+    - paper:zhang-2025-cdd
+    - paper:xu-2023-vulcan
+    - paper:zhang-2024-lpr
+    - project:wdd-artifact
+  claims: []
+decision: RESEARCH_ONLY
+automatic_removal_authority: false
+implementation: Research records only; no runtime changes
+acceptance_evidence:
+  - reports/SOURCE_CORRECTIONS.md
+  - reports/SOURCE_REGISTRY_AUDIT.md
+  - reports/REPOSITORY_LICENSE_REVIEW.md
+independent_review: PENDING

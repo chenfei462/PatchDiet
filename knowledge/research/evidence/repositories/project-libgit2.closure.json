@@ -1,0 +1,76 @@
+{
+  "id": "project:libgit2",
+  "retrieved_at": "2026-10-27",
+  "captured_at_utc": "2026-10-27T17:01:23.235208+00:00",
+  "repository": "https://github.com/libgit2/libgit2",
+  "default_branch": "main",
+  "inspected_commit": "42a89d7cc9374a19e72fa57011e5fe3a99c7b3bf",
+  "commit_date": "2026-10-16T15:02:19+01:00",
+  "project_status": {
+    "archived": false,
+    "disabled": false,
+    "pushed_at": "2026-10-16T14:02:20Z",
+    "description": "A cross-platform, linkable library implementation of Git that you can use in your application."
+  },
+  "api_repository_url": "https://api.github.com/repos/libgit2/libgit2",
+  "api_commit_url": "https://api.github.com/repos/libgit2/libgit2/commits/42a89d7cc9374a19e72fa57011e5fe3a99c7b3bf",
+  "github_license_metadata": {
+    "key": "other",
+    "name": "Other",
+    "spdx_id": "NOASSERTION",
+    "url": null,
+    "node_id": "MDc6TGljZW5zZTA="
+  },
+  "files": {
+    "COPYING": {
+      "url": "https://github.com/libgit2/libgit2/blob/42a89d7cc9374a19e72fa57011e5fe3a99c7b3bf/COPYING",
+      "path": "knowledge/research/evidence/repositories/project-libgit2.COPYING.txt",
+      "sha256": "b123691b72ba7939138915f1665cc0d27599e69e3035e8be4556da1f50269cf9",
+      "bytes": 67021
+    }
+  },
+  "capture_errors": [
+    "LICENSE: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+    "LICENSE.md: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+    "LICENSE.txt: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+    "LICENSE-MIT: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+    "LICENSE-APACHE: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+    "COPYING: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+    "README.md: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+    "README.md: fatal: unable to access 'https://github.com/libgit2/libgit2/': TLS connect error: error:0A000126:SSL routines::unexpected eof while reading\nfatal: could not fetch b3d0e299d27047747205457a9a33813b78ff7063 from promisor remote\n"
+  ],
+  "capture_method": "git bare shallow blob-filtered clone; git show at exact SHA using OpenSSL backend",
+  "metadata_error": "HTTP Error 403: rate limit exceeded",
+  "root_entries": [
+    ".HEADER",
+    ".clang-format",
+    ".devcontainer",
+    ".editorconfig",
+    ".gitattributes",
+    ".github",
+    ".gitignore",
+    ".mailmap",
+    ".vscode",
+    "AUTHORS",
+    "CMakeLists.txt",
+    "COPYING",
+    "FUNDING.json",
+    "README.md",
+    "SECURITY.md",
+    "api.docurium",
+    "benchmarks",
+    "ci",
+    "cmake",
+    "deps",
+    "docs",
+    "examples",
+    "fuzzers",
+    "git.git-authors",
+    "include",
+    "package.json",
+    "script",
+    "src",
+    "tests"
+  ],
+  "temporary_bare_clone": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\pd-r153-b8dhi9n2\\repo.git"
+}

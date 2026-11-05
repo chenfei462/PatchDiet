@@ -1,0 +1,21 @@
+id: claim:picire:001
+statement: Picire provides parallel delta debugging and configurable search behavior; wall-clock benefit and reliable
+  isolation require workload measurement.
+source:
+  id: project:picire
+evidence_type: reference-implementation
+scope: verification
+confidence: medium
+assumptions:
+  - oracle executions are isolated and deterministic enough for caching
+limitations:
+  - parallelism can amplify resource pressure and nondeterminism
+patchdiet_mapping:
+  affected_components:
+    - packages/core/src/reducer.ts
+    - packages/core/src/runner.ts
+possible_action: benchmark existing cache and worker pool before adding new strategies
+safety_effect: positive
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

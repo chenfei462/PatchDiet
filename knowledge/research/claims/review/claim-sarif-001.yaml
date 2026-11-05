@@ -1,0 +1,21 @@
+id: claim:sarif:001
+statement: SARIF provides a portable structure for tool findings, rules, locations, and artifacts that can support
+  evidence transport.
+source:
+  id: standard:sarif-2.1.0
+evidence_type: normative-specification
+scope: review
+confidence: high
+assumptions:
+  - PatchDiet findings can map to SARIF result and location fields
+limitations:
+  - serialization does not make findings correct or authorize removal
+patchdiet_mapping:
+  affected_components:
+    - packages/report/src
+    - packages/github-app/src
+possible_action: prototype `--format sarif` only after mapping and consumer value are measured
+safety_effect: positive
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

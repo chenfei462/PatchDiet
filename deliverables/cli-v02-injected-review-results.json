@@ -1,0 +1,134 @@
+{
+  "at": "2026-10-06T00:47:54.246Z",
+  "status": "available-corpus-passed",
+  "implementationVersion": "0.1.1",
+  "composition": "Three tiny reviewer-created mixed-hunk language fixtures; no natural agent PRs. This is a provisional subset, not the full release benchmark.",
+  "cases": [
+    {
+      "name": "js-mixed-semantic",
+      "corpus": "synthetic-injected",
+      "base": "8a227651fcac00e4cd0b3cfafaff554a49b5efba",
+      "head": "8c3c4e243177164013e0b61dba80910a90e4ecd2",
+      "labels": {
+        "necessary": [
+          {
+            "sourcePath": "src/total.js",
+            "behavior": "total(4)=8 and total(0)=0"
+          }
+        ],
+        "unnecessary": [
+          {
+            "sourcePath": "src/total.js",
+            "statement": "const trace = {n};"
+          },
+          {
+            "sourcePath": "src/total.js",
+            "statement": "console.error('injected-debug', trace);"
+          }
+        ],
+        "uncertain": []
+      },
+      "automaticRemoved": 2,
+      "benchmarkSafeRemoved": 2,
+      "falseOrUncertainRemoved": 0,
+      "necessaryBehaviorsRetained": 1,
+      "scopeViolationFound": true,
+      "independentFinalOracle": "passed",
+      "knownHiddenRegressions": 0,
+      "durationMs": 3499,
+      "cleanupSha256": "e503490bc19cb3d4acb709ce086dd0a5d92528e99bd9aa5fa5a01854bde6ebef",
+      "sourceIdentityProof": "all nonblank lines byte-identical to pinned HEAD minus the two prelabelled unnecessary statements; blank separators allowed only in these simple fixtures without multiline strings"
+    },
+    {
+      "name": "python-mixed-semantic",
+      "corpus": "synthetic-injected",
+      "base": "58d8265b50fdfff5aba00fb95f420bbde03af7fb",
+      "head": "c28692b7dd9175436d60f270d0148d7bb15a6d83",
+      "labels": {
+        "necessary": [
+          {
+            "sourcePath": "src/total.py",
+            "behavior": "total(4)=8 and total(0)=0"
+          }
+        ],
+        "unnecessary": [
+          {
+            "sourcePath": "src/total.py",
+            "statement": "trace = {'n': n}"
+          },
+          {
+            "sourcePath": "src/total.py",
+            "statement": "print('injected-debug', trace)"
+          }
+        ],
+        "uncertain": []
+      },
+      "automaticRemoved": 2,
+      "benchmarkSafeRemoved": 2,
+      "falseOrUncertainRemoved": 0,
+      "necessaryBehaviorsRetained": 1,
+      "scopeViolationFound": true,
+      "independentFinalOracle": "passed",
+      "knownHiddenRegressions": 0,
+      "durationMs": 3938,
+      "cleanupSha256": "d6a4fbb5bd5c655454ffef47395130a6ab1ba6e73e668f6d8f2fbd5e3b79e2d3",
+      "sourceIdentityProof": "all nonblank lines byte-identical to pinned HEAD minus the two prelabelled unnecessary statements; blank separators allowed only in these simple fixtures without multiline strings"
+    },
+    {
+      "name": "typescript-mixed-semantic",
+      "corpus": "synthetic-injected",
+      "base": "e3c7f2a4d10af2e5fed8352ca76d853583eaa22d",
+      "head": "377c4c46e49a11e1369e4b95fe6a5b015274e741",
+      "labels": {
+        "necessary": [
+          {
+            "sourcePath": "src/total.ts",
+            "behavior": "total(4)=8 and total(0)=0, source compiles with real TypeScript compiler"
+          }
+        ],
+        "unnecessary": [
+          {
+            "sourcePath": "src/total.ts",
+            "statement": "const trace: Trace = {n};"
+          },
+          {
+            "sourcePath": "src/total.ts",
+            "statement": "console.error('injected-debug', trace);"
+          }
+        ],
+        "uncertain": []
+      },
+      "automaticRemoved": 2,
+      "benchmarkSafeRemoved": 2,
+      "falseOrUncertainRemoved": 0,
+      "necessaryBehaviorsRetained": 1,
+      "scopeViolationFound": true,
+      "independentFinalOracle": "passed",
+      "knownHiddenRegressions": 0,
+      "durationMs": 7637,
+      "cleanupSha256": "a4db035c28eab85bcd28f674f620488b77222662d52510d783696e14f9e2d4ab",
+      "sourceIdentityProof": "all nonblank lines byte-identical to pinned HEAD minus the two prelabelled unnecessary statements; blank separators allowed only in these simple fixtures without multiline strings"
+    }
+  ],
+  "sampleCount": 3,
+  "precision": {
+    "numerator": 6,
+    "denominator": 6,
+    "rate": 1
+  },
+  "scopeViolationHitRate": {
+    "numerator": 3,
+    "denominator": 3
+  },
+  "finalOraclePassRate": {
+    "numerator": 3,
+    "denominator": 3
+  },
+  "knownHiddenRegressions": 0,
+  "naturalAgentPRGate": {
+    "status": "NOT VERIFIED",
+    "sampleCount": 0,
+    "reason": "No human-labelled natural agent PR dataset supplied."
+  },
+  "releaseApproval": "NOT APPROVED"
+}

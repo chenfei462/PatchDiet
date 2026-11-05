@@ -1,0 +1,20 @@
+id: claim:perses:001
+statement: Generating syntax-valid reduction candidates avoids oracle executions on variants rejected solely for syntax.
+source:
+  id: paper:perses-icse-2018
+evidence_type: peer-reviewed-paper
+scope: program-reduction
+confidence: high
+assumptions:
+  - grammar or parser is available
+limitations:
+  - syntax validity does not establish semantic equivalence or task relevance
+patchdiet_mapping:
+  affected_components:
+    - packages/core/src/ast-atomizer.ts
+    - packages/core/src/ast-shrink.ts
+possible_action: keep AST-aware candidate generation and measure oracle-call savings
+safety_effect: positive
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

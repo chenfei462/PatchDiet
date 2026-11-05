@@ -1,0 +1,42 @@
+id: standard:git-config-quotepath
+title: git-config core.quotePath
+authors:
+  - Git project
+year: 2026
+venue: Git official reference manual
+canonical_url: https://git-scm.com/docs/git-config#Documentation/git-config.txt-corequotePath
+source_type: normative-documentation
+authority_tier: A
+primary_secondary: primary
+retrieved_at: 2026-10-27
+paper_version_used: Git git-config 2.56.0
+inspection:
+  url: https://git-scm.com/docs/git-config#Documentation/git-config.txt-corequotePath
+  locators:
+    - core.quotePath
+  retrieved_at: 2026-10-27
+verification_status: SOURCE_VERIFIED_PRIMARY
+claims:
+  - claim:git:004
+limitations:
+  - Normative representation and transport only; no behavioral equivalence or removal authority.
+patchdiet_relevance:
+  mapping: mappings/git-diff-support-matrix.md; parser/serializer and metadata human-review boundaries
+  relevance: high
+status:
+  source_verified: true
+  distilled: false
+  decision: RESEARCH_ONLY
+ticket_refs:
+  - PD-R158
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D7: Normative citation added to existing support matrix; no runtime implementation changed.
+  D6: Research-only provenance/source review; no runtime adoption ticket is required.

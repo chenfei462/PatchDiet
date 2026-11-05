@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Mutation testing resources for academic research.">
+	<meta name="keywords" content="mutation testing, mutation testing repository, yue jia">
+	<meta name="author" content="Yue Jia and Mark Harman">
+
+<title>
+   Mutation Testing Repository
+</title>
+
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" >
+<link href="css/mut.css" rel="stylesheet" type="text/css" >
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" >
+<!-- Documentation extras -->
+<!--<link href="../assets/css/docs.min.css" rel="stylesheet">-->
+
+<!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Favicons -->
+<!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+                               <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+-->
+
+<!--<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-146052-10']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+-->
+  </head>
+  <body>
+  
+  
+<div class="container" >
+
+		<div class="masthead" >
+	<!-- <h2>Mutation Testing <span class="muted" >Repository</span></h2>-->
+	<img src="/img/Header.png"/>
+        <div class="navbar" >
+          <div class="navbar-inner" >
+            <div class="container" >
+              <ul class="nav" >
+                <li  ><a href="index.php" >Home</a></li>
+                <li><a href="repository.php" >Repository</a></li>
+                <li class="active"><a href="theory.php" >Theory</a></li>
+                <li><a href="tools.php" >Tools</a></li>
+                <li><a href="analysis.php" >Controlled Experiments</a></li>
+               <!-- <li><a href="resources.html" >Resources</a></li> -->
+              </ul>
+            </div>
+          </div> <!--end navbar-inner-->
+        </div><!-- end navbar -->
+	</div> <!-- endmasthead-->
+
+
+<!--	<div class="jumbotron" >
+ 		<div class="row-fluid">
+ 			<ul class="thumbnails">
+               
+                <li class="span8">
+                    <img src="img/subject_program_tr.jpg" alt="Fittest_Banner" >           
+                </li>   
+                 <li class="span4">
+                <h2>Empirical Study</h2>
+                  <p class="lead" >Far more new real programs than toy programs have been introduced...
+</p>
+        <a class="btn btn-large btn-success" href="project.html" >Learn more</a>
+                </li>         
+           </ul>
+		</div>
+   </div>--> <!-- end Jumbotron -->
+    
+   <div class="row-fluid">
+      <div class="span8">
+           <div id="proj_desc">
+           <h3>Mutation Testing Theory</h3>
+	 				<p>
+Mutation Testing is a fault-based testing technique which provides a testing criterion
+called the &quot;mutation adequacy score&quot;. The mutation adequacy score can be used
+to measure the effectiveness of a test set in terms of its ability to detect
+faults. 
+</p>
+ <p>
+The general principle underlying Mutation Testing work is that the faults used by
+Mutation Testing represent the mistakes that programmers often make and other related
+testing heuristics.  Such faults are deliberately seeded into the original
+program, by a simple syntactic change, to create a set of faulty programs
+called mutants, each containing a different syntactic change. To assess the
+quality of a given test set, these mutants are executed against the input test
+set to see if the seeded faults can be detected. The history of Mutation Testing can
+be traced back to 1971 in a student paper by Richard Lipton
+[<a href="search_paper.php?func=2&pid=EncyclopediaSE">EncyclopediaSE</a>]. The birth of the field can also be
+identified in other papers published in the late 1970s by DeMillo et al.
+[<a href="search_paper.php?func=2&pid=DeMilloLS78">DeMilloLS78</a>] and Hamlet [<a href="search_paper.php?func=2&pid=Hamlet77">Hamlet77</a>].				
+</p>
+
+</div> <!-- end of proj_desc-->
+           <div id="desc1">
+      
+<h3>Fundamental Hypotheses</h3>
+				<p>
+Mutation Testing promises to be effective in identifying adequate
+test data which can be used to find real faults
+[<a href="search_paper.php?func=2&pid=GeistOH92">GeistOH92</a>]. However, the number of such potential faults for a given
+program is enormous; it is impossible to generate mutants representing all of
+them. Therefore, traditional Mutation Testing only targets a subset of these
+faults; those which are close to the correct version of the program with the
+hope that these will be sufficient to simulate all faults. This theory is based
+on two hypotheses: the Competent Programmer Hypothesis (CPH) [<a href="search_paper.php?func=2&pid=DeMilloLS78">DeMilloLS78</a>, <a href="search_paper.php?func=2&pid=AcreeBDLS79">AcreeBDLS79</a>] and
+Coupling Effect [<a href="search_paper.php?func=2&pid=DeMilloLS78">DeMilloLS78</a>].
+</p>
+
+<p>
+The CPH was first introduced by DeMillo et al. in 1978 [<a href="search_paper.php?func=2&pid=DeMilloLS78">DeMilloLS78</a>].  
+It states that programmers are competent, which implies that they tend
+to develop programs close to the correct version. As a result, although there
+may be faults in the program delivered by a competent programmer, we assume
+that these faults are merely a few simple faults which can be corrected by a
+few small syntactical changes. Therefore, in Mutation Testing, only faults
+constructed from several simple syntactical changes are applied, which
+represents the faults that are made by &quot;competent programmers&quot;. An example of
+the CPH can be found in Acree et al.'s work [<a href="search_paper.php?func=2&pid=AcreeBDLS79">AcreeBDLS79</a>] and
+a theoretical discussion using the concept of program
+neighbourhoods can also be found in Budd et al.'s work [<a href="search_paper.php?func=2&pid=BuddDLS80">BuddDLS80</a>].</p>
+
+<p>
+The Coupling Effect was also proposed by DeMillo et al. in 1978
+[<a href="search_paper.php?func=2&pid=DeMilloLS78">DeMilloLS78</a>]. Unlike the CPH concerning programmer's behaviour, the Coupling
+Effect concerns the type of faults used in mutation analysis. It states that
+&quot;Test data that distinguishes all programs differing from a correct one by
+only simple errors is so sensitive that it also implicitly distinguishes more
+complex errors&quot;. Offutt [<a href="search_paper.php?func=2&pid=Offutt89">Offutt89</a>,<a href="search_paper.php?func=2&pid=Offutt92"> Offutt92</a>] extended this into the
+Coupling Effect Hypothesis and the Mutation Coupling Effect Hypothesis with a
+precise definition of simple and complex faults (errors). In his definition, a
+simple fault is represented by a simple mutant which is created by making a
+single syntactical change, while a complex fault is represented as a complex
+mutant which is created by making more than one change.</p>
+
+<p>
+According to Offutt, the Coupling Effect Hypothesis is that &quot;complex faults
+are coupled to simple faults in such a way that a test data set that detects
+all simple faults in a program will detect a high percentage of the complex
+faults&quot; [<a href="search_paper.php?func=2&pid=Offutt92">Offutt92</a>]. The Mutation Coupling Effect Hypothesis now becomes
+&quot;Complex mutants are coupled to simple mutants in such a way that a test data
+set that detects all simple mutants in a program will also detect a large
+percentage of the complex mutants&quot; [<a href="search_paper.php?func=2&pid=Offutt92">Offutt92</a>]. As a result, the mutants
+used in traditional Mutation Testing are limited to simple mutants only. </p>
+
+         </div> <!-- end of survey_desc-->   
+         
+         <div>
+         
+<h3>The Process of Mutation Analysis</h3>
+
+<p>The traditional process of mutation analysis is illustrated in the figure below. In mutation analysis, from a program p, a set of faulty programs p' called mutants, is generated by a few single syntactic changes into the original program p. A transformation rule that generates a mutant from the original program is known as a mutation operator.
+In the literature of Mutation Testing, mutation operators are also known as mutant operators, mutagenic
+operators, mutagens and mutation rules [<a href="search_paper.php?func=2&pid=OffuttU01">OffuttU01</a>]. Typical mutation operators are designed to modify variables and expressions by replacement, insertion or deletion operators. </p>
+						<img src="img/fig2.jpg" width="440" height="376" style="margin-left:80px; margin-top:10px; margin-bottom:15px;" />
+						<p>In next step, a test set T is supplied to the system. Before
+starting the mutation analysis, this test set needs to be successfully
+executed against the original program p to check its correctness
+for the test case. If p is incorrect, it has to be fixed before running
+other mutants, otherwise each mutant p' will then be run against
+this test set T. If the result of running p' is different from the
+result of running p for any test case in T, then the mutant p' is
+said to be &quot;killed&quot;, otherwise it is said to have &quot;survived&quot;.</p>
+
+                        <p>After all test cases have been executed, there may be still a
+few "surviving" mutants. To improve the test set T, the program
+tester can provide additional test inputs to kill these surviving
+mutants. However, there are some mutants that can never be
+killed, because they always produce the same output as the
+original program. These mutants are called Equivalent Mutants.
+They are syntactically different but functionally equivalent to the
+original program. Automatically detecting equivalent mutants is
+impossible [<a href="search_paper.php?func=2&pid=BuddA82">BuddA82</a>,<a href="search_paper.php?func=2&pid=OffuttP97">OffuttP97</a>], because the problem would involve detecting
+equivalence. 
+<p>
+Mutation Testing concludes with an adequacy score, known
+as the Mutation Score, which indicates the quality of the input
+test set. The mutation score (MS) is the ratio of the number of
+killed mutants over the total number of non-equivalent mutants.
+The goal of mutation analysis is to raise the mutation score to
+1, indicating the test set T is sufficient to detect all the faults
+denoted by the mutants.
+</p>
+
+         </div>
+      <div>
+      
+<h3>The Problems of Mutation Analysis</h3>
+<p>
+Although Mutation Testing is able to effectively assess the quality of a test set, it still
+suffers from a number of problems. One problem that prevents Mutation Testing from becoming
+a practical testing technique is the high computational cost of executing the
+enormous number of mutants against a test set. The other problems are related
+to the amount of human effort involved in using Mutation Testing , for example, the human
+oracle problem and the equivalent mutant problem. 
+</p>
+<p>
+The human oracle problem
+refers to the process of checking the original program's output with each test
+case. Strictly speaking this is not a problem unique to Mutation Testing. In all forms of
+testing, once a of set inputs has been arrived at, there remains the problem of
+checking output. However, mutating testing is effective precisely because it is
+demanding and this can lead to an increase in the number of test cases, thereby
+increasing oracle cost. This oracle cost is often the most expensive part of
+the overall test activity. Also, because of the undecidability of mutant
+equivalence, the detection of equivalent mutants often involves additional
+human effort. 
+
+</p>
+      </div>
+           </div> <!-- end of span 9-->
+   
+   <div class="span3 offset1">
+<script  language="javascript">
+function quick_search()
+{
+	if(document.form_quick_search.search_type[0].checked == true)
+	//	alert("paper");
+		search_paper();
+	else
+	
+		search_author();
+}
+
+
+function search_paper()
+{
+	  var name = window.document.form_quick_search.keywords.value;
+	  if( name == "") {
+	  	alert("Keywords are required");
+	  }
+	  else
+	  {
+	  var loc="search_paper.php?pm=0&pg=1&func=1&kw="+ name;
+	  top.location=loc;
+	  }
+}
+
+function search_author()
+{
+	  var name =  window.document.form_quick_search.keywords.value;
+	  if( name == "") {
+	  	alert("Keywords are required");
+	  }
+	  else
+      {
+		 var loc="search_author.php?sn=" + name;
+		 top.location=loc;
+	 }
+	//alert("Available Soon, please try to search paper first")
+}
+</script>
+
+    <div class="well sidebar-nav">
+          		<h3>Quick Search </h3>  
+					<form name="form_quick_search"  onSubmit="return false;">
+  		
+  		 <div class="radio">
+      <label class="radio-inline">
+        	<input name="search_type" type="radio" value="paper" checked="checked" /> by paper title
+        </label>
+         <label class="radio-inline">
+    		<input type="radio" name="search_type"  value="author" > by author name
+  		</label>
+   		 </div>
+    
+   <div>
+      <input style="width:150px" name="keywords" type="text" size="0" placeholder="keywords"> 
+    </div>
+	<input type="submit" class="btn btn-default" value="Search" onClick="quick_search();">
+
+</form>
+
+<div align="left">View all <a href="search_paper.php?func=1&pm=0&pg=1">papers</a> | <a href="search_author.php">authors</a>
+
+</div>
+
+          </div><!--/.well -->
+	
+  <div class="well sidebar-nav">
+	<h3>Citation</h3>  
+    <div class="code-box" style="width:192px;  font-size: 10pt;">  @ARTICLE{PapadakisKZJTH18, 
+  author = {Mike Papadakis and Marinos Kintis and Jie Zhang and Yue Jia and Yves Le Traon and Mark Harman},
+  title = {Mutation Testing Advances: An Analysis and Survey},
+  journal = {Advances in Computers},
+  year = {2018},
+}
+	</div>
+</div>
+	
+   <div class="well sidebar-nav">
+	<h3>Survey </h3>  
+   <h4>(TR version)</h4>
+  <a href="survey.pdf" class="btn btn-success" role="button">Download</a> 
+</div>
+	
+   
+       
+   </div>
+   
+   </div>
+     <footer class="footer" >
+      <div class="container" >
+     <!-- <p>Terms of Use:
+Unless stated differently, all material on this repository is the property of its own author. All downloads from this website are provided as freeware for personal use only. You must not sell, redistribute or modify any items (in whole, and/or in part) that have originated from this site.
+      </p> -->
+<p>Mutation testing Repository is a joint work of the University of Luxembourg and University College London</p>
+<p>Copyright © Université du Luxembourg 2018. All rights reserved.</p>
+<!-- <p>Copyright © 2007-2018 </p> --> <!--       <p>Copyright © 2007-2018 <a href="http://www0.cs.ucl.ac.uk/staff/Y.Jia/" >Yue Jia</a> and <a href="http://www0.cs.ucl.ac.uk/staff/M.Harman/" >Mark Harman</a>     
+        </p> -->
+        <ul class="footer-links" >
+          <li><a href="http://crest.cs.ucl.ac.uk"  target="_blank"><img src="/img/CREST.png"  height="92" width="102"/></a></li>
+          <li class="muted" >&middot;</li>
+          <li><a href="http://www.uni.lu"  target="_blank"><img src="/img/UniLu.png" height="92" width="82"/></a></li>
+           <!--<li><a href="http://crest.cs.ucl.ac.uk/cow/" >COW</a></li> -->
+       </ul>
+
+      </div>
+    </footer>
+	
+
+
+
+</div> <!-- container -->
+  
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

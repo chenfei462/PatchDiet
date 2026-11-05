@@ -1,0 +1,5 @@
+# Generated benchmark output (per-run JSON, patches, labels, hashes, logs).
+# Written fresh by every run of `npm run bench:cli-v02` under results/<stamp>/.
+# Nothing here is deleted: existing runs stay on disk as local evidence;
+# they are simply not tracked so stale stamps never masquerade as current.
+results/

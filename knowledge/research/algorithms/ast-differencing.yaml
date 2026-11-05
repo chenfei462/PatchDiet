@@ -1,0 +1,63 @@
+name: ast-differencing
+family: semantic-diff
+original_sources:
+  - project:gumtree
+  - project:refactoringminer
+problem: Represent structural edits separately from textual line churn.
+input: Before/after syntax trees.
+output: Insert, delete, update, move, and domain-specific refactoring evidence.
+algorithm: Match nodes using stable labels and structure, then emit edit actions and confidence.
+pseudocode: |
+  old_tree = parse(old_source)
+  new_tree = parse(new_source)
+  matches = match(old_tree, new_tree)
+  return actions_from_unmatched_and_changed_nodes(matches)
+complexity: Depends on matcher; typically superlinear in tree size for robust matching.
+oracle_calls: None for analysis; candidates still require executable verification.
+termination: Matcher terminates on finite trees and configured limits.
+correctness_scope: Structural evidence and refactoring hypotheses, not semantic proof.
+assumptions:
+  - compatible parsers
+  - stable node identity heuristics
+failure_modes: &a1
+  - ambiguous matches
+  - generated code
+  - parser differences
+known_variants:
+  - tree matching
+  - refactoring detection
+  - token differencing
+patchdiet_current_state: Diff and insight modules expose textual and lightweight structural evidence.
+patchdiet_gap: No measured value for a JVM semantic-diff adapter on PatchDiet workloads.
+recommended_use: Research-only adapter experiment.
+not_recommended_for: Converting a detected refactoring into delete permission.
+tests_required:
+  - rename
+  - move
+  - insert/delete/update
+  - parser failure
+benchmark_metrics:
+  - matching precision
+  - runtime
+  - semantic reduction
+  - review effort
+status: NOT_VERIFIED
+independent_review: PENDING
+id: ast-differencing
+claims:
+  - claim:gumtree:001
+  - claim:refactoringminer:001
+limitations: *a1
+patchdiet_mapping: Diff and insight modules expose textual and lightweight structural evidence.
+distillation_gates:
+  D1_SOURCE_VERIFIED: FAIL
+  D2_CLAIMS_EXTRACTED: FAIL
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: No new research-derived runtime work is authorized; no adoption ticket required.
+  D7: Research card only; pre-existing runtime is covered separately by the fresh regression.
+  D1: Algorithm-specific primary distillation has not been independently established; this schematic remains quarantined.

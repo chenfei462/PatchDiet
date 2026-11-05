@@ -1,0 +1,78 @@
+name: probabilistic-delta-debugging
+family: program-reduction
+original_sources:
+  - paper:wang-2021-probdd
+source_version: Original ESEC/FSE 2021 author manuscript, 12 pages
+evidence_locators:
+  - Sections 3.1–3.3
+  - Algorithm and Theorem 4.1
+  - Section 5
+problem: Use prior property-test outcomes to choose expected profitable deletions.
+input: Finite sequence, initial probability 0<p0<1, binary property function.
+output: An observed property-preserving subsequence and learned relevance estimates.
+algorithm: Maintain independent Bernoulli relevance estimates. Order by ascending probability; choose a deletion prefix
+  maximizing k·product(1-p). Verify its complement; update only deleted/attempted elements.
+pseudocode: |
+  p[e] = p0
+  while any retained p[e] < 1:
+    S = low_probability_prefix maximizing size(S)*product(1-p[e] for e in S)
+    if property(L-S): L = L-S; set p[e]=0 for e in S
+    else: for e in S: p[e] = p[e] / (1-product(1-p[j] for j in S))
+  return L
+pseudocode_scope: Original paraphrase for research; use cited full algorithm before implementing a reproduction.
+complexity: Original Theorem 4.1 gives O(n) worst-case property tests for its algorithm/model; this is not an arbitrary
+  budgeted random sampler.
+oracle_calls: Only executable property outcomes accept candidates; do not count probability/structure/LLM advice as a
+  successful test.
+termination: Original stops when retained probabilities reach 1 (removed elements have 0); numerical tolerance and
+  tie-breaking must be specified for any implementation.
+correctness_scope: Model arguments assume monotonicity, unambiguity and independence; later 2025 analysis documents
+  missed single deletions when revisits are skipped. Do not infer unconditional minimality.
+assumptions:
+  - monotonicity/unambiguity for theoretical model
+  - independent Bernoulli relevance approximation
+  - stable binary property oracle
+limitations:
+  - Sequential posterior updates ignore interactions among tests
+  - Dependent/non-monotone real inputs may violate model
+  - Later CDD findings are separate primary evidence about limitations
+failure_modes:
+  - unstable or insufficient oracle
+  - invalid serialization
+  - unsupported domain transfer
+patchdiet_current_state: Existing runtime preserved; this correction adds no runtime strategy.
+patchdiet_gap: No controlled PatchDiet comparison establishes benefit.
+patchdiet_mapping: Research-only learned search policy. Configured checks remain authoritative; INCONCLUSIVE must not
+  become property=true.
+recommended_use: RESEARCH_ONLY until independently reviewed and benchmarked.
+not_recommended_for: Automatic removal authority or semantic correctness claims.
+tests_required:
+  - property polarity adapter
+  - inconclusive oracle
+  - deterministic reconstruction
+  - budget exit does not claim minimality
+benchmark_metrics:
+  - Removal Precision
+  - Removal Recall
+  - oracle calls
+  - runtime
+  - final verification
+  - hidden regression rate
+status: RESEARCH_ONLY
+independent_review: PENDING
+source_evaluation: Original evaluates HDD/CHISEL substitutions across multiple reduction domains; stochastic variants
+  repeated five times on a specified Linux server. This does not measure PatchDiet.
+id: probabilistic-delta-debugging
+claims:
+  - claim:probdd:001
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: No new research-derived runtime work is authorized; no adoption ticket required.
+  D7: Research card only; pre-existing runtime is covered separately by the fresh regression.

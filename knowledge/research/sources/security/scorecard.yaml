@@ -1,0 +1,83 @@
+id: project:openssf-scorecard
+title: OpenSSF Scorecard
+source_type: reference-implementation
+authority_tier: B
+year: 2020
+canonical_url: https://github.com/ossf/scorecard
+retrieved_at: 2026-10-26
+repository: https://github.com/ossf/scorecard
+license: Apache-2.0
+authors:
+  - OpenSSF contributors
+topics:
+  - security
+  - supply-chain
+problem:
+  summary: Produces evidence-based checks for open-source project security practices.
+technique:
+  summary: Heuristic checks with score and evidence output.
+validated_on:
+  - GitHub repository reachable with HTTP 200
+claims:
+  - claim:security:003
+assumptions:
+  - heuristic evidence is interpreted with its scope and limitations
+limitations:
+  - scores are heuristics and cannot prove absence of vulnerabilities or correctness
+patchdiet_relevance:
+  modules:
+    - docs/security-model.md
+    - packages/report/src
+  relevance: low
+license_review:
+  status: ROOT_LICENSE_INSPECTED_AT_COMMIT
+  code_copy_allowed: false
+  note: Research summaries only. Dependencies, subcomponents and any future copied files require their own notices review.
+status:
+  source_verified: true
+  distilled: false
+  decision: RESEARCH_ONLY
+primary_secondary: primary-repository
+verification_status: SOURCE_VERIFIED_REPOSITORY
+provenance_audit:
+  ticket: PD-R100
+  previous_status: SOURCE_VERIFIED
+  previous_pin: repository metadata default branch main checked 2026-10-26
+  reason: "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content
+    review."
+  historical_record: reports/PRE_CORRECTION_RECORDS.json
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+inspected_commit: bf930af43c4355506d4c4a88149b112ab7251e1a
+license_verified_at_commit: bf930af43c4355506d4c4a88149b112ab7251e1a
+license_path: LICENSE
+license_type: Apache-2.0
+repository_evidence: evidence/repositories/project-openssf-scorecard.json
+inspection:
+  retrieved_at: 2026-10-26
+  url: https://github.com/ossf/scorecard/blob/bf930af43c4355506d4c4a88149b112ab7251e1a/LICENSE
+  locators:
+    - LICENSE
+    - https://github.com/ossf/scorecard/blob/bf930af43c4355506d4c4a88149b112ab7251e1a/README.md
+  scope: Repository identity, root license text and README-level architecture. No claims about uninspected implementation
+    correctness.
+commit_date: 2026-10-27T04:11:30Z
+license_scope: Research summaries only. Dependencies, subcomponents and any future copied files require their own notices review.
+project_status:
+  observed: Pinned upstream snapshot accessible
+  commit_timestamp: 2026-10-27T04:11:30Z
+  maintenance_assessment: No forward maintenance guarantee; this review preserves the inspected snapshot rather than asserting latest release.
+gate_justifications:
+  D7: Source distillation introduces no implementation in this phase; historical runtime regression is recorded
+    separately. This is not an adoption claim.
+  D6: Research-only provenance/source review; no runtime adoption ticket is required.
+ticket_refs:
+  - PD-R100
+  - PD-R101
+  - PD-R159

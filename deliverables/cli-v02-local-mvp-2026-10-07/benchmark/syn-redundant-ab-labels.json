@@ -1,0 +1,47 @@
+{
+  "case": "syn-redundant-ab",
+  "labels": [
+    {
+      "filePath": "src/util1.js",
+      "identity": "atom-d09d5c8c37f0977e",
+      "kind": "ast",
+      "label": "unnecessary",
+      "spans": {
+        "baseBlobSha": "acd6de51b62a",
+        "headBlobSha": "64e0436b3247",
+        "baseBytes": [
+          28,
+          28
+        ],
+        "headBytes": [
+          28,
+          72
+        ]
+      },
+      "baseSlice": "",
+      "headSlice": "export function double(n) { return n * 2; }\n",
+      "header": "ast: insert block"
+    },
+    {
+      "filePath": "src/util2.js",
+      "identity": "atom-c1b17236fcca4a66",
+      "kind": "ast",
+      "label": "unnecessary",
+      "spans": {
+        "baseBlobSha": "3b693a0bfb5f",
+        "headBlobSha": "ecbd818743d6",
+        "baseBytes": [
+          28,
+          28
+        ],
+        "headBytes": [
+          28,
+          72
+        ]
+      },
+      "baseSlice": "",
+      "headSlice": "export function double(n) { return n * 2; }\n",
+      "header": "ast: insert block"
+    }
+  ]
+}

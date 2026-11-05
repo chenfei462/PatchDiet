@@ -1,0 +1,10 @@
+diff --git a/src/broken.js b/src/broken.js
+index e831c5b..9593f5f 100644
+--- a/src/broken.js
++++ b/src/broken.js
+@@ -1,3 +1,5 @@
+ export function ok() {
+   return 1;
+ }
++}})
++function broken( {

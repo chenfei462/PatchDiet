@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/chenfei462/PatchDiet/main/docs/feedback.schema.json",
+  "title": "PatchDiet local feedback data",
+  "description": "Bounded local-only record of human review verdicts for one PatchDiet shrink run. Data format specification only: PatchDiet 0.2.0 has no feedback reader or writer; files in this format are manually authored and consumer-managed local records with no built-in collection, network access, or adaptive behavior.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "runRef", "feedback"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "runRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["baseRef", "headRef", "cleanupDiffSha256"],
+      "properties": {
+        "baseRef": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "headRef": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "cleanupDiffSha256": {
+          "type": "string",
+          "description": "SHA-256 of .patchdiet/cleanup.diff at review time; binds verdicts to the exact reviewed bytes.",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "feedback": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["candidateId", "path", "verdict", "reviewedAt"],
+        "properties": {
+          "candidateId": { "type": "string", "minLength": 1, "maxLength": 200 },
+          "path": {
+            "type": "string",
+            "description": "Repo-relative path with forward slashes. Rejects absolute Unix/Windows/UNC/drive-letter paths, empty, dot and dot-dot traversal segments, backslashes, and NUL/control characters.",
+            "minLength": 1,
+            "maxLength": 1024,
+            "allOf": [
+              {
+                "description": "Allowed character set only, at least one character; lookaheads reject empty (//) segments, a leading slash, and a trailing slash. The character class applies to every character, including the last.",
+                "pattern": "^(?!/)(?!.*//)(?!.*[/]$)[^\\\\:*?\"<>|\\u0000-\\u001F]+$"
+              },
+              {
+                "description": "No dot-dot traversal segment anywhere.",
+                "pattern": "^(?!.*(^|/)\\.\\.($|/))"
+              },
+              {
+                "description": "No dot segment anywhere.",
+                "pattern": "^(?!.*(^|/)\\.($|/))"
+              }
+            ]
+          },
+          "verdict": {
+            "enum": ["accepted", "rejected", "wrong_scope", "uncertain"]
+          },
+          "note": { "type": "string", "minLength": 0, "maxLength": 2000 },
+          "reviewedAt": {
+            "type": "string",
+            "description": "RFC 3339 date-time with explicit UTC offset or Z.",
+            "format": "date-time",
+            "minLength": 20,
+            "maxLength": 64
+          }
+        }
+      }
+    }
+  },
+  "$comment": "Consumer requirement (not automatic CLI enforcement): feedback files SHOULD be at most 4 MiB of UTF-8 encoding exactly one JSON object with no trailing data. PatchDiet 0.2.0 performs no enforcement of this file size because it neither reads nor writes feedback files; tooling that consumes this format must reject larger files. The 'format': 'date-time' assertion on reviewedAt follows RFC 3339."
+}

@@ -1,0 +1,21 @@
+id: claim:swebench:001
+statement: The official SWE-bench repository exposes issue-resolution task and evaluation tooling; PatchDiet must
+  separately measure unnecessary-change removal.
+source:
+  id: benchmark:swe-bench
+evidence_type: benchmark-dataset
+scope: benchmarks
+confidence: high
+assumptions:
+  - container or equivalent environment is reproducible
+limitations:
+  - agent repair success does not directly measure unnecessary-change removal
+patchdiet_mapping:
+  affected_components:
+    - benchmarks
+    - docs/benchmark-schema.json
+possible_action: keep PatchDiet benchmark labels and validation gates separate from agent success rates
+safety_effect: positive
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

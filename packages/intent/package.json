@@ -1,0 +1,8 @@
+{
+  "name": "@patchdiet/intent",
+  "version": "0.2.0",
+  "type": "module",
+  "dependencies": {
+    "zod": "^4.6.5"
+  }
+}

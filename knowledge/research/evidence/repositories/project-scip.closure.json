@@ -1,0 +1,73 @@
+{
+  "id": "project:scip",
+  "retrieved_at": "2026-10-27",
+  "captured_at_utc": "2026-10-27T16:51:23.641926+00:00",
+  "repository": "https://github.com/scip-code/scip",
+  "inspected_commit": "026b4201c2d556141bd9934a33060cf38895bd40",
+  "commit_date": "2026-10-27T16:04:01Z",
+  "capture_method": "git bare shallow blob-filtered clone; git show at exact SHA; retry transient TLS failures",
+  "files": {
+    "LICENSE": {
+      "url": "https://github.com/scip-code/scip/blob/026b4201c2d556141bd9934a33060cf38895bd40/LICENSE",
+      "path": "knowledge/research/evidence/repositories/project-scip.LICENSE.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    "README.md": {
+      "url": "https://github.com/scip-code/scip/blob/026b4201c2d556141bd9934a33060cf38895bd40/README.md",
+      "path": "knowledge/research/evidence/repositories/project-scip.README.md.txt",
+      "sha256": "fce767acbc4242c6f589fedf6f81a3089d6da766789e4d5a0a5673d2f6a927c0",
+      "bytes": 3176
+    },
+    "scip.proto": {
+      "url": "https://github.com/scip-code/scip/blob/026b4201c2d556141bd9934a33060cf38895bd40/scip.proto",
+      "path": "evidence/repositories/project-scip.scip.proto.txt",
+      "sha256": "b38021b65ef90cbbf6af9c829ff75192859ad9b5da05439ef154bea4ceb2bf03",
+      "bytes": 35781
+    },
+    "go.mod": {
+      "url": "https://github.com/scip-code/scip/blob/026b4201c2d556141bd9934a33060cf38895bd40/go.mod",
+      "path": "evidence/repositories/project-scip.go.mod.txt",
+      "sha256": "34c255a4615e839af22d92cf8e937c51a1b5b763577f64a6bb9bca119ce43aca",
+      "bytes": 1487
+    },
+    "docs/Development.md": {
+      "url": "https://github.com/scip-code/scip/blob/026b4201c2d556141bd9934a33060cf38895bd40/docs/Development.md",
+      "path": "evidence/repositories/project-scip.docs-Development.md.txt",
+      "sha256": "bc827a0f45a2f8b62f3468508d80ffbb567bc597e134f3bb1269ebce8ad06243",
+      "bytes": 6557
+    }
+  },
+  "metadata_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+  "root_entries": [
+    ".gitattributes",
+    ".github",
+    ".gitignore",
+    ".prettierignore",
+    ".prettierrc",
+    "LICENSE",
+    "README.md",
+    "bindings",
+    "buf.gen.yaml",
+    "buf.yaml",
+    "checks.nix",
+    "cmd",
+    "docs",
+    "flake.lock",
+    "flake.nix",
+    "go.mod",
+    "go.sum",
+    "go.work",
+    "go.work.sum",
+    "reprolang",
+    "scip.proto"
+  ],
+  "temporary_bare_clone": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\pd-r153-zj3736a0\\repo.git",
+  "project_status": {
+    "archived": false,
+    "disabled": false,
+    "pushed_at": "2026-10-27T16:04:33Z",
+    "description": "SCIP Code Intelligence Protocol"
+  },
+  "default_branch": "main"
+}

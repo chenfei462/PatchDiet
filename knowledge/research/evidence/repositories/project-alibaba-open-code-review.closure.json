@@ -1,0 +1,78 @@
+{
+  "id": "project:alibaba-open-code-review",
+  "retrieved_at": "2026-10-27",
+  "captured_at_utc": "2026-10-27T16:49:26.982658+00:00",
+  "repository": "https://github.com/alibaba/open-code-review",
+  "inspected_commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+  "commit_date": "2026-10-20T17:50:03+08:00",
+  "capture_method": "git bare shallow blob-filtered clone; git show at exact SHA; retry transient TLS failures",
+  "files": {
+    "LICENSE": {
+      "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/LICENSE",
+      "path": "knowledge/research/evidence/repositories/project-alibaba-open-code-review.LICENSE.txt",
+      "sha256": "1945665fdb6968a66ea29438ddee0aee23035365c862e5c4a75b62b303340acf",
+      "bytes": 11356
+    },
+    "README.md": {
+      "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/README.md",
+      "path": "knowledge/research/evidence/repositories/project-alibaba-open-code-review.README.md.txt",
+      "sha256": "e90ddd2234de7d1b3608ed9107287cf94a9c574fb5d5d1c9e3133a83d4556bd6",
+      "bytes": 13447
+    }
+  },
+  "default_branch": "main",
+  "project_status": {
+    "archived": false,
+    "disabled": false,
+    "pushed_at": "2026-10-22T04:24:26Z",
+    "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible."
+  },
+  "github_license_metadata": {
+    "key": "apache-2.0",
+    "name": "Apache License 2.0",
+    "spdx_id": "Apache-2.0",
+    "url": "https://api.github.com/licenses/apache-2.0",
+    "node_id": "MDc6TGljZW5zZTI="
+  },
+  "root_entries": [
+    ".agents",
+    ".claude-plugin",
+    ".claude",
+    ".gitattributes",
+    ".github",
+    ".gitignore",
+    ".kimi-plugin",
+    ".npmignore",
+    ".opencodereview",
+    "AGENTS.md",
+    "ASSURANCE_CASE.md",
+    "CLAUDE.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "GOVERNANCE.md",
+    "LICENSE",
+    "Makefile",
+    "README.md",
+    "ROADMAP.md",
+    "acp",
+    "action.yml",
+    "bin",
+    "cmd",
+    "docs",
+    "examples",
+    "extensions",
+    "go.mod",
+    "go.sum",
+    "imgs",
+    "install.ps1",
+    "install.sh",
+    "internal",
+    "npm",
+    "package.json",
+    "pages",
+    "plugins",
+    "scripts",
+    "skills"
+  ],
+  "temporary_bare_clone": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\pd-r153-zqpcxbzb\\repo.git"
+}

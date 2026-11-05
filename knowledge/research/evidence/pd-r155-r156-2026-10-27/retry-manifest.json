@@ -1,0 +1,46 @@
+[
+  {
+    "file": "codereviewqa-code-LICENSE.json",
+    "url": "https://api.github.com/repos/hongyi-tom/CodeReviewQA/git/blobs/bfa900c49f026d2260fe7056d7f40b623528b4d1",
+    "retrieved_at": "2026-10-27T16:57:31.984435+00:00",
+    "sha256": "205eca5aa50d199c2ec6528c10599279ffec48dfa3511a232ff4b0a1bde95fa2"
+  },
+  {
+    "file": "codereviewqa-code-LICENSE",
+    "derived_from": "codereviewqa-code-LICENSE.json",
+    "sha256": "4580dd7b4156ae957ebce2d35cd3037991ca8edbe3f6004383a11f039c5a3bd0"
+  },
+  {
+    "file": "live-harness-README.md.json",
+    "url": "https://api.github.com/repos/microsoft/SWE-bench-Live/git/blobs/e432e607e8644d550a22d02ae83743decad19fb3",
+    "retrieved_at": "2026-10-27T16:57:32.073883+00:00",
+    "sha256": "eb519aeaf5b45d1f53e97e486eb3a0ea3a769cde5b215ba98ed9d9b6d8eddcd1"
+  },
+  {
+    "file": "live-harness-README.md",
+    "derived_from": "live-harness-README.md.json",
+    "sha256": "3a5e751a703c69c045a9bfc1123ac50481eee0755561db4389023f38e3cfed16"
+  },
+  {
+    "file": "aidev-code-README.md.json",
+    "url": "https://api.github.com/repos/SAILResearch/AI_Teammates_in_SE3/git/blobs/72f9471232afca54830931192ea864f95ce16755",
+    "retrieved_at": "2026-10-27T16:57:32.168602+00:00",
+    "sha256": "b17098ddf5541c1a0c2ee02d377e24e91c0b930ff167ddedb3386c394201b67a"
+  },
+  {
+    "file": "aidev-code-README.md",
+    "derived_from": "aidev-code-README.md.json",
+    "sha256": "8c4a93a080ca9b0f0252d06d3f64b80dec0a1c886247046579abfff6c256e91e"
+  },
+  {
+    "file": "codereviewqa-code-README.md.json",
+    "url": "https://api.github.com/repos/hongyi-tom/CodeReviewQA/git/blobs/72033ed6b8b1a12956e9b67207855a476a88ce1a",
+    "retrieved_at": "2026-10-27T16:57:33.572401+00:00",
+    "sha256": "d39c56d39ed1df3fd4485bb3f77eb97824165b8a089141f2db76f345bf511b33"
+  },
+  {
+    "file": "codereviewqa-code-README.md",
+    "derived_from": "codereviewqa-code-README.md.json",
+    "sha256": "3657c8138ab5dfe93dff054ed448ee7c74a6a329932aa1220640f0becb304ab2"
+  }
+]

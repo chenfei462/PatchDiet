@@ -1,0 +1,20 @@
+id: claim:git:002
+statement: A combined diff describes a merge relative to multiple parents and cannot be treated as a sequence of
+  independent two-way patches.
+source:
+  id: standard:git-diff-format
+evidence_type: normative-specification
+scope: git-fidelity
+confidence: high
+assumptions:
+  - PatchDiet accepts merge diffs or rejects them explicitly
+limitations:
+  - current parser support must be verified with a fixture
+patchdiet_mapping:
+  affected_components:
+    - packages/core/src/diff.ts
+possible_action: document unsupported combined-diff behavior or add an explicit parse status
+safety_effect: positive
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

@@ -1,0 +1,85 @@
+id: benchmark:swe-bench
+title: SWE-bench official benchmark repository
+source_type: benchmark-paper-and-repository
+authority_tier: C
+year: 2023
+canonical_url: https://github.com/SWE-bench/SWE-bench
+paper_url: https://arxiv.org/abs/2310.06770
+retrieved_at: 2026-10-26
+repository: https://github.com/SWE-bench/SWE-bench
+license: MIT
+authors:
+  - SWE-bench contributors
+topics:
+  - benchmarks
+  - ai-coding-agents
+problem:
+  summary: Evaluates repository-level issue resolution using real GitHub issues, patches, and tests.
+technique:
+  summary: Containerized repository environments and test-based grading per task instance.
+validated_on:
+  - official repository and paper page
+claims:
+  - claim:swebench:001
+assumptions:
+  - task environments and grading tests are reproducible
+limitations:
+  - benchmark distribution and contamination can limit generalization to PatchDiet cleanup
+patchdiet_relevance:
+  modules:
+    - benchmarks
+    - docs/benchmark-schema.json
+  relevance: medium
+license_review:
+  status: ROOT_LICENSE_INSPECTED_AT_COMMIT
+  code_copy_allowed: false
+  note: Research summaries only. Dependencies, subcomponents and any future copied files require their own notices review.
+status:
+  source_verified: true
+  distilled: false
+  decision: ADAPT
+primary_secondary: primary-repository
+verification_status: SOURCE_VERIFIED_REPOSITORY
+provenance_audit:
+  ticket: PD-R100
+  previous_status: SOURCE_VERIFIED
+  previous_pin: repository metadata default branch main checked 2026-10-26
+  reason: "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content
+    review."
+  historical_record: reports/PRE_CORRECTION_RECORDS.json
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+inspected_commit: 02e7a74ffd0b707aab73d203fe87bdc7c76afc8e
+license_verified_at_commit: 02e7a74ffd0b707aab73d203fe87bdc7c76afc8e
+license_path: LICENSE
+license_type: MIT
+repository_evidence: evidence/repositories/benchmark-swe-bench.json
+inspection:
+  retrieved_at: 2026-10-26
+  url: https://github.com/SWE-bench/SWE-bench/blob/02e7a74ffd0b707aab73d203fe87bdc7c76afc8e/LICENSE
+  locators:
+    - LICENSE
+    - https://github.com/SWE-bench/SWE-bench/blob/02e7a74ffd0b707aab73d203fe87bdc7c76afc8e/README.md
+  scope: Repository identity, root license text and README-level architecture. No claims about uninspected implementation
+    correctness. Paper authors/experimental results are separate evidence, not inferred from repository authors.
+paper_version_used: null
+commit_date: 2026-09-02T01:50:34Z
+license_scope: Research summaries only. Dependencies, subcomponents and any future copied files require their own notices review.
+project_status:
+  observed: Pinned upstream snapshot accessible
+  commit_timestamp: 2026-09-02T01:50:34Z
+  maintenance_assessment: No forward maintenance guarantee; this review preserves the inspected snapshot rather than asserting latest release.
+gate_justifications:
+  D7: Source distillation introduces no implementation in this phase; historical runtime regression is recorded
+    separately. This is not an adoption claim.
+  D6: Research-only provenance/source review; no runtime adoption ticket is required.
+ticket_refs:
+  - PD-R100
+  - PD-R101
+  - PD-R159

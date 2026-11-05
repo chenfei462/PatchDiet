@@ -1,0 +1,110 @@
+{
+  "case": "inj-python-two-debug-sites",
+  "labels": [
+    {
+      "filePath": "src/total.py",
+      "identity": "atom-08a46b3ef96b9592",
+      "kind": "ast",
+      "label": "uncertain",
+      "spans": {
+        "baseBlobSha": "b03659e369bc",
+        "headBlobSha": "31eadbaf1613",
+        "baseBytes": [
+          14,
+          27
+        ],
+        "headBytes": [
+          14,
+          14
+        ]
+      },
+      "baseSlice": "    return n\n",
+      "headSlice": "",
+      "header": "ast: delete block in total"
+    },
+    {
+      "filePath": "src/total.py",
+      "identity": "atom-0e9888bf57d5bc6b",
+      "kind": "ast",
+      "label": "unnecessary",
+      "spans": {
+        "baseBlobSha": "b03659e369bc",
+        "headBlobSha": "31eadbaf1613",
+        "baseBytes": [
+          27,
+          27
+        ],
+        "headBytes": [
+          14,
+          34
+        ]
+      },
+      "baseSlice": "",
+      "headSlice": "    trace = {'n': n}",
+      "header": "ast: insert expression_statement in total"
+    },
+    {
+      "filePath": "src/total.py",
+      "identity": "atom-6d36d117090a093d",
+      "kind": "ast",
+      "label": "unnecessary",
+      "spans": {
+        "baseBlobSha": "b03659e369bc",
+        "headBlobSha": "31eadbaf1613",
+        "baseBytes": [
+          27,
+          27
+        ],
+        "headBytes": [
+          34,
+          69
+        ]
+      },
+      "baseSlice": "",
+      "headSlice": "\n    print('injected-debug', trace)",
+      "header": "ast: insert expression_statement in total"
+    },
+    {
+      "filePath": "src/total.py",
+      "identity": "atom-f66426eb5fb91f20",
+      "kind": "ast",
+      "label": "necessary",
+      "spans": {
+        "baseBlobSha": "b03659e369bc",
+        "headBlobSha": "31eadbaf1613",
+        "baseBytes": [
+          27,
+          27
+        ],
+        "headBytes": [
+          69,
+          87
+        ]
+      },
+      "baseSlice": "",
+      "headSlice": "\n    return n * 2\n",
+      "header": "ast: insert return_statement in total"
+    },
+    {
+      "filePath": "src/util.py",
+      "identity": "atom-b00f80433d72f75c",
+      "kind": "ast",
+      "label": "unnecessary",
+      "spans": {
+        "baseBlobSha": "d1045f266bca",
+        "headBlobSha": "d3b8ff3bb4f0",
+        "baseBytes": [
+          13,
+          13
+        ],
+        "headBytes": [
+          13,
+          49
+        ]
+      },
+      "baseSlice": "",
+      "headSlice": "    print('injected-debug-util', n)\n",
+      "header": "ast: insert block"
+    }
+  ]
+}

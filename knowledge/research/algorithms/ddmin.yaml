@@ -1,0 +1,86 @@
+name: ddmin
+family: program-reduction
+original_sources:
+  - paper:zeller-hildebrandt-2002-ddmin
+source_version: TSE February 2002 author manuscript, 17 pages; university-hosted copy
+evidence_locators:
+  - Definitions 8–10
+  - Figure 5
+  - Propositions 11–13
+  - Figure 15 and section V
+problem: Minimize an input that retains an observed failure using a test function.
+input: Finite ordered changes C with test(C)=FAIL and test(empty)=PASS; outcomes PASS, FAIL, UNRESOLVED.
+output: A failure-inducing 1-minimal configuration after an unbudgeted completed ddmin run.
+algorithm: Partition C into n approximately equal-count subsets; test subsets first, then complements; shrink on FAIL,
+  otherwise increase granularity.
+pseudocode: |
+  C = initial; n = 2
+  while size(C) >= 2:
+    parts = split_by_count(C, n)
+    if a part S has test(S) == FAIL: C = S; n = 2; continue
+    if a complement C-S has test(C-S) == FAIL: C = C-S; n = max(n-1, 2); continue
+    if n == size(C): return C
+    n = min(2*n, size(C))
+  return C
+pseudocode_scope: Original paraphrase for research; use cited full algorithm before implementing a reproduction.
+complexity: "Oracle queries: O(n²) worst case (n²+3n bound in Proposition 12); O(log n) special best case (Proposition 13)."
+oracle_calls: Only executable property outcomes accept candidates; do not count probability/structure/LLM advice as a
+  successful test.
+termination: Finite input and terminating tests; accepted steps strictly shrink; unsuccessful steps increase granularity
+  to singletons. Budget interruption removes the minimality guarantee.
+correctness_scope: 1-minimal means no single retained element can be deleted while still observing FAIL. UNRESOLVED
+  means failure not reproduced, not proof of passing. Monotonicity is not required for this local guarantee.
+assumptions:
+  - stable test outcomes
+  - finite atomization
+  - test(empty)=PASS and test(initial)=FAIL
+  - each oracle execution terminates
+limitations:
+  - Not subset-minimal for non-monotone tests
+  - Not globally minimum-size
+  - No semantic equivalence proof
+  - Budgeted/flaky execution cannot inherit completed-run guarantee
+failure_modes:
+  - unstable or insufficient oracle
+  - invalid serialization
+  - unsupported domain transfer
+patchdiet_current_state: Existing runtime preserved; this correction adds no runtime strategy.
+patchdiet_gap: No controlled PatchDiet comparison establishes benefit.
+patchdiet_mapping: Benchmark reference only. Paper FAIL (interesting failure reproduced) maps to PatchDiet candidate
+  checks PASS (required behavior retained), via an explicit adapter.
+recommended_use: RESEARCH_ONLY until independently reviewed and benchmarked.
+not_recommended_for: Automatic removal authority or semantic correctness claims.
+tests_required:
+  - property polarity adapter
+  - inconclusive oracle
+  - deterministic reconstruction
+  - budget exit does not claim minimality
+benchmark_metrics:
+  - Removal Precision
+  - Removal Recall
+  - oracle calls
+  - runtime
+  - final verification
+  - hidden regression rate
+status: RESEARCH_ONLY
+independent_review: PENDING
+minimality_distinctions:
+  one_minimal: No one-element deletion preserves the property.
+  subset_minimal: No strict subset preserves the property; stronger than 1-minimal in a non-monotone model.
+  globally_minimal: Minimum objective value across the declared search domain, which must be specified.
+  minimum_size: Smallest cardinality/size among all property-preserving candidates in that domain.
+  dd_vs_ddmin: ddmin simplifies a failing configuration; dd narrows a passing/failing pair and returns a 1-minimal difference.
+id: ddmin
+claims:
+  - claim:ddmin:001
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: No new research-derived runtime work is authorized; no adoption ticket required.
+  D7: Research card only; pre-existing runtime is covered separately by the fresh regression.

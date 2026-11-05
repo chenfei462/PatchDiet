@@ -1,0 +1,47 @@
+{
+  "case": "syn-dependent-edits",
+  "labels": [
+    {
+      "filePath": "src/app.js",
+      "identity": "atom-1610ec24b55efece",
+      "kind": "ast",
+      "label": "unnecessary",
+      "spans": {
+        "baseBlobSha": "08a3ff0b0fb9",
+        "headBlobSha": "326f2f73e46d",
+        "baseBytes": [
+          62,
+          62
+        ],
+        "headBytes": [
+          62,
+          96
+        ]
+      },
+      "baseSlice": "",
+      "headSlice": "  console.error('debug-main', n);\n",
+      "header": "ast: insert block"
+    },
+    {
+      "filePath": "src/util.js",
+      "identity": "atom-5c0165d948e61425",
+      "kind": "ast",
+      "label": "necessary",
+      "spans": {
+        "baseBlobSha": "ed62324e4f2c",
+        "headBlobSha": "50b95ceae062",
+        "baseBytes": [
+          28,
+          40
+        ],
+        "headBytes": [
+          28,
+          44
+        ]
+      },
+      "baseSlice": "  return n;\n",
+      "headSlice": "  return n * 3;\n",
+      "header": "ast: replace return_statement -> return_statement"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+id: claim:hdd:001
+statement: HDD applies ddmin level by level to a tree; its single-pass output must not be described as generally 1-tree-minimal.
+source:
+  id: paper:misherghi-su-2006-hdd
+  locators:
+    - Section 3.2 Algorithm 1
+    - Sections 3.3–3.4
+    - Section 4 and Tables 1–2
+evidence_type: peer-reviewed-paper
+scope: program-reduction
+assumptions:
+  - faithful tree serialization
+  - stable executable oracle
+  - meaningful hierarchy
+limitations:
+  - Tree constraints do not guarantee all variants parse or typecheck
+  - Cross-level dependencies can make earlier nodes removable later
+  - Original GCC/XML examples are not PatchDiet benchmarks
+patchdiet_mapping:
+  mapping: "Hypothesis: file → symbol → AST node → token/atom hierarchy may improve candidate grouping. Do not implement
+    before comparison."
+  affected_components:
+    - packages/core/src/reducer.ts
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

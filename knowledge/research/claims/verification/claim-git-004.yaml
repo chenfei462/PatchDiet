@@ -1,0 +1,16 @@
+id: claim:git:004
+statement: Git path display uses C-style and octal byte escaping under core.quotePath; simple spaces are not unusual
+  characters, and disabling quotePath does not disable control-character escaping.
+source:
+  id: standard:git-config-quotepath
+  locators:
+    - core.quotePath
+evidence_type: normative-documentation
+scope: git-fidelity
+limitations:
+  - Normative representation and transport only; no behavioral equivalence or removal authority.
+patchdiet_mapping:
+  mapping: mappings/git-diff-support-matrix.md; parser/serializer and metadata human-review boundaries
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

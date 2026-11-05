@@ -1,0 +1,47 @@
+{
+  "case": "inj-coarse-weak-oracle",
+  "labels": [
+    {
+      "filePath": "src/other.js",
+      "identity": "atom-350acdb2de2e34b5",
+      "kind": "ast",
+      "label": "unnecessary",
+      "spans": {
+        "baseBlobSha": "aa84460e5b89",
+        "headBlobSha": "4b074db17753",
+        "baseBytes": [
+          26,
+          26
+        ],
+        "headBytes": [
+          26,
+          58
+        ]
+      },
+      "baseSlice": "",
+      "headSlice": "  console.error('debug-other');\n",
+      "header": "ast: insert block"
+    },
+    {
+      "filePath": "src/total.js",
+      "identity": "atom-e2f89393b69b45a9",
+      "kind": "ast",
+      "label": "necessary",
+      "spans": {
+        "baseBlobSha": "f0a466c94258",
+        "headBlobSha": "9b75d4ea3167",
+        "baseBytes": [
+          0,
+          39
+        ],
+        "headBytes": [
+          0,
+          108
+        ]
+      },
+      "baseSlice": "export function total(n) { return n; }\n",
+      "headSlice": "export function total(n) {\n  const trace = {n};\n  console.error('injected-debug', trace);\n  return n * 2;\n}\n",
+      "header": "ast: replace export_statement -> export_statement"
+    }
+  ]
+}

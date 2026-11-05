@@ -1,0 +1,157 @@
+{
+  "baseRef": "main",
+  "headRef": "agent",
+  "input": {
+    "fileCount": 2,
+    "hunkCount": 2,
+    "addedLineCount": 4,
+    "removedLineCount": 2,
+    "changedLineCount": 6
+  },
+  "output": {
+    "fileCount": 1,
+    "hunkCount": 1,
+    "addedLineCount": 2,
+    "removedLineCount": 2,
+    "changedLineCount": 4
+  },
+  "testCommand": {
+    "command": "\"C:\\Program Files\\nodejs\\node.exe\" check.cjs",
+    "status": "passed",
+    "durationMs": 336,
+    "attempts": 1
+  },
+  "mode": "verified",
+  "verification": {
+    "baseline": {
+      "stage": "baseline",
+      "status": "passed",
+      "commands": [
+        {
+          "command": "\"C:\\Program Files\\nodejs\\node.exe\" check.cjs",
+          "status": "passed",
+          "durationMs": 232,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 128
+            }
+          ]
+        }
+      ],
+      "durationMs": 336,
+      "baseCommitSha": "7555f3158c99e34763bea1624c692b5ce5dc24ff",
+      "headCommitSha": "31a352d0c7999fc1899fb06ecf3f6028dcdcdbd1"
+    },
+    "final": {
+      "stage": "final",
+      "status": "passed",
+      "commands": [
+        {
+          "command": "\"C:\\Program Files\\nodejs\\node.exe\" check.cjs",
+          "status": "passed",
+          "durationMs": 203,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 119
+            }
+          ]
+        }
+      ],
+      "durationMs": 577,
+      "baseCommitSha": "7555f3158c99e34763bea1624c692b5ce5dc24ff",
+      "headCommitSha": "31a352d0c7999fc1899fb06ecf3f6028dcdcdbd1",
+      "expectedTreeSha": "02aaaf6c04d25a43800fe8c7317af024c9d49e4b",
+      "artifactTreeSha": "02aaaf6c04d25a43800fe8c7317af024c9d49e4b",
+      "treesMatch": true
+    }
+  },
+  "reduction": {
+    "strategy": "ddmin",
+    "selectedGroupIds": [
+      "targeted.cjs"
+    ],
+    "attempts": [
+      {
+        "ids": [
+          "targeted.cjs"
+        ],
+        "key": "7ee8802f075206c36d5d5cedd03457068b2c40611eef5856e60093e5afc737cf",
+        "verdict": "PASS",
+        "cached": false
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "filePath": "source.cjs",
+      "hunkHeader": "@@ -1,5 +1,5 @@",
+      "category": "unknown",
+      "verdict": "kept",
+      "reason": "kept because '\"C:\\Program Files\\nodejs\\node.exe\" check.cjs' failed after reverting this hunk"
+    },
+    {
+      "filePath": "targeted.cjs",
+      "hunkHeader": "@@ -0,0 +1,2 @@",
+      "category": "unknown",
+      "verdict": "removed",
+      "reason": "removed because checks still passed after reverting this file"
+    }
+  ],
+  "removals": [
+    {
+      "filePath": "targeted.cjs",
+      "hunkHeader": "@@ -0,0 +1,2 @@",
+      "category": "unknown",
+      "reason": "removed because checks still passed after reverting this file",
+      "confidence": "high-confidence removal"
+    }
+  ],
+  "kept": [
+    {
+      "filePath": "source.cjs",
+      "hunkHeader": "@@ -1,5 +1,5 @@",
+      "category": "unknown",
+      "reason": "kept because '\"C:\\Program Files\\nodejs\\node.exe\" check.cjs' failed after reverting this hunk",
+      "confidence": "kept"
+    }
+  ],
+  "needsHumanReview": [],
+  "artifacts": [
+    ".patchdiet/cleanup.diff",
+    ".patchdiet/report.md",
+    ".patchdiet/run.json",
+    ".patchdiet/report.html",
+    ".patchdiet/report.github.md"
+  ],
+  "targetedVerification": {
+    "used": true,
+    "outcome": "passed",
+    "commands": [
+      "\"C:\\Program Files\\nodejs\\node.exe\" targeted.cjs"
+    ],
+    "mappingProvenance": "benchmark-labelled-static-mapping",
+    "detail": "targeted mapped test commands executed on the actual removal state after each trial (1 unique command(s)); a targeted failure only rejects candidates; the FULL required combined/final oracle ran and remains the removal authority"
+  },
+  "patchPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-EsSGqV\\inj-targeted-mapping-fJcGJB\\.patchdiet\\cleanup.diff",
+  "startedAt": "2026-10-06T12:22:50.028Z",
+  "patchdietVersion": "0.1.1",
+  "baseCommitSha": "7555f3158c99e34763bea1624c692b5ce5dc24ff",
+  "headCommitSha": "31a352d0c7999fc1899fb06ecf3f6028dcdcdbd1",
+  "mergeBaseCommitSha": "7555f3158c99e34763bea1624c692b5ce5dc24ff",
+  "commandLineArgs": [],
+  "partial": false,
+  "durationMs": 5015,
+  "finishedAt": "2026-10-06T12:22:55.043Z",
+  "reportPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-EsSGqV\\inj-targeted-mapping-fJcGJB\\.patchdiet\\report.md",
+  "reportJsonPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-EsSGqV\\inj-targeted-mapping-fJcGJB\\.patchdiet\\run.json"
+}

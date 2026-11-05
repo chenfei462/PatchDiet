@@ -1,0 +1,77 @@
+name: mutation-testing
+family: oracle-strength-audit
+original_sources:
+  - paper:mutation-testing-survey-2018
+  - paper:mutation-testing-survey-2011
+problem: Audit whether tests detect representative behavior changes.
+input: Source, mutation operators, configured tests.
+output: Tool-native mutant states (killed, survived, timeout, no-coverage, invalid and other configured states),
+  mutation score, and a separately labelled manual suspected-equivalent review set.
+algorithm: Generate mutants, run configured tests, classify each outcome, and report confidence limits.
+pseudocode: |
+  for mutant in generate_mutants(source):
+    result = run_tests(mutant)
+    classify(result)
+  report(tool_states, score, survivors, manual_suspected_equivalents)
+complexity: O(m * test_suite_cost) for m mutants.
+oracle_calls: One test run per mutant, often with optimization and caching.
+termination: Mutant inventory exhausted or research budget reached.
+correctness_scope: Evidence about test sensitivity, not proof of semantic equivalence.
+assumptions:
+  - repeatable tests
+  - representative mutation operators
+failure_modes:
+  - equivalent mutants cannot be identified completely by the tool
+  - flaky tests
+  - environment sensitivity
+known_variants:
+  - weak mutation
+  - strong mutation
+  - selective mutation
+patchdiet_current_state: No normal-shrink mutation mode; benchmark artifacts exist for injected fixtures.
+patchdiet_gap: No oracle-strength report connects surviving mutants to PatchDiet confidence wording.
+recommended_use: Benchmark and design-partner research mode.
+not_recommended_for: Blocking or authorizing cleanup solely from mutation score.
+tests_required:
+  - killed mutant
+  - survived mutant
+  - equivalent mutant handling is manual/suspected only; no automatic equivalence count
+benchmark_metrics:
+  - mutation score
+  - survivor categories
+  - runtime
+  - confidence labeling
+status: RESEARCH_ONLY
+independent_review: PENDING
+id: mutation-testing
+implementation_sources:
+  - project:pit
+  - project:strykerjs
+theory_source: source:mutationtesting-uni-lu
+provenance_scope: Surveys establish bounded theory/methodology. PIT/Stryker records separately describe implementations;
+  no original-invention claim or runtime adoption.
+distillation_gates:
+  D1_SOURCE_VERIFIED: FAIL
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: Research-only source assessment; no experiment benefit or runtime adoption has been demonstrated, so no PD-E runtime
+    ticket is permitted.
+  D7: No implementation/integration or experiment performed in this research-only phase; validation is not represented as
+    runtime evidence.
+  D1: The theory website is a secondary navigation source and has no explicit reuse license; primary survey records carry
+    the bounded theory claims.
+extracted_claims:
+  - statement: Selected mutants audit configured-test sensitivity; score is not semantic adequacy.
+    source: paper:mutation-testing-survey-2018
+limitations:
+  - Equivalent mutants are undecidable in general; suspected equivalents are manual categories.
+  - Coupling hypothesis does not guarantee all real/complex fault detection.
+  - Operator, language, subject and oracle selection bias limits representativeness.
+automatic_removal_authority: false
+patchdiet_mapping: Benchmark-only audit of configured verification strength; surviving mutants and mutation scores never
+  authorize deletion.

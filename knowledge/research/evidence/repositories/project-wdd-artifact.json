@@ -1,0 +1,23 @@
+{
+  "id": "project:wdd-artifact",
+  "repository": "https://github.com/weightdd/WeightDD",
+  "inspected_commit": "4a6cdd00f3f136867f23f76057a7104961c2e8e4",
+  "retrieved_at": "2026-10-27",
+  "license_path": null,
+  "license_type": "NO_ROOT_LICENSE_FOUND",
+  "license_status": "NOT_VERIFIED",
+  "nested_notice_paths": [
+    "xml_benchmarks/lib/xmlresolver-5.2.0/notices/LICENSE"
+  ],
+  "readme_url": "https://github.com/weightdd/WeightDD/blob/4a6cdd00f3f136867f23f76057a7104961c2e8e4/README.md",
+  "readme_sha256": "a341e5359b1eff7debd28c06e99c53d4de29a279169bfb84953c875008e645fa",
+  "note": "Fresh full recursive tree confirms no root license. Separate Zenodo resource declaration/GPL text cannot license this GitHub snapshot. README capture hash is historical (2026-10-26); fresh raw README endpoint failed TLS, official GitHub rendered README was inspected on 2026-10-27.",
+  "commit_date": "2025-12-08T21:57:06Z",
+  "license_scope": "No root project license in complete pinned tree; xmlresolver notice limited to that dependency.",
+  "tree_truncated": false,
+  "commit_api": "https://api.github.com/repos/weightdd/WeightDD/commits/4a6cdd00f3f136867f23f76057a7104961c2e8e4",
+  "tree_api": "https://api.github.com/repos/weightdd/WeightDD/git/trees/4a6cdd00f3f136867f23f76057a7104961c2e8e4?recursive=1",
+  "commit_evidence": "evidence/repositories/wdd-github-commit-2026-10-27.json",
+  "tree_evidence": "evidence/repositories/wdd-github-tree-2026-10-27.json",
+  "project_status": "Public artifact; pinned README directs algorithm implementation users to Perses; no ongoing maintenance claim."
+}

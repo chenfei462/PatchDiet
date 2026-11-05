@@ -1,0 +1,27 @@
+name: Bug report
+description: Report a PatchDiet bug with a minimal reproduction.
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What went wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction
+      description: Include command, base/head refs, and a minimal public fixture when possible.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: PatchDiet version, Node version, OS, package manager, and runner if relevant.
+    validations:
+      required: true

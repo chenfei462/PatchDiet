@@ -1,0 +1,36 @@
+{
+  "review_date": "2026-10-27",
+  "scope": "Synthetic validator adversarial fixtures only; no experiments or data import",
+  "results": [
+    {
+      "name": "baseline",
+      "exit": 0,
+      "errors": [],
+      "experiments_authorized": false
+    },
+    {
+      "name": "primary_missing_retrieval",
+      "exit": 0,
+      "errors": [],
+      "experiments_authorized": false
+    },
+    {
+      "name": "algorithm_dangling_claim",
+      "exit": 0,
+      "errors": [],
+      "experiments_authorized": false
+    },
+    {
+      "name": "implemented_unvalidated_D7",
+      "exit": 0,
+      "errors": [],
+      "experiments_authorized": false
+    },
+    {
+      "name": "repository_missing_license_type",
+      "exit": 0,
+      "errors": [],
+      "experiments_authorized": false
+    }
+  ]
+}

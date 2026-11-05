@@ -1,0 +1,68 @@
+{
+  "case": "inj-ts-debug",
+  "labels": [
+    {
+      "filePath": "src/total.ts",
+      "identity": "atom-5d5b3829ae9b49d6",
+      "kind": "ast",
+      "label": "unnecessary",
+      "spans": {
+        "baseBlobSha": "cbefcd560f3b",
+        "headBlobSha": "0bcabd047fdc",
+        "baseBytes": [
+          43,
+          43
+        ],
+        "headBytes": [
+          43,
+          80
+        ]
+      },
+      "baseSlice": "",
+      "headSlice": "  const trace: { n: number } = { n };",
+      "header": "ast: insert lexical_declaration in total"
+    },
+    {
+      "filePath": "src/total.ts",
+      "identity": "atom-25a0cd360f34b396",
+      "kind": "ast",
+      "label": "unnecessary",
+      "spans": {
+        "baseBlobSha": "cbefcd560f3b",
+        "headBlobSha": "0bcabd047fdc",
+        "baseBytes": [
+          43,
+          43
+        ],
+        "headBytes": [
+          80,
+          122
+        ]
+      },
+      "baseSlice": "",
+      "headSlice": "\n  console.error('injected-debug', trace);",
+      "header": "ast: insert expression_statement in total"
+    },
+    {
+      "filePath": "src/total.ts",
+      "identity": "atom-c6a6a60d81fef636",
+      "kind": "ast",
+      "label": "necessary",
+      "spans": {
+        "baseBlobSha": "cbefcd560f3b",
+        "headBlobSha": "0bcabd047fdc",
+        "baseBytes": [
+          43,
+          55
+        ],
+        "headBytes": [
+          122,
+          139
+        ]
+      },
+      "baseSlice": "  return n;\n",
+      "headSlice": "\n  return n * 2;\n",
+      "header": "ast: replace return_statement in total"
+    }
+  ]
+}

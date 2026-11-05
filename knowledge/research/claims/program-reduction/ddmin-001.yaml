@@ -1,0 +1,30 @@
+id: claim:ddmin:001
+statement: A completed classic ddmin run returns a 1-minimal failure-inducing configuration under its stable test model;
+  it need not return a smallest or subset-minimal configuration.
+source:
+  id: paper:zeller-hildebrandt-2002-ddmin
+  locators:
+    - Definitions 8–10
+    - Figure 5
+    - Propositions 11–13
+    - Figure 15 and section V
+evidence_type: peer-reviewed-paper
+scope: program-reduction
+assumptions:
+  - stable test outcomes
+  - finite atomization
+  - test(empty)=PASS and test(initial)=FAIL
+  - each oracle execution terminates
+limitations:
+  - Not subset-minimal for non-monotone tests
+  - Not globally minimum-size
+  - No semantic equivalence proof
+  - Budgeted/flaky execution cannot inherit completed-run guarantee
+patchdiet_mapping:
+  mapping: Benchmark reference only. Paper FAIL (interesting failure reproduced) maps to PatchDiet candidate checks PASS
+    (required behavior retained), via an explicit adapter.
+  affected_components:
+    - packages/core/src/reducer.ts
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

@@ -1,0 +1,10 @@
+diff --git a/src/total.ts b/src/total.ts
+index 397afac..abb73ba 100644
+--- a/src/total.ts
++++ b/src/total.ts
+@@ -1,3 +1,4 @@
+ export function total(n: number): number {
+-  return n;
++
++  return n * 2;
+ }

@@ -1,0 +1,75 @@
+id: standard:nist-ssdf-1.1
+title: Secure Software Development Framework (SSDF) Version 1.1
+source_type: normative-standard
+authority_tier: A
+year: 2022
+canonical_url: https://csrc.nist.gov/pubs/sp/800/218/final
+doi: https://doi.org/10.6028/NIST.SP.800-218
+retrieved_at: 2026-10-26
+authors:
+  - Murugiah Souppaya
+  - Karen Scarfone
+  - Donna Dodson
+topics:
+  - security
+  - supply-chain
+problem:
+  summary: Provides high-level secure software development practices for reducing vulnerability risk.
+technique:
+  summary: SSDF practice groups for preparing organizations, protecting software, producing well-secured software, and
+    responding to vulnerabilities.
+validated_on:
+  - NIST final publication page
+claims:
+  - claim:security:001
+assumptions:
+  - PatchDiet runs code and must make execution provenance visible
+limitations:
+  - SSDF is a process framework
+  - not a deletion algorithm or correctness proof
+patchdiet_relevance:
+  modules:
+    - packages/core/src/runner.ts
+    - packages/monitoring/src/logger.ts
+    - docs/security-model.md
+  relevance: medium
+license_review:
+  status: public NIST publication
+  code_copy_allowed: false
+status:
+  source_verified: true
+  distilled: false
+  decision: ADAPT
+paper_version_used: NIST SP 800-218 final, February 2022
+inspection:
+  retrieved_at: 2026-10-26
+  url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf
+  locators:
+    - Publication authors and abstract; SSDF practices in the final PDF; no certification claim
+  scope: Only recorded, bounded claims; independent review pending
+primary_secondary: primary
+verification_status: SOURCE_VERIFIED_PRIMARY
+provenance_audit:
+  ticket: PD-R100
+  previous_status: SOURCE_VERIFIED
+  previous_pin: null
+  reason: Primary content inspected at listed locators; not merely a webpage existence check.
+  historical_record: reports/PRE_CORRECTION_RECORDS.json
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+venue: NIST Special Publication
+gate_justifications:
+  D7: Source distillation introduces no implementation in this phase; historical runtime regression is recorded
+    separately. This is not an adoption claim.
+  D6: Research-only provenance/source review; no runtime adoption ticket is required.
+ticket_refs:
+  - PD-R001
+  - PD-R100
+  - PD-R101
+  - PD-R159

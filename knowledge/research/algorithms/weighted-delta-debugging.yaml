@@ -1,0 +1,81 @@
+name: weighted-delta-debugging
+family: program-reduction
+original_sources:
+  - paper:zhou-2025-wdd
+source_version: arXiv:2411.19410v2, 16 December 2024; ICSE 2025 accepted preprint
+evidence_locators:
+  - Sections III–V
+  - Algorithm 1 weightedPartition and ensureOneMinimal
+  - Section VI, Table I
+problem: Equal-count partitions disregard unequal fragment sizes.
+input: Ordered fragments with size weights and an executable property oracle.
+output: Smaller property-preserving input.
+algorithm: Wddmin balances partition total weights and tests partitions/complements, then repeats
+  single-element deletions to a fixed point. WProbDD separately modifies the probabilistic model using
+  weights.
+pseudocode: |
+  partitions = [L]
+  while partitions not empty:
+    test partitions and complements, retain property-preserving reductions
+    split remaining divisible partitions by approximately equal total weight
+  repeat:
+    remove one retained element if oracle accepts
+  until no single deletion succeeds
+  return L
+pseudocode_scope: Original paraphrase for research; use cited full algorithm before implementing a reproduction.
+complexity: Depends on partitioning and oracle outcomes; single-element fixed-point cleanup can require
+  quadratic queries. No PatchDiet speed bound established.
+oracle_calls: Only executable property outcomes accept candidates; do not count probability/structure/LLM
+  advice as a successful test.
+termination: Partitions eventually reach singletons; accepted cleanup deletions strictly reduce finite L.
+correctness_scope: Wddmin cleanup targets 1-minimality relative to the executable property. Weight alone does
+  not justify acceptance.
+assumptions:
+  - positive size weights
+  - stable oracle
+  - faithful fragment reconstruction
+limitations:
+  - Fragment-size correlation is empirical, not causal proof
+  - Risk, test-cost and scope-confidence weights are PatchDiet hypotheses, not the paper algorithm
+  - Reported C/XML gains do not transfer automatically
+failure_modes:
+  - unstable or insufficient oracle
+  - invalid serialization
+  - unsupported domain transfer
+patchdiet_current_state: Existing runtime preserved; this correction adds no runtime strategy.
+patchdiet_gap: No controlled PatchDiet comparison establishes benefit.
+patchdiet_mapping: AST-size weights are a plausible experiment; risk/test-cost/scope weights require separate evidence.
+recommended_use: RESEARCH_ONLY until independently reviewed and benchmarked.
+not_recommended_for: Automatic removal authority or semantic correctness claims.
+tests_required:
+  - property polarity adapter
+  - inconclusive oracle
+  - deterministic reconstruction
+  - budget exit does not claim minimality
+benchmark_metrics:
+  - Removal Precision
+  - Removal Recall
+  - oracle calls
+  - runtime
+  - final verification
+  - hidden regression rate
+status: RESEARCH_ONLY
+independent_review: PENDING
+source_evaluation: 62 C/XML benchmarks, Wddmin/WProbDD substituted into HDD and Perses; reported time/size
+  improvements vary by framework and subject.
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: Research-only provenance decision; no runtime implementation ticket is authorized or required.
+  D7: No implementation, reproduction, or experiment was performed; runtime validation is not applicable.
+claims:
+  - claim:wdd:001
+retrieved_at: 2026-10-27
+artifact_limitation: Paper algorithm provenance verified; GitHub code license unresolved; Zenodo
+  resource/license applicability unclear; container digest unavailable. No reproduction performed.

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b0a">
+  <title>PatchDiet - Verified PR Cleanup</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="homepage">
+  <div class="ambient-grid" aria-hidden="true"></div>
+  <main class="shell">
+    <header class="product-bar">
+      <a class="brand" href="#hero" aria-label="PatchDiet homepage">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>PatchDiet</span>
+      </a>
+      <div class="product-status" aria-label="System status"><span class="status-pulse" aria-hidden="true"></span>Local engine ready</div>
+      <a class="button button--ghost nav-demo" href="/demo/classic/workspace.html">Open demo</a>
+    </header>
+
+    <section id="hero" class="intro hero" aria-labelledby="hero-title">
+      <div class="intro-copy">
+        <div class="eyebrow"><span>Cinematic proof</span> Diff compression show</div>
+        <h1 id="hero-title">128 changed lines became 32. Tests still passed.</h1>
+        <p>PatchDiet shrinks oversized AI-generated PRs before human review by testing what can be safely removed, then generating a cleanup receipt reviewers can inspect.</p>
+        <div class="actions actions--hero" aria-label="Hero calls to action">
+          <a class="button button--primary" href="/demo/classic/workspace.html">Try the 30-second diff demo</a>
+          <a class="button button--secondary" href="#cleanup-proof">See verified cleanup proof</a>
+        </div>
+        <dl class="hero-proof-list" aria-label="Verified hero proof metrics">
+          <div><dt>Files compressed</dt><dd>4 files -&gt; 2 files</dd></div>
+          <div><dt>Changed lines removed</dt><dd>75% changed-line reduction</dd></div>
+          <div><dt>Fixture</dt><dd>Verified fixture: agent-large-pr</dd></div>
+        </dl>
+        <p class="hero-trust">Verified with the configured checks. This is not a semantic-equivalence proof.</p>
+      </div>
+
+      <aside class="hero-show" aria-label="Diff compression proof for agent-large-pr">
+        <div class="hero-show__noise" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="hero-show__bar"><span><i></i><i></i><i></i></span><code>patchdiet shrink --fixture agent-large-pr</code><b>VERIFIED</b></div>
+        <div class="hero-diff-field">
+          <span class="hero-file-card hero-file-card--before">generated.fixture.ts</span>
+          <span class="hero-file-card hero-file-card--after">cart.checkout.ts</span>
+          <span class="hero-diff-row hero-diff-row--keep"><b>+ kept</b><code>assert.equal(calculateTotal(cart), 42)</code></span>
+          <span class="hero-diff-row hero-diff-row--cut"><b>- noise</b><code>console.log("temporary agent trace")</code></span>
+          <span class="hero-diff-row hero-diff-row--cut"><b>- docs</b><code>generated scratch plan and unused adapter</code></span>
+          <span class="hero-diff-row hero-diff-row--keep"><b>+ kept</b><code>export function calculateTotal(items)</code></span>
+          <span class="hero-diff-row hero-diff-row--pass"><b>PASS</b><code>npm test passed</code></span>
+        </div>
+        <div class="hero-proof-core"><span>Proof metric</span><strong data-hero-proof-metric>128 -&gt; 32</strong><em data-hero-test-state>npm test passed</em></div>
+        <div class="hero-receipt" data-hero-receipt><span>Cleanup receipt</span><strong>75% changed-line reduction</strong><p>4 files -&gt; 2 files. Verified fixture: agent-large-pr.</p></div>
+      </aside>
+    </section>
+
+    <section id="cleanup-proof" class="cleanup-proof" data-verification-machine data-narrative-scene data-scene-state="idle" aria-labelledby="cleanup-title">
+      <header class="compact-heading">
+        <div class="panel-kicker"><span>02</span> Cleanup proof</div>
+        <h2 id="cleanup-title">One proof surface, from noise to receipt.</h2>
+        <p>PatchDiet reduces the review surface, tests each candidate away from the working branch, and records both removals and candidates that must stay.</p>
+      </header>
+
+      <div class="compact-receipts" aria-label="Before After Receipt proof panels">
+        <article class="receipt-panel receipt-panel--before">
+          <span class="receipt-panel__label">Before</span>
+          <h3>Noisy AI PR</h3>
+          <p>Source, docs, generated files, and scope creep arrive in one oversized diff.</p>
+          <strong>4 files / 128 changed lines</strong>
+        </article>
+        <article class="receipt-panel receipt-panel--after">
+          <span class="receipt-panel__label">After</span>
+          <h3>Review surface</h3>
+          <p>Fewer files and hunks remain after configured checks accept the removal.</p>
+          <strong>2 files / 32 changed lines</strong>
+        </article>
+        <article class="receipt-panel receipt-panel--receipt">
+          <span class="receipt-panel__label">Receipt</span>
+          <h3>Proof trail</h3>
+          <p>Report, removal patch, candidates JSON, and Diet Card make cleanup inspectable.</p>
+          <strong>75% changed-line reduction</strong>
+        </article>
+      </div>
+
+      <ol class="machine-flow compact-machine-flow" aria-label="Verified cleanup workflow">
+        <li data-machine-step="1"><span>01</span><strong>Diff in</strong></li>
+        <li data-machine-step="2"><span>02</span><strong>Temporary worktrees</strong></li>
+        <li data-machine-step="3"><span>03</span><strong>Rerun tests</strong></li>
+        <li data-machine-step="4"><span>04</span><strong>Removal patch</strong></li>
+        <li data-machine-step="5"><span>05</span><strong>Cleanup receipt</strong></li>
+      </ol>
+
+      <div class="compact-verification">
+        <ul class="machine-trust" aria-label="PatchDiet verification boundaries">
+          <li><strong>Local-first</strong><span>No source upload by default</span></li>
+          <li><strong>Deterministic gate</strong><span>No LLM required for verified cleanup</span></li>
+          <li><strong>Non-destructive</strong><span>No branch rewrite by default</span></li>
+          <li><strong>Configured checks</strong><span>Candidate removal only counts when configured checks still pass</span></li>
+        </ul>
+        <div class="machine-terminal compact-terminal">
+          <div class="machine-terminal__bar"><i></i><i></i><i></i><code>patchdiet / verify-candidates</code></div>
+          <div class="machine-terminal__body" aria-label="Verification command results">
+            <p><span>$</span> node --test</p>
+            <p class="terminal-pass"><b>PASS</b> candidate removed</p>
+            <p class="terminal-kept"><b>FAIL</b> Candidate kept / behavior changed</p>
+            <p class="terminal-receipt"><b>WRITE</b> removal.patch + cleanup receipt</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo-entry" class="compact-demo" aria-labelledby="demo-title">
+      <div class="compact-demo__copy">
+        <div class="panel-kicker"><span>03</span> 30-Second Demo</div>
+        <h2 id="demo-title">See the reduction. Open the full controls when needed.</h2>
+        <p>Browser preview highlights likely noise. CLI verifies cleanup by rerunning tests. Start with the sample, paste a diff, or fetch a public GitHub PR URL.</p>
+        <ol class="demo-paths" aria-label="Demo input paths">
+          <li><span>01</span><strong>Sample diff</strong></li>
+          <li><span>02</span><strong>Paste diff</strong></li>
+          <li><span>03</span><strong>Public GitHub PR URL</strong></li>
+        </ol>
+        <a class="button button--primary" href="/demo/classic/workspace.html">Open the full demo</a>
+      </div>
+      <aside class="sample-receipt" aria-label="Sample PatchDiet receipt">
+        <span>Verified sample / sample-cart-pr</span>
+        <strong>58% review noise removed</strong>
+        <div><b>5 files / 33 lines</b><i>-&gt;</i><b>2 files / 14 lines</b></div>
+        <p>4m estimated attention saved. Preview first; verify candidate removals with configured checks.</p>
+      </aside>
+    </section>
+
+    <section id="evidence-adoption" class="evidence-adoption" data-narrative-scene data-scene-state="idle" aria-labelledby="evidence-title">
+      <header class="compact-heading">
+        <div class="panel-kicker"><span>04</span> Evidence and adoption</div>
+        <h2 id="evidence-title">The cleanup leaves inspectable work behind.</h2>
+      </header>
+      <figure class="artifact-capture">
+        <img src="/docs/assets/launch-gif/browser-frames/frame-03-candidates-card.png" loading="lazy" width="1265" height="720" alt="PatchDiet product capture showing deletion candidates beside a Diet Card receipt">
+        <figcaption>Real product capture / sample-cart-pr preview</figcaption>
+      </figure>
+      <div class="artifact-ledger">
+        <div class="artifact-ledger__header"><span>Cleanup receipt index</span><strong>5 outputs</strong></div>
+        <ol>
+          <li><code>.patchdiet/report.github.md</code><span>Reviewer narrative</span></li>
+          <li><code>.patchdiet/removal.patch</code><span>Exact tested removals</span></li>
+          <li><code>.patchdiet/reduced.patch</code><span>Remaining review surface</span></li>
+          <li><code>.patchdiet/candidates.json</code><span>Machine-readable decisions</span></li>
+          <li><code>.patchdiet/diet-card.svg</code><span>Portable cleanup receipt</span></li>
+        </ol>
+      </div>
+      <div class="adoption-strip">
+        <p><span>Available / CLI + GitHub Action</span><strong>Run locally or at PR intake.</strong></p>
+        <p><span>Direction / GitHub App + VS Code + Team Pro</span><strong>Policy and history without overclaiming a hosted service.</strong></p>
+      </div>
+    </section>
+
+    <section id="final-cta" class="final-cta" aria-labelledby="final-title">
+      <div class="final-cta__copy">
+        <div class="panel-kicker"><span>05</span> Put the diff on a diet</div>
+        <h2 id="final-title">Shrink the review surface before the reviewer arrives.</h2>
+        <p>Preview likely noise in the browser. Verify candidate removals locally. Humans still review the remaining patch.</p>
+        <div class="actions final-cta__actions">
+          <a class="button button--primary" href="/demo/classic/workspace.html">Try the 30-second diff demo</a>
+          <button class="button button--secondary" type="button" data-copy-install-command>Run patchdiet shrink</button>
+        </div>
+        <span class="final-cta__status" data-install-copy-status role="status" aria-live="polite"></span>
+      </div>
+      <div class="final-command" aria-label="PatchDiet build and shrink command">
+        <div><span></span><span></span><span></span><code>local / configured checks</code></div>
+        <pre><code>npm ci &amp;&amp; npm run build
+node dist/packages/cli/src/index.js shrink --test "npm test"</code></pre>
+        <p>Test-passing cleanup is not semantic equivalence. Humans still review the remaining patch.</p>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="./homepage.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+{
+  "id": "project:scip-python",
+  "retrieved_at": "2026-10-27",
+  "captured_at_utc": "2026-10-27T16:52:59.962252+00:00",
+  "repository": "https://github.com/sourcegraph/scip-python",
+  "inspected_commit": "3b50a0697bddf623f6d879b53bf66b0656309db3",
+  "commit_date": "2026-10-22T09:02:26+02:00",
+  "capture_method": "git bare shallow blob-filtered clone; git show at exact SHA; retry transient TLS failures",
+  "files": {
+    "LICENSE.txt": {
+      "url": "https://github.com/sourcegraph/scip-python/blob/3b50a0697bddf623f6d879b53bf66b0656309db3/LICENSE.txt",
+      "path": "knowledge/research/evidence/repositories/project-scip-python.LICENSE.txt.txt",
+      "sha256": "87e315bc818c17abe4154b1f0020ac485bcd6fce76c2f350f3bd7876eac749eb",
+      "bytes": 1172
+    },
+    "README.md": {
+      "url": "https://github.com/sourcegraph/scip-python/blob/3b50a0697bddf623f6d879b53bf66b0656309db3/README.md",
+      "path": "knowledge/research/evidence/repositories/project-scip-python.README.md.txt",
+      "sha256": "a789a41a2dc61a59fd145e25f7af15233a5c7045a6bab35e5557be09ec0c880a",
+      "bytes": 5700
+    },
+    "packages/pyright-scip/package.json": {
+      "url": "https://github.com/sourcegraph/scip-python/blob/3b50a0697bddf623f6d879b53bf66b0656309db3/packages/pyright-scip/package.json",
+      "path": "evidence/repositories/project-scip-python.packages-pyright-scip-package.json.txt",
+      "sha256": "6e0732bd9f978d834e2eb411b012f145448e1dff6896e7ac904e7fe8771be0b3",
+      "bytes": 2263
+    },
+    "package.json": {
+      "url": "https://github.com/sourcegraph/scip-python/blob/3b50a0697bddf623f6d879b53bf66b0656309db3/package.json",
+      "path": "evidence/repositories/project-scip-python.package.json.txt",
+      "sha256": "572de96483e5f5b64c570ddcc71f6fd4c6dac2a8a2e2c6cdab1f58ee59a16a03",
+      "bytes": 1770
+    }
+  },
+  "default_branch": "scip",
+  "project_status": {
+    "archived": false,
+    "disabled": false,
+    "pushed_at": "2026-10-27T12:06:31Z",
+    "description": "SCIP indexer for Python"
+  },
+  "github_license_metadata": {
+    "key": "other",
+    "name": "Other",
+    "spdx_id": "NOASSERTION",
+    "url": null,
+    "node_id": "MDc6TGljZW5zZTA="
+  },
+  "root_entries": [
+    ".eslintignore",
+    ".eslintrc.json",
+    ".git-blame-ignore-revs",
+    ".gitattributes",
+    ".github",
+    ".gitignore",
+    ".prettierignore",
+    ".prettierrc",
+    ".tool-versions",
+    ".vscode",
+    "CONTRIBUTING.md",
+    "Dockerfile.autoindex",
+    "LICENSE.txt",
+    "README.md",
+    "SECURITY.md",
+    "build",
+    "dev",
+    "docs",
+    "lerna.json",
+    "package-lock.json",
+    "package.json",
+    "packages",
+    "pyright-last-commit",
+    "pyright-last-sync",
+    "tsconfig.json"
+  ],
+  "temporary_bare_clone": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\pd-r153-hteqjo7a\\repo.git"
+}

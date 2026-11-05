@@ -1,0 +1,183 @@
+{
+  "baseRef": "main",
+  "headRef": "agent",
+  "input": {
+    "fileCount": 1,
+    "hunkCount": 1,
+    "addedLineCount": 3,
+    "removedLineCount": 1,
+    "changedLineCount": 4
+  },
+  "output": {
+    "fileCount": 1,
+    "hunkCount": 1,
+    "addedLineCount": 3,
+    "removedLineCount": 1,
+    "changedLineCount": 4
+  },
+  "testCommand": {
+    "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"process.exit(0)\"",
+    "status": "passed",
+    "durationMs": 425,
+    "attempts": 1
+  },
+  "mode": "unverified",
+  "verification": {
+    "baseline": {
+      "stage": "baseline",
+      "status": "passed",
+      "commands": [
+        {
+          "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"process.exit(0)\"",
+          "status": "passed",
+          "durationMs": 281,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 133
+            }
+          ]
+        }
+      ],
+      "durationMs": 425,
+      "baseCommitSha": "4f3f719a31c7a62137077602ac9c5a437ca39f1c",
+      "headCommitSha": "c5c74ad2db23442b344963807dd74e75dc71c590"
+    },
+    "final": {
+      "stage": "final",
+      "status": "passed",
+      "commands": [
+        {
+          "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"process.exit(0)\"",
+          "status": "passed",
+          "durationMs": 247,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 125
+            }
+          ]
+        }
+      ],
+      "durationMs": 833,
+      "baseCommitSha": "4f3f719a31c7a62137077602ac9c5a437ca39f1c",
+      "headCommitSha": "c5c74ad2db23442b344963807dd74e75dc71c590",
+      "expectedTreeSha": "a0eb2eeacdc15b709bf44bcf5b4ecf1c69426ade",
+      "artifactTreeSha": "a0eb2eeacdc15b709bf44bcf5b4ecf1c69426ade",
+      "treesMatch": true
+    }
+  },
+  "reduction": {
+    "strategy": "ddmin",
+    "selectedGroupIds": [],
+    "attempts": [
+      {
+        "ids": [
+          "grp-08e544cdf085"
+        ],
+        "key": "d53363a536ff30b269b4e812adcf368525325e467aa54af613ed8b969e2a8dd0",
+        "verdict": "PASS",
+        "cached": false
+      }
+    ],
+    "atomGranularity": "ast",
+    "dependencyGroups": [
+      {
+        "id": "grp-08e544cdf085",
+        "memberIds": [
+          "atom-b42623bb1d636558"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "filePath": "src/total.js",
+      "hunkHeader": "ast: insert lexical_declaration in total",
+      "category": "unknown",
+      "verdict": "kept",
+      "reason": "RETAIN scope state required"
+    },
+    {
+      "filePath": "src/total.js",
+      "hunkHeader": "ast: insert expression_statement in total",
+      "category": "unknown",
+      "verdict": "needs-human-review",
+      "reason": "downgraded to keep-only: individually verified, but an optional advisory command mutated tracked source; every removal was retained for human review during combined removal verification"
+    },
+    {
+      "filePath": "src/total.js",
+      "hunkHeader": "ast: replace return_statement in total",
+      "category": "unknown",
+      "verdict": "kept",
+      "reason": "RETAIN scope state required"
+    }
+  ],
+  "removals": [],
+  "kept": [
+    {
+      "filePath": "src/total.js",
+      "hunkHeader": "ast: insert lexical_declaration in total",
+      "category": "unknown",
+      "reason": "RETAIN scope state required",
+      "confidence": "kept"
+    },
+    {
+      "filePath": "src/total.js",
+      "hunkHeader": "ast: replace return_statement in total",
+      "category": "unknown",
+      "reason": "RETAIN scope state required",
+      "confidence": "kept"
+    }
+  ],
+  "needsHumanReview": [
+    {
+      "filePath": "src/total.js",
+      "hunkHeader": "ast: insert expression_statement in total",
+      "category": "unknown",
+      "reason": "downgraded to keep-only: individually verified, but an optional advisory command mutated tracked source; every removal was retained for human review during combined removal verification",
+      "confidence": "needs-human-review"
+    }
+  ],
+  "artifacts": [
+    ".patchdiet/cleanup.diff",
+    ".patchdiet/report.md",
+    ".patchdiet/run.json",
+    ".patchdiet/report.html",
+    ".patchdiet/report.github.md"
+  ],
+  "optionalCommands": [
+    {
+      "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"require('fs').writeFileSync('src/total.js','mutated\\n')\"",
+      "status": "passed",
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 132,
+      "advisory": true,
+      "mutatedTrackedSource": true,
+      "detail": "advisory optional command passed (exit 0); this command MUTATED tracked source in the evaluation environment; advisory only — it never replaces the required oracle and never upgrades a verdict"
+    }
+  ],
+  "patchPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-6HLuED\\inj-mutating-optional-command-MBxkIx\\.patchdiet\\cleanup.diff",
+  "startedAt": "2026-10-06T15:41:31.242Z",
+  "patchdietVersion": "0.2.0",
+  "baseCommitSha": "4f3f719a31c7a62137077602ac9c5a437ca39f1c",
+  "headCommitSha": "c5c74ad2db23442b344963807dd74e75dc71c590",
+  "mergeBaseCommitSha": "4f3f719a31c7a62137077602ac9c5a437ca39f1c",
+  "commandLineArgs": [],
+  "partial": true,
+  "partialReason": "optional advisory command(s) mutated tracked source in the evaluation environment; the cleanup artifact is invalidated and every removal was retained for human review",
+  "durationMs": 5223,
+  "finishedAt": "2026-10-06T15:41:36.465Z",
+  "reportPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-6HLuED\\inj-mutating-optional-command-MBxkIx\\.patchdiet\\report.md",
+  "reportJsonPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-6HLuED\\inj-mutating-optional-command-MBxkIx\\.patchdiet\\run.json"
+}

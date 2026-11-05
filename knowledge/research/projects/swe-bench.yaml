@@ -1,0 +1,65 @@
+name: SWE-bench
+repository: https://github.com/SWE-bench/SWE-bench
+official_site: https://www.swebench.com/
+license: MIT
+languages:
+  - Python
+  - Docker
+primary_purpose: Repository-level coding-agent benchmark.
+architecture: Task instances, base commits, patches, containers, and test-based grading.
+key_modules:
+  - instance schema
+  - environment builder
+  - evaluator
+  - leaderboard
+algorithms: []
+useful_patterns:
+  - reproducible task bundle
+  - hidden grading tests
+  - environment isolation
+patchdiet_mapping:
+  - benchmarks
+  - docs/benchmark-schema.json
+do_not_copy:
+  - leaderboard numbers as PatchDiet evidence
+integration_options:
+  - borrow-concept
+  - adapter
+integration_recommendation: borrow-concept
+reasons: PatchDiet needs separate ground truth for necessary and unnecessary changes.
+risks: Contamination, distribution shift, and mismatch with cleanup tasks.
+estimated_complexity: medium
+status: DISTILLED
+source_refs:
+  - benchmark:swe-bench
+provenance_status: SOURCE_VERIFIED_REPOSITORY
+previous_license_verified_at_commit: 2026-10-26
+license_review_status: ROOT_LICENSE_INSPECTED_AT_COMMIT
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+inspected_commit: 02e7a74ffd0b707aab73d203fe87bdc7c76afc8e
+license_verified_at_commit: 02e7a74ffd0b707aab73d203fe87bdc7c76afc8e
+retrieved_at: 2026-10-26
+license_path: LICENSE
+license_type: MIT
+repository_evidence: evidence/repositories/benchmark-swe-bench.json
+id: benchmark:swe-bench
+claims:
+  - claim:swebench:001
+limitations:
+  - Contamination, distribution shift, and mismatch with cleanup tasks.
+gate_justifications:
+  D7: No newly adopted research implementation; existing runtime gets a separate fresh regression.
+  D6: No runtime adoption ticket is authorized in the research-only phase.
+algorithm_topics:
+  - benchmark-evaluation
+ticket_refs:
+  - PD-R100
+  - PD-R101
+  - PD-R159

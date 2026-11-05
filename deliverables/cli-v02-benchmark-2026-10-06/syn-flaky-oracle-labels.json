@@ -1,0 +1,13 @@
+{
+  "case": "syn-flaky-oracle",
+  "labels": [
+    {
+      "filePath": "value.txt",
+      "identity": "atom-ee7022888c",
+      "kind": "hunk",
+      "label": "uncertain",
+      "header": "@@ -1 +1 @@",
+      "atomId": "atom-ee7022888c"
+    }
+  ]
+}

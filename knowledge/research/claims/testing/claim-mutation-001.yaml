@@ -1,0 +1,21 @@
+id: claim:mutation:001
+statement: Mutation testing measures whether configured tests detect selected behavior changes through killed and
+  survived mutants.
+source:
+  id: project:strykerjs
+evidence_type: reference-implementation
+scope: testing
+confidence: high
+assumptions:
+  - mutants are isolated and tests are repeatable
+limitations:
+  - mutation score is sample-dependent and equivalent mutants distort interpretation
+patchdiet_mapping:
+  affected_components:
+    - packages/testing
+    - benchmarks
+possible_action: use mutation mode to audit oracle strength in benchmark runs
+safety_effect: positive
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

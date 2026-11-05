@@ -1,0 +1,720 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+       Mutation Testing Advances: An Analysis and Survey 
+      -
+      UCL Discovery
+    </title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <script type="text/javascript" src="/javascript/jquery/jquery-1.4.4.js">// <!-- No script --></script>
+    <script type="text/javascript" src="/javascript/jquery/jquery-ui.min.js">// <!-- No script --></script>
+    <link type="text/css" href="/css/jquery/jquery-ui.css" rel="stylesheet" />
+    <link type="text/css" href="/css/accordion.css" rel="stylesheet" />
+    <link rel="alternate" href="https://blogs.ucl.ac.uk/ucl-discovery/feed/" title="UCL Discovery Blog" type="application/rss+xml" />
+    <link rel="alternate" href="/latest.xml" title="Latest additions" type="application/rss+xml" />
+    <meta name="subject" content="research at UCL (University College London)" />
+    <meta name="description" content="UCL Discovery is UCL's open access repository, showcasing and providing access to UCL research outputs from all UCL disciplines." />
+    <meta name="keywords" content="ucl discovery, discovery, open access, open access repository, ucl research, research, ucl library, ucl, theses, journal articles, book chapters, conference proceedings, digital web resources" />
+    <meta name="contact.name" content="UCL Discovery" />
+    <meta name="contact.email" content="discovery@ucl.ac.uk" />
+
+    <meta name="eprints.eprintid" content="10056704" />
+<meta name="eprints.rev_number" content="24" />
+<meta name="eprints.eprint_status" content="archive" />
+<meta name="eprints.userid" content="608" />
+<meta name="eprints.dir" content="disk0/10/05/67/04" />
+<meta name="eprints.datestamp" content="2018-09-21 14:35:46" />
+<meta name="eprints.lastmod" content="2026-03-30 14:25:12" />
+<meta name="eprints.status_changed" content="2018-09-21 14:35:46" />
+<meta name="eprints.type" content="article" />
+<meta name="eprints.metadata_visibility" content="show" />
+<meta name="eprints.creators_name" content="Papadakis, M" />
+<meta name="eprints.creators_name" content="Kintis, M" />
+<meta name="eprints.creators_name" content="Zhang, J" />
+<meta name="eprints.creators_name" content="Jia, Y" />
+<meta name="eprints.creators_name" content="Traon, YL" />
+<meta name="eprints.creators_name" content="Harman, M" />
+<meta name="eprints.title" content="Mutation Testing Advances: An Analysis and Survey" />
+<meta name="eprints.ispublished" content="pub" />
+<meta name="eprints.divisions" content="UCL" />
+<meta name="eprints.divisions" content="B04" />
+<meta name="eprints.divisions" content="C05" />
+<meta name="eprints.divisions" content="F48" />
+<meta name="eprints.note" content="© 2018 Elsevier Inc. This version is the author accepted manuscript. For information on re-use, please refer to the publisher’s terms and conditions." />
+<meta name="eprints.abstract" content="Mutation testing realizes the idea of using artificial defects to support testing activities. Mutation is typically used as a way to evaluate the adequacy of test suites, to guide the generation of test cases, and to support experimentation. Mutation has reached a maturity phase and gradually gains popularity both in academia and in industry. This chapter presents a survey of recent advances, over the past decade, related to the fundamental problems of mutation testing and sets out the challenges and open problems for the future development of the method. It also collects advices on best practices related to the use of mutation in empirical studies of software testing. Thus, giving the reader a “mini-handbook”-style roadmap for the application of mutation testing as experimental methodology." />
+<meta name="eprints.date" content="2019" />
+<meta name="eprints.date_type" content="published" />
+<meta name="eprints.official_url" content="http://dx.doi.org/10.1016/bs.adcom.2018.03.015" />
+<meta name="eprints.oa_status" content="green" />
+<meta name="eprints.full_text_type" content="other" />
+<meta name="eprints.language" content="eng" />
+<meta name="eprints.primo" content="open" />
+<meta name="eprints.primo_central" content="open_green" />
+<meta name="eprints.verified" content="verified_manual" />
+<meta name="eprints.elements_id" content="1558406" />
+<meta name="eprints.doi" content="10.1016/bs.adcom.2018.03.015" />
+<meta name="eprints.lyricists_name" content="Harman, Mark" />
+<meta name="eprints.lyricists_name" content="Jia, Yue" />
+<meta name="eprints.lyricists_name" content="Zhang, Jie" />
+<meta name="eprints.lyricists_id" content="MHARM36" />
+<meta name="eprints.lyricists_id" content="YJIAX90" />
+<meta name="eprints.lyricists_id" content="JZHAE79" />
+<meta name="eprints.actors_name" content="Zhang, Jie" />
+<meta name="eprints.actors_id" content="JZHAE79" />
+<meta name="eprints.actors_role" content="owner" />
+<meta name="eprints.full_text_status" content="public" />
+<meta name="eprints.publication" content="Advances in Computers" />
+<meta name="eprints.volume" content="112" />
+<meta name="eprints.pagerange" content="275-378" />
+<meta name="eprints.issn" content="0065-2458" />
+<meta name="eprints.citation" content="       Papadakis, M;    Kintis, M;    Zhang, J;    Jia, Y;    Traon, YL;    Harman, M;      (2019)    Mutation Testing Advances: An Analysis and Survey.                   Advances in Computers , 112    pp. 275-378.    10.1016/bs.adcom.2018.03.015 &lt;https://doi.org/10.1016/bs.adcom.2018.03.015&gt;.       Green open access   
+ " />
+<meta name="eprints.document_url" content="https://discovery.ucl.ac.uk/id/eprint/10056704/1/survey.pdf" />
+<link rel="schema.DC" href="https://purl.org/DC/elements/1.0/" />
+<meta name="DC.title" content="Mutation Testing Advances: An Analysis and Survey" />
+<meta name="DC.creator" content="Papadakis, M" />
+<meta name="DC.creator" content="Kintis, M" />
+<meta name="DC.creator" content="Zhang, J" />
+<meta name="DC.creator" content="Jia, Y" />
+<meta name="DC.creator" content="Traon, YL" />
+<meta name="DC.creator" content="Harman, M" />
+<meta name="DC.description" content="Mutation testing realizes the idea of using artificial defects to support testing activities. Mutation is typically used as a way to evaluate the adequacy of test suites, to guide the generation of test cases, and to support experimentation. Mutation has reached a maturity phase and gradually gains popularity both in academia and in industry. This chapter presents a survey of recent advances, over the past decade, related to the fundamental problems of mutation testing and sets out the challenges and open problems for the future development of the method. It also collects advices on best practices related to the use of mutation in empirical studies of software testing. Thus, giving the reader a “mini-handbook”-style roadmap for the application of mutation testing as experimental methodology." />
+<meta name="DC.date" content="2019" />
+<meta name="DC.type" content="Article" />
+<meta name="DC.language" content="eng" />
+<meta name="DC.source" content="   Advances in Computers , 112    pp. 275-378.   (2019)      " />
+<meta name="DC.format" content="text" />
+<meta name="DC.identifier" content="https://discovery.ucl.ac.uk/id/eprint/10056704/1/survey.pdf" />
+<meta name="DC.identifier" content="https://discovery.ucl.ac.uk/id/eprint/10056704/" />
+<meta name="DC.rights" content="open" />
+<link rel="alternate" href="https://discovery.ucl.ac.uk/cgi/export/eprint/10056704/EndNote/discovery-eprint-10056704.enw" type="text/plain; charset=utf-8" title="EndNote" />
+<link rel="alternate" href="https://discovery.ucl.ac.uk/cgi/export/eprint/10056704/DIDL/discovery-eprint-10056704.xml" type="text/xml; charset=utf-8" title="MPEG-21 DIDL" />
+<link rel="alternate" href="https://discovery.ucl.ac.uk/cgi/export/eprint/10056704/Simple/discovery-eprint-10056704.txt" type="text/plain; charset=utf-8" title="Simple Metadata" />
+<link rel="alternate" href="https://discovery.ucl.ac.uk/cgi/export/eprint/10056704/RIS/discovery-eprint-10056704.ris" type="text/plain" title="Reference Manager" />
+<link rel="alternate" href="https://discovery.ucl.ac.uk/cgi/export/eprint/10056704/HTML/discovery-eprint-10056704.html" type="text/html; charset=utf-8" title="HTML Citation" />
+<link rel="alternate" href="https://discovery.ucl.ac.uk/cgi/export/eprint/10056704/COinS/discovery-eprint-10056704.txt" type="text/plain; charset=utf-8" title="OpenURL ContextObject in Span" />
+<link rel="alternate" href="https://discovery.ucl.ac.uk/cgi/export/eprint/10056704/RDFN3/discovery-eprint-10056704.n3" type="text/n3" title="RDF+N3" />
+<link rel="alternate" href="https://discovery.ucl.ac.uk/cgi/export/eprint/10056704/BibTeX/discovery-eprint-10056704.bib" type="text/plain; charset=utf-8" title="BibTeX" />
+<link rel="alternate" href="https://discovery.ucl.ac.uk/cgi/export/eprint/10056704/NEEO/discovery-eprint-10056704.xml" type="text/xml" title="NEEO" />
+<link rel="alternate" href="https://discovery.ucl.ac.uk/cgi/export/eprint/10056704/RDFNT/discovery-eprint-10056704.nt" type="text/plain" title="RDF+N-Triples" />
+<link rel="alternate" href="https://discovery.ucl.ac.uk/cgi/export/eprint/10056704/Atom/discovery-eprint-10056704.xml" type="application/atom+xml;charset=utf-8" title="Atom" />
+<link rel="alternate" href="https://discovery.ucl.ac.uk/cgi/export/eprint/10056704/MODS/discovery-eprint-10056704.xml" type="text/xml; charset=utf-8" title="MODS" />
+<link rel="alternate" href="https://discovery.ucl.ac.uk/cgi/export/eprint/10056704/CSV/discovery-eprint-10056704.csv" type="text/csv; charset=utf-8" title="Multiline CSV" />
+<link rel="alternate" href="https://discovery.ucl.ac.uk/cgi/export/eprint/10056704/Text/discovery-eprint-10056704.txt" type="text/plain; charset=utf-8" title="ASCII Citation" />
+<link rel="alternate" href="https://discovery.ucl.ac.uk/cgi/export/eprint/10056704/Refer/discovery-eprint-10056704.refer" type="text/plain" title="Refer" />
+<link rel="alternate" href="https://discovery.ucl.ac.uk/cgi/export/eprint/10056704/RDFXML/discovery-eprint-10056704.rdf" type="application/rdf+xml" title="RDF+XML" />
+<link rel="Top" href="https://discovery.ucl.ac.uk/" />
+    <link rel="Sword" href="https://discovery.ucl.ac.uk/sword-app/servicedocument" />
+    <link rel="SwordDeposit" href="https://discovery.ucl.ac.uk/id/contents" />
+    <link rel="Search" type="text/html" href="https://discovery.ucl.ac.uk/cgi/search" />
+    <link rel="Search" type="application/opensearchdescription+xml" href="https://discovery.ucl.ac.uk/cgi/opensearchdescription" title="UCL Discovery" />
+    <script type="text/javascript" src="https://www.google.com/jsapi">
+//padder
+</script><script type="text/javascript">
+// <![CDATA[
+google.load("visualization", "1", {packages:["corechart", "geochart"]});
+// ]]></script><script type="text/javascript">
+// <![CDATA[
+var eprints_http_root = "https://discovery.ucl.ac.uk";
+var eprints_http_cgiroot = "https://discovery.ucl.ac.uk/cgi";
+var eprints_oai_archive_id = "eprints.ucl.ac.uk.OAI2";
+var eprints_logged_in = false;
+var eprints_logged_in_userid = 0; 
+var eprints_logged_in_username = ""; 
+var eprints_logged_in_usertype = ""; 
+// ]]></script>
+    <style type="text/css">.ep_logged_in { display: none }</style>
+    <link rel="stylesheet" type="text/css" href="/style/auto-3.4.3.css" />
+    <script type="text/javascript" src="/javascript/auto-3.4.3.js">
+//padder
+</script>
+    <!--[if lte IE 6]>
+        <link rel="stylesheet" type="text/css" href="/style/ie6.css" />
+   <![endif]-->
+    <meta name="Generator" content="EPrints 3.4.3" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="en" />
+    
+
+    <!--[if lte IE 8]>
+        <style type="text/css">
+          body { text-align:center }
+          .ep_tm_header, .ep_toolbox_content, div#container { text-align:left }
+          div#menuBrowseBy {min-height:60px;}
+          .ep_doc_icon { float:left; }
+        </style>
+    <![endif]-->
+    <!--[if lte IE 7]>
+        <style type="text/css">
+          #homeMainSearch #homekw { width:290px !important; }
+          #homeMainSearch input { padding:2px !important; }
+          #homeMainSearch { margin-top:20px; }
+        </style>
+    <![endif]-->
+
+  </head>
+  <body>
+
+    <div id="container">
+      <div class="ep_noprint">
+        <noscript>
+          <style type="text/css">@import url(https://discovery.ucl.ac.uk/style/nojs.css);</style>
+        </noscript>
+      </div>
+      
+
+      <!-- UCL header -->
+      <div class="ucl_header">
+        <img id="ucl_logo" alt="UCL Logo" src="/images/ucl-widelogo.svg" />
+        <div class="ucl_top_left">
+          UCL Discovery
+        </div>
+      </div>
+
+      <!-- UCL strip   added 23-Jun-2021  -->
+      <div class="ucl_strip">
+      </div>
+
+      <!--  UCL breadcrumbs  -->
+      <div id="ucl-breadcrumb">
+        <a href="https://www.ucl.ac.uk">UCL home</a> »
+        <a href="https://www.ucl.ac.uk/library">Library Services</a> »
+        <a href="https://www.ucl.ac.uk/library/electronic-resources">Electronic resources</a> »
+        <a href="https://discovery.ucl.ac.uk">UCL Discovery</a>
+      </div>
+
+      <!--  EPrints breadcrumbs ep_tm_menu  -->
+      <!-- 27-Sep-2019            <div>
+                      <ul class="ep_tm_menu">
+                          <li>
+                              <a href="{$config{http_url}}">
+                                  <epc:phrase ref="template/navigation:home"/>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="{$config{http_url}}/information.html">
+                                  <epc:phrase ref="template/navigation:about"/>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="{$config{http_url}}/view/" menu="ep_tm_menu_browse">
+                                  <epc:phrase ref="template/navigation:browse"/>
+                              </a>
+                              <ul id="ep_tm_menu_browse" style="display:none;">
+                                  <li>
+                                      <a href="{$config{http_url}}/view/subjects/">
+                                          <epc:phrase ref="bin/generate_views:indextitleprefix"/>
+                                          <epc:phrase ref="viewname_eprint_subjects"/>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </div>  27-Sep-2019 -->
+
+      <div id="main" class="homeMain">
+
+        <div id="leftcol">
+          <div class="padding">
+
+            <!-- SEARCH AND BROWSE -->
+
+            <!-- FUNNELBACK SEARCH -->
+            <form id="homeSearchPub" action="https://search2.ucl.ac.uk/s/search.html" method="get" name="search">
+              <label for="kw">Enter your search terms</label>
+              <div class="home_searchTextBox">
+                <input id="kw" accept-charset="utf-8" type="text" name="query" value="" placeholder="Search publications" class="ui-autocomplete-input" autocomplete="off" aria-autocomplete="list" aria-haspopup="true" />
+              </div>
+              <input type="hidden" name="collection" value="ucl-discovery" />
+              <input type="submit" class="home_searchButton" value="Go" />
+            </form>
+
+            <div id="menuBrowseBy">
+              <ul class="top">
+                <li>
+                  <a href="https://discovery.ucl.ac.uk/cgi/search/advanced">Advanced
+                    search
+                  </a>
+                </li>
+                <li>
+                  <dl class="sub">
+                    <dt>Browse by:</dt>
+                    <dd>
+                      <a href="/departments.html">Department</a>
+                      <span style="margin-left:9px;">|</span>
+                      <a href="/view/year/">Year</a>
+                    </dd>
+                    <dd>
+                      <a href="/view/theses/UCL=5FThesis/">UCL Theses</a>
+                      <span>|</span>
+                      <a href="/cgi/latest">Latest</a>
+                      <a href="/latest.xml">
+                        <img src="/images/rss-feed.gif" title="Latest additions RSS feed" alt="RSS feed" />
+                      </a>
+                    </dd>
+                  </dl>
+                </li>
+              </ul>
+            </div>
+
+            <h3 id="depositButton">
+              <a href="https://rps.ucl.ac.uk/">Deposit your research</a>
+            </h3>
+
+            <ul class="left-nav">
+              <!-- any second level lists should be <ul class="ev"> -->
+              <li>
+                <a href="https://www.ucl.ac.uk/library/open-access">Open Access</a>
+              </li>
+              <!--  26-Sep-2019 About UCL Discovery put back  -->
+              <li>
+                <a href="/about.html">About
+                  UCL Discovery
+                </a>
+              </li>
+              <li>
+                <a href="/plus/">
+                  UCL Discovery Plus
+                </a>
+              </li>
+              <li>
+                <a href="https://www.ucl.ac.uk/library/open-access/ref">REF and open access</a>
+              </li>
+              <li>
+                <a href="https://www.ucl.ac.uk/ucl-press">UCL Press</a>
+              </li>
+              <li>
+                <a href="https://www.ucl.ac.uk/library/e-theses">UCL e-theses guidelines</a>
+              </li>
+              <li>
+                <a href="/cgi/stats/report">Statistics</a>
+              </li>
+              <li>
+                <a href="https://www.ucl.ac.uk/library/open-access/faqs">FAQs</a>
+              </li>
+              <li>
+                <a href="https://www.ucl.ac.uk/library/open-access/policies">Notices and policies</a>
+              </li>
+              <li>
+                <a href="https://www.ucl.ac.uk/library/open-access/contact-us">Contact us</a>
+              </li>
+            </ul>
+
+            <!-- Maintenance message -->
+            <!--
+            <div id="msg-maintenance" style="border: 1px solid red; border-radius: 5px; padding: 5px; font-size: 125%">
+                <span>
+                    <img style="width: 16px; height: 16px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMSBCYXNpYy8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS1iYXNpYy5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgYmFzZVByb2ZpbGU9ImJhc2ljIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCIKICAgdmlld0JveD0iMCAwIDMyIDMyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KICA8cGF0aCB0cmFuc2Zvcm09Im1hdHJpeCgwLjAzMiwwLDAsMC4wMzIsMCwwKSIgc3Ryb2tlPSJub25lIiBzdHlsZT0iZmlsbDojMDg2NkNDIiBkPSJNIDUwMCAwIEMgMjIzIDAgMCAyMjMgMCA1MDAgQyAwIDc3NSAyMjMgMTAwMCA1MDAgMTAwMCBDIDc3NSAxMDAwIDEwMDAgNzc1IDEwMDAgNTAwIEMgMTAwMCAyMjMgNzc1IDAgNTAwIDAgeiBNIDQ3NSA4MDcgQyA0MDkgODA3IDM3NSA3MjkgNDA5IDYzMCBDIDQ0MyA1MzEgNDk2IDQ0MyAzNTMgNDQ2IEMgMzUzIDQ0NiA0MTUgNDA2IDQ4OSA0MDYgQyA1NjUgNDA2IDU3NCA0OTMgNTQwIDU3NyBDIDUwNiA2NjEgNDgwIDc2MyA1OTkgNzUxIEMgNTk5IDc1MSA1NDMgODA3IDQ3NSA4MDcgeiBNIDU0NSAzMzcgQyA1MDcgMzM3IDQ3NSAzMDcgNDc1IDI2OSBDIDQ3NSAyMzIgNTA3IDIwMSA1NDUgMjAxIEMgNTgyIDIwMSA2MTMgMjMyIDYxMyAyNjkgQyA2MTMgMzA3IDU4MiAzMzcgNTQ1IDMzNyB6Ii8+Cjwvc3ZnPg=="></img>&nbsp;
+                    <b>Please note!</b>
+                </span>
+                <p>UCL Discovery download statistics are currently being regenerated.</p>
+                <p>We estimate that this process will complete on or before Mon 06-Jul-2020. Until then, reported statistics will be incomplete.</p>
+            </div>
+            -->
+
+          </div>
+        </div>
+        <!-- #leftcol -->
+
+        <div id="contentcol">
+          <div class="padding">
+
+            <!--  <epc:pin ref="toolbar" /> -->
+
+            <a name="top"></a>
+
+            <!--  UCL 29-Jun-21  Change h2 to h1 to get rid of WAVE no-h1 alert  -->
+            <h2>
+              
+
+Mutation Testing Advances: An Analysis and Survey
+
+
+            </h2>
+
+            <div class="ep_summary_content"><div class="ep_summary_content_left"></div><div class="ep_summary_content_right"></div><div class="ep_summary_content_top"></div><div class="ep_summary_content_main">
+
+  <p style="margin-bottom: 1em" class="ep_block">
+    
+
+<!-- basic creators and date -->
+
+    <!-- print expr="creators_name"/ -->
+        <span id="short_list_10056704">
+          
+            
+                <span class="person_name">Papadakis, M</span>;
+              
+      
+            
+                <span class="person_name">Kintis, M</span>;
+              
+      
+            
+                <span class="person_name">Zhang, J</span>;
+              
+      
+            
+                <span class="person_name">Jia, Y</span>;
+              
+      
+            
+                <span class="person_name">Traon, YL</span>;
+              
+      
+            
+                <span class="person_name">Harman, M</span>;
+              
+      
+        </span>
+        
+  
+
+(2019)
+
+<!-- title -->
+
+<!-- cite:linkhere><xhtml:em><print expr="title" opts="magicstop"/></xhtml:em></cite:linkhere -->
+
+
+  Mutation Testing Advances: An Analysis and Survey.
+
+
+<!-- if test="is_set(translators)">(<print expr="translators"/>, Trans.).</if -->
+
+<!-- print type info where required -->
+
+
+
+
+
+<!-- print subtype info where required -->
+
+
+
+
+
+
+
+
+<!-- if test="is_set(data_type)">[<print expr="data_type"/>].</if -->
+
+
+
+<!-- publication details -->
+
+
+<strong>Advances in Computers</strong>
+, 112
+      
+    
+     pp. 275-378.
+    <!-- if test="pagerange">, <print expr="pagerange"/>.</if -->
+         <a href="https://doi.org/10.1016/bs.adcom.2018.03.015" target="_blank">10.1016/bs.adcom.2018.03.015</a>.
+
+
+
+  
+
+
+
+  
+      <img src="/images/oagreen.png" style="margin-left:1em; vertical-align:middle" title="An open access version is available from UCL Discovery" alt="Green open access" />
+    
+
+<br />
+
+  </p>
+
+  
+
+  
+
+    
+  
+    
+      <b></b>
+      <table class="ep_block">
+        
+          <tr>
+            <td valign="top" align="right"><a onmouseout="EPJS_HidePreview( event, 'doc_preview_739156', 'right' );" onfocus="EPJS_ShowPreview( event, 'doc_preview_739156', 'right' );" class="ep_document_link" href="https://discovery.ucl.ac.uk/10056704/1/survey.pdf" onblur="EPJS_HidePreview( event, 'doc_preview_739156', 'right' );" onmouseover="EPJS_ShowPreview( event, 'doc_preview_739156', 'right' );"><img class="ep_doc_icon" alt="[thumbnail of survey.pdf]" src="https://discovery.ucl.ac.uk/10056704/1.hassmallThumbnailVersion/survey.pdf" border="0" /></a><div id="doc_preview_739156" class="ep_preview"><div><div><span><img class="ep_preview_image" id="doc_preview_739156_img" alt="" src="https://discovery.ucl.ac.uk/10056704/1.haspreviewThumbnailVersion/survey.pdf" border="0" /><div class="ep_preview_title">Preview</div></span></div></div></div></td>
+            <td valign="top">
+              
+
+<!-- document citation -->
+
+
+<span class="ep_document_citation">
+<span class="document_format">Text</span>
+<br /><span class="document_filename">survey.pdf</span>
+ - Accepted Version
+
+
+</span>
+
+<br />
+              <a href="https://discovery.ucl.ac.uk/id/eprint/10056704/1/survey.pdf" class="ep_document_link">Download (1MB)</a>
+              
+			  
+			  | <a href="https://discovery.ucl.ac.uk/10056704/1.haslightboxThumbnailVersion/survey.pdf" rel="lightbox[docs] nofollow">Preview</a>
+			  
+			  
+              
+  
+              <ul>
+              
+              </ul>
+            </td>
+          </tr>
+        
+      </table>
+    
+
+  
+
+  
+    <h2 class="ep_block">Abstract</h2>
+    <p style="text-align: left; margin: 1em auto 0em auto">Mutation testing realizes the idea of using artificial defects to support testing activities. Mutation is typically used as a way to evaluate the adequacy of test suites, to guide the generation of test cases, and to support experimentation. Mutation has reached a maturity phase and gradually gains popularity both in academia and in industry. This chapter presents a survey of recent advances, over the past decade, related to the fundamental problems of mutation testing and sets out the challenges and open problems for the future development of the method. It also collects advices on best practices related to the use of mutation in empirical studies of software testing. Thus, giving the reader a “mini-handbook”-style roadmap for the application of mutation testing as experimental methodology.</p>
+  
+
+  <table style="margin-bottom: 1em; margin-top: 1em;" cellpadding="3" class="ep_block">
+    <tr>
+      <th align="right">Type:</th>
+      <td>
+        Article
+        
+        
+        
+      </td>
+    </tr>
+    
+    
+      
+    
+      
+    
+      
+        <tr>
+          <th align="right">Title:</th>
+          <td valign="top">Mutation Testing Advances: An Analysis and Survey</td>
+        </tr>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <tr>
+          <th align="right">Open access status:</th>
+          <td valign="top">An open access version is available from UCL Discovery</td>
+        </tr>
+      
+    
+      
+        <tr>
+          <th align="right">DOI:</th>
+          <td valign="top"><a href="https://doi.org/10.1016/bs.adcom.2018.03.015" target="_blank">10.1016/bs.adcom.2018.03.015</a></td>
+        </tr>
+      
+    
+      
+        <tr>
+          <th align="right">Publisher version:</th>
+          <td valign="top"><a href="https://dx.doi.org/10.1016/bs.adcom.2018.03.015">http://dx.doi.org/10.1016/bs.adcom.2018.03.015</a></td>
+        </tr>
+      
+    
+      
+        <tr>
+          <th align="right">Language:</th>
+          <td valign="top">English</td>
+        </tr>
+      
+    
+      
+        <tr>
+          <th align="right">Additional information:</th>
+          <td valign="top">© 2018 Elsevier Inc. This version is the author accepted manuscript. For information on re-use, please refer to the publisher’s terms and conditions.</td>
+        </tr>
+      
+    
+      
+    
+      
+        <tr>
+          <th align="right">UCL classification:</th>
+          <td valign="top"><a href="https://discovery.ucl.ac.uk/view/UCL/UCL/">UCL</a><br /><a href="https://discovery.ucl.ac.uk/view/UCL/UCL/">UCL</a> &gt; <a href="https://discovery.ucl.ac.uk/view/UCL/A01/">Provost and Vice Provost Offices</a> &gt; <a href="https://discovery.ucl.ac.uk/view/UCL/B04/">UCL BEAMS</a><br /><a href="https://discovery.ucl.ac.uk/view/UCL/UCL/">UCL</a> &gt; <a href="https://discovery.ucl.ac.uk/view/UCL/A01/">Provost and Vice Provost Offices</a> &gt; <a href="https://discovery.ucl.ac.uk/view/UCL/B04/">UCL BEAMS</a> &gt; <a href="https://discovery.ucl.ac.uk/view/UCL/C05/">Faculty of Engineering Science</a><br /><a href="https://discovery.ucl.ac.uk/view/UCL/UCL/">UCL</a> &gt; <a href="https://discovery.ucl.ac.uk/view/UCL/A01/">Provost and Vice Provost Offices</a> &gt; <a href="https://discovery.ucl.ac.uk/view/UCL/B04/">UCL BEAMS</a> &gt; <a href="https://discovery.ucl.ac.uk/view/UCL/C05/">Faculty of Engineering Science</a> &gt; <a href="https://discovery.ucl.ac.uk/view/UCL/F48/">Dept of Computer Science</a></td>
+        </tr>
+      
+    
+    <tr>
+      <th align="right">URI:</th>
+      <td valign="top"><a href="https://discovery.ucl.ac.uk/id/eprint/10056704">https://discovery.ucl.ac.uk/id/eprint/10056704</a></td>
+    </tr>
+  </table>
+
+  
+  
+
+  
+    <div align="center" class="irstats2_view irstats2_view_KeyFigures"><div class="irstats2_view_title">Downloads since deposit</div><div class="irstats2_view_content"><div class="irstats2_keyfigures"><div class="irstats2_keyfigures_section" title="Number of downloads"><div id="downloads" class="irstats2_googlespark"></div><script type="text/javascript">
+// <![CDATA[
+document.observe("dom:loaded",function(){
+	new EPJS_Stats_GoogleSpark( { 'context': {'irs2report': 'eprint', 'set_name': 'eprint', 'set_value': '10056704', 'range': '_ALL_', 'datatype': 'downloads'}, 'options': { 'container_id': 'downloads' } } );
+});
+// ]]></script><span class="irstats2_keyfigures_metric"><span class="irstats2_keyfigures_metric_figure">25</span><span class="irstats2_keyfigures_metric_text">Downloads</span></span></div><div class="irstats2_ruler"></div></div></div></div><div align="center" class="irstats2_view irstats2_view_Google_Graph"><div class="irstats2_view_title">Download activity - last month<a href="#" class="irstats2_export_bar_toggle ep_noprint" onclick="return EPJS_Stats_Export_Toggle( this, 'irstats2_container_54823' );"><img border="0" src="/style/images/multi_down.png" title="Export options" /></a></div><div class="irstats2_export_bar ep_noprint"><div class="irstats2_export_content" style="display: none;" id="irstats2_container_54823">
+<form action="/cgi/stats/get" method="get">
+<input type="hidden" name="to" value="20261026" /><input type="hidden" name="set_value" value="10056704" /><input type="hidden" name="range" value="1m" /><input type="hidden" name="datatype" value="downloads" /><input type="hidden" name="set_name" value="eprint" /><input type="hidden" name="from" value="20260926" /><input type="hidden" name="irs2report" value="eprint" /><input type="hidden" name="title" value="Download activity - last month" /><input type="hidden" name="view" value="Google::Graph" /><input type="hidden" name="date_resolution" value="day" /><input type="hidden" name="graph_type" value="column" />
+Export as <select name="export"><option value="XML">XML</option><option value="CSV">CSV</option><option value="JSON">JSON</option></select>
+<input type="submit" value="Export" /> 
+</form>
+</div></div><div class="irstats2_view_content"><div id="irstats2_container_7384" class="irstats2_googlegraph"></div><script type="text/javascript">
+// <![CDATA[
+	if( document.loaded )
+	  new EPJS_Stats_GoogleGraph( { 'context': {'irs2report': 'eprint', 'set_name': 'eprint', 'set_value': '10056704', 'from': '20260926', 'to': '20261026', 'range': '1m', 'datatype': 'downloads'}, 'options': { 'container_id': 'irstats2_container_7384', 'view': 'Google::Graph', 'title': 'Download activity - last month', 'graph_type': 'column', 'date_resolution': 'day' } } );
+	else
+		document.observe("dom:loaded",function(){
+			  new EPJS_Stats_GoogleGraph( { 'context': {'irs2report': 'eprint', 'set_name': 'eprint', 'set_value': '10056704', 'from': '20260926', 'to': '20261026', 'range': '1m', 'datatype': 'downloads'}, 'options': { 'container_id': 'irstats2_container_7384', 'view': 'Google::Graph', 'title': 'Download activity - last month', 'graph_type': 'column', 'date_resolution': 'day' } } );
+		});
+// ]]></script></div></div><div align="center" class="irstats2_view irstats2_view_Google_Graph"><div class="irstats2_view_title">Download activity - last 12 months<a href="#" class="irstats2_export_bar_toggle ep_noprint" onclick="return EPJS_Stats_Export_Toggle( this, 'irstats2_container_42586' );"><img border="0" src="/style/images/multi_down.png" title="Export options" /></a></div><div class="irstats2_export_bar ep_noprint"><div class="irstats2_export_content" style="display: none;" id="irstats2_container_42586">
+<form action="/cgi/stats/get" method="get">
+<input type="hidden" name="from" value="20251026" /><input type="hidden" name="irs2report" value="eprint" /><input type="hidden" name="datatype" value="downloads" /><input type="hidden" name="set_name" value="eprint" /><input type="hidden" name="set_value" value="10056704" /><input type="hidden" name="range" value="1y" /><input type="hidden" name="to" value="20261026" /><input type="hidden" name="title" value="Download activity - last 12 months" /><input type="hidden" name="view" value="Google::Graph" /><input type="hidden" name="date_resolution" value="month" /><input type="hidden" name="graph_type" value="column" />
+Export as <select name="export"><option value="XML">XML</option><option value="CSV">CSV</option><option value="JSON">JSON</option></select>
+<input type="submit" value="Export" /> 
+</form>
+</div></div><div class="irstats2_view_content"><div id="irstats2_container_93312" class="irstats2_googlegraph"></div><script type="text/javascript">
+// <![CDATA[
+	if( document.loaded )
+	  new EPJS_Stats_GoogleGraph( { 'context': {'irs2report': 'eprint', 'set_name': 'eprint', 'set_value': '10056704', 'from': '20251026', 'to': '20261026', 'range': '1y', 'datatype': 'downloads'}, 'options': { 'container_id': 'irstats2_container_93312', 'view': 'Google::Graph', 'title': 'Download activity - last 12 months', 'graph_type': 'column', 'date_resolution': 'month' } } );
+	else
+		document.observe("dom:loaded",function(){
+			  new EPJS_Stats_GoogleGraph( { 'context': {'irs2report': 'eprint', 'set_name': 'eprint', 'set_value': '10056704', 'from': '20251026', 'to': '20261026', 'range': '1y', 'datatype': 'downloads'}, 'options': { 'container_id': 'irstats2_container_93312', 'view': 'Google::Graph', 'title': 'Download activity - last 12 months', 'graph_type': 'column', 'date_resolution': 'month' } } );
+		});
+// ]]></script></div></div><div align="center" class="irstats2_view irstats2_view_Table"><div class="irstats2_view_title">Downloads by country - last 12 months<a href="#" class="irstats2_export_bar_toggle ep_noprint" onclick="return EPJS_Stats_Export_Toggle( this, 'irstats2_container_35517' );"><img border="0" src="/style/images/multi_down.png" title="Export options" /></a></div><div class="irstats2_export_bar ep_noprint"><div class="irstats2_export_content" style="display: none;" id="irstats2_container_35517">
+<form action="/cgi/stats/get" method="get">
+<input type="hidden" name="to" value="20261026" /><input type="hidden" name="range" value="1y" /><input type="hidden" name="set_value" value="10056704" /><input type="hidden" name="set_name" value="eprint" /><input type="hidden" name="datatype" value="countries" /><input type="hidden" name="irs2report" value="eprint" /><input type="hidden" name="from" value="20251026" /><input type="hidden" name="top" value="countries" /><input type="hidden" name="title" value="Downloads by country - last 12 months" /><input type="hidden" name="view" value="Table" />
+Export as <select name="export"><option value="JSON">JSON</option><option value="CSV">CSV</option><option value="XML">XML</option></select>
+<input type="submit" value="Export" /> 
+</form>
+</div></div><div class="irstats2_view_content"><div id="irstats2_container_65049" class="irstats2_table"></div><script type="text/javascript">
+// <![CDATA[
+	if( document.loaded )
+	  new EPJS_Stats_Table( { 'context': {'irs2report': 'eprint', 'set_name': 'eprint', 'set_value': '10056704', 'from': '20251026', 'to': '20261026', 'range': '1y', 'datatype': 'countries'}, 'options': { 'top': 'countries', 'view': 'Table', 'title': 'Downloads by country - last 12 months', 'container_id': 'irstats2_container_65049' } } );
+	else
+		document.observe("dom:loaded",function(){
+			  new EPJS_Stats_Table( { 'context': {'irs2report': 'eprint', 'set_name': 'eprint', 'set_value': '10056704', 'from': '20251026', 'to': '20261026', 'range': '1y', 'datatype': 'countries'}, 'options': { 'top': 'countries', 'view': 'Table', 'title': 'Downloads by country - last 12 months', 'container_id': 'irstats2_container_65049' } } );
+		});
+// ]]></script></div></div>
+  
+
+  
+    <h3>Archive Staff Only</h3>
+    <table class="ep_summary_page_actions">
+    
+      <tr>
+        <td><a href="/cgi/users/home?screen=EPrint%3A%3AView&amp;eprintid=10056704"><img src="/style/images/action_view.png" alt="View Item" class="ep_form_action_icon" role="button" /></a></td>
+        <td>View Item</td>
+      </tr>
+    
+    </table>
+  
+
+</div><div class="ep_summary_content_bottom"></div><div class="ep_summary_content_after"></div></div>
+
+
+          </div>
+          <!-- .padding -->
+        </div>
+        <!-- #contentcol -->
+
+        <div class="ep_tm_footer ep_noprint"></div>
+
+      </div>
+      <!-- #main -->
+
+      <div id="footer">
+        <ul>
+          <li>
+            <a href="https://www.ucl.ac.uk/disclaimer/">Disclaimer</a>
+          </li>
+          <li>
+            <a href="https://www.ucl.ac.uk/foi/">Freedom of Information</a>
+          </li>
+          <li>
+            <a href="https://www.ucl.ac.uk/accessibility/">Accessibility</a>
+          </li>
+          <li>
+            <a href="https://www.ucl.ac.uk/privacy/">Privacy</a>
+          </li>
+          <li>
+            <a href="https://search2.ucl.ac.uk/s/search.html?query=UCL+Discovery&amp;collection=website-meta&amp;profile=_website&amp;tab=websites&amp;sumbit=Go">Advanced Search</a>
+          </li>
+          <li>
+            <a href="https://www.ucl.ac.uk/about/contact-us">Contact Us</a>
+          </li>
+          <li>
+            <a href="/cgi/users/home" style="text-decoration: none;">
+              <!--  UCL 22-Jun-2021.  Add alt="UCL Admin"  -->
+              <img id="ucl-admin" height="10" width="10" alt="UCL Admin" src="//cdn.ucl.ac.uk/skins/UCLIndigoSkin/default-theme/images/edit.gif" data-src="//cdn.ucl.ac.uk/skins/UCLIndigoSkin/default-theme/images/edit.gif" />
+            </a>
+          </li>
+        </ul>
+        <div>
+          <address class="vcard">
+            <span class="adr">
+              <span class="fn org">University College London</span>, <span class="street-address">Gower Street</span>, <span class="region">London</span>, <span class="postal-code">WC1E 6BT</span>
+            </span>
+            <span class="tel">
+              <span class="type"><span class="value-title" title="work"></span>Tel</span>: <span class="value">+44</span> (0) <span class="value">20 7679 2000</span>
+            </span>
+          </address>
+
+          <p>© UCL 1999–<script type="text/javascript">var today = new Date(); document.write(today.getFullYear());</script></p>
+        </div>
+      </div>
+      <!-- #footer -->
+
+    </div>
+    <!-- #container -->
+
+    <!-- search box autocomplete scripts -->
+    <script type="text/javascript" src="https://search2.ucl.ac.uk/search/js/jquery.funnelback-completion.js">// <!-- No script --></script>
+    <script type="text/javascript" src="https://search2.ucl.ac.uk/search/js/jquery/jquery.tmpl.min.js">// <!-- No script --></script>
+    <script type="text/javascript" src="https://search2.ucl.ac.uk/search/js/jquery/jquery-ui-1.8.2.custom.min.js">// <!-- No script --></script>
+    <script type="text/javascript">
+      // Query completion setup.
+      jQuery(function () {
+        jQuery("#kw, #homekw").fbcompletion({
+          'enabled': 'enabled',
+          'collection': 'ucl-discovery',
+          'program': 'https://search2.ucl.ac.uk/s/suggest.json',
+          'format': 'extended',
+          'alpha': '.5',
+          'show': '10',
+          'sort': '0',
+          'length': '3',
+          'delay': '0',
+          'profile': ''
+        });
+        jQuery('#results_per_page').change(function pResults() {
+          url = jQuery(this).val();
+          window.location = url;
+        });
+      });
+    </script>
+
+  </body>
+</html>

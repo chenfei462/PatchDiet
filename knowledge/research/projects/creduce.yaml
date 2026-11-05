@@ -1,0 +1,67 @@
+name: C-Reduce
+repository: https://github.com/csmith-project/creduce
+official_site: https://embed.cs.utah.edu/creduce/
+license: NCSA
+languages:
+  - Perl
+  - C++
+primary_purpose: C and C++ test-case reduction.
+architecture: Pipeline of independent transformation passes driven by an interestingness test.
+key_modules:
+  - pass manager
+  - test harness
+  - temporary files
+  - parallel execution
+algorithms: []
+useful_patterns:
+  - oracle abstraction
+  - isolated candidates
+  - pass composition
+patchdiet_mapping:
+  - packages/core/src/reducer.ts
+  - packages/core/src/runner.ts
+do_not_copy:
+  - code until license is manually reviewed
+  - C/C++-specific passes
+integration_options:
+  - borrow-concept
+  - external-tool
+  - no-integration
+integration_recommendation: borrow-concept
+reasons: Candidate isolation and explicit oracle boundaries match PatchDiet safety needs.
+risks: License ambiguity and language-specific assumptions.
+estimated_complexity: medium
+status: DISTILLED
+source_refs:
+  - project:creduce
+provenance_status: SOURCE_VERIFIED_REPOSITORY
+previous_license_verified_at_commit: 2026-10-26
+license_review_status: ROOT_LICENSE_INSPECTED_AT_COMMIT
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+inspected_commit: 31e855e290970cba0286e5032971509c0e7c0a80
+license_verified_at_commit: 31e855e290970cba0286e5032971509c0e7c0a80
+retrieved_at: 2026-10-26
+license_path: COPYING
+license_type: NCSA
+repository_evidence: evidence/repositories/project-creduce.json
+id: project:creduce
+claims:
+  - claim:creduce:001
+limitations:
+  - License ambiguity and language-specific assumptions.
+gate_justifications:
+  D7: No newly adopted research implementation; existing runtime gets a separate fresh regression.
+  D6: No runtime adoption ticket is authorized in the research-only phase.
+algorithm_topics:
+  - delta-debugging
+ticket_refs:
+  - PD-R100
+  - PD-R101
+  - PD-R159

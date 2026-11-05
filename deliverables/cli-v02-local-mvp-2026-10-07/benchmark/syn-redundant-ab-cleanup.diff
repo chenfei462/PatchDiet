@@ -1,0 +1,7 @@
+diff --git a/src/util2.js b/src/util2.js
+index 6d7a40e..3d57972 100644
+--- a/src/util2.js
++++ b/src/util2.js
+@@ -1 +1,2 @@
+ export const tag = 'util2';
++export function double(n) { return n * 2; }

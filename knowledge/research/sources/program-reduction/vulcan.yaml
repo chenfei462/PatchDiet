@@ -1,0 +1,61 @@
+id: paper:xu-2023-vulcan
+title: Pushing the Limit of 1-Minimality of Language-Agnostic Program Reduction
+authors:
+  - Zhenyang Xu
+  - Yongqiang Tian
+  - Mengxiao Zhang
+  - Gaosen Zhao
+  - Yu Jiang
+  - Chengnian Sun
+year: 2023
+venue: Proceedings of the ACM on Programming Languages 7, OOPSLA1, Article 97
+doi: 10.1145/3586049
+canonical_url: https://doi.org/10.1145/3586049
+source_type: peer-reviewed-paper
+authority_tier: A
+primary_secondary: primary
+retrieved_at: 2026-10-26
+paper_version_used: Published April 2023 manuscript, 29 pages
+inspection:
+  url: https://researchmgt.monash.edu/ws/portalfiles/portal/716513714/716367322-oa.pdf
+  locators:
+    - Sections 1–4 transformations/framework
+    - Section 5 evaluation
+    - Section 8 conclusion
+  retrieved_at: 2026-10-26
+verification_status: SOURCE_VERIFIED_PRIMARY
+claims:
+  - claim:vulcan:001
+assumptions:
+  - usable grammar and serializer
+  - stable property test
+  - bounded transformation search
+limitations:
+  - Auxiliary outputs must be no larger than their input; equal-size transformations may expose new reductions
+  - No semantic-equivalence or global-minimum proof
+  - C/Rust/SMT-LIBv2 evaluation is not a safe PR-removal benchmark
+patchdiet_relevance:
+  relevance: high
+  mapping: Study search-space expansion only; PatchDiet must not transform source code merely to make tests pass.
+status:
+  source_verified: true
+  distilled: false
+  decision: RESEARCH_ONLY
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+size_contract: Original section 3 requires auxiliary outputs <= input size and main reducer outputs smaller or
+  identical. Size-increasing loop unrolling is an LPR example, not the Vulcan framework contract.
+gate_justifications:
+  D6: Research-only source; no runtime adoption or implementation ticket is authorized.
+  D7: No research-derived implementation is introduced by this source-verification phase.
+ticket_refs:
+  - PD-R100
+  - PD-R101
+  - PD-R107
+  - PD-R159

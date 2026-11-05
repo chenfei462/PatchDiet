@@ -1,0 +1,45 @@
+name: Mutation testing benchmark
+source: project:strykerjs
+truth_labels:
+  - killed
+  - survived
+  - timeout
+  - no_coverage
+  - invalid_or_error
+patchdiet_use: audit configured verification strength in research mode
+metrics:
+  - mutation score
+  - survivor categories
+  - runtime
+  - confidence wording
+safety: surviving mutants surface a limitation and never authorize cleanup
+status: RESEARCH_ONLY
+id: mutation-testing
+label_policy: Preserve actual tool-native statuses separately; manual suspected-equivalent assessment is not a tool
+  truth label or automatic equivalence count.
+distillation_gates:
+  D1_SOURCE_VERIFIED: FAIL
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: Research-only source assessment; no experiment benefit or runtime adoption has been demonstrated, so no PD-E runtime
+    ticket is permitted.
+  D7: No implementation/integration or experiment performed in this research-only phase; validation is not represented as
+    runtime evidence.
+  D1: Existing Stryker source record remains partially verified; source promotion is not inferred from a verified PIT
+    repository or survey.
+extracted_claims:
+  - statement: Tool status categories and manual suspected-equivalence review must stay separate.
+    source: project:strykerjs
+limitations:
+  - Operator and mutation sample bias.
+  - Survival does not prove equivalence, inadequacy of every test, or permission to delete.
+patchdiet_mapping:
+  affected_components:
+    - benchmarks
+    - packages/testing
+automatic_removal_authority: false

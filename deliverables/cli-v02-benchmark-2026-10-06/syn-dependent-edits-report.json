@@ -1,0 +1,207 @@
+{
+  "baseRef": "main",
+  "headRef": "agent",
+  "input": {
+    "fileCount": 2,
+    "hunkCount": 2,
+    "addedLineCount": 2,
+    "removedLineCount": 1,
+    "changedLineCount": 3
+  },
+  "output": {
+    "fileCount": 1,
+    "hunkCount": 1,
+    "addedLineCount": 1,
+    "removedLineCount": 1,
+    "changedLineCount": 2
+  },
+  "testCommand": {
+    "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"import {main} from './src/app.js'; process.exit(main(2)===6?0:1)\"",
+    "status": "passed",
+    "durationMs": 354,
+    "attempts": 1
+  },
+  "mode": "verified",
+  "verification": {
+    "baseline": {
+      "stage": "baseline",
+      "status": "passed",
+      "commands": [
+        {
+          "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"import {main} from './src/app.js'; process.exit(main(2)===6?0:1)\"",
+          "status": "passed",
+          "durationMs": 254,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 144
+            }
+          ]
+        }
+      ],
+      "durationMs": 354,
+      "baseCommitSha": "6dd2cd61fe267d9bf57fc44f3bae1de14e971351",
+      "headCommitSha": "85022742857f4f294c77a26374c071c4acf12d0d"
+    },
+    "final": {
+      "stage": "final",
+      "status": "passed",
+      "commands": [
+        {
+          "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"import {main} from './src/app.js'; process.exit(main(2)===6?0:1)\"",
+          "status": "passed",
+          "durationMs": 231,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 137
+            }
+          ]
+        }
+      ],
+      "durationMs": 662,
+      "baseCommitSha": "6dd2cd61fe267d9bf57fc44f3bae1de14e971351",
+      "headCommitSha": "85022742857f4f294c77a26374c071c4acf12d0d",
+      "expectedTreeSha": "d4e3fb604a48afc35ce0d0d1f0741d67eb6151bd",
+      "artifactTreeSha": "d4e3fb604a48afc35ce0d0d1f0741d67eb6151bd",
+      "treesMatch": true
+    }
+  },
+  "reduction": {
+    "strategy": "ddmin",
+    "selectedGroupIds": [
+      "grp-1fc0989fb6b6"
+    ],
+    "attempts": [
+      {
+        "ids": [
+          "grp-1fc0989fb6b6",
+          "grp-73d4268746e4"
+        ],
+        "key": "512cddfe70091ba135fcc21cf3cabd6c105165ef707352afe15cf841313f2317",
+        "verdict": "FAIL",
+        "cached": false
+      },
+      {
+        "ids": [
+          "grp-1fc0989fb6b6"
+        ],
+        "key": "fbcc1152332d15024ea76eeab5aabcc2e789417da14019c2d95c75fd5319a3f2",
+        "verdict": "PASS",
+        "cached": false
+      },
+      {
+        "ids": [
+          "grp-73d4268746e4"
+        ],
+        "key": "f5f1c96081481d8064e2dc3d37692a893d3378f901aa2c57a02529fd8f17494f",
+        "verdict": "FAIL",
+        "cached": false
+      },
+      {
+        "ids": [
+          "grp-73d4268746e4"
+        ],
+        "key": "f5f1c96081481d8064e2dc3d37692a893d3378f901aa2c57a02529fd8f17494f",
+        "verdict": "FAIL",
+        "cached": true
+      },
+      {
+        "ids": [
+          "grp-1fc0989fb6b6"
+        ],
+        "key": "fbcc1152332d15024ea76eeab5aabcc2e789417da14019c2d95c75fd5319a3f2",
+        "verdict": "PASS",
+        "cached": true
+      },
+      {
+        "ids": [
+          "grp-1fc0989fb6b6",
+          "grp-73d4268746e4"
+        ],
+        "key": "512cddfe70091ba135fcc21cf3cabd6c105165ef707352afe15cf841313f2317",
+        "verdict": "FAIL",
+        "cached": true
+      }
+    ],
+    "atomGranularity": "ast",
+    "dependencyGroups": [
+      {
+        "id": "grp-1fc0989fb6b6",
+        "memberIds": [
+          "atom-1610ec24b55efece"
+        ],
+        "reasons": []
+      },
+      {
+        "id": "grp-73d4268746e4",
+        "memberIds": [
+          "atom-5c0165d948e61425"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "filePath": "src/app.js",
+      "hunkHeader": "ast: insert block",
+      "category": "unknown",
+      "verdict": "removed",
+      "reason": "removed after ddmin: the grouped removal set passed the full configured oracle"
+    },
+    {
+      "filePath": "src/util.js",
+      "hunkHeader": "ast: replace return_statement -> return_statement",
+      "category": "unknown",
+      "verdict": "kept",
+      "reason": "kept after ddmin: this group was not part of the passing combined removal set"
+    }
+  ],
+  "removals": [
+    {
+      "filePath": "src/app.js",
+      "hunkHeader": "ast: insert block",
+      "category": "unknown",
+      "reason": "removed after ddmin: the grouped removal set passed the full configured oracle",
+      "confidence": "high-confidence removal"
+    }
+  ],
+  "kept": [
+    {
+      "filePath": "src/util.js",
+      "hunkHeader": "ast: replace return_statement -> return_statement",
+      "category": "unknown",
+      "reason": "kept after ddmin: this group was not part of the passing combined removal set",
+      "confidence": "kept"
+    }
+  ],
+  "needsHumanReview": [],
+  "artifacts": [
+    ".patchdiet/cleanup.diff",
+    ".patchdiet/report.md",
+    ".patchdiet/run.json",
+    ".patchdiet/report.html",
+    ".patchdiet/report.github.md"
+  ],
+  "patchPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-EsSGqV\\syn-dependent-edits-S6XJ2I\\.patchdiet\\cleanup.diff",
+  "startedAt": "2026-10-06T12:23:14.294Z",
+  "patchdietVersion": "0.1.1",
+  "baseCommitSha": "6dd2cd61fe267d9bf57fc44f3bae1de14e971351",
+  "headCommitSha": "85022742857f4f294c77a26374c071c4acf12d0d",
+  "mergeBaseCommitSha": "6dd2cd61fe267d9bf57fc44f3bae1de14e971351",
+  "commandLineArgs": [],
+  "partial": false,
+  "durationMs": 5190,
+  "finishedAt": "2026-10-06T12:23:19.484Z",
+  "reportPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-EsSGqV\\syn-dependent-edits-S6XJ2I\\.patchdiet\\report.md",
+  "reportJsonPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-EsSGqV\\syn-dependent-edits-S6XJ2I\\.patchdiet\\run.json"
+}

@@ -1,0 +1,25 @@
+id: claim:review:003
+statement: The Google case study describes lightweight tool-based review practices using interviews, a survey and
+  review-log analysis at Google.
+source:
+  id: paper:google-modern-code-review-2018
+  locators:
+    - Original author manuscript, abstract and study design
+evidence_type: peer-reviewed-paper
+scope: review
+confidence: medium
+assumptions:
+  - routing and review metadata are observable
+limitations:
+  - Google's scale and tooling differ from PatchDiet deployments
+patchdiet_mapping:
+  affected_components:
+    - packages/report/src
+    - packages/github-app/src
+possible_action: use as context for review routing experiments only
+safety_effect: neutral
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+patchdiet_hypothesis: Review routing patterns may be useful; the observational case study does not establish a causal
+  scaling or correctness benefit for PatchDiet.
+independent_review: PENDING

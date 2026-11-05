@@ -1,0 +1,18 @@
+id: PD-R001
+title: Build research registry and source verification contract
+research_basis:
+  sources: [standard:git-diff-format, standard:nist-ssdf-1.1, paper:perses-icse-2018]
+  claims: [claim:git:001, claim:security:001, claim:perses:001]
+problem: Research notes were not represented as reviewable, source-linked records.
+current_repo_evidence: knowledge/research did not exist at the observed HEAD.
+proposed_change: Add registry, taxonomy, source records, atomic claims, cards, ADRs, and validation test.
+files_likely_affected: [knowledge/research, tests/unit/research-registry.test.ts]
+implementation_steps: [create trust-domain layout, verify seed sources, atomize claims, add cards and ADRs, validate references]
+safety_invariants: [automatic_removal_authority remains false for every claim, research is separate from runtime knowledge]
+tests: [tests/unit/research-registry.test.ts]
+benchmark: none; registry integrity is the acceptance evidence
+acceptance_criteria: [all registered paths exist, required source/algorithm IDs are present, claims cannot authorize removal]
+dependencies: [yaml, vitest]
+complexity: low
+do_not_change: [runtime deletion authority, .patchdiet/knowledge.sqlite]
+status: IMPLEMENTED

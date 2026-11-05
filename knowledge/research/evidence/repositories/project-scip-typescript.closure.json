@@ -1,0 +1,68 @@
+{
+  "repository": "https://github.com/sourcegraph/scip-typescript",
+  "inspected_commit": "d681554f55e74e0f1d2844baefabdc155289742d",
+  "commit_date": "2026-10-27T11:05:27+01:00",
+  "retrieved_at": "2026-10-27",
+  "temporary_bare_clone": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\pd-scip-ts-closure-retry",
+  "capture_method": "git bare shallow blob-filtered clone; git show at exact SHA; retry transient TLS failures",
+  "files": {
+    "LICENSE": {
+      "url": "https://github.com/sourcegraph/scip-typescript/blob/d681554f55e74e0f1d2844baefabdc155289742d/LICENSE",
+      "path": "knowledge/research/evidence/repositories/project-scip-typescript.LICENSE.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    "README.md": {
+      "url": "https://github.com/sourcegraph/scip-typescript/blob/d681554f55e74e0f1d2844baefabdc155289742d/README.md",
+      "path": "knowledge/research/evidence/repositories/project-scip-typescript.README.md.txt",
+      "sha256": "979996597051d89c92c7ceae8a7447d3d45fa0486a2b28dd0da84da89ead56d8",
+      "bytes": 4261
+    },
+    "package.json": {
+      "url": "https://github.com/sourcegraph/scip-typescript/blob/d681554f55e74e0f1d2844baefabdc155289742d/package.json",
+      "path": "evidence/repositories/project-scip-typescript.package.json.txt",
+      "sha256": "dd4226cc89f6f9f8cf643ba66e02b68007ffdc4aa7d129153f942bcfe2552ef1",
+      "bytes": 1809
+    },
+    ".github/workflows/ci.yml": {
+      "url": "https://github.com/sourcegraph/scip-typescript/blob/d681554f55e74e0f1d2844baefabdc155289742d/.github/workflows/ci.yml",
+      "path": "evidence/repositories/project-scip-typescript..github-workflows-ci.yml.txt",
+      "sha256": "07400fdb88941da01e36537338a20ee4c87f035f61372e533d5feb92678474f5",
+      "bytes": 1007
+    },
+    "src/main.ts": {
+      "url": "https://github.com/sourcegraph/scip-typescript/blob/d681554f55e74e0f1d2844baefabdc155289742d/src/main.ts",
+      "path": "evidence/repositories/project-scip-typescript.src-main.ts.txt",
+      "sha256": "14e58aa7712948893f1e9740ec092664d6f184d637f61c5a8e70b87d05b2f0b4",
+      "bytes": 9026
+    }
+  },
+  "project_status": {
+    "archived": false,
+    "disabled": false,
+    "pushed_at": "2026-10-27T10:07:07Z",
+    "description": "SCIP indexer for TypeScript and JavaScript"
+  },
+  "default_branch": "main",
+  "root_entries": [
+    ".dockerignore",
+    ".github",
+    ".gitignore",
+    ".prettierignore",
+    ".prettierrc",
+    ".tool-versions",
+    ".vscode",
+    "Development.md",
+    "Dockerfile",
+    "LICENSE",
+    "README.md",
+    "dev",
+    "eslint.config.mjs",
+    "package.json",
+    "renovate.json",
+    "snapshots",
+    "src",
+    "tsconfig.json",
+    "yarn.lock"
+  ]
+}

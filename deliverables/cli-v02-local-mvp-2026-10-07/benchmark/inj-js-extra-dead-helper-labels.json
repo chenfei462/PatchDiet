@@ -1,0 +1,47 @@
+{
+  "case": "inj-js-extra-dead-helper",
+  "labels": [
+    {
+      "filePath": "src/extra.js",
+      "identity": "atom-1156831c39084929",
+      "kind": "ast",
+      "label": "unnecessary",
+      "spans": {
+        "baseBlobSha": "a84c22fcfeb8",
+        "headBlobSha": "15d827977011",
+        "baseBytes": [
+          44,
+          44
+        ],
+        "headBytes": [
+          44,
+          97
+        ]
+      },
+      "baseSlice": "",
+      "headSlice": "\nexport function deadHelper(n) {\n  return n + 999;\n}\n",
+      "header": "ast: insert block"
+    },
+    {
+      "filePath": "src/total.js",
+      "identity": "atom-649f54dc069a46ee",
+      "kind": "ast",
+      "label": "necessary",
+      "spans": {
+        "baseBlobSha": "525d730416b5",
+        "headBlobSha": "ad58ceec7f00",
+        "baseBytes": [
+          27,
+          39
+        ],
+        "headBytes": [
+          27,
+          43
+        ]
+      },
+      "baseSlice": "  return n;\n",
+      "headSlice": "  return n * 2;\n",
+      "header": "ast: replace return_statement -> return_statement"
+    }
+  ]
+}

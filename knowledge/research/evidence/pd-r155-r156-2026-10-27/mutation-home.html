@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121782022-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-121782022-1');
+</script>
+</head>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Mutation testing resources for academic research.">
+	<meta name="keywords" content="mutation testing, mutation testing repository, yue jia">
+	<meta name="author" content="Yue Jia: http://www0.cs.ucl.ac.uk/staff/Y.Jia/">
+	<meta name="robots" content="index, follow" />
+
+<title>
+   Mutation Testing Repository
+</title>
+
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" >
+<link href="css/mut.css" rel="stylesheet" type="text/css" >
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" >
+<!-- Documentation extras -->
+<!--<link href="../assets/css/docs.min.css" rel="stylesheet">-->
+
+<!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Favicons -->
+<!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+                               <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+-->
+  </head>
+<body>
+  
+  
+<div class="container" >
+
+	<div class="masthead" >
+	<!-- <h2>Mutation Testing <span class="muted" >Repository</span></h2>-->
+	<img src="/img/Header.png"/>
+	
+        <div class="navbar" >
+          <div class="navbar-inner" >
+            <div class="container" >
+              <ul class="nav" >
+                <li class="active" ><a href="index.php" >Home</a></li>
+                <li><a href="repository.php" >Repository</a></li>
+                <li><a href="theory.php" >Theory</a></li>
+                <li><a href="tools.php" >Tools</a></li>
+                <li><a href="analysis.php" >Controlled Experiments</a></li>
+               <!-- <li><a href="resources.html" >Resources</a></li> -->
+              </ul>
+            </div>
+          </div> <!--end navbar-inner-->
+        </div><!-- end navbar -->
+	</div> <!-- endmasthead-->
+<?php/* require('include/banner/banner.inc') */?>
+
+    
+   <div class="row-fluid">
+      <div class="span8">
+           <div id="proj_desc">
+           <h3>Welcome</h3>
+	  <p><a href="theory.php">Mutation Testing</a> is a fault–based software testing
+technique that has been widely studied for over four decades. Mutation is typically used as a way to evaluate the adequacy of test suites, to guide the generation of test cases and to support experimentation. Mutation has reached a maturity phase and gradually gains popularity both in academia and in industry. The literature on mutation testing has contributed a set of approaches, tools and empirical studies. This repository aims to provide a full coverage of the publications in the literature on Mutation Testing. </p>
+          </div> <!-- end of proj_desc-->
+           <div id="survey_desc">
+          <h3>Mutation Testing Survey </h3>
+	  <p>Using this repository, a comprehensive analysis and survey of Mutation Testing work has been conducted. 
+			  The results of the survey appear in two papers: </p>
+			  <ul>
+			  <li><a href="survey.pdf">"Mutation Testing Advances: An Analysis and Survey"</a> covering the period from 2008-2017.</li>
+			  <li><a href="TR-09-06.pdf">"An Analysis and Survey of the Development of Mutation Testing"</a> covering the period from 1970-2009.</li>
+			  </ul>
+			  
+<p> <!-- The papers are published as a technical reports, available here: <a href="survey.pdf">Survey1</a>  <a href="TR-09-06.pdf">Survey2</a>.
+	-->		   
+			   
+If you want to cite results from the surveys, here are the BibTeX entries:  </p>
+			  
+<pre>
+  @ARTICLE{PapadakisKZJTH18, 
+  author = {Mike Papadakis and Marinos Kintis and Jie Zhang and Yue Jia and Yves Le Traon and Mark Harman},
+  title = {Mutation Testing Advances: An Analysis and Survey},
+  journal = {Advances in Computers},
+  year = {2018},
+}
+
+  @ARTICLE{JiaM11, 
+  author = {Yue Jia and Mark Harman},
+  title = {An Analysis and Survey of the Development of Mutation Testing},
+  journal = {IEEE Transactions of Software Engineering},
+  year = {2011},
+  volume = {37},
+  number = {5},
+  pages = {649-678},
+  doi={10.1109/TSE.2010.62}
+}</pre>
+         </div> <!-- end of survey_desc-->   
+           </div> <!-- end of span 9-->
+   
+   <div class="span3 offset1">
+<script  language="javascript">
+function quick_search()
+{
+	if(document.form_quick_search.search_type[0].checked == true)
+	//	alert("paper");
+		search_paper();
+	else
+	
+		search_author();
+}
+
+
+function search_paper()
+{
+	  var name = window.document.form_quick_search.keywords.value;
+	  if( name == "") {
+	  	alert("Keywords are required");
+	  }
+	  else
+	  {
+	  var loc="search_paper.php?pm=0&pg=1&func=1&kw="+ name;
+	  top.location=loc;
+	  }
+}
+
+function search_author()
+{
+	  var name =  window.document.form_quick_search.keywords.value;
+	  if( name == "") {
+	  	alert("Keywords are required");
+	  }
+	  else
+      {
+		 var loc="search_author.php?sn=" + name;
+		 top.location=loc;
+	 }
+	//alert("Available Soon, please try to search paper first")
+}
+</script>
+
+    <div class="well sidebar-nav">
+          		<h3>Quick Search </h3>  
+					<form name="form_quick_search"  onSubmit="return false;">
+  		
+  		 <div class="radio">
+      <label class="radio-inline">
+        	<input name="search_type" type="radio" value="paper" checked="checked" /> by paper title
+        </label>
+         <label class="radio-inline">
+    		<input type="radio" name="search_type"  value="author" > by author name
+  		</label>
+   		 </div>
+    
+   <div>
+      <input style="width:150px" name="keywords" type="text" size="0" placeholder="keywords"> 
+    </div>
+	<input type="submit" class="btn btn-default" value="Search" onClick="quick_search();">
+
+</form>
+
+<div align="left">View all <a href="search_paper.php?func=1&pm=0&pg=1">papers</a> | <a href="search_author.php">authors</a>
+
+</div>
+
+          </div><!--/.well -->
+	
+          <div class="well sidebar-nav">
+          		<h3>Status</h3> 
+<p>
+<table width="100%" border="0">
+  <tr>
+    <td> Last update:</td> <td align="right" style="padding-right:15px;">  28/05/18</td>
+  </tr>
+  <tr>
+    <td>Papers:</td> <td align="right" style="padding-right:15px;">857</td>
+  </tr>
+  <tr>
+    <td>Authors:</td> <td align="right" style="padding-right:15px;"> 299</td>
+  </tr>
+</table></p>
+<div align="left"><a href="repository.php#status">Detailed status  ...</a></div>
+
+          </div><!--/.well -->	
+
+	</div> <!-- end of span3-->
+    
+   
+   </div>
+   
+        <footer class="footer" >
+      <div class="container" >
+     <!-- <p>Terms of Use:
+Unless stated differently, all material on this repository is the property of its own author. All downloads from this website are provided as freeware for personal use only. You must not sell, redistribute or modify any items (in whole, and/or in part) that have originated from this site.
+      </p> -->
+<p>Mutation testing Repository is a joint work of the University of Luxembourg and University College London</p>
+<p>Copyright © Université du Luxembourg 2018. All rights reserved.</p>
+<!-- <p>Copyright © 2007-2018 </p> --> <!--       <p>Copyright © 2007-2018 <a href="http://www0.cs.ucl.ac.uk/staff/Y.Jia/" >Yue Jia</a> and <a href="http://www0.cs.ucl.ac.uk/staff/M.Harman/" >Mark Harman</a>     
+        </p> -->
+        <ul class="footer-links" >
+          <li><a href="http://crest.cs.ucl.ac.uk"  target="_blank"><img src="/img/CREST.png"  height="92" width="102"/></a></li>
+          <li class="muted" >&middot;</li>
+          <li><a href="http://www.uni.lu"  target="_blank"><img src="/img/UniLu.png" height="92" width="82"/></a></li>
+           <!--<li><a href="http://crest.cs.ucl.ac.uk/cow/" >COW</a></li> -->
+       </ul>
+
+      </div>
+    </footer>
+	
+
+
+</div> <!-- container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

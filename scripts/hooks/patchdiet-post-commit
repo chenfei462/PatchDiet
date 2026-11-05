@@ -1,0 +1,34 @@
+#!/usr/bin/env sh
+set -eu
+
+MODE="${PATCHDIET_HOOK_MODE:-check}"
+TEST_COMMAND="${PATCHDIET_TEST_COMMAND:-}"
+PATCHDIET_BIN="${PATCHDIET_BIN:-patchdiet}"
+
+if ! command -v "$PATCHDIET_BIN" >/dev/null 2>&1; then
+  if [ -x "./node_modules/.bin/patchdiet" ]; then
+    PATCHDIET_BIN="./node_modules/.bin/patchdiet"
+  else
+    echo "PatchDiet hook: patchdiet command not found; skipping."
+    exit 0
+  fi
+fi
+
+case "$MODE" in
+  check)
+    "$PATCHDIET_BIN" check || true
+    ;;
+  shrink)
+    if [ -z "$TEST_COMMAND" ]; then
+      echo "PatchDiet hook: set PATCHDIET_TEST_COMMAND before using shrink mode."
+      exit 0
+    fi
+    "$PATCHDIET_BIN" shrink --test "$TEST_COMMAND" || true
+    ;;
+  off)
+    ;;
+  *)
+    echo "PatchDiet hook: unknown PATCHDIET_HOOK_MODE=$MODE"
+    exit 0
+    ;;
+esac

@@ -1,0 +1,158 @@
+{
+  "baseRef": "main",
+  "headRef": "agent",
+  "input": {
+    "fileCount": 2,
+    "hunkCount": 2,
+    "addedLineCount": 5,
+    "removedLineCount": 1,
+    "changedLineCount": 6
+  },
+  "output": {
+    "fileCount": 1,
+    "hunkCount": 1,
+    "addedLineCount": 1,
+    "removedLineCount": 1,
+    "changedLineCount": 2
+  },
+  "testCommand": {
+    "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"import {total} from './src/total.js'; process.exit(total(4)===8?0:1)\"",
+    "status": "passed",
+    "durationMs": 420,
+    "attempts": 1
+  },
+  "mode": "verified",
+  "verification": {
+    "baseline": {
+      "stage": "baseline",
+      "status": "passed",
+      "commands": [
+        {
+          "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"import {total} from './src/total.js'; process.exit(total(4)===8?0:1)\"",
+          "status": "passed",
+          "durationMs": 284,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 145
+            }
+          ]
+        }
+      ],
+      "durationMs": 420,
+      "baseCommitSha": "7dec9e1e777694b77873f8f70527f77fdad19b20",
+      "headCommitSha": "8f9a215f0c4b8989f5149415d00f53e0ad63d910"
+    },
+    "final": {
+      "stage": "final",
+      "status": "passed",
+      "commands": [
+        {
+          "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"import {total} from './src/total.js'; process.exit(total(4)===8?0:1)\"",
+          "status": "passed",
+          "durationMs": 275,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 128
+            }
+          ]
+        }
+      ],
+      "durationMs": 783,
+      "baseCommitSha": "7dec9e1e777694b77873f8f70527f77fdad19b20",
+      "headCommitSha": "8f9a215f0c4b8989f5149415d00f53e0ad63d910",
+      "expectedTreeSha": "a8f89313ddb6514672081a0ef81dac7aff91c4f7",
+      "artifactTreeSha": "a8f89313ddb6514672081a0ef81dac7aff91c4f7",
+      "treesMatch": true
+    }
+  },
+  "reduction": {
+    "strategy": "ddmin",
+    "selectedGroupIds": [
+      "grp-9c7afc08bd58"
+    ],
+    "attempts": [
+      {
+        "ids": [
+          "grp-9c7afc08bd58"
+        ],
+        "key": "f59bc824da1fd5ae6ae2c5ca05002887b5bee3ad6acaf17adf65822ae3f58f19",
+        "verdict": "PASS",
+        "cached": false
+      }
+    ],
+    "atomGranularity": "ast",
+    "dependencyGroups": [
+      {
+        "id": "grp-9c7afc08bd58",
+        "memberIds": [
+          "atom-1156831c39084929"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "filePath": "src/extra.js",
+      "hunkHeader": "ast: insert block",
+      "category": "unknown",
+      "verdict": "removed",
+      "reason": "removed after ddmin: the grouped removal set passed the full configured oracle"
+    },
+    {
+      "filePath": "src/total.js",
+      "hunkHeader": "ast: replace return_statement -> return_statement",
+      "category": "unknown",
+      "verdict": "kept",
+      "reason": "RETAIN scope state required"
+    }
+  ],
+  "removals": [
+    {
+      "filePath": "src/extra.js",
+      "hunkHeader": "ast: insert block",
+      "category": "unknown",
+      "reason": "removed after ddmin: the grouped removal set passed the full configured oracle",
+      "confidence": "high-confidence removal"
+    }
+  ],
+  "kept": [
+    {
+      "filePath": "src/total.js",
+      "hunkHeader": "ast: replace return_statement -> return_statement",
+      "category": "unknown",
+      "reason": "RETAIN scope state required",
+      "confidence": "kept"
+    }
+  ],
+  "needsHumanReview": [],
+  "artifacts": [
+    ".patchdiet/cleanup.diff",
+    ".patchdiet/report.md",
+    ".patchdiet/run.json",
+    ".patchdiet/report.html",
+    ".patchdiet/report.github.md"
+  ],
+  "patchPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-6HLuED\\inj-js-extra-dead-helper-cGgNdC\\.patchdiet\\cleanup.diff",
+  "startedAt": "2026-10-06T15:41:49.735Z",
+  "patchdietVersion": "0.2.0",
+  "baseCommitSha": "7dec9e1e777694b77873f8f70527f77fdad19b20",
+  "headCommitSha": "8f9a215f0c4b8989f5149415d00f53e0ad63d910",
+  "mergeBaseCommitSha": "7dec9e1e777694b77873f8f70527f77fdad19b20",
+  "commandLineArgs": [],
+  "partial": false,
+  "durationMs": 4518,
+  "finishedAt": "2026-10-06T15:41:54.253Z",
+  "reportPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-6HLuED\\inj-js-extra-dead-helper-cGgNdC\\.patchdiet\\report.md",
+  "reportJsonPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-6HLuED\\inj-js-extra-dead-helper-cGgNdC\\.patchdiet\\run.json"
+}

@@ -1,0 +1,40 @@
+id: project:wdd-artifact
+title: Official WDD evaluation artifact
+repository: https://github.com/weightdd/WeightDD
+source_refs:
+  - project:wdd-artifact
+inspected_version: 4a6cdd00f3f136867f23f76057a7104961c2e8e4
+record_license: CC-BY-4.0 deposited-resource declaration; applicability unresolved
+bundled_license: Separately supplied GPL v3 LICENSE text; archive contents and applicability not fully inspected
+artifact_evidence: evidence/repositories/project-wdd-artifact-zenodo.json
+patchdiet_mapping: Research-only WDD reproduction reference; no code import or runtime strategy.
+integration_recommendation: research-only
+risks: &a1
+  - GitHub root license absent.
+  - Zenodo CC-BY resource declaration and supplied GPL-v3 text lack component mapping.
+  - "Image digest unavailable: REPRODUCTION_LIMITATION."
+  - Artifact not executed; results not reproduced.
+status: RESEARCH_ONLY
+provenance_status: SOURCE_PARTIALLY_VERIFIED
+distillation_gates:
+  D1_SOURCE_VERIFIED: FAIL
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+inspected_commit: 4a6cdd00f3f136867f23f76057a7104961c2e8e4
+commit_date: 2025-12-08T21:57:06Z
+retrieved_at: 2026-10-27
+license: null
+license_path: null
+license_scope: No GitHub repository-wide grant verified; separate Zenodo resource declaration and supplied GPL text do not resolve it.
+project_status: Public research artifact; pinned README redirects implementation maintenance to Perses.
+gate_justifications:
+  D6: Research-only provenance decision; no runtime implementation ticket is authorized or required.
+  D7: No implementation, reproduction, or experiment was performed; runtime validation is not applicable.
+  D1: GitHub root license and Zenodo per-component applicability unresolved.
+extracted_claims:
+  - Official WDD artifact identity is established; code reuse remains unapproved.
+limitations: *a1

@@ -1,0 +1,18 @@
+id: PD-R050
+title: Complete Git diff fidelity audit
+research_basis:
+  sources: [standard:git-diff-format, standard:git-apply]
+  claims: [claim:git:001, claim:git:002, claim:git:003]
+problem: PatchDiet must preserve Git metadata across all supported patch forms.
+current_repo_evidence: packages/core/src/diff.ts already handles many extended headers and binary sections.
+proposed_change: Add fixtures and an explicit support matrix for modified, new, deleted, rename, copy, binary, mode, symlink, submodule, combined diff, and quoted paths.
+files_likely_affected: [packages/core/src/diff.ts, packages/core/src/patch-encoder.ts, tests/unit/diff.test.ts]
+implementation_steps: [generate Git fixtures, round-trip, apply with Git, record unsupported cases]
+safety_invariants: [Git normative behavior wins, unsupported input is explicit]
+tests: [diff unit tests, git apply integration]
+benchmark: [round-trip fidelity, apply success, parse time]
+acceptance_criteria: [support matrix and failures are documented]
+dependencies: [PD-R001]
+complexity: medium
+do_not_change: [verification authority]
+status: EXPERIMENTAL

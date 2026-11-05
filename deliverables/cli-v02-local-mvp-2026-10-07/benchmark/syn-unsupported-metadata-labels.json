@@ -1,0 +1,21 @@
+{
+  "case": "syn-unsupported-metadata",
+  "labels": [
+    {
+      "filePath": "README.md",
+      "identity": "atom-533c98b0d2",
+      "kind": "hunk",
+      "label": "unnecessary",
+      "header": "@@ -1,3 +1,3 @@",
+      "atomId": "atom-533c98b0d2"
+    },
+    {
+      "filePath": "asset.bin",
+      "identity": "atom-9352a2d1c4",
+      "kind": "hunk",
+      "label": "uncertain",
+      "header": "Binary files /dev/null and b/asset.bin differ",
+      "atomId": "atom-9352a2d1c4"
+    }
+  ]
+}

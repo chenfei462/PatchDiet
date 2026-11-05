@@ -1,0 +1,66 @@
+name: Picire
+repository: https://github.com/renatahodovan/picire
+official_site: https://github.com/renatahodovan/picire
+license: BSD-3-Clause AND LicenseRef-Zeller-legacy-notice
+languages:
+  - Python
+primary_purpose: Practical delta debugging and parallel reduction.
+architecture: Partitioned subset/complement testing with caching and configurable parallelism.
+key_modules:
+  - ddmin engine
+  - cache
+  - worker scheduling
+algorithms:
+  - ddmin
+useful_patterns:
+  - complement testing
+  - granularity progression
+  - cache keys
+patchdiet_mapping:
+  - packages/core/src/reducer.ts
+  - packages/core/src/runner.ts
+do_not_copy:
+  - source code without license verification
+integration_options:
+  - borrow-concept
+  - adapter
+  - external-tool
+integration_recommendation: borrow-concept
+reasons: Existing worker pool and cache provide a local comparison baseline.
+risks: Parallel resource pressure and nondeterministic timing.
+estimated_complexity: low
+status: DISTILLED
+source_refs:
+  - project:picire
+provenance_status: SOURCE_VERIFIED_REPOSITORY
+previous_license_verified_at_commit: 2026-10-26
+license_review_status: ROOT_LICENSE_INSPECTED_AT_COMMIT
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+inspected_commit: 1e5b25c5aee2bee62f3e0192d591050219eaec22
+license_verified_at_commit: 1e5b25c5aee2bee62f3e0192d591050219eaec22
+retrieved_at: 2026-10-26
+license_path: LICENSE.rst
+license_type: BSD-3-Clause AND LicenseRef-Zeller-legacy-notice
+repository_evidence: evidence/repositories/project-picire.json
+id: project:picire
+claims:
+  - claim:picire:001
+limitations:
+  - Parallel resource pressure and nondeterministic timing.
+gate_justifications:
+  D7: No newly adopted research implementation; existing runtime gets a separate fresh regression.
+  D6: No runtime adoption ticket is authorized in the research-only phase.
+algorithm_topics:
+  - parallel-delta-debugging
+ticket_refs:
+  - PD-R002
+  - PD-R100
+  - PD-R101
+  - PD-R159

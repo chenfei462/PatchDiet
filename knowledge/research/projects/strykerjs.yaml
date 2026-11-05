@@ -1,0 +1,66 @@
+name: StrykerJS
+repository: https://github.com/stryker-mutator/stryker-js
+official_site: https://stryker-mutator.io/
+license: Apache-2.0
+languages:
+  - TypeScript
+  - JavaScript
+primary_purpose: Mutation testing for JavaScript and TypeScript.
+architecture: Mutant generators, test runners, reporters, and score aggregation.
+key_modules:
+  - mutant operators
+  - test runner
+  - reporters
+algorithms:
+  - mutation-testing
+useful_patterns:
+  - survivor classification
+  - incremental test execution
+  - confidence reporting
+patchdiet_mapping:
+  - packages/testing
+  - benchmarks
+do_not_copy:
+  - full runtime integration into normal shrink
+integration_options:
+  - external-tool
+  - adapter
+  - no-integration
+integration_recommendation: external-tool in benchmark mode
+reasons: Mutation score can audit oracle strength without changing deletion authority.
+risks: Runtime cost and equivalent mutants.
+estimated_complexity: medium
+status: RESEARCH_ONLY
+source_refs:
+  - project:strykerjs
+provenance_status: SOURCE_VERIFIED_REPOSITORY
+previous_license_verified_at_commit: 2026-10-26
+license_review_status: ROOT_LICENSE_INSPECTED_AT_COMMIT
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+inspected_commit: abf560c94601c2dac7deb084d8053cd8504da8e2
+license_verified_at_commit: abf560c94601c2dac7deb084d8053cd8504da8e2
+retrieved_at: 2026-10-26
+license_path: LICENSE
+license_type: Apache-2.0
+repository_evidence: evidence/repositories/project-strykerjs.json
+id: project:strykerjs
+claims:
+  - claim:mutation:001
+  - claim:mutation:002
+limitations:
+  - Runtime cost and equivalent mutants.
+gate_justifications:
+  D7: No newly adopted research implementation; existing runtime gets a separate fresh regression.
+  D6: No runtime adoption ticket is authorized in the research-only phase.
+ticket_refs:
+  - PD-R040
+  - PD-R100
+  - PD-R101
+  - PD-R159

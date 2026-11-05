@@ -1,0 +1,21 @@
+id: claim:review:001
+statement: Reviewdog supports diff-filtered line annotations and provider integration; its transport does not establish
+  finding correctness.
+source:
+  id: project:reviewdog
+evidence_type: reference-implementation
+scope: review
+confidence: high
+assumptions:
+  - finding locations can be mapped to the current diff
+limitations:
+  - line mapping and tool findings can both be wrong
+patchdiet_mapping:
+  affected_components:
+    - packages/report/src
+    - packages/github-app/src
+possible_action: preserve evidence labels and human-review routing
+safety_effect: positive
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

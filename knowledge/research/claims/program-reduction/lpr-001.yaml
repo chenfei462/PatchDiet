@@ -1,0 +1,27 @@
+id: claim:lpr:001
+statement: In LPR, LLMs propose transformations and executable property ψ validates them; LLM confidence never replaces
+  the property oracle.
+source:
+  id: paper:zhang-2024-lpr
+  locators:
+    - Section 3.2 Algorithm 1 and workflow
+    - Section 3.3 prompts
+    - Evaluation and limitations
+evidence_type: peer-reviewed-paper
+scope: program-reduction
+assumptions:
+  - property test is meaningful and stable
+  - LLM output treated as untrusted
+  - generic reducer uses same property
+limitations:
+  - Evaluation covers 50 C/Rust/JavaScript compiler-oriented subjects
+  - Can temporarily enlarge programs (e.g. loop unrolling)
+  - Model/prompt/cost dependence
+  - Compiler interestingness is not PatchDiet task correctness
+patchdiet_mapping:
+  mapping: Advisory candidate suggestions only; never summarize as LLM safely removes code. No runtime integration authorized.
+  affected_components:
+    - packages/core/src/reducer.ts
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

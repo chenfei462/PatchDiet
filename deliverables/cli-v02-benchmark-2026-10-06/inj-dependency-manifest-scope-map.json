@@ -1,0 +1,175 @@
+{
+  "schemaVersion": "patchdiet-scope/1",
+  "analysisId": "scope-b141a8d33baf",
+  "intent": {
+    "goal": "Fix total(n) to return twice n.",
+    "confidence": "explicit",
+    "sourceIds": [
+      "cli:task",
+      "commit:0"
+    ]
+  },
+  "atoms": [
+    {
+      "atomId": "atom-3ec492be35620e6a",
+      "filePath": "src/total.js",
+      "symbolPath": "total",
+      "state": "required",
+      "evidenceIds": [
+        "ev-fe594ab164"
+      ],
+      "counterEvidenceIds": [],
+      "explanation": "matches a stated requirement or acceptance criterion",
+      "missingInputs": [],
+      "conflicts": [],
+      "risks": [],
+      "removalEligible": false,
+      "requiresRuntimeOracle": true
+    },
+    {
+      "atomId": "atom-91c0c312c0",
+      "filePath": "package.json",
+      "state": "uncertain",
+      "evidenceIds": [
+        "ev-c842f894fd"
+      ],
+      "counterEvidenceIds": [],
+      "explanation": "graph facts are incomplete, so absent dependency evidence cannot be trusted",
+      "missingInputs": [
+        "graph/index facts are incomplete",
+        "no dependency graph supplied"
+      ],
+      "conflicts": [],
+      "risks": [
+        {
+          "flag": "dependency-manifest",
+          "detail": "dependency manifest changed: package.json",
+          "evidenceIds": []
+        }
+      ],
+      "removalEligible": false,
+      "requiresRuntimeOracle": true
+    },
+    {
+      "atomId": "atom-b42623bb1d636558",
+      "filePath": "src/total.js",
+      "symbolPath": "total",
+      "state": "uncertain",
+      "evidenceIds": [
+        "ev-d72b47dd09"
+      ],
+      "counterEvidenceIds": [],
+      "explanation": "graph facts are incomplete, so absent dependency evidence cannot be trusted",
+      "missingInputs": [
+        "graph/index facts are incomplete",
+        "no dependency graph supplied"
+      ],
+      "conflicts": [],
+      "risks": [],
+      "removalEligible": false,
+      "requiresRuntimeOracle": true
+    },
+    {
+      "atomId": "atom-c19ba4768a4df9d2",
+      "filePath": "src/total.js",
+      "symbolPath": "total",
+      "state": "required",
+      "evidenceIds": [
+        "ev-4fceace043"
+      ],
+      "counterEvidenceIds": [],
+      "explanation": "matches a stated requirement or acceptance criterion",
+      "missingInputs": [],
+      "conflicts": [],
+      "risks": [],
+      "removalEligible": false,
+      "requiresRuntimeOracle": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-4fceace043",
+      "category": "intent",
+      "polarity": "supports-required",
+      "confidence": 0.7,
+      "sourceId": "cli:task",
+      "atomId": "atom-c19ba4768a4df9d2",
+      "span": {
+        "sourceId": "cli:task",
+        "startByte": 0,
+        "endByte": 31,
+        "startLine": 1,
+        "endLine": 1,
+        "excerpt": "Fix total(n) to return twice n."
+      },
+      "detail": "requirement mentions symbol name \"total\": \"Fix total(n) to return twice n.\""
+    },
+    {
+      "id": "ev-c842f894fd",
+      "category": "intent",
+      "polarity": "limits",
+      "confidence": 0.6,
+      "sourceId": "cli:task",
+      "atomId": "atom-91c0c312c0",
+      "detail": "task exclusion statement matches this atom (terms: debug)",
+      "limits": [
+        "an exclusion prevents required classification; removal still requires the runtime oracle"
+      ]
+    },
+    {
+      "id": "ev-d72b47dd09",
+      "category": "intent",
+      "polarity": "limits",
+      "confidence": 0.6,
+      "sourceId": "cli:task",
+      "atomId": "atom-b42623bb1d636558",
+      "detail": "task exclusion statement matches this atom (terms: debug)",
+      "limits": [
+        "an exclusion prevents required classification; removal still requires the runtime oracle"
+      ]
+    },
+    {
+      "id": "ev-fe594ab164",
+      "category": "intent",
+      "polarity": "supports-required",
+      "confidence": 0.7,
+      "sourceId": "cli:task",
+      "atomId": "atom-3ec492be35620e6a",
+      "span": {
+        "sourceId": "cli:task",
+        "startByte": 0,
+        "endByte": 31,
+        "startLine": 1,
+        "endLine": 1,
+        "excerpt": "Fix total(n) to return twice n."
+      },
+      "detail": "requirement mentions symbol name \"total\": \"Fix total(n) to return twice n.\""
+    }
+  ],
+  "summary": {
+    "required": 2,
+    "supporting": 0,
+    "candidate": 0,
+    "uncertain": 2,
+    "protected": 0,
+    "flagged": 1
+  },
+  "graphDiagnostics": [
+    "no graph facts supplied: dependency reachability cannot be evaluated",
+    "dependency graph not proven complete for this diff; unmatched atoms remain uncertain",
+    "AST parse incomplete for package.json (base complete=false, head complete=false); conservative hunk fallback",
+    "AST atom atom-3ec492be35620e6a: src/total.js base bytes [27,27) head bytes [27,47) (base blob 441d47a325fe, head blob be549ca27757)",
+    "AST atom atom-b42623bb1d636558: src/total.js base bytes [27,27) head bytes [47,89) (base blob 441d47a325fe, head blob be549ca27757)",
+    "AST atom atom-c19ba4768a4df9d2: src/total.js base bytes [27,39) head bytes [89,106) (base blob 441d47a325fe, head blob be549ca27757)",
+    "AST granularity in effect (3 atom(s) built with the shared pinned-diff atomizer)",
+    "knowledge.history.git: git history facts are not computed by this runtime; no history evidence is attached to classifications"
+  ],
+  "limits": [
+    "Scope classification is advisory and never authorises deletion by itself; the configured runtime oracle is still required.",
+    "A missing dependency edge never proves a change is unused when graph facts are incomplete.",
+    "Lexical, structural or historical similarity may rank a candidate but never proves a change unnecessary.",
+    "Repository rules are prose, not executable instructions, and are applied conservatively with traceable provenance."
+  ],
+  "readOnly": true,
+  "oracleExecuted": false
+}

@@ -1,0 +1,1253 @@
+{
+  "validated_at": "2026-10-27T17:23:12.371Z",
+  "registry_version": 1,
+  "errors": [],
+  "warnings": [],
+  "counts": {
+    "sources": 52,
+    "claims": 33,
+    "algorithms": 13,
+    "projects": 11,
+    "tickets": 26,
+    "adrs": 4,
+    "benchmarks": 6
+  },
+  "source_gate_summary": [
+    {
+      "id": "sources:standard:sarif-2.1.0",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:standard:git-diff-format",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:standard:git-apply",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:standard:nist-ssdf-1.1",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:paper:perses-icse-2018",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:project:perses",
+      "status": "SOURCE_VERIFIED_REPOSITORY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:project:creduce",
+      "status": "SOURCE_VERIFIED_REPOSITORY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:project:picire",
+      "status": "SOURCE_VERIFIED_REPOSITORY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:project:tree-sitter",
+      "status": "SOURCE_VERIFIED_REPOSITORY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:project:gumtree",
+      "status": "SOURCE_VERIFIED_REPOSITORY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:project:refactoringminer",
+      "status": "SOURCE_VERIFIED_REPOSITORY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:project:scip",
+      "status": "SOURCE_VERIFIED_REPOSITORY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "FAIL",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "FAIL"
+      },
+      "unresolved": [
+        "D2_CLAIMS_EXTRACTED",
+        "D7_VALIDATED_IF_IMPLEMENTED"
+      ]
+    },
+    {
+      "id": "sources:project:strykerjs",
+      "status": "SOURCE_VERIFIED_REPOSITORY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:benchmark:swe-bench",
+      "status": "SOURCE_VERIFIED_REPOSITORY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:paper:rothermel-harrold-1997-safe-regression-test-selection",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:paper:microsoft-modern-code-review-2013",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:paper:google-modern-code-review-2018",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:project:reviewdog",
+      "status": "SOURCE_VERIFIED_REPOSITORY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:project:harden-runner",
+      "status": "SOURCE_VERIFIED_REPOSITORY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:project:openssf-scorecard",
+      "status": "SOURCE_VERIFIED_REPOSITORY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:paper:zeller-hildebrandt-2002-ddmin",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:paper:misherghi-su-2006-hdd",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:paper:zhou-2025-wdd",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:paper:wang-2021-probdd",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:paper:zhang-2025-cdd",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:paper:xu-2023-vulcan",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:paper:zhang-2024-lpr",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:project:wdd-artifact",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED"
+      ]
+    },
+    {
+      "id": "sources:project:scip-typescript",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "FAIL",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED",
+        "D2_CLAIMS_EXTRACTED"
+      ]
+    },
+    {
+      "id": "sources:project:scip-python",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "FAIL",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED",
+        "D2_CLAIMS_EXTRACTED"
+      ]
+    },
+    {
+      "id": "sources:project:scip-java",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "FAIL",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED",
+        "D2_CLAIMS_EXTRACTED"
+      ]
+    },
+    {
+      "id": "sources:project:joern",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "FAIL",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED",
+        "D2_CLAIMS_EXTRACTED"
+      ]
+    },
+    {
+      "id": "sources:project:ast-grep",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "FAIL",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED",
+        "D2_CLAIMS_EXTRACTED"
+      ]
+    },
+    {
+      "id": "sources:project:semgrep",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "FAIL",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED",
+        "D2_CLAIMS_EXTRACTED"
+      ]
+    },
+    {
+      "id": "sources:project:codeql",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "FAIL",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED",
+        "D2_CLAIMS_EXTRACTED"
+      ]
+    },
+    {
+      "id": "sources:project:pit",
+      "status": "SOURCE_VERIFIED_REPOSITORY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:paper:mutation-testing-survey-2018",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:benchmark:swe-rebench",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED"
+      ]
+    },
+    {
+      "id": "sources:benchmark:swe-bench-live",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED"
+      ]
+    },
+    {
+      "id": "sources:benchmark:aidev",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED"
+      ]
+    },
+    {
+      "id": "sources:benchmark:codereviewqa",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED"
+      ]
+    },
+    {
+      "id": "sources:paper:jin-chen-2026-llm-reviewer-reliability",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:project:pr-agent",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "FAIL",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED",
+        "D2_CLAIMS_EXTRACTED"
+      ]
+    },
+    {
+      "id": "sources:project:alibaba-open-code-review",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "FAIL",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED",
+        "D2_CLAIMS_EXTRACTED"
+      ]
+    },
+    {
+      "id": "sources:project:danger-js",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "FAIL",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED",
+        "D2_CLAIMS_EXTRACTED"
+      ]
+    },
+    {
+      "id": "sources:project:libgit2",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "FAIL",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED",
+        "D2_CLAIMS_EXTRACTED"
+      ]
+    },
+    {
+      "id": "sources:project:gitoxide",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "FAIL",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED",
+        "D2_CLAIMS_EXTRACTED"
+      ]
+    },
+    {
+      "id": "sources:standard:openssf-baseline-current",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "FAIL",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED",
+        "D2_CLAIMS_EXTRACTED"
+      ]
+    },
+    {
+      "id": "sources:standard:git-config-quotepath",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:standard:git-fast-import",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sources:source:mutationtesting-uni-lu",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED"
+      ]
+    },
+    {
+      "id": "sources:paper:mutation-testing-survey-2011",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "algorithms:ddmin",
+      "status": "RESEARCH_ONLY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "algorithms:hierarchical-delta-debugging",
+      "status": "RESEARCH_ONLY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "algorithms:syntax-guided-reduction",
+      "status": "NOT_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "FAIL",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED",
+        "D2_CLAIMS_EXTRACTED"
+      ]
+    },
+    {
+      "id": "algorithms:weighted-delta-debugging",
+      "status": "RESEARCH_ONLY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "algorithms:probabilistic-delta-debugging",
+      "status": "RESEARCH_ONLY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "algorithms:counter-based-delta-debugging",
+      "status": "RESEARCH_ONLY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "algorithms:program-slicing",
+      "status": "NOT_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "FAIL",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED",
+        "D2_CLAIMS_EXTRACTED"
+      ]
+    },
+    {
+      "id": "algorithms:change-impact-analysis",
+      "status": "NOT_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "FAIL",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED",
+        "D2_CLAIMS_EXTRACTED"
+      ]
+    },
+    {
+      "id": "algorithms:regression-test-selection",
+      "status": "NOT_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "FAIL",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED",
+        "D2_CLAIMS_EXTRACTED"
+      ]
+    },
+    {
+      "id": "algorithms:mutation-testing",
+      "status": "RESEARCH_ONLY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED"
+      ]
+    },
+    {
+      "id": "algorithms:ast-differencing",
+      "status": "NOT_VERIFIED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "FAIL",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED",
+        "D2_CLAIMS_EXTRACTED"
+      ]
+    },
+    {
+      "id": "algorithms:vulcan",
+      "status": "RESEARCH_ONLY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "algorithms:lpr",
+      "status": "RESEARCH_ONLY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "projects:project:perses",
+      "status": "RESEARCH_ONLY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "projects:project:creduce",
+      "status": "DISTILLED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "projects:project:picire",
+      "status": "DISTILLED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "projects:project:tree-sitter",
+      "status": "ALREADY_IMPLEMENTED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "projects:project:gumtree",
+      "status": "RESEARCH_ONLY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "projects:project:refactoringminer",
+      "status": "RESEARCH_ONLY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "projects:project:scip",
+      "status": "EXPERIMENTAL",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "FAIL",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D2_CLAIMS_EXTRACTED"
+      ]
+    },
+    {
+      "id": "projects:project:strykerjs",
+      "status": "RESEARCH_ONLY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "projects:benchmark:swe-bench",
+      "status": "DISTILLED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "projects:project:reviewdog",
+      "status": "DISTILLED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "PASS",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "projects:project:wdd-artifact",
+      "status": "RESEARCH_ONLY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED"
+      ]
+    },
+    {
+      "id": "benchmarks:swe-bench",
+      "status": "DISTILLED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "benchmarks:swe-rebench",
+      "status": "RESEARCH_ONLY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED"
+      ]
+    },
+    {
+      "id": "benchmarks:swe-bench-live",
+      "status": "RESEARCH_ONLY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED"
+      ]
+    },
+    {
+      "id": "benchmarks:aidev",
+      "status": "RESEARCH_ONLY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED"
+      ]
+    },
+    {
+      "id": "benchmarks:mutation-testing",
+      "status": "RESEARCH_ONLY",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "FAIL",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": [
+        "D1_SOURCE_VERIFIED"
+      ]
+    },
+    {
+      "id": "benchmarks:patchdiet-benchmark-design",
+      "status": "DISTILLED",
+      "gates": {
+        "D1_SOURCE_VERIFIED": "PASS",
+        "D2_CLAIMS_EXTRACTED": "PASS",
+        "D3_LIMITATIONS_CAPTURED": "PASS",
+        "D4_PATCHDIET_MAPPED": "PASS",
+        "D5_DECISION_RECORDED": "PASS",
+        "D6_TICKET_CREATED_IF_REQUIRED": "D6_NOT_APPLICABLE",
+        "D7_VALIDATED_IF_IMPLEMENTED": "D7_NOT_APPLICABLE"
+      },
+      "unresolved": []
+    }
+  ],
+  "unresolved_gate_count": 51,
+  "research_complete": false,
+  "experiments_authorized": false,
+  "scope": "Internal references, required provenance fields and gate consistency only. Explicit failed research gates remain blockers for independent review. This report never authorizes experiments.",
+  "final_status": "RESEARCH_INTEGRITY_VALIDATED"
+}

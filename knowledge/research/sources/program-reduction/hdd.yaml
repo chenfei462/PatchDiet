@@ -1,0 +1,56 @@
+id: paper:misherghi-su-2006-hdd
+title: "HDD: Hierarchical Delta Debugging"
+authors:
+  - Ghassan Misherghi
+  - Zhendong Su
+year: 2006
+venue: ICSE 2006, 142–151
+doi: 10.1145/1134285.1134307
+canonical_url: https://doi.org/10.1145/1134285.1134307
+source_type: peer-reviewed-paper
+authority_tier: A
+primary_secondary: primary
+retrieved_at: 2026-10-26
+paper_version_used: ICSE 2006 author manuscript, 10 pages
+inspection:
+  url: https://web.cs.ucdavis.edu/~su/publications/icse06-hdd.pdf
+  locators:
+    - Section 3.2 Algorithm 1
+    - Sections 3.3–3.4
+    - Section 4 and Tables 1–2
+  retrieved_at: 2026-10-26
+verification_status: SOURCE_VERIFIED_PRIMARY
+claims:
+  - claim:hdd:001
+assumptions:
+  - faithful tree serialization
+  - stable executable oracle
+  - meaningful hierarchy
+limitations:
+  - Tree constraints do not guarantee all variants parse or typecheck
+  - Cross-level dependencies can make earlier nodes removable later
+  - Original GCC/XML examples are not PatchDiet benchmarks
+patchdiet_relevance:
+  relevance: high
+  mapping: "Hypothesis: file → symbol → AST node → token/atom hierarchy may improve candidate grouping. Do not implement
+    before comparison."
+status:
+  source_verified: true
+  distilled: false
+  decision: RESEARCH_ONLY
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: Research-only source; no runtime adoption or implementation ticket is authorized.
+  D7: No research-derived implementation is introduced by this source-verification phase.
+ticket_refs:
+  - PD-R100
+  - PD-R101
+  - PD-R103
+  - PD-R159

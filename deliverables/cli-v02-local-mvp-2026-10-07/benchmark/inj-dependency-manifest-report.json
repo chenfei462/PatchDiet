@@ -1,0 +1,187 @@
+{
+  "baseRef": "main",
+  "headRef": "agent",
+  "input": {
+    "fileCount": 2,
+    "hunkCount": 2,
+    "addedLineCount": 5,
+    "removedLineCount": 2,
+    "changedLineCount": 7
+  },
+  "output": {
+    "fileCount": 2,
+    "hunkCount": 2,
+    "addedLineCount": 4,
+    "removedLineCount": 2,
+    "changedLineCount": 6
+  },
+  "testCommand": {
+    "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"process.exit(0)\"",
+    "status": "passed",
+    "durationMs": 428,
+    "attempts": 1
+  },
+  "mode": "verified",
+  "verification": {
+    "baseline": {
+      "stage": "baseline",
+      "status": "passed",
+      "commands": [
+        {
+          "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"process.exit(0)\"",
+          "status": "passed",
+          "durationMs": 301,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 164
+            }
+          ]
+        }
+      ],
+      "durationMs": 428,
+      "baseCommitSha": "08097cb14e5336c55b8efa90350c78694c46c2e6",
+      "headCommitSha": "13628a29e18d99966c89b6a9b2bcf688b7e9b930"
+    },
+    "final": {
+      "stage": "final",
+      "status": "passed",
+      "commands": [
+        {
+          "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"process.exit(0)\"",
+          "status": "passed",
+          "durationMs": 288,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 141
+            }
+          ]
+        }
+      ],
+      "durationMs": 840,
+      "baseCommitSha": "08097cb14e5336c55b8efa90350c78694c46c2e6",
+      "headCommitSha": "13628a29e18d99966c89b6a9b2bcf688b7e9b930",
+      "expectedTreeSha": "4443d98c0564cac9b2a8e8806c4a919341753cf1",
+      "artifactTreeSha": "4443d98c0564cac9b2a8e8806c4a919341753cf1",
+      "treesMatch": true
+    }
+  },
+  "reduction": {
+    "strategy": "ddmin",
+    "selectedGroupIds": [
+      "grp-08e544cdf085"
+    ],
+    "attempts": [
+      {
+        "ids": [
+          "grp-08e544cdf085"
+        ],
+        "key": "5b2f8a1840126186811d6abf2091aa773fe87453517b9e0cfe18dc2f61691028",
+        "verdict": "PASS",
+        "cached": false
+      }
+    ],
+    "atomGranularity": "ast",
+    "dependencyGroups": [
+      {
+        "id": "grp-08e544cdf085",
+        "memberIds": [
+          "atom-b42623bb1d636558"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "filePath": "src/total.js",
+      "hunkHeader": "ast: insert lexical_declaration in total",
+      "category": "unknown",
+      "verdict": "kept",
+      "reason": "RETAIN scope state required"
+    },
+    {
+      "filePath": "src/total.js",
+      "hunkHeader": "ast: insert expression_statement in total",
+      "category": "unknown",
+      "verdict": "removed",
+      "reason": "removed after ddmin: the grouped removal set passed the full configured oracle"
+    },
+    {
+      "filePath": "src/total.js",
+      "hunkHeader": "ast: replace return_statement in total",
+      "category": "unknown",
+      "verdict": "kept",
+      "reason": "RETAIN scope state required"
+    },
+    {
+      "filePath": "package.json",
+      "hunkHeader": "@@ -1,4 +1,5 @@",
+      "category": "dependency-related",
+      "verdict": "needs-human-review",
+      "reason": "dependency manifest or lockfile requires human review by safety policy"
+    }
+  ],
+  "removals": [
+    {
+      "filePath": "src/total.js",
+      "hunkHeader": "ast: insert expression_statement in total",
+      "category": "unknown",
+      "reason": "removed after ddmin: the grouped removal set passed the full configured oracle",
+      "confidence": "high-confidence removal"
+    }
+  ],
+  "kept": [
+    {
+      "filePath": "src/total.js",
+      "hunkHeader": "ast: insert lexical_declaration in total",
+      "category": "unknown",
+      "reason": "RETAIN scope state required",
+      "confidence": "kept"
+    },
+    {
+      "filePath": "src/total.js",
+      "hunkHeader": "ast: replace return_statement in total",
+      "category": "unknown",
+      "reason": "RETAIN scope state required",
+      "confidence": "kept"
+    }
+  ],
+  "needsHumanReview": [
+    {
+      "filePath": "package.json",
+      "hunkHeader": "@@ -1,4 +1,5 @@",
+      "category": "dependency-related",
+      "reason": "dependency manifest or lockfile requires human review by safety policy",
+      "confidence": "needs-human-review"
+    }
+  ],
+  "artifacts": [
+    ".patchdiet/cleanup.diff",
+    ".patchdiet/report.md",
+    ".patchdiet/run.json",
+    ".patchdiet/report.html",
+    ".patchdiet/report.github.md"
+  ],
+  "patchPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-6HLuED\\inj-dependency-manifest-jDYcyL\\.patchdiet\\cleanup.diff",
+  "startedAt": "2026-10-06T15:41:21.458Z",
+  "patchdietVersion": "0.2.0",
+  "baseCommitSha": "08097cb14e5336c55b8efa90350c78694c46c2e6",
+  "headCommitSha": "13628a29e18d99966c89b6a9b2bcf688b7e9b930",
+  "mergeBaseCommitSha": "08097cb14e5336c55b8efa90350c78694c46c2e6",
+  "commandLineArgs": [],
+  "partial": false,
+  "durationMs": 5550,
+  "finishedAt": "2026-10-06T15:41:27.008Z",
+  "reportPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-6HLuED\\inj-dependency-manifest-jDYcyL\\.patchdiet\\report.md",
+  "reportJsonPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-6HLuED\\inj-dependency-manifest-jDYcyL\\.patchdiet\\run.json"
+}

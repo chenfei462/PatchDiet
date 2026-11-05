@@ -1,0 +1,555 @@
+registry_version: 1
+retrieved_at: 2026-10-27
+repository:
+  name: PatchDiet
+  url: https://github.com/chenfei462/PatchDiet
+  observed_head: a57b27eeea6d6d3c7ad581334dba10830b7f4730
+  protocol_baseline: 2a02dad9cd1859c9b7c232c5a4b67446bf004d89
+sources:
+  - id: standard:sarif-2.1.0
+    path: sources/standards/sarif-2.1.0.yaml
+    authority_tier: A
+    status: SOURCE_VERIFIED_PRIMARY
+    retrieved_at: 2026-10-26
+  - id: standard:git-diff-format
+    path: sources/git-diff/git-diff-format.yaml
+    authority_tier: A
+    status: SOURCE_VERIFIED_PRIMARY
+    retrieved_at: 2026-10-26
+  - id: standard:git-apply
+    path: sources/git-diff/git-apply.yaml
+    authority_tier: A
+    status: SOURCE_VERIFIED_PRIMARY
+    retrieved_at: 2026-10-26
+  - id: standard:nist-ssdf-1.1
+    path: sources/security/nist-ssdf.yaml
+    authority_tier: A
+    status: SOURCE_VERIFIED_PRIMARY
+    retrieved_at: 2026-10-26
+  - id: paper:perses-icse-2018
+    path: sources/program-reduction/perses-paper.yaml
+    authority_tier: A
+    status: SOURCE_VERIFIED_PRIMARY
+    retrieved_at: 2026-10-26
+  - id: project:perses
+    path: sources/program-reduction/perses-repo.yaml
+    authority_tier: B
+    status: SOURCE_VERIFIED_REPOSITORY
+    retrieved_at: 2026-10-26
+  - id: project:creduce
+    path: sources/program-reduction/creduce.yaml
+    authority_tier: B
+    status: SOURCE_VERIFIED_REPOSITORY
+    retrieved_at: 2026-10-26
+  - id: project:picire
+    path: sources/program-reduction/picire.yaml
+    authority_tier: B
+    status: SOURCE_VERIFIED_REPOSITORY
+    retrieved_at: 2026-10-26
+  - id: project:tree-sitter
+    path: sources/code-intelligence/tree-sitter.yaml
+    authority_tier: B
+    status: SOURCE_VERIFIED_REPOSITORY
+    retrieved_at: 2026-10-26
+  - id: project:gumtree
+    path: sources/semantic-diff/gumtree.yaml
+    authority_tier: B
+    status: SOURCE_VERIFIED_REPOSITORY
+    retrieved_at: 2026-10-26
+  - id: project:refactoringminer
+    path: sources/semantic-diff/refactoringminer.yaml
+    authority_tier: B
+    status: SOURCE_VERIFIED_REPOSITORY
+    retrieved_at: 2026-10-26
+  - id: project:scip
+    path: sources/code-intelligence/scip.yaml
+    authority_tier: B
+    status: SOURCE_VERIFIED_REPOSITORY
+    retrieved_at: 2026-10-26
+  - id: project:strykerjs
+    path: sources/mutation-testing/strykerjs.yaml
+    authority_tier: B
+    status: SOURCE_VERIFIED_REPOSITORY
+    retrieved_at: 2026-10-26
+  - id: benchmark:swe-bench
+    path: sources/benchmarks/swe-bench.yaml
+    authority_tier: C
+    status: SOURCE_VERIFIED_REPOSITORY
+    retrieved_at: 2026-10-26
+  - id: paper:rothermel-harrold-1997-safe-regression-test-selection
+    path: sources/regression-testing/rothermel-harrold-1997.yaml
+    authority_tier: A
+    status: SOURCE_VERIFIED_PRIMARY
+    retrieved_at: 2026-10-26
+  - id: paper:microsoft-modern-code-review-2013
+    path: sources/code-review/microsoft-modern-code-review.yaml
+    authority_tier: A
+    status: SOURCE_VERIFIED_PRIMARY
+    retrieved_at: 2026-10-26
+  - id: paper:google-modern-code-review-2018
+    path: sources/code-review/google-modern-code-review.yaml
+    authority_tier: A
+    status: SOURCE_VERIFIED_PRIMARY
+    retrieved_at: 2026-10-26
+  - id: project:reviewdog
+    path: sources/code-review/reviewdog.yaml
+    authority_tier: B
+    status: SOURCE_VERIFIED_REPOSITORY
+    retrieved_at: 2026-10-26
+  - id: project:harden-runner
+    path: sources/security/harden-runner.yaml
+    authority_tier: B
+    status: SOURCE_VERIFIED_REPOSITORY
+    retrieved_at: 2026-10-26
+  - id: project:openssf-scorecard
+    path: sources/security/scorecard.yaml
+    authority_tier: B
+    status: SOURCE_VERIFIED_REPOSITORY
+    retrieved_at: 2026-10-26
+  - id: paper:zeller-hildebrandt-2002-ddmin
+    path: sources/program-reduction/ddmin.yaml
+    authority_tier: A
+    status: SOURCE_VERIFIED_PRIMARY
+    retrieved_at: 2026-10-26
+  - id: paper:misherghi-su-2006-hdd
+    path: sources/program-reduction/hdd.yaml
+    authority_tier: A
+    status: SOURCE_VERIFIED_PRIMARY
+    retrieved_at: 2026-10-26
+  - id: paper:zhou-2025-wdd
+    path: sources/program-reduction/wdd.yaml
+    authority_tier: A
+    status: SOURCE_VERIFIED_PRIMARY
+    retrieved_at: 2026-10-27
+  - id: paper:wang-2021-probdd
+    path: sources/program-reduction/probdd.yaml
+    authority_tier: A
+    status: SOURCE_VERIFIED_PRIMARY
+    retrieved_at: 2026-10-26
+  - id: paper:zhang-2025-cdd
+    path: sources/program-reduction/cdd.yaml
+    authority_tier: A
+    status: SOURCE_VERIFIED_PRIMARY
+    retrieved_at: 2026-10-26
+  - id: paper:xu-2023-vulcan
+    path: sources/program-reduction/vulcan.yaml
+    authority_tier: A
+    status: SOURCE_VERIFIED_PRIMARY
+    retrieved_at: 2026-10-26
+  - id: paper:zhang-2024-lpr
+    path: sources/program-reduction/lpr.yaml
+    authority_tier: A
+    status: SOURCE_VERIFIED_PRIMARY
+    retrieved_at: 2026-10-26
+  - id: project:wdd-artifact
+    path: sources/program-reduction/wdd-artifact.yaml
+    authority_tier: B
+    status: SOURCE_PARTIALLY_VERIFIED
+    retrieved_at: 2026-10-27
+  - id: project:scip-typescript
+    path: projects/project-scip-typescript.yaml
+    authority_tier: B
+    status: SOURCE_PARTIALLY_VERIFIED
+    retrieved_at: 2026-10-26
+  - id: project:scip-python
+    path: projects/project-scip-python.yaml
+    authority_tier: B
+    status: SOURCE_PARTIALLY_VERIFIED
+    retrieved_at: 2026-10-26
+  - id: project:scip-java
+    path: projects/project-scip-java.yaml
+    authority_tier: B
+    status: SOURCE_PARTIALLY_VERIFIED
+    retrieved_at: 2026-10-26
+  - id: project:joern
+    path: projects/project-joern.yaml
+    authority_tier: B
+    status: SOURCE_PARTIALLY_VERIFIED
+    retrieved_at: 2026-10-26
+  - id: project:ast-grep
+    path: projects/project-ast-grep.yaml
+    authority_tier: B
+    status: SOURCE_PARTIALLY_VERIFIED
+    retrieved_at: 2026-10-26
+  - id: project:semgrep
+    path: projects/project-semgrep.yaml
+    authority_tier: B
+    status: SOURCE_PARTIALLY_VERIFIED
+    retrieved_at: 2026-10-26
+  - id: project:codeql
+    path: projects/project-codeql.yaml
+    authority_tier: B
+    status: SOURCE_PARTIALLY_VERIFIED
+    retrieved_at: 2026-10-26
+  - id: project:pit
+    path: projects/project-pit.yaml
+    authority_tier: B
+    status: SOURCE_VERIFIED_REPOSITORY
+    retrieved_at: 2026-10-27
+  - id: paper:mutation-testing-survey-2018
+    path: sources/mutation-testing/paper-mutation-testing-survey-2018.yaml
+    authority_tier: A
+    status: SOURCE_VERIFIED_PRIMARY
+    retrieved_at: 2026-10-27
+  - id: benchmark:swe-rebench
+    path: benchmarks/benchmark-swe-rebench.yaml
+    authority_tier: C
+    status: SOURCE_PARTIALLY_VERIFIED
+    retrieved_at: 2026-10-27
+  - id: benchmark:swe-bench-live
+    path: benchmarks/benchmark-swe-bench-live.yaml
+    authority_tier: C
+    status: SOURCE_PARTIALLY_VERIFIED
+    retrieved_at: 2026-10-27
+  - id: benchmark:aidev
+    path: benchmarks/benchmark-aidev.yaml
+    authority_tier: C
+    status: SOURCE_PARTIALLY_VERIFIED
+    retrieved_at: 2026-10-27
+  - id: benchmark:codereviewqa
+    path: benchmarks/benchmark-codereviewqa.yaml
+    authority_tier: C
+    status: SOURCE_PARTIALLY_VERIFIED
+    retrieved_at: 2026-10-27
+  - id: paper:jin-chen-2026-llm-reviewer-reliability
+    path: sources/code-review/paper-llm-reviewer-reliability-2026.yaml
+    authority_tier: A
+    status: SOURCE_VERIFIED_PRIMARY
+    retrieved_at: 2026-10-27
+  - id: project:pr-agent
+    path: projects/project-pr-agent.yaml
+    authority_tier: B
+    status: SOURCE_PARTIALLY_VERIFIED
+    retrieved_at: 2026-10-26
+  - id: project:alibaba-open-code-review
+    path: projects/project-alibaba-open-code-review.yaml
+    authority_tier: B
+    status: SOURCE_PARTIALLY_VERIFIED
+    retrieved_at: 2026-10-26
+  - id: project:danger-js
+    path: projects/project-danger-js.yaml
+    authority_tier: B
+    status: SOURCE_PARTIALLY_VERIFIED
+    retrieved_at: 2026-10-26
+  - id: project:libgit2
+    path: projects/project-libgit2.yaml
+    authority_tier: B
+    status: SOURCE_PARTIALLY_VERIFIED
+    retrieved_at: 2026-10-26
+  - id: project:gitoxide
+    path: projects/project-gitoxide.yaml
+    authority_tier: B
+    status: SOURCE_PARTIALLY_VERIFIED
+    retrieved_at: 2026-10-26
+  - id: standard:openssf-baseline-current
+    path: sources/security/standard-openssf-baseline-current.yaml
+    authority_tier: A
+    status: SOURCE_PARTIALLY_VERIFIED
+    retrieved_at: 2026-10-26
+  - id: standard:git-config-quotepath
+    path: sources/git-diff/git-config-quotepath.yaml
+    status: SOURCE_VERIFIED_PRIMARY
+    authority_tier: A
+    retrieved_at: 2026-10-27
+  - id: standard:git-fast-import
+    path: sources/git-diff/git-fast-import.yaml
+    status: SOURCE_VERIFIED_PRIMARY
+    authority_tier: A
+    retrieved_at: 2026-10-27
+  - id: source:mutationtesting-uni-lu
+    path: sources/mutation-testing/mutationtesting-uni-lu.yaml
+    authority_tier: B
+    status: SOURCE_PARTIALLY_VERIFIED
+    retrieved_at: 2026-10-27
+  - id: paper:mutation-testing-survey-2011
+    path: sources/mutation-testing/paper-mutation-testing-survey-2011.yaml
+    authority_tier: B
+    status: SOURCE_VERIFIED_PRIMARY
+    retrieved_at: 2026-10-27
+claims:
+  - id: claim:perses:001
+    path: claims/program-reduction/claim-perses-001.yaml
+    source: paper:perses-icse-2018
+  - id: claim:perses:002
+    path: claims/program-reduction/claim-perses-002.yaml
+    source: paper:perses-icse-2018
+  - id: claim:perses:003
+    path: claims/program-reduction/claim-perses-003.yaml
+    source: project:perses
+  - id: claim:creduce:001
+    path: claims/program-reduction/claim-creduce-001.yaml
+    source: project:creduce
+  - id: claim:picire:001
+    path: claims/program-reduction/claim-picire-001.yaml
+    source: project:picire
+  - id: claim:git:001
+    path: claims/verification/claim-git-001.yaml
+    source: standard:git-diff-format
+  - id: claim:git:002
+    path: claims/verification/claim-git-002.yaml
+    source: standard:git-diff-format
+  - id: claim:git:003
+    path: claims/verification/claim-git-003.yaml
+    source: standard:git-apply
+  - id: claim:treesitter:001
+    path: claims/scope/claim-treesitter-001.yaml
+    source: project:tree-sitter
+  - id: claim:scip:001
+    path: claims/scope/claim-scip-001.yaml
+    source: project:scip
+  - id: claim:mutation:001
+    path: claims/testing/claim-mutation-001.yaml
+    source: project:strykerjs
+  - id: claim:mutation:002
+    path: claims/testing/claim-mutation-002.yaml
+    source: project:strykerjs
+  - id: claim:swebench:001
+    path: claims/testing/claim-swebench-001.yaml
+    source: benchmark:swe-bench
+  - id: claim:sarif:001
+    path: claims/review/claim-sarif-001.yaml
+    source: standard:sarif-2.1.0
+  - id: claim:rts:001
+    path: claims/testing/claim-rts-001.yaml
+    source: paper:rothermel-harrold-1997-safe-regression-test-selection
+  - id: claim:review:002
+    path: claims/review/claim-review-002.yaml
+    source: paper:microsoft-modern-code-review-2013
+  - id: claim:review:003
+    path: claims/review/claim-review-003.yaml
+    source: paper:google-modern-code-review-2018
+  - id: claim:review:001
+    path: claims/review/claim-review-001.yaml
+    source: project:reviewdog
+  - id: claim:security:001
+    path: claims/security/claim-security-001.yaml
+    source: standard:nist-ssdf-1.1
+  - id: claim:security:002
+    path: claims/security/claim-security-002.yaml
+    source: project:harden-runner
+  - id: claim:security:003
+    path: claims/security/claim-security-003.yaml
+    source: project:openssf-scorecard
+  - id: claim:ddmin:001
+    path: claims/program-reduction/ddmin-001.yaml
+    source: paper:zeller-hildebrandt-2002-ddmin
+  - id: claim:hdd:001
+    path: claims/program-reduction/hdd-001.yaml
+    source: paper:misherghi-su-2006-hdd
+  - id: claim:wdd:001
+    path: claims/program-reduction/wdd-001.yaml
+    source: paper:zhou-2025-wdd
+  - id: claim:probdd:001
+    path: claims/program-reduction/probdd-001.yaml
+    source: paper:wang-2021-probdd
+  - id: claim:cdd:001
+    path: claims/program-reduction/cdd-001.yaml
+    source: paper:zhang-2025-cdd
+  - id: claim:vulcan:001
+    path: claims/program-reduction/vulcan-001.yaml
+    source: paper:xu-2023-vulcan
+  - id: claim:lpr:001
+    path: claims/program-reduction/lpr-001.yaml
+    source: paper:zhang-2024-lpr
+  - id: claim:gumtree:001
+    path: claims/semantic-diff/gumtree-001.yaml
+    source: project:gumtree
+  - id: claim:refactoringminer:001
+    path: claims/semantic-diff/refactoringminer-001.yaml
+    source: project:refactoringminer
+  - id: claim:llm-reviewer-reliability:001
+    path: claims/review/claim-llm-reviewer-reliability-001.yaml
+    source: paper:jin-chen-2026-llm-reviewer-reliability
+  - id: claim:git:004
+    path: claims/verification/claim-git-004.yaml
+    source: standard:git-config-quotepath
+  - id: claim:git:005
+    path: claims/verification/claim-git-005.yaml
+    source: standard:git-fast-import
+algorithms:
+  - id: ddmin
+    path: algorithms/ddmin.yaml
+    status: RESEARCH_ONLY
+  - id: hierarchical-delta-debugging
+    path: algorithms/hierarchical-delta-debugging.yaml
+    status: RESEARCH_ONLY
+  - id: syntax-guided-reduction
+    path: algorithms/syntax-guided-reduction.yaml
+    status: NOT_VERIFIED
+  - id: weighted-delta-debugging
+    path: algorithms/weighted-delta-debugging.yaml
+    status: RESEARCH_ONLY
+  - id: probabilistic-delta-debugging
+    path: algorithms/probabilistic-delta-debugging.yaml
+    status: RESEARCH_ONLY
+  - id: counter-based-delta-debugging
+    path: algorithms/counter-based-delta-debugging.yaml
+    status: RESEARCH_ONLY
+  - id: program-slicing
+    path: algorithms/program-slicing.yaml
+    status: NOT_VERIFIED
+  - id: change-impact-analysis
+    path: algorithms/change-impact-analysis.yaml
+    status: NOT_VERIFIED
+  - id: regression-test-selection
+    path: algorithms/regression-test-selection.yaml
+    status: NOT_VERIFIED
+  - id: mutation-testing
+    path: algorithms/mutation-testing.yaml
+    status: NOT_VERIFIED
+  - id: ast-differencing
+    path: algorithms/ast-differencing.yaml
+    status: NOT_VERIFIED
+  - id: vulcan
+    path: algorithms/vulcan.yaml
+    status: RESEARCH_ONLY
+  - id: lpr
+    path: algorithms/lpr.yaml
+    status: RESEARCH_ONLY
+projects:
+  - id: project:perses
+    path: projects/perses.yaml
+    status: RESEARCH_ONLY
+  - id: project:creduce
+    path: projects/creduce.yaml
+    status: DISTILLED
+  - id: project:picire
+    path: projects/picire.yaml
+    status: DISTILLED
+  - id: project:tree-sitter
+    path: projects/tree-sitter.yaml
+    status: ALREADY_IMPLEMENTED
+  - id: project:gumtree
+    path: projects/gumtree.yaml
+    status: RESEARCH_ONLY
+  - id: project:refactoringminer
+    path: projects/refactoringminer.yaml
+    status: RESEARCH_ONLY
+  - id: project:scip
+    path: projects/scip.yaml
+    status: EXPERIMENTAL
+  - id: project:strykerjs
+    path: projects/strykerjs.yaml
+    status: RESEARCH_ONLY
+  - id: benchmark:swe-bench
+    path: projects/swe-bench.yaml
+    status: DISTILLED
+  - id: project:reviewdog
+    path: projects/reviewdog.yaml
+    status: DISTILLED
+  - id: project:wdd-artifact
+    path: projects/project-wdd-artifact.yaml
+    status: RESEARCH_ONLY
+adrs:
+  - id: ADR-REDUCER-001
+    path: adr/ADR-REDUCER-001.md
+    status: ACCEPTED
+  - id: ADR-SEMANTIC-CHANGE-001
+    path: adr/ADR-SEMANTIC-CHANGE-001.md
+    status: ACCEPTED
+  - id: ADR-CODE-INTELLIGENCE-001
+    path: adr/ADR-CODE-INTELLIGENCE-001.md
+    status: ACCEPTED
+  - id: ADR-MUTATION-ORACLE-001
+    path: adr/ADR-MUTATION-ORACLE-001.md
+    status: ACCEPTED
+benchmarks:
+  - id: swe-bench
+    path: benchmarks/swe-bench.yaml
+    status: DISTILLED
+  - id: swe-rebench
+    path: benchmarks/swe-rebench.yaml
+    status: NOT_VERIFIED
+  - id: swe-bench-live
+    path: benchmarks/swe-bench-live.yaml
+    status: NOT_VERIFIED
+  - id: aidev
+    path: benchmarks/aidev.yaml
+    status: NOT_VERIFIED
+  - id: mutation-testing
+    path: benchmarks/mutation-testing.yaml
+    status: DISTILLED
+  - id: patchdiet-benchmark-design
+    path: benchmarks/patchdiet-benchmark-design.yaml
+    status: DISTILLED
+tickets:
+  - id: PD-R001
+    path: tickets/PD-R001.yaml
+    status: IMPLEMENTED
+  - id: PD-R002
+    path: tickets/PD-R002.yaml
+    status: EXPERIMENTAL
+  - id: PD-R003
+    path: tickets/PD-R003.yaml
+    status: EXPERIMENTAL
+  - id: PD-R010
+    path: tickets/PD-R010.yaml
+    status: RESEARCH_ONLY
+  - id: PD-R020
+    path: tickets/PD-R020.yaml
+    status: EXPERIMENTAL
+  - id: PD-R040
+    path: tickets/PD-R040.yaml
+    status: RESEARCH_ONLY
+  - id: PD-R050
+    path: tickets/PD-R050.yaml
+    status: EXPERIMENTAL
+  - id: PD-R100
+    path: tickets/PD-R100.yaml
+    status: CORRECTED_PENDING_INDEPENDENT_REVIEW
+  - id: PD-R101
+    path: tickets/PD-R101.yaml
+    status: CORRECTED_PENDING_INDEPENDENT_REVIEW
+  - id: PD-R102
+    path: tickets/PD-R102.yaml
+    status: CORRECTED_PENDING_INDEPENDENT_REVIEW
+  - id: PD-R103
+    path: tickets/PD-R103.yaml
+    status: CORRECTED_PENDING_INDEPENDENT_REVIEW
+  - id: PD-R104
+    path: tickets/PD-R104.yaml
+    status: PARTIAL_ARTIFACT_REVIEW_PENDING
+  - id: PD-R105
+    path: tickets/PD-R105.yaml
+    status: CORRECTED_PENDING_INDEPENDENT_REVIEW
+  - id: PD-R106
+    path: tickets/PD-R106.yaml
+    status: CORRECTED_PENDING_INDEPENDENT_REVIEW
+  - id: PD-R107
+    path: tickets/PD-R107.yaml
+    status: CORRECTED_PENDING_INDEPENDENT_REVIEW
+  - id: PD-R108
+    path: tickets/PD-R108.yaml
+    status: CORRECTED_PENDING_INDEPENDENT_REVIEW
+  - id: PD-R150
+    path: tickets/PD-R150.yaml
+    status: IN_PROGRESS
+  - id: PD-R151
+    path: tickets/PD-R151.yaml
+    status: IN_PROGRESS
+  - id: PD-R152
+    path: tickets/PD-R152.yaml
+    status: IN_PROGRESS
+  - id: PD-R153
+    path: tickets/PD-R153.yaml
+    status: IN_PROGRESS
+  - id: PD-R154
+    path: tickets/PD-R154.yaml
+    status: IN_PROGRESS
+  - id: PD-R155
+    path: tickets/PD-R155.yaml
+    status: IN_PROGRESS
+  - id: PD-R156
+    path: tickets/PD-R156.yaml
+    status: IN_PROGRESS
+  - id: PD-R157
+    path: tickets/PD-R157.yaml
+    status: IN_PROGRESS
+  - id: PD-R158
+    path: tickets/PD-R158.yaml
+    status: IN_PROGRESS
+  - id: PD-R159
+    path: tickets/PD-R159.yaml
+    status: IN_PROGRESS
+research_status: RESEARCH_DISTILLATION_PARTIAL
+engineering_status: ENGINEERING_EVIDENCE_NOT_YET_CLOSED

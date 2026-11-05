@@ -1,0 +1,594 @@
+{
+  "ticket": "PD-R100",
+  "audited_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "standard:sarif-2.1.0",
+      "path": "sources/standards/sarif-2.1.0.yaml",
+      "title": "Static Analysis Results Interchange Format (SARIF) Version 2.1.0",
+      "authors": [
+        "Michael C. Fanning",
+        "Laurence J. Golding"
+      ],
+      "year": 2020,
+      "venue": null,
+      "doi": null,
+      "canonical_url": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/os/sarif-v2.1.0-os.html",
+      "source_type": "normative-standard",
+      "authority_tier": "A",
+      "primary_secondary": "primary",
+      "retrieved_at": "2026-10-26",
+      "license": null,
+      "repository": null,
+      "inspected_commit": null,
+      "paper_version_used": "OASIS Standard 27 March 2020",
+      "claim_references": [
+        "claim:sarif:001"
+      ],
+      "previous_status": "SOURCE_VERIFIED",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "reason": "Primary content inspected at listed locators; not merely a webpage existence check.",
+      "missing": []
+    },
+    {
+      "id": "standard:git-diff-format",
+      "path": "sources/git-diff/git-diff-format.yaml",
+      "title": "Git diff-format documentation",
+      "authors": [
+        "Git project"
+      ],
+      "year": 2026,
+      "venue": null,
+      "doi": null,
+      "canonical_url": "https://git-scm.com/docs/diff-format",
+      "source_type": "normative-documentation",
+      "authority_tier": "A",
+      "primary_secondary": "primary",
+      "retrieved_at": "2026-10-26",
+      "license": null,
+      "repository": null,
+      "inspected_commit": null,
+      "paper_version_used": "Git diff-format 2.55.0",
+      "claim_references": [
+        "claim:git:001",
+        "claim:git:002"
+      ],
+      "previous_status": "SOURCE_VERIFIED",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "reason": "Primary content inspected at listed locators; not merely a webpage existence check.",
+      "missing": []
+    },
+    {
+      "id": "standard:git-apply",
+      "path": "sources/git-diff/git-apply.yaml",
+      "title": "git-apply documentation",
+      "authors": [
+        "Git project"
+      ],
+      "year": 2026,
+      "venue": null,
+      "doi": null,
+      "canonical_url": "https://git-scm.com/docs/git-apply",
+      "source_type": "normative-documentation",
+      "authority_tier": "A",
+      "primary_secondary": "primary",
+      "retrieved_at": "2026-10-26",
+      "license": null,
+      "repository": null,
+      "inspected_commit": null,
+      "paper_version_used": "Git git-apply 2.51.0",
+      "claim_references": [
+        "claim:git:003"
+      ],
+      "previous_status": "SOURCE_VERIFIED",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "reason": "Primary content inspected at listed locators; not merely a webpage existence check.",
+      "missing": []
+    },
+    {
+      "id": "standard:nist-ssdf-1.1",
+      "path": "sources/security/nist-ssdf.yaml",
+      "title": "Secure Software Development Framework (SSDF) Version 1.1",
+      "authors": [
+        "Murugiah Souppaya",
+        "Karen Scarfone",
+        "Donna Dodson"
+      ],
+      "year": 2022,
+      "venue": null,
+      "doi": "https://doi.org/10.6028/NIST.SP.800-218",
+      "canonical_url": "https://csrc.nist.gov/pubs/sp/800/218/final",
+      "source_type": "normative-standard",
+      "authority_tier": "A",
+      "primary_secondary": "primary",
+      "retrieved_at": "2026-10-26",
+      "license": null,
+      "repository": null,
+      "inspected_commit": null,
+      "paper_version_used": "NIST SP 800-218 final, February 2022",
+      "claim_references": [
+        "claim:security:001"
+      ],
+      "previous_status": "SOURCE_VERIFIED",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "reason": "Primary content inspected at listed locators; not merely a webpage existence check.",
+      "missing": []
+    },
+    {
+      "id": "paper:perses-icse-2018",
+      "path": "sources/program-reduction/perses-paper.yaml",
+      "title": "Perses: Syntax-Guided Program Reduction",
+      "authors": [
+        "Chengnian Sun",
+        "Yuanbo Li",
+        "Qirun Zhang",
+        "Tianxiao Gu",
+        "Zhendong Su"
+      ],
+      "year": 2018,
+      "venue": "ICSE",
+      "doi": "10.1145/3180155.3180236",
+      "canonical_url": "https://web.cs.ucdavis.edu/~su/publications/perses.pdf",
+      "source_type": "peer-reviewed-paper",
+      "authority_tier": "A",
+      "primary_secondary": "primary",
+      "retrieved_at": "2026-10-26",
+      "license": null,
+      "repository": null,
+      "inspected_commit": null,
+      "paper_version_used": "ICSE 2018 author manuscript, 11 pages",
+      "claim_references": [
+        "claim:perses:001",
+        "claim:perses:002"
+      ],
+      "previous_status": "SOURCE_VERIFIED",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "reason": "Primary content inspected at listed locators; not merely a webpage existence check.",
+      "missing": []
+    },
+    {
+      "id": "project:perses",
+      "path": "sources/program-reduction/perses-repo.yaml",
+      "title": "Perses reference implementation",
+      "authors": [
+        "UW PLUVERSE"
+      ],
+      "year": 2018,
+      "venue": null,
+      "doi": null,
+      "canonical_url": "https://github.com/uw-pluverse/perses",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "primary_secondary": "primary-repository",
+      "retrieved_at": "2026-10-26",
+      "license": "GPL-3.0",
+      "repository": "https://github.com/uw-pluverse/perses",
+      "inspected_commit": null,
+      "paper_version_used": null,
+      "claim_references": [
+        "claim:perses:003"
+      ],
+      "previous_status": "SOURCE_VERIFIED",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "reason": "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content review.",
+      "missing": [
+        "inspected commit and pinned license review"
+      ]
+    },
+    {
+      "id": "project:creduce",
+      "path": "sources/program-reduction/creduce.yaml",
+      "title": "C-Reduce",
+      "authors": [
+        "Csmith project contributors"
+      ],
+      "year": 2011,
+      "venue": null,
+      "doi": null,
+      "canonical_url": "https://github.com/csmith-project/creduce",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "primary_secondary": "primary-repository",
+      "retrieved_at": "2026-10-26",
+      "license": "NOASSERTION",
+      "repository": "https://github.com/csmith-project/creduce",
+      "inspected_commit": null,
+      "paper_version_used": null,
+      "claim_references": [
+        "claim:creduce:001"
+      ],
+      "previous_status": "SOURCE_VERIFIED",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "reason": "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content review.",
+      "missing": [
+        "inspected commit and pinned license review"
+      ]
+    },
+    {
+      "id": "project:picire",
+      "path": "sources/program-reduction/picire.yaml",
+      "title": "Picire",
+      "authors": [
+        "Renata Hodovan"
+      ],
+      "year": 2016,
+      "venue": null,
+      "doi": null,
+      "canonical_url": "https://github.com/renatahodovan/picire",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "primary_secondary": "primary-repository",
+      "retrieved_at": "2026-10-26",
+      "license": "NOASSERTION",
+      "repository": "https://github.com/renatahodovan/picire",
+      "inspected_commit": null,
+      "paper_version_used": null,
+      "claim_references": [
+        "claim:picire:001"
+      ],
+      "previous_status": "SOURCE_VERIFIED",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "reason": "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content review.",
+      "missing": [
+        "inspected commit and pinned license review"
+      ]
+    },
+    {
+      "id": "project:tree-sitter",
+      "path": "sources/code-intelligence/tree-sitter.yaml",
+      "title": "Tree-sitter",
+      "authors": [
+        "Tree-sitter contributors"
+      ],
+      "year": 2018,
+      "venue": null,
+      "doi": null,
+      "canonical_url": "https://github.com/tree-sitter/tree-sitter",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "primary_secondary": "primary-repository",
+      "retrieved_at": "2026-10-26",
+      "license": "MIT",
+      "repository": "https://github.com/tree-sitter/tree-sitter",
+      "inspected_commit": null,
+      "paper_version_used": null,
+      "claim_references": [
+        "claim:treesitter:001"
+      ],
+      "previous_status": "SOURCE_VERIFIED",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "reason": "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content review.",
+      "missing": [
+        "inspected commit and pinned license review"
+      ]
+    },
+    {
+      "id": "project:gumtree",
+      "path": "sources/semantic-diff/gumtree.yaml",
+      "title": "GumTree Diff",
+      "authors": [
+        "GumTree contributors"
+      ],
+      "year": 2014,
+      "venue": null,
+      "doi": null,
+      "canonical_url": "https://github.com/GumTreeDiff/gumtree",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "primary_secondary": "primary-repository",
+      "retrieved_at": "2026-10-26",
+      "license": "LGPL-3.0",
+      "repository": "https://github.com/GumTreeDiff/gumtree",
+      "inspected_commit": null,
+      "paper_version_used": null,
+      "claim_references": [
+        "claim:gumtree:001"
+      ],
+      "previous_status": "SOURCE_VERIFIED",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "reason": "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content review.",
+      "missing": [
+        "inspected commit and pinned license review"
+      ]
+    },
+    {
+      "id": "project:refactoringminer",
+      "path": "sources/semantic-diff/refactoringminer.yaml",
+      "title": "RefactoringMiner",
+      "authors": [
+        "Tsantalis lab contributors"
+      ],
+      "year": 2018,
+      "venue": null,
+      "doi": null,
+      "canonical_url": "https://github.com/tsantalis/RefactoringMiner",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "primary_secondary": "primary-repository",
+      "retrieved_at": "2026-10-26",
+      "license": "MIT",
+      "repository": "https://github.com/tsantalis/RefactoringMiner",
+      "inspected_commit": null,
+      "paper_version_used": null,
+      "claim_references": [
+        "claim:refactoringminer:001"
+      ],
+      "previous_status": "SOURCE_VERIFIED",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "reason": "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content review.",
+      "missing": [
+        "inspected commit and pinned license review"
+      ]
+    },
+    {
+      "id": "project:scip",
+      "path": "sources/code-intelligence/scip.yaml",
+      "title": "SCIP code intelligence protocol",
+      "authors": [
+        "SCIP contributors"
+      ],
+      "year": 2021,
+      "venue": null,
+      "doi": null,
+      "canonical_url": "https://github.com/scip-code/scip",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "primary_secondary": "primary-repository",
+      "retrieved_at": "2026-10-26",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/scip-code/scip",
+      "inspected_commit": null,
+      "paper_version_used": null,
+      "claim_references": [
+        "claim:scip:001"
+      ],
+      "previous_status": "SOURCE_VERIFIED",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "reason": "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content review.",
+      "missing": [
+        "inspected commit and pinned license review"
+      ]
+    },
+    {
+      "id": "project:strykerjs",
+      "path": "sources/mutation-testing/strykerjs.yaml",
+      "title": "StrykerJS",
+      "authors": [
+        "Stryker contributors"
+      ],
+      "year": 2016,
+      "venue": null,
+      "doi": null,
+      "canonical_url": "https://github.com/stryker-mutator/stryker-js",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "primary_secondary": "primary-repository",
+      "retrieved_at": "2026-10-26",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/stryker-mutator/stryker-js",
+      "inspected_commit": null,
+      "paper_version_used": null,
+      "claim_references": [
+        "claim:mutation:001",
+        "claim:mutation:002"
+      ],
+      "previous_status": "SOURCE_VERIFIED",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "reason": "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content review.",
+      "missing": [
+        "inspected commit and pinned license review"
+      ]
+    },
+    {
+      "id": "benchmark:swe-bench",
+      "path": "sources/benchmarks/swe-bench.yaml",
+      "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+      "authors": [
+        "John Yang",
+        "Carlos E. Jimenez",
+        "Alexander Wettig",
+        "Kilian Lieret",
+        "Shunyu Yao",
+        "Karthik Narasimhan",
+        "Ofir Press"
+      ],
+      "year": 2024,
+      "venue": null,
+      "doi": null,
+      "canonical_url": "https://github.com/SWE-bench/SWE-bench",
+      "source_type": "benchmark-paper-and-repository",
+      "authority_tier": "C",
+      "primary_secondary": "primary-repository",
+      "retrieved_at": "2026-10-26",
+      "license": "MIT",
+      "repository": "https://github.com/SWE-bench/SWE-bench",
+      "inspected_commit": null,
+      "paper_version_used": null,
+      "claim_references": [
+        "claim:swebench:001"
+      ],
+      "previous_status": "SOURCE_VERIFIED",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "reason": "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content review.",
+      "missing": [
+        "inspected commit and pinned license review"
+      ]
+    },
+    {
+      "id": "paper:rothermel-harrold-1997-safe-regression-test-selection",
+      "path": "sources/regression-testing/rothermel-harrold-1997.yaml",
+      "title": "A Safe, Efficient Regression Test Selection Technique",
+      "authors": [
+        "Gregg Rothermel",
+        "Mary Jean Harrold"
+      ],
+      "year": 1997,
+      "venue": "ACM TOSEM",
+      "doi": "10.1145/248233.248262",
+      "canonical_url": "https://dl.acm.org/doi/10.1145/248233.248262",
+      "source_type": "peer-reviewed-paper",
+      "authority_tier": "A",
+      "primary_secondary": "primary",
+      "retrieved_at": "2026-10-26",
+      "license": null,
+      "repository": null,
+      "inspected_commit": null,
+      "paper_version_used": null,
+      "claim_references": [
+        "claim:rts:001"
+      ],
+      "previous_status": "SOURCE_VERIFIED",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "reason": "Publisher HTTP 403; bibliographic identity known, original content verification remains open.",
+      "missing": [
+        "original paper content"
+      ]
+    },
+    {
+      "id": "paper:microsoft-modern-code-review-2013",
+      "path": "sources/code-review/microsoft-modern-code-review.yaml",
+      "title": "Expectations, Outcomes, and Challenges of Modern Code Review",
+      "authors": [
+        "Alberto Bacchelli",
+        "Christian Bird"
+      ],
+      "year": 2013,
+      "venue": "ICSE",
+      "doi": "10.1109/ICSE.2013.6606589",
+      "canonical_url": "https://www.microsoft.com/en-us/research/publication/expectations-outcomes-and-challenges-of-modern-code-review/",
+      "source_type": "peer-reviewed-paper",
+      "authority_tier": "A",
+      "primary_secondary": "primary",
+      "retrieved_at": "2026-10-26",
+      "license": null,
+      "repository": null,
+      "inspected_commit": null,
+      "paper_version_used": "ICSE 2013 author manuscript, 10 pages",
+      "claim_references": [
+        "claim:review:002"
+      ],
+      "previous_status": "SOURCE_VERIFIED",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "reason": "Primary content inspected at listed locators; not merely a webpage existence check.",
+      "missing": []
+    },
+    {
+      "id": "paper:google-modern-code-review-2018",
+      "path": "sources/code-review/google-modern-code-review.yaml",
+      "title": "Modern Code Review: A Case Study at Google",
+      "authors": [
+        "Caitlin Sadowski",
+        "Emma Söderberg",
+        "Luke Church",
+        "Michal Sipko",
+        "Alberto Bacchelli"
+      ],
+      "year": 2018,
+      "venue": "ICSE SEIP",
+      "doi": "10.1145/3183519.3183525",
+      "canonical_url": "https://research.google/pubs/modern-code-review-a-case-study-at-google/",
+      "source_type": "peer-reviewed-paper",
+      "authority_tier": "A",
+      "primary_secondary": "primary",
+      "retrieved_at": "2026-10-26",
+      "license": null,
+      "repository": null,
+      "inspected_commit": null,
+      "paper_version_used": "ICSE-SEIP 2018 author manuscript, 10 pages",
+      "claim_references": [
+        "claim:review:003"
+      ],
+      "previous_status": "SOURCE_VERIFIED",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "reason": "Primary content inspected at listed locators; not merely a webpage existence check.",
+      "missing": []
+    },
+    {
+      "id": "project:reviewdog",
+      "path": "sources/code-review/reviewdog.yaml",
+      "title": "reviewdog",
+      "authors": [
+        "reviewdog contributors"
+      ],
+      "year": 2015,
+      "venue": null,
+      "doi": null,
+      "canonical_url": "https://github.com/reviewdog/reviewdog",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "primary_secondary": "primary-repository",
+      "retrieved_at": "2026-10-26",
+      "license": "MIT",
+      "repository": "https://github.com/reviewdog/reviewdog",
+      "inspected_commit": null,
+      "paper_version_used": null,
+      "claim_references": [
+        "claim:review:001"
+      ],
+      "previous_status": "SOURCE_VERIFIED",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "reason": "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content review.",
+      "missing": [
+        "inspected commit and pinned license review"
+      ]
+    },
+    {
+      "id": "project:harden-runner",
+      "path": "sources/security/harden-runner.yaml",
+      "title": "StepSecurity Harden-Runner",
+      "authors": [
+        "StepSecurity contributors"
+      ],
+      "year": 2021,
+      "venue": null,
+      "doi": null,
+      "canonical_url": "https://github.com/step-security/harden-runner",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "primary_secondary": "primary-repository",
+      "retrieved_at": "2026-10-26",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/step-security/harden-runner",
+      "inspected_commit": null,
+      "paper_version_used": null,
+      "claim_references": [
+        "claim:security:002"
+      ],
+      "previous_status": "SOURCE_VERIFIED",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "reason": "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content review.",
+      "missing": [
+        "inspected commit and pinned license review"
+      ]
+    },
+    {
+      "id": "project:openssf-scorecard",
+      "path": "sources/security/scorecard.yaml",
+      "title": "OpenSSF Scorecard",
+      "authors": [
+        "OpenSSF contributors"
+      ],
+      "year": 2020,
+      "venue": null,
+      "doi": null,
+      "canonical_url": "https://github.com/ossf/scorecard",
+      "source_type": "reference-implementation",
+      "authority_tier": "B",
+      "primary_secondary": "primary-repository",
+      "retrieved_at": "2026-10-26",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/ossf/scorecard",
+      "inspected_commit": null,
+      "paper_version_used": null,
+      "claim_references": [
+        "claim:security:003"
+      ],
+      "previous_status": "SOURCE_VERIFIED",
+      "status": "SOURCE_PARTIALLY_VERIFIED",
+      "reason": "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content review.",
+      "missing": [
+        "inspected commit and pinned license review"
+      ]
+    }
+  ]
+}

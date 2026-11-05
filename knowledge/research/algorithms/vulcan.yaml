@@ -1,0 +1,79 @@
+name: vulcan
+family: program-reduction
+original_sources:
+  - paper:xu-2023-vulcan
+source_version: Published April 2023 manuscript, 29 pages
+evidence_locators:
+  - Sections 1–4 transformations/framework
+  - Section 5 evaluation
+  - Section 8 conclusion
+problem: A reducer can stop at a large 1-minimal result relative to its limited transformation vocabulary.
+input: Program, grammar, main language-agnostic reducer and property oracle.
+output: Further reduced program preserving the observed property.
+algorithm: Alternate the main reducer with identifier replacement, subtree replacement and tree-based local exhaustive
+  enumeration to expose new reduction opportunities.
+pseudocode: |
+  P=main_reduce(P,property)
+  repeat within search budget:
+    generate auxiliary grammar-guided transformations
+    verify property for transformed candidates
+    apply main reducer to accepted candidates
+    retain improving reduced result
+  return best property-preserving result
+pseudocode_scope: Original paraphrase for research; use cited full algorithm before implementing a reproduction.
+complexity: Transformation search adds oracle/time cost; local exhaustive enumeration can be expensive. No global minimum bound.
+oracle_calls: Only executable property outcomes accept candidates; do not count probability/structure/LLM advice as a
+  successful test.
+termination: Bound auxiliary search and stop when the configured framework makes no further progress; schematic
+  pseudocode is not a reproduction specification.
+correctness_scope: 1-minimality is relative to available moves. Transformations can escape that local minimum; only
+  property tests accept outputs.
+assumptions:
+  - usable grammar and serializer
+  - stable property test
+  - bounded transformation search
+limitations:
+  - Auxiliary outputs must be no larger than their input; equal-size transformations may expose new reductions
+  - No semantic-equivalence or global-minimum proof
+  - C/Rust/SMT-LIBv2 evaluation is not a safe PR-removal benchmark
+failure_modes:
+  - unstable or insufficient oracle
+  - invalid serialization
+  - unsupported domain transfer
+patchdiet_current_state: Existing runtime preserved; this correction adds no runtime strategy.
+patchdiet_gap: No controlled PatchDiet comparison establishes benefit.
+patchdiet_mapping: Study search-space expansion only; PatchDiet must not transform source code merely to make tests pass.
+recommended_use: RESEARCH_ONLY until independently reviewed and benchmarked.
+not_recommended_for: Automatic removal authority or semantic correctness claims.
+tests_required:
+  - property polarity adapter
+  - inconclusive oracle
+  - deterministic reconstruction
+  - budget exit does not claim minimality
+benchmark_metrics:
+  - Removal Precision
+  - Removal Recall
+  - oracle calls
+  - runtime
+  - final verification
+  - hidden regression rate
+status: RESEARCH_ONLY
+independent_review: PENDING
+source_evaluation: Published evaluation compares sizes and costs with Perses and additional reduction of C-Reduce
+  outputs; extra search can improve size at increased cost.
+size_contract: Original section 3 requires auxiliary outputs <= input size and main reducer outputs smaller or
+  identical. Size-increasing loop unrolling is an LPR example, not the Vulcan framework contract.
+id: vulcan
+claims:
+  - claim:vulcan:001
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: No new research-derived runtime work is authorized; no adoption ticket required.
+  D7: Research card only; pre-existing runtime is covered separately by the fresh regression.

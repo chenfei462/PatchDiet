@@ -1,0 +1,74 @@
+id: paper:google-modern-code-review-2018
+title: "Modern Code Review: A Case Study at Google"
+source_type: peer-reviewed-paper
+authority_tier: A
+year: 2018
+venue: ICSE SEIP
+canonical_url: https://research.google/pubs/modern-code-review-a-case-study-at-google/
+retrieved_at: 2026-10-26
+authors:
+  - Caitlin Sadowski
+  - Emma Söderberg
+  - Luke Church
+  - Michal Sipko
+  - Alberto Bacchelli
+topics:
+  - code-review
+  - review-tooling
+problem:
+  summary: Examines modern code review practices, motivations, and challenges at Google.
+technique:
+  summary: Interviews, survey responses, and review-log analysis across millions of changes.
+validated_on:
+  - Google Research publication page
+claims:
+  - claim:review:003
+assumptions:
+  - Google's process is a case study
+  - not a universal product requirement
+limitations:
+  - organizational scale and tooling differ from PatchDiet users
+patchdiet_relevance:
+  modules:
+    - packages/report/src
+    - packages/github-app/src
+  relevance: medium
+license_review:
+  status: paper metadata only
+  code_copy_allowed: false
+status:
+  source_verified: true
+  distilled: false
+  decision: RESEARCH_ONLY
+paper_version_used: ICSE-SEIP 2018 author manuscript, 10 pages
+inspection:
+  retrieved_at: 2026-10-26
+  url: https://storage.googleapis.com/gweb-research2023-media/pubtools/4476.pdf
+  locators:
+    - Title page, abstract, DOI; interviews/survey/logs describe Google practices
+  scope: Only recorded, bounded claims; independent review pending
+doi: 10.1145/3183519.3183525
+primary_secondary: primary
+verification_status: SOURCE_VERIFIED_PRIMARY
+provenance_audit:
+  ticket: PD-R100
+  previous_status: SOURCE_VERIFIED
+  previous_pin: null
+  reason: Primary content inspected at listed locators; not merely a webpage existence check.
+  historical_record: reports/PRE_CORRECTION_RECORDS.json
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D7: Source distillation introduces no implementation in this phase; historical runtime regression is recorded
+    separately. This is not an adoption claim.
+  D6: Research-only provenance/source review; no runtime adoption ticket is required.
+ticket_refs:
+  - PD-R100
+  - PD-R101
+  - PD-R159

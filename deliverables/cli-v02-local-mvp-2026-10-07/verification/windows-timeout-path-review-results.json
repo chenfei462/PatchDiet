@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-06T15:34:48.225Z",
+  "implementation": "D:\\systemDir\\Desktop\\PatchDiet",
+  "root": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-timeout-path-review-MD5f1n",
+  "verdict": {
+    "timedOut": true,
+    "durationMs": 969,
+    "failureKind": "timeout"
+  },
+  "descendantAliveAtReturn": false,
+  "status": "passed",
+  "cleanup": "absolute taskkill against only the PID written by this newly owned helper"
+}

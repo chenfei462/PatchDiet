@@ -1,0 +1,71 @@
+{
+  "id": "project:wdd-artifact",
+  "retrieved_at": "2026-10-27",
+  "scope": "Fresh primary source and repository inspection; no experiments, container pull, execution, archive import or runtime changes.",
+  "github": {
+    "repository": "https://github.com/weightdd/WeightDD",
+    "inspected_commit": "4a6cdd00f3f136867f23f76057a7104961c2e8e4",
+    "commit_date": "2025-12-08T21:57:06Z",
+    "tree_sha": "4a6cdd00f3f136867f23f76057a7104961c2e8e4",
+    "tree_truncated": false,
+    "root_license_paths": [],
+    "nested_license_paths": [
+      "xml_benchmarks/lib/xmlresolver-5.2.0/notices/LICENSE"
+    ],
+    "status": "SOURCE_PARTIALLY_VERIFIED"
+  },
+  "zenodo": {
+    "pinned_record": "14270380",
+    "pinned_doi": "10.5281/zenodo.14270380",
+    "pinned_version": "v1",
+    "latest_record": "14301983",
+    "latest_version": "v2",
+    "v1_archive_checksum": "md5:5fb52bbe1e42a8b13eaf6f1be579e6c8",
+    "v2_archive_checksum": "md5:2de412c8ba298e7ff861b2e293e11d11",
+    "license_declaration": "cc-by-4.0",
+    "separate_license_text": "GPL v3",
+    "applicability": "UNRESOLVED_FOR_CODE_REUSE",
+    "metadata_policy_primary": "https://about.zenodo.org/terms/"
+  },
+  "container": {
+    "reference": "wddartifact/wdd:latest",
+    "digest": null,
+    "status": "REPRODUCTION_LIMITATION",
+    "primary_readme": "https://github.com/weightdd/WeightDD/blob/4a6cdd00f3f136867f23f76057a7104961c2e8e4/README.md",
+    "attempts": [
+      {
+        "url": "https://hub.docker.com/r/wddartifact/wdd/tags",
+        "result": "Web tool inaccessible"
+      },
+      {
+        "url": "https://hub.docker.com/v2/repositories/wddartifact/wdd/tags/latest",
+        "result": "curl TLS schannel handshake failure"
+      }
+    ],
+    "historical_paper_image_identity": "NOT_ESTABLISHED"
+  },
+  "captured_files": [
+    {
+      "path": "evidence/repositories/wdd-github-commit-2026-10-27.json",
+      "sha256": "c9c8fe4e6f9176272b60c12081cba2fdf350a4d1a3ec283209a4d02102811b32"
+    },
+    {
+      "path": "evidence/repositories/wdd-github-tree-2026-10-27.json",
+      "sha256": "cf942416d2bcf015edf713a76b9e99eb5d3e484d6aeb4a8af891ea37c8be90c4"
+    },
+    {
+      "path": "evidence/repositories/wdd-zenodo-v1-2026-10-27.json",
+      "sha256": "adecae2fd35ac342f77c842b847a6043df5accc9ee976ce823cea51c093db264"
+    },
+    {
+      "path": "evidence/repositories/wdd-zenodo-latest-check-2026-10-27.json",
+      "sha256": "7f5427f9d536f4ce8654a1bccae2c7be0615e07b5ccc776df25a5d3cafad3196"
+    },
+    {
+      "path": "evidence/repositories/wdd-zenodo-LICENSE-2026-10-27.txt",
+      "sha256": "8b1ba204bb69a0ade2bfcf65ef294a920f6bb361b317dba43c7ef29d96332b9b"
+    }
+  ],
+  "disposition": "RESEARCH_ONLY_WITH_EXPLICIT_LICENSE_AND_REPRODUCTION_LIMITATIONS",
+  "experiments_authorized": false
+}

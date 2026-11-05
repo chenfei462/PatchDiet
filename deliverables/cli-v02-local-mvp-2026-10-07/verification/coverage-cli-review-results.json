@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-06T15:34:49.014Z",
+  "implementation": "D:\\systemDir\\Desktop\\PatchDiet",
+  "root": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-coverage-cli-review-lun6X6",
+  "results": [
+    {
+      "name": "public index CLI ingests bounded per-test coverage without source changes",
+      "status": "passed"
+    }
+  ]
+}

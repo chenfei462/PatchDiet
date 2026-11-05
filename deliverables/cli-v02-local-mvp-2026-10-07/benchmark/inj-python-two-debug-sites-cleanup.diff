@@ -1,0 +1,9 @@
+diff --git a/src/total.py b/src/total.py
+index 2d1b28c..369131d 100644
+--- a/src/total.py
++++ b/src/total.py
+@@ -1,2 +1,3 @@
+ def total(n):
+-    return n
++
++    return n * 2

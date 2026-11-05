@@ -1,0 +1,66 @@
+name: syntax-guided-reduction
+family: syntax-aware-program-reduction
+original_sources:
+  - paper:perses-icse-2018
+  - project:tree-sitter
+problem: Avoid candidates that cannot be parsed or violate grammar-level invariants.
+input: Parsed syntax tree or CST, reduction atoms, executable oracle.
+output: Syntax-valid candidate patches accepted by the oracle.
+algorithm: Choose removable syntax atoms, rebuild the source, reject parse-invalid candidates before oracle execution,
+  then verify accepted candidates.
+pseudocode: |
+  for atom in syntax_atoms:
+    candidate = rebuild_without(atom)
+    if parse(candidate) has fatal errors: continue
+    if oracle(candidate) == PASS: keep removal
+  return source
+complexity: O(a * (parse_cost + oracle_cost)) for a atoms; oracle dominates when tests are expensive.
+oracle_calls: One executable oracle call for each parse-valid candidate, with cache keyed by content and context.
+termination: Atom list exhausted or budget reached.
+correctness_scope: Syntax validity plus configured oracle outcome; no semantic equivalence guarantee.
+assumptions:
+  - parser grammar
+  - stable source reconstruction
+failure_modes: &a1
+  - error-tolerant parser ambiguity
+  - hidden generated files
+  - parser/runtime drift
+known_variants:
+  - Perses Normal Form
+  - AST shrinking
+  - grammar-aware ddmin
+patchdiet_current_state: Tree-sitter-related atomization and AST shrink files are present.
+patchdiet_gap: Current workload evidence does not quantify parse filtering versus oracle overhead.
+recommended_use: Keep as an opt-in candidate generator and benchmark.
+not_recommended_for: Allowing parser success to bypass verification.
+tests_required:
+  - syntax invalid candidate
+  - comment/string preservation
+  - parse-valid candidate
+  - oracle failure
+benchmark_metrics:
+  - parse rejection rate
+  - oracle calls
+  - reduction size
+  - precision
+status: NOT_VERIFIED
+independent_review: PENDING
+id: syntax-guided-reduction
+claims:
+  - claim:perses:001
+  - claim:perses:002
+  - claim:treesitter:001
+limitations: *a1
+patchdiet_mapping: Tree-sitter-related atomization and AST shrink files are present.
+distillation_gates:
+  D1_SOURCE_VERIFIED: FAIL
+  D2_CLAIMS_EXTRACTED: FAIL
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: No new research-derived runtime work is authorized; no adoption ticket required.
+  D7: Research card only; pre-existing runtime is covered separately by the fresh regression.
+  D1: Algorithm-specific primary distillation has not been independently established; this schematic remains quarantined.

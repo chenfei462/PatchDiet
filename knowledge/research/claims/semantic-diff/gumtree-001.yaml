@@ -1,0 +1,21 @@
+id: claim:gumtree:001
+statement: GumTree provides syntax-aware differencing that can represent moved or renamed elements in addition to
+  insertions and deletions.
+source:
+  id: project:gumtree
+  locators:
+    - Pinned README in evidence/repositories/project-gumtree.readme.txt
+evidence_type: project-documentation
+scope: scope
+assumptions:
+  - compatible language frontend and parser input
+limitations:
+  - A detected structural match is not semantic equivalence
+  - No measured PatchDiet precision, recall or integration benefit
+patchdiet_mapping:
+  affected_components:
+    - packages/core/src/insights.ts
+  mapping: Advisory structural evidence only; no deletion authority
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

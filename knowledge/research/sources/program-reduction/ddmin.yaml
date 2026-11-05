@@ -1,0 +1,59 @@
+id: paper:zeller-hildebrandt-2002-ddmin
+title: Simplifying and Isolating Failure-Inducing Input
+authors:
+  - Andreas Zeller
+  - Ralf Hildebrandt
+year: 2002
+venue: IEEE Transactions on Software Engineering 28(2), 183–200
+doi: 10.1109/32.988498
+canonical_url: https://doi.org/10.1109/32.988498
+source_type: peer-reviewed-paper
+authority_tier: A
+primary_secondary: primary
+retrieved_at: 2026-10-26
+paper_version_used: TSE February 2002 author manuscript, 17 pages; university-hosted copy
+inspection:
+  url: https://www.cs.toronto.edu/~chechik/courses18/csc410/delta-debugging.pdf
+  locators:
+    - Definitions 8–10
+    - Figure 5
+    - Propositions 11–13
+    - Figure 15 and section V
+  retrieved_at: 2026-10-26
+verification_status: SOURCE_VERIFIED_PRIMARY
+claims:
+  - claim:ddmin:001
+assumptions:
+  - stable test outcomes
+  - finite atomization
+  - test(empty)=PASS and test(initial)=FAIL
+  - each oracle execution terminates
+limitations:
+  - Not subset-minimal for non-monotone tests
+  - Not globally minimum-size
+  - No semantic equivalence proof
+  - Budgeted/flaky execution cannot inherit completed-run guarantee
+patchdiet_relevance:
+  relevance: high
+  mapping: Benchmark reference only. Paper FAIL (interesting failure reproduced) maps to PatchDiet candidate checks PASS
+    (required behavior retained), via an explicit adapter.
+status:
+  source_verified: true
+  distilled: false
+  decision: RESEARCH_ONLY
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: Research-only source; no runtime adoption or implementation ticket is authorized.
+  D7: No research-derived implementation is introduced by this source-verification phase.
+ticket_refs:
+  - PD-R100
+  - PD-R101
+  - PD-R102
+  - PD-R159

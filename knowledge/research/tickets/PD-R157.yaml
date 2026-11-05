@@ -1,0 +1,23 @@
+id: PD-R157
+title: PR/Git/Security Source Verification
+status: IN_PROGRESS
+research_basis:
+  sources:
+    - project:pr-agent
+    - project:alibaba-open-code-review
+    - project:danger-js
+    - project:libgit2
+    - project:gitoxide
+    - standard:openssf-baseline-current
+  claims: []
+decision: RESEARCH_ONLY
+automatic_removal_authority: false
+implementation: Research provenance, source/claim/license/data-use and validator evidence only. No runtime adoption or experiments.
+acceptance_criteria:
+  - Primary evidence and limitations recorded separately
+  - D1-D7 explicitly consistent
+  - Independent review V2 assesses remaining blockers
+acceptance_evidence:
+  - reports/RESEARCH_GATE_STATUS.md
+  - reports/RESEARCH_INTEGRITY_VALIDATION.json
+independent_review: PENDING

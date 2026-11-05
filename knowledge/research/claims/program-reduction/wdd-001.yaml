@@ -1,0 +1,29 @@
+id: claim:wdd:001
+statement: WDD uses fragment sizes to alter partitioning/modeling; Wddmin is not ordinary ddmin preceded by a
+  weight sort.
+source:
+  id: paper:zhou-2025-wdd
+  locators:
+    - Sections III–V
+    - Algorithm 1 weightedPartition and ensureOneMinimal
+    - Section VI, Table I
+evidence_type: peer-reviewed-paper
+scope: program-reduction
+assumptions:
+  - positive size weights
+  - stable oracle
+  - faithful fragment reconstruction
+limitations:
+  - Fragment-size correlation is empirical, not causal proof
+  - Risk, test-cost and scope-confidence weights are PatchDiet hypotheses, not the paper algorithm
+  - Reported C/XML gains do not transfer automatically
+patchdiet_mapping:
+  mapping: AST-size weights are a plausible experiment; risk/test-cost/scope weights require separate evidence.
+  affected_components:
+    - packages/core/src/reducer.ts
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: RECHECKED_PRIMARY_REVIEW_PENDING
+verified_at: 2026-10-27
+artifact_scope: Claim rests on the paper algorithm; it does not assert artifact licensing, reproduction, or
+  PatchDiet performance.

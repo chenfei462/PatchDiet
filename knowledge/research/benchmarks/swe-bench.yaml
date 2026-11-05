@@ -1,0 +1,27 @@
+name: SWE-bench
+source: benchmark:swe-bench
+task_shape: issue, base commit, agent patch, environment, and grading tests
+ground_truth: patch solves the issue under the benchmark tests; this is distinct from necessary/unnecessary cleanup labels
+contamination_limits: record task retrieval date, repository commit, and hidden test provenance
+patchdiet_use: borrow reproducible task bundle and environment isolation; report cleanup metrics separately
+metrics:
+  - final validation pass rate
+  - hidden regression rate
+  - runtime
+status: DISTILLED
+id: swe-bench
+claims:
+  - claim:swebench:001
+limitations: record task retrieval date, repository commit, and hidden test provenance
+patchdiet_mapping: borrow reproducible task bundle and environment isolation; report cleanup metrics separately
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: No new research-derived runtime work is authorized; no adoption ticket required.
+  D7: Research card only; pre-existing runtime is covered separately by the fresh regression.

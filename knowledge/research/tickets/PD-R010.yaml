@@ -1,0 +1,18 @@
+id: PD-R010
+title: Evaluate semantic change evidence adapters
+research_basis:
+  sources: [project:gumtree, project:refactoringminer, project:tree-sitter]
+  claims: [claim:treesitter:001]
+problem: Textual size does not always match structural change size.
+current_repo_evidence: packages/core/src/diff.ts and insights.ts expose textual and lightweight evidence.
+proposed_change: Prototype an adapter or fixture corpus for rename, move, extract, inline, and API changes.
+files_likely_affected: [packages/core/src/insights.ts, benchmarks, knowledge/research/adr/ADR-SEMANTIC-CHANGE-001.md]
+implementation_steps: [define vocabulary, build labeled fixtures, measure matcher precision and runtime, decide]
+safety_invariants: [semantic evidence is advisory and cannot authorize deletion]
+tests: [semantic fixture parser tests]
+benchmark: [matching precision, runtime, semantic change reduction, review effort]
+acceptance_criteria: [ADR updated with measured decision]
+dependencies: [PD-R001]
+complexity: high
+do_not_change: [Git fidelity contract]
+status: RESEARCH_ONLY

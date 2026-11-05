@@ -1,0 +1,20 @@
+diff --git a/src/other.js b/src/other.js
+index 0f097b3..dbd3464 100644
+--- a/src/other.js
++++ b/src/other.js
+@@ -1,3 +1,4 @@
+ export function other() {
++  console.error('debug-other');
+   return 1;
+ }
+diff --git a/src/total.js b/src/total.js
+index 02da81c..be549ca 100644
+--- a/src/total.js
++++ b/src/total.js
+@@ -1 +1,5 @@
+-export function total(n) { return n; }
++export function total(n) {
++  const trace = {n};
++  console.error('injected-debug', trace);
++  return n * 2;
++}

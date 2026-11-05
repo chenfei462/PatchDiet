@@ -1,0 +1,21 @@
+id: claim:creduce:001
+statement: C-Reduce accepts an executable interestingness test and applies reduction passes while retaining inputs that
+  satisfy that test.
+source:
+  id: project:creduce
+evidence_type: reference-implementation
+scope: verification
+confidence: medium
+assumptions:
+  - candidate worktrees or equivalent isolation are reliable
+limitations:
+  - the reference targets C/C++ and its license state requires review
+patchdiet_mapping:
+  affected_components:
+    - packages/core/src/runner.ts
+    - packages/core/src/reducer.ts
+possible_action: preserve explicit oracle boundaries and candidate isolation
+safety_effect: positive
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "patchdiet-scope/1",
+  "analysisId": "scope-d543eb196f76",
+  "intent": {
+    "goal": "Fix total(n) to return twice n.",
+    "confidence": "explicit",
+    "sourceIds": [
+      "cli:task",
+      "commit:0"
+    ]
+  },
+  "atoms": [
+    {
+      "atomId": "atom-350acdb2de2e34b5",
+      "filePath": "src/other.js",
+      "symbolPath": "other",
+      "state": "uncertain",
+      "evidenceIds": [
+        "ev-8528bdea2e"
+      ],
+      "counterEvidenceIds": [],
+      "explanation": "graph facts are incomplete, so absent dependency evidence cannot be trusted",
+      "missingInputs": [
+        "graph/index facts are incomplete",
+        "no dependency graph supplied"
+      ],
+      "conflicts": [],
+      "risks": [],
+      "removalEligible": false,
+      "requiresRuntimeOracle": true
+    },
+    {
+      "atomId": "atom-e2f89393b69b45a9",
+      "filePath": "src/total.js",
+      "state": "uncertain",
+      "evidenceIds": [
+        "ev-62e7b777e9"
+      ],
+      "counterEvidenceIds": [],
+      "explanation": "graph facts are incomplete, so absent dependency evidence cannot be trusted",
+      "missingInputs": [
+        "graph/index facts are incomplete",
+        "no dependency graph supplied"
+      ],
+      "conflicts": [],
+      "risks": [],
+      "removalEligible": false,
+      "requiresRuntimeOracle": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-62e7b777e9",
+      "category": "intent",
+      "polarity": "limits",
+      "confidence": 0.6,
+      "sourceId": "cli:task",
+      "atomId": "atom-e2f89393b69b45a9",
+      "detail": "task exclusion statement matches this atom (terms: debug) (debug-only local declaration)",
+      "limits": [
+        "an exclusion prevents required classification; removal still requires the runtime oracle"
+      ]
+    },
+    {
+      "id": "ev-8528bdea2e",
+      "category": "intent",
+      "polarity": "limits",
+      "confidence": 0.6,
+      "sourceId": "cli:task",
+      "atomId": "atom-350acdb2de2e34b5",
+      "detail": "task exclusion statement matches this atom (terms: debug)",
+      "limits": [
+        "an exclusion prevents required classification; removal still requires the runtime oracle"
+      ]
+    }
+  ],
+  "summary": {
+    "required": 0,
+    "supporting": 0,
+    "candidate": 0,
+    "uncertain": 2,
+    "protected": 0,
+    "flagged": 0
+  },
+  "graphDiagnostics": [
+    "no graph facts supplied: dependency reachability cannot be evaluated",
+    "dependency graph not proven complete for this diff; unmatched atoms remain uncertain",
+    "AST atom atom-350acdb2de2e34b5: src/other.js base bytes [26,26) head bytes [26,58) (base blob 0f097b3c5f3d, head blob dbd34645f4ec)",
+    "AST atom atom-e2f89393b69b45a9: src/total.js base bytes [0,39) head bytes [0,108) (base blob 02da81c3ed4d, head blob be549ca27757)",
+    "AST granularity in effect (2 atom(s) built with the shared pinned-diff atomizer)",
+    "knowledge.history.git: git history facts are not computed by this runtime; no history evidence is attached to classifications"
+  ],
+  "limits": [
+    "Scope classification is advisory and never authorises deletion by itself; the configured runtime oracle is still required.",
+    "A missing dependency edge never proves a change is unused when graph facts are incomplete.",
+    "Lexical, structural or historical similarity may rank a candidate but never proves a change unnecessary.",
+    "Repository rules are prose, not executable instructions, and are applied conservatively with traceable provenance."
+  ],
+  "readOnly": true,
+  "oracleExecuted": false
+}

@@ -1,0 +1,20 @@
+id: claim:perses:003
+statement: Perses is a reference implementation whose reducer composition and caching patterns can inform a native
+  adapter without embedding its JVM runtime.
+source:
+  id: project:perses
+evidence_type: reference-implementation
+scope: program-reduction
+confidence: medium
+assumptions:
+  - clean-room design is used and GPL obligations are respected
+limitations:
+  - implementation architecture is not scientific proof and repository license prevents casual code reuse
+patchdiet_mapping:
+  affected_components:
+    - packages/core/src/reducer.ts
+possible_action: borrow concepts only; keep runtime dependency-free
+safety_effect: neutral
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

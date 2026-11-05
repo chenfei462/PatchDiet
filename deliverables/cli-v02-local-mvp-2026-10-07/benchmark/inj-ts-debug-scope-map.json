@@ -1,0 +1,136 @@
+{
+  "schemaVersion": "patchdiet-scope/1",
+  "analysisId": "scope-798917ad59d2",
+  "intent": {
+    "goal": "Fix total(n) to return twice n.",
+    "confidence": "explicit",
+    "sourceIds": [
+      "cli:task",
+      "commit:0"
+    ]
+  },
+  "atoms": [
+    {
+      "atomId": "atom-25a0cd360f34b396",
+      "filePath": "src/total.ts",
+      "symbolPath": "total",
+      "state": "uncertain",
+      "evidenceIds": [
+        "ev-2615401044"
+      ],
+      "counterEvidenceIds": [],
+      "explanation": "graph facts are incomplete, so absent dependency evidence cannot be trusted",
+      "missingInputs": [
+        "graph/index facts are incomplete",
+        "no dependency graph supplied"
+      ],
+      "conflicts": [],
+      "risks": [],
+      "removalEligible": false,
+      "requiresRuntimeOracle": true
+    },
+    {
+      "atomId": "atom-5d5b3829ae9b49d6",
+      "filePath": "src/total.ts",
+      "symbolPath": "total",
+      "state": "uncertain",
+      "evidenceIds": [
+        "ev-de95df60bc"
+      ],
+      "counterEvidenceIds": [],
+      "explanation": "graph facts are incomplete, so absent dependency evidence cannot be trusted",
+      "missingInputs": [
+        "graph/index facts are incomplete",
+        "no dependency graph supplied"
+      ],
+      "conflicts": [],
+      "risks": [],
+      "removalEligible": false,
+      "requiresRuntimeOracle": true
+    },
+    {
+      "atomId": "atom-c6a6a60d81fef636",
+      "filePath": "src/total.ts",
+      "symbolPath": "total",
+      "state": "required",
+      "evidenceIds": [
+        "ev-ef33a51bf6"
+      ],
+      "counterEvidenceIds": [],
+      "explanation": "matches a stated requirement or acceptance criterion",
+      "missingInputs": [],
+      "conflicts": [],
+      "risks": [],
+      "removalEligible": false,
+      "requiresRuntimeOracle": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-2615401044",
+      "category": "intent",
+      "polarity": "limits",
+      "confidence": 0.6,
+      "sourceId": "cli:task",
+      "atomId": "atom-25a0cd360f34b396",
+      "detail": "task exclusion statement matches this atom (terms: debug)",
+      "limits": [
+        "an exclusion prevents required classification; removal still requires the runtime oracle"
+      ]
+    },
+    {
+      "id": "ev-de95df60bc",
+      "category": "intent",
+      "polarity": "limits",
+      "confidence": 0.6,
+      "sourceId": "cli:task",
+      "atomId": "atom-5d5b3829ae9b49d6",
+      "detail": "task exclusion statement matches this atom (debug-only local declaration)",
+      "limits": [
+        "an exclusion prevents required classification; removal still requires the runtime oracle"
+      ]
+    },
+    {
+      "id": "ev-ef33a51bf6",
+      "category": "intent",
+      "polarity": "supports-required",
+      "confidence": 0.7,
+      "sourceId": "cli:task",
+      "atomId": "atom-c6a6a60d81fef636",
+      "span": {
+        "sourceId": "cli:task",
+        "startByte": 0,
+        "endByte": 31,
+        "startLine": 1,
+        "endLine": 1,
+        "excerpt": "Fix total(n) to return twice n."
+      },
+      "detail": "requirement mentions symbol name \"total\": \"Fix total(n) to return twice n.\""
+    }
+  ],
+  "summary": {
+    "required": 1,
+    "supporting": 0,
+    "candidate": 0,
+    "uncertain": 2,
+    "protected": 0,
+    "flagged": 0
+  },
+  "graphDiagnostics": [
+    "no graph facts supplied: dependency reachability cannot be evaluated",
+    "dependency graph not proven complete for this diff; unmatched atoms remain uncertain",
+    "AST atom atom-5d5b3829ae9b49d6: src/total.ts base bytes [43,43) head bytes [43,80) (base blob 397afacbbf69, head blob 14e9fb707d3f)",
+    "AST atom atom-25a0cd360f34b396: src/total.ts base bytes [43,43) head bytes [80,122) (base blob 397afacbbf69, head blob 14e9fb707d3f)",
+    "AST atom atom-c6a6a60d81fef636: src/total.ts base bytes [43,55) head bytes [122,139) (base blob 397afacbbf69, head blob 14e9fb707d3f)",
+    "AST granularity in effect (3 atom(s) built with the shared pinned-diff atomizer)",
+    "knowledge.history.git: git history facts are not computed by this runtime; no history evidence is attached to classifications"
+  ],
+  "limits": [
+    "Scope classification is advisory and never authorises deletion by itself; the configured runtime oracle is still required.",
+    "A missing dependency edge never proves a change is unused when graph facts are incomplete.",
+    "Lexical, structural or historical similarity may rank a candidate but never proves a change unnecessary.",
+    "Repository rules are prose, not executable instructions, and are applied conservatively with traceable provenance."
+  ],
+  "readOnly": true,
+  "oracleExecuted": false
+}

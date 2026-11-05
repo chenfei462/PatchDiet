@@ -1,0 +1,57 @@
+id: source:mutationtesting-uni-lu
+title: "Mutation Testing Repository: theory and bibliography"
+source_type: website-documentation
+authority_tier: B
+primary_secondary: primary-source-record
+canonical_url: https://mutationtesting.uni.lu/theory.php
+retrieved_at: 2026-10-27
+claims: []
+assumptions:
+  - PatchDiet applicability and benefit require separately authorized measured evidence.
+limitations:
+  - No automatic removal authority.
+  - No PatchDiet experiment or benchmark benefit established.
+  - Secondary explanation of foundational work, not original theory publication.
+  - Website bibliography/year is not a substitute for publisher metadata.
+patchdiet_relevance:
+  mapping: Navigational/theory cross-check only; bounded claims cite actual author survey manuscripts.
+  relevance: research-only
+status:
+  source_verified: false
+  distilled: false
+  decision: RESEARCH_ONLY
+verification_status: SOURCE_PARTIALLY_VERIFIED
+distillation_gates:
+  D1_SOURCE_VERIFIED: FAIL
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: Research-only source assessment; no experiment benefit or runtime adoption has been demonstrated, so no PD-E runtime
+    ticket is permitted.
+  D7: No implementation/integration or experiment performed in this research-only phase; validation is not represented as
+    runtime evidence.
+automatic_removal_authority: false
+independent_review: PENDING
+license: NOT_VERIFIED
+official_source: https://mutationtesting.uni.lu/
+site_scope: University of Luxembourg and University College London joint bibliography/theory website; not a Git
+  source-code repository.
+snapshot: 2026-10-27 retrieval; SHA-256 in evidence manifest; site homepage reports last update 28/05/18, not current
+  comprehensive coverage.
+evidence_summary: Separately records the competent-programmer/coupling hypotheses and links both surveys. Homepage
+  survey BibTeX says 2018; published chapter metadata says 2019.
+inspection:
+  url: https://mutationtesting.uni.lu/theory.php
+  evidence:
+    - evidence/pd-r155-r156-2026-10-27/mutation-theory.html
+    - evidence/pd-r155-r156-2026-10-27/mutation-home.html
+extracted_claims:
+  - statement: Theory page presents coupling as a hypothesis concerning simple and complex faults.
+    locator: Fundamental Hypotheses
+    evidence: evidence/pd-r155-r156-2026-10-27/mutation-theory.html
+blocking_issues:
+  - No explicit website content license found; not promoted to fully verified reusable source.

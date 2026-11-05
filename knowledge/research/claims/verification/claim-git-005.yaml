@@ -1,0 +1,16 @@
+id: claim:git:005
+statement: Git filemodify mode 120000 identifies a symbolic link whose blob stores its target; mode 160000 identifies a
+  gitlink pointing to a commit in another repository.
+source:
+  id: standard:git-fast-import
+  locators:
+    - INPUT FORMAT / commit / filemodify
+evidence_type: normative-documentation
+scope: git-fidelity
+limitations:
+  - Normative representation and transport only; no behavioral equivalence or removal authority.
+patchdiet_mapping:
+  mapping: mappings/git-diff-support-matrix.md; parser/serializer and metadata human-review boundaries
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

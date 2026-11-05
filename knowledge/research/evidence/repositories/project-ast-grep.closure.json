@@ -1,0 +1,74 @@
+{
+  "id": "project:ast-grep",
+  "retrieved_at": "2026-10-27",
+  "captured_at_utc": "2026-10-27T16:48:48.127832+00:00",
+  "repository": "https://github.com/ast-grep/ast-grep",
+  "default_branch": "main",
+  "inspected_commit": "461e7d35ae4d18cb09de63fe43ecc0215ae99c04",
+  "commit_date": "2026-10-26T17:13:14Z",
+  "project_status": {
+    "archived": false,
+    "disabled": false,
+    "pushed_at": "2026-10-27T10:46:06Z",
+    "description": "\u26a1A CLI tool for code structural search, lint and rewriting. Written in Rust"
+  },
+  "api_repository_url": "https://api.github.com/repos/ast-grep/ast-grep",
+  "api_commit_url": "https://api.github.com/repos/ast-grep/ast-grep/commits/461e7d35ae4d18cb09de63fe43ecc0215ae99c04",
+  "github_license_metadata": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit",
+    "node_id": "MDc6TGljZW5zZTEz"
+  },
+  "files": {
+    "LICENSE": {
+      "url": "https://github.com/ast-grep/ast-grep/blob/461e7d35ae4d18cb09de63fe43ecc0215ae99c04/LICENSE",
+      "path": "knowledge/research/evidence/repositories/project-ast-grep.LICENSE.txt",
+      "sha256": "81471889c77b2161a3e4dcdb1b2e6ca382e485766132d92d5fe1d7497e7dd2d9",
+      "bytes": 1077
+    },
+    "README.md": {
+      "url": "https://github.com/ast-grep/ast-grep/blob/461e7d35ae4d18cb09de63fe43ecc0215ae99c04/README.md",
+      "path": "knowledge/research/evidence/repositories/project-ast-grep.README.md.txt",
+      "sha256": "c2b6f0d19696fcb6ef2a0d7711bdaf49d39cc7c9fbbf63b0a3f674eda3c2a2c7",
+      "bytes": 5689
+    }
+  },
+  "capture_errors": [
+    "LICENSE: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+    "LICENSE.md: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+    "LICENSE.txt: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+    "LICENSE-MIT: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+    "LICENSE-APACHE: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+    "COPYING: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+    "README.md: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>",
+    "LICENSE: fatal: unable to access 'https://github.com/ast-grep/ast-grep/': TLS connect error: error:0A000126:SSL routines::unexpected eof while reading\nfatal: could not fetch f15282f90a7158c2d9f1fedef55438bf9f5c37b0 from promisor remote\n",
+    "README.md: fatal: unable to access 'https://github.com/ast-grep/ast-grep/': TLS connect error: error:0A000126:SSL routines::unexpected eof while reading\nfatal: could not fetch 504d24e820e460b23fc36084f33b270737c1053d from promisor remote\n"
+  ],
+  "capture_method": "git bare shallow blob-filtered clone; git show at exact SHA; retry transient TLS failures",
+  "root_entries": [
+    ".cargo",
+    ".editorconfig",
+    ".github",
+    ".gitignore",
+    ".pre-commit-config.yaml",
+    "CHANGELOG.md",
+    "Cargo.lock",
+    "Cargo.toml",
+    "LICENSE",
+    "README.md",
+    "SECURITY.md",
+    "clippy.toml",
+    "crates",
+    "fixtures",
+    "npm",
+    "pyproject.toml",
+    "renovate.json",
+    "rust-toolchain.toml",
+    "rustfmt.toml",
+    "schemas",
+    "xtask"
+  ],
+  "temporary_bare_clone": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\pd-r153-8jg3kbve\\repo.git"
+}

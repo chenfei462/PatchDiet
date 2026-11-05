@@ -1,0 +1,200 @@
+{
+  "baseRef": "main",
+  "headRef": "agent",
+  "input": {
+    "fileCount": 2,
+    "hunkCount": 2,
+    "addedLineCount": 2,
+    "removedLineCount": 2,
+    "changedLineCount": 4
+  },
+  "output": {
+    "fileCount": 2,
+    "hunkCount": 2,
+    "addedLineCount": 2,
+    "removedLineCount": 2,
+    "changedLineCount": 4
+  },
+  "testCommand": {
+    "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"import {main} from './src/app.js'; process.exit(main(2)===20?0:1)\"",
+    "status": "passed",
+    "durationMs": 981,
+    "attempts": 1
+  },
+  "mode": "unverified",
+  "verification": {
+    "baseline": {
+      "stage": "baseline",
+      "status": "passed",
+      "commands": [
+        {
+          "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"import {main} from './src/app.js'; process.exit(main(2)===20?0:1)\"",
+          "status": "passed",
+          "durationMs": 714,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 485
+            }
+          ]
+        }
+      ],
+      "durationMs": 981,
+      "baseCommitSha": "18d416aaabeebe2997df5c2bc5cf996e9e156c22",
+      "headCommitSha": "9cbf976be8959cee96f6d155a0e19da89cea8cc8"
+    },
+    "final": {
+      "stage": "final",
+      "status": "passed",
+      "commands": [
+        {
+          "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"import {main} from './src/app.js'; process.exit(main(2)===20?0:1)\"",
+          "status": "passed",
+          "durationMs": 238,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 136
+            }
+          ]
+        }
+      ],
+      "durationMs": 668,
+      "baseCommitSha": "18d416aaabeebe2997df5c2bc5cf996e9e156c22",
+      "headCommitSha": "9cbf976be8959cee96f6d155a0e19da89cea8cc8",
+      "expectedTreeSha": "a326500a647175640ac3080c4eb6525d5ed818d9",
+      "artifactTreeSha": "a326500a647175640ac3080c4eb6525d5ed818d9",
+      "treesMatch": true
+    }
+  },
+  "reduction": {
+    "strategy": "ddmin",
+    "selectedGroupIds": [],
+    "attempts": [
+      {
+        "ids": [
+          "grp-9cd83b9e70a0"
+        ],
+        "key": "2df288551267c5a50ae5522d57283891a921cc9f8a79c7f47c9dad71c3fef24b",
+        "verdict": "FAIL",
+        "cached": false
+      },
+      {
+        "ids": [
+          "grp-single-atom-5c0165d948e61425",
+          "grp-single-atom-bae1783c1b9e0d3b"
+        ],
+        "key": "b56aaa214e2a3c4a9b099e4fa0c03368d8e65c45ee8f1321b1721e49e9d14347",
+        "verdict": "FAIL",
+        "cached": false
+      },
+      {
+        "ids": [
+          "grp-single-atom-5c0165d948e61425"
+        ],
+        "key": "189827d23fe766ad467c214267a104bfb1f4fa63d92382d1c42c3df49e2b8214",
+        "verdict": "FAIL",
+        "cached": false
+      },
+      {
+        "ids": [
+          "grp-single-atom-bae1783c1b9e0d3b"
+        ],
+        "key": "be78b4eddeedb8f570ef6371570f9279e8c10bbe62da227330e3f41756117e70",
+        "verdict": "FAIL",
+        "cached": false
+      },
+      {
+        "ids": [
+          "grp-single-atom-bae1783c1b9e0d3b"
+        ],
+        "key": "be78b4eddeedb8f570ef6371570f9279e8c10bbe62da227330e3f41756117e70",
+        "verdict": "FAIL",
+        "cached": true
+      },
+      {
+        "ids": [
+          "grp-single-atom-5c0165d948e61425"
+        ],
+        "key": "189827d23fe766ad467c214267a104bfb1f4fa63d92382d1c42c3df49e2b8214",
+        "verdict": "FAIL",
+        "cached": true
+      }
+    ],
+    "atomGranularity": "ast",
+    "dependencyGroups": [
+      {
+        "id": "grp-9cd83b9e70a0",
+        "memberIds": [
+          "atom-5c0165d948e61425",
+          "atom-bae1783c1b9e0d3b"
+        ],
+        "reasons": [
+          "call-reference"
+        ]
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "filePath": "src/app.js",
+      "hunkHeader": "ast: replace return_statement -> return_statement",
+      "category": "unknown",
+      "verdict": "needs-human-review",
+      "reason": "no passing grouped removal set was found; this candidate requires human review"
+    },
+    {
+      "filePath": "src/util.js",
+      "hunkHeader": "ast: replace return_statement -> return_statement",
+      "category": "unknown",
+      "verdict": "needs-human-review",
+      "reason": "no passing grouped removal set was found; this candidate requires human review"
+    }
+  ],
+  "removals": [],
+  "kept": [],
+  "needsHumanReview": [
+    {
+      "filePath": "src/app.js",
+      "hunkHeader": "ast: replace return_statement -> return_statement",
+      "category": "unknown",
+      "reason": "no passing grouped removal set was found; this candidate requires human review",
+      "confidence": "needs-human-review"
+    },
+    {
+      "filePath": "src/util.js",
+      "hunkHeader": "ast: replace return_statement -> return_statement",
+      "category": "unknown",
+      "reason": "no passing grouped removal set was found; this candidate requires human review",
+      "confidence": "needs-human-review"
+    }
+  ],
+  "artifacts": [
+    ".patchdiet/cleanup.diff",
+    ".patchdiet/report.md",
+    ".patchdiet/run.json",
+    ".patchdiet/report.html",
+    ".patchdiet/report.github.md"
+  ],
+  "patchPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-6HLuED\\syn-cross-file-dependency-Lo4JvK\\.patchdiet\\cleanup.diff",
+  "startedAt": "2026-10-06T15:42:38.556Z",
+  "patchdietVersion": "0.2.0",
+  "baseCommitSha": "18d416aaabeebe2997df5c2bc5cf996e9e156c22",
+  "headCommitSha": "9cbf976be8959cee96f6d155a0e19da89cea8cc8",
+  "mergeBaseCommitSha": "18d416aaabeebe2997df5c2bc5cf996e9e156c22",
+  "commandLineArgs": [],
+  "partial": true,
+  "partialReason": "AST ddmin found no passing grouped removal set; all removals require human review",
+  "durationMs": 7595,
+  "finishedAt": "2026-10-06T15:42:46.151Z",
+  "reportPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-6HLuED\\syn-cross-file-dependency-Lo4JvK\\.patchdiet\\report.md",
+  "reportJsonPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-6HLuED\\syn-cross-file-dependency-Lo4JvK\\.patchdiet\\run.json"
+}

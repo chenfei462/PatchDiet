@@ -1,0 +1,141 @@
+{
+  "at": "2026-10-06T15:43:41.655Z",
+  "status": "LOCAL FUNCTIONAL MVP ACCEPTED",
+  "version": "0.2.0",
+  "implementation": {
+    "provider": "Paseo MCP -> ZCode BigModel",
+    "model": "GLM-5.3-Flash",
+    "independentReviewer": "Codex"
+  },
+  "mainFull": {
+    "files": 51,
+    "passed": 707,
+    "skipped": 1,
+    "total": 708,
+    "exitCode": 0,
+    "skipReason": "Windows environment denies creation of dangling file symlink"
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0
+  },
+  "node20": {
+    "root": "D:\\systemDir\\Desktop\\PatchDiet\\.patchdiet\\review-2026-10-04\\node20-ast-tarball-a870c28c-8127-4186-b412-a3801125ec0c",
+    "results": [
+      {
+        "name": "fresh production Node20 tarball with native SQLite, real index and AST exact artifact",
+        "status": "passed",
+        "tarballSha256": "a5f718d78fef76de9524275c812c8576c28361276482b183e2864f217c1147a0",
+        "version": "0.2.0",
+        "removals": 2
+      }
+    ]
+  },
+  "benchmark": {
+    "inputCount": 16,
+    "removedTotal": 17,
+    "removedUnnecessary": 17,
+    "removalPrecision": {
+      "numerator": 17,
+      "denominator": 17,
+      "rate": 1,
+      "undefinedWhenZeroDenominator": true
+    },
+    "stages": {
+      "staticDetection": {
+        "numerator": 9,
+        "denominator": 14,
+        "rate": 0.6428571428571429,
+        "missCases": [
+          "inj-targeted-mapping",
+          "syn-redundant-ab",
+          "syn-dependent-edits",
+          "syn-malformed-syntax",
+          "syn-unsupported-metadata"
+        ]
+      },
+      "runtimeConfirmed": {
+        "numerator": 12,
+        "denominator": 14,
+        "rate": 0.8571428571428571,
+        "missCases": [
+          "inj-mutating-optional-command",
+          "syn-malformed-syntax"
+        ]
+      },
+      "fullPipelineDetection": {
+        "numerator": 13,
+        "denominator": 14,
+        "rate": 0.9285714285714286,
+        "missCases": [
+          "syn-malformed-syntax"
+        ]
+      },
+      "deletion": {
+        "numerator": 12,
+        "denominator": 14,
+        "rate": 0.8571428571428571,
+        "missCases": [
+          "inj-mutating-optional-command",
+          "syn-malformed-syntax"
+        ]
+      }
+    },
+    "independentFinalOracle": {
+      "numerator": 12,
+      "denominator": 12,
+      "rate": 1,
+      "undefinedWhenZeroDenominator": true
+    },
+    "hiddenRegressions": 0,
+    "successfulReductionCases": [
+      "inj-js-debug",
+      "inj-python-debug",
+      "inj-python-two-debug-sites",
+      "inj-ts-debug",
+      "inj-coarse-weak-oracle",
+      "inj-protected-paths",
+      "inj-dependency-manifest",
+      "inj-targeted-mapping",
+      "inj-js-extra-dead-helper",
+      "syn-redundant-ab",
+      "syn-dependent-edits",
+      "syn-unsupported-metadata"
+    ],
+    "timingsMs": {
+      "inj-js-debug": 7310,
+      "inj-python-debug": 6823,
+      "inj-python-two-debug-sites": 8599,
+      "inj-ts-debug": 7180,
+      "inj-coarse-weak-oracle": 6911,
+      "inj-protected-paths": 7178,
+      "inj-dependency-manifest": 7975,
+      "inj-mutating-optional-command": 7574,
+      "inj-targeted-mapping": 8660,
+      "inj-js-extra-dead-helper": 7058,
+      "syn-redundant-ab": 9081,
+      "syn-dependent-edits": 9471,
+      "syn-flaky-oracle": 3778,
+      "syn-malformed-syntax": 5769,
+      "syn-unsupported-metadata": 6056,
+      "syn-cross-file-dependency": 10222
+    }
+  },
+  "naturalAgentPRs": {
+    "sampleCount": 0,
+    "status": "NOT VERIFIED",
+    "note": "no human-labelled natural agent PR dataset is available; no substitute corpus may claim production precision"
+  },
+  "tarball": {
+    "file": "patchdiet-0.2.0.tgz",
+    "sha256": "a5f718d78fef76de9524275c812c8576c28361276482b183e2864f217c1147a0"
+  },
+  "limitations": [
+    "No natural human-labelled agent PRs; real-world removal precision NOT VERIFIED.",
+    "History/merged-PR evidence, cloud intent and feedback collection/adaptive behavior are not implemented; local accepted field limitations are documented.",
+    "Optional coverage is provenance; final full required oracle and exact-base artifact proof remain mandatory.",
+    "No publishing, push or product commit performed."
+  ]
+}

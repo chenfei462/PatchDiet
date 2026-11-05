@@ -1,0 +1,207 @@
+{
+  "baseRef": "main",
+  "headRef": "agent",
+  "input": {
+    "fileCount": 2,
+    "hunkCount": 2,
+    "addedLineCount": 2,
+    "removedLineCount": 0,
+    "changedLineCount": 2
+  },
+  "output": {
+    "fileCount": 1,
+    "hunkCount": 1,
+    "addedLineCount": 1,
+    "removedLineCount": 0,
+    "changedLineCount": 1
+  },
+  "testCommand": {
+    "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"import * as u1 from './src/util1.js'; import * as u2 from './src/util2.js'; const d = u1.double ?? u2.double; process.exit(d(4)===8?0:1)\"",
+    "status": "passed",
+    "durationMs": 409,
+    "attempts": 1
+  },
+  "mode": "verified",
+  "verification": {
+    "baseline": {
+      "stage": "baseline",
+      "status": "passed",
+      "commands": [
+        {
+          "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"import * as u1 from './src/util1.js'; import * as u2 from './src/util2.js'; const d = u1.double ?? u2.double; process.exit(d(4)===8?0:1)\"",
+          "status": "passed",
+          "durationMs": 276,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 142
+            }
+          ]
+        }
+      ],
+      "durationMs": 409,
+      "baseCommitSha": "898fd79bd739d5eaf9dd33260c1e8d5efc6b79f3",
+      "headCommitSha": "4eb0eec85cb6166b89435036283d238ccb5cf5f3"
+    },
+    "final": {
+      "stage": "final",
+      "status": "passed",
+      "commands": [
+        {
+          "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"import * as u1 from './src/util1.js'; import * as u2 from './src/util2.js'; const d = u1.double ?? u2.double; process.exit(d(4)===8?0:1)\"",
+          "status": "passed",
+          "durationMs": 274,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 145
+            }
+          ]
+        }
+      ],
+      "durationMs": 826,
+      "baseCommitSha": "898fd79bd739d5eaf9dd33260c1e8d5efc6b79f3",
+      "headCommitSha": "4eb0eec85cb6166b89435036283d238ccb5cf5f3",
+      "expectedTreeSha": "26a242afa7f752ec1c6a3aae79bfcb77c1c0ca2a",
+      "artifactTreeSha": "26a242afa7f752ec1c6a3aae79bfcb77c1c0ca2a",
+      "treesMatch": true
+    }
+  },
+  "reduction": {
+    "strategy": "ddmin",
+    "selectedGroupIds": [
+      "grp-680a1b237518"
+    ],
+    "attempts": [
+      {
+        "ids": [
+          "grp-680a1b237518",
+          "grp-74a8537f4e07"
+        ],
+        "key": "d3c6c3a61c5bef97b9a65230e5b124cae8f4a201ed771717c30e09d9d56af1fc",
+        "verdict": "FAIL",
+        "cached": false
+      },
+      {
+        "ids": [
+          "grp-680a1b237518"
+        ],
+        "key": "5d9c73d2bdde41191d336bf0472f084998fb92021c06349822d4c92e534b9ae1",
+        "verdict": "PASS",
+        "cached": false
+      },
+      {
+        "ids": [
+          "grp-74a8537f4e07"
+        ],
+        "key": "85cb37d3104c6b03000eee049f4dcfbe0fcf5511bffb9b7d8ba7023de246211a",
+        "verdict": "PASS",
+        "cached": false
+      },
+      {
+        "ids": [
+          "grp-74a8537f4e07"
+        ],
+        "key": "85cb37d3104c6b03000eee049f4dcfbe0fcf5511bffb9b7d8ba7023de246211a",
+        "verdict": "PASS",
+        "cached": true
+      },
+      {
+        "ids": [
+          "grp-680a1b237518"
+        ],
+        "key": "5d9c73d2bdde41191d336bf0472f084998fb92021c06349822d4c92e534b9ae1",
+        "verdict": "PASS",
+        "cached": true
+      },
+      {
+        "ids": [
+          "grp-680a1b237518",
+          "grp-74a8537f4e07"
+        ],
+        "key": "d3c6c3a61c5bef97b9a65230e5b124cae8f4a201ed771717c30e09d9d56af1fc",
+        "verdict": "FAIL",
+        "cached": true
+      }
+    ],
+    "atomGranularity": "ast",
+    "dependencyGroups": [
+      {
+        "id": "grp-680a1b237518",
+        "memberIds": [
+          "atom-d09d5c8c37f0977e"
+        ],
+        "reasons": []
+      },
+      {
+        "id": "grp-74a8537f4e07",
+        "memberIds": [
+          "atom-c1b17236fcca4a66"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "filePath": "src/util1.js",
+      "hunkHeader": "ast: insert block",
+      "category": "unknown",
+      "verdict": "removed",
+      "reason": "removed after ddmin: the grouped removal set passed the full configured oracle"
+    },
+    {
+      "filePath": "src/util2.js",
+      "hunkHeader": "ast: insert block",
+      "category": "unknown",
+      "verdict": "kept",
+      "reason": "kept after ddmin: this group was not part of the passing combined removal set"
+    }
+  ],
+  "removals": [
+    {
+      "filePath": "src/util1.js",
+      "hunkHeader": "ast: insert block",
+      "category": "unknown",
+      "reason": "removed after ddmin: the grouped removal set passed the full configured oracle",
+      "confidence": "high-confidence removal"
+    }
+  ],
+  "kept": [
+    {
+      "filePath": "src/util2.js",
+      "hunkHeader": "ast: insert block",
+      "category": "unknown",
+      "reason": "kept after ddmin: this group was not part of the passing combined removal set",
+      "confidence": "kept"
+    }
+  ],
+  "needsHumanReview": [],
+  "artifacts": [
+    ".patchdiet/cleanup.diff",
+    ".patchdiet/report.md",
+    ".patchdiet/run.json",
+    ".patchdiet/report.html",
+    ".patchdiet/report.github.md"
+  ],
+  "patchPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-6HLuED\\syn-redundant-ab-UhDiPW\\.patchdiet\\cleanup.diff",
+  "startedAt": "2026-10-06T15:41:58.487Z",
+  "patchdietVersion": "0.2.0",
+  "baseCommitSha": "898fd79bd739d5eaf9dd33260c1e8d5efc6b79f3",
+  "headCommitSha": "4eb0eec85cb6166b89435036283d238ccb5cf5f3",
+  "mergeBaseCommitSha": "898fd79bd739d5eaf9dd33260c1e8d5efc6b79f3",
+  "commandLineArgs": [],
+  "partial": false,
+  "durationMs": 6674,
+  "finishedAt": "2026-10-06T15:42:05.161Z",
+  "reportPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-6HLuED\\syn-redundant-ab-UhDiPW\\.patchdiet\\report.md",
+  "reportJsonPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-6HLuED\\syn-redundant-ab-UhDiPW\\.patchdiet\\run.json"
+}

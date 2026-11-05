@@ -1,0 +1,28 @@
+id: claim:vulcan:001
+statement: Vulcan uses additional grammar-guided transformations plus a main reducer to escape some
+  transformation-relative 1-minimal results; it does not establish a global minimum.
+source:
+  id: paper:xu-2023-vulcan
+  locators:
+    - Sections 1–4 transformations/framework
+    - Section 5 evaluation
+    - Section 8 conclusion
+evidence_type: peer-reviewed-paper
+scope: program-reduction
+assumptions:
+  - usable grammar and serializer
+  - stable property test
+  - bounded transformation search
+limitations:
+  - Auxiliary outputs must be no larger than their input; equal-size transformations may expose new reductions
+  - No semantic-equivalence or global-minimum proof
+  - C/Rust/SMT-LIBv2 evaluation is not a safe PR-removal benchmark
+patchdiet_mapping:
+  mapping: Study search-space expansion only; PatchDiet must not transform source code merely to make tests pass.
+  affected_components:
+    - packages/core/src/reducer.ts
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING
+size_contract: Original section 3 requires auxiliary outputs <= input size and main reducer outputs smaller or
+  identical. Size-increasing loop unrolling is an LPR example, not the Vulcan framework contract.

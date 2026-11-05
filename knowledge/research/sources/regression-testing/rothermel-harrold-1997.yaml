@@ -1,0 +1,73 @@
+id: paper:rothermel-harrold-1997-safe-regression-test-selection
+title: A Safe, Efficient Regression Test Selection Technique
+source_type: peer-reviewed-paper
+authority_tier: A
+year: 1997
+venue: ACM TOSEM
+canonical_url: https://dl.acm.org/doi/10.1145/248233.248262
+doi: 10.1145/248233.248262
+retrieved_at: 2026-10-26
+authors:
+  - Gregg Rothermel
+  - Mary Jean Harrold
+topics:
+  - regression-testing
+  - change-impact
+problem:
+  summary: Select tests that safely exercise changed behavior while reducing regression cost.
+technique:
+  summary: Coverage and change-based selection with a safety criterion for controlled settings.
+validated_on:
+  - paper metadata and title verified
+claims:
+  - claim:rts:001
+assumptions:
+  - coverage and changed-program mappings are available
+limitations:
+  - safety depends on analysis assumptions and does not remove the need for full verification in PatchDiet
+patchdiet_relevance:
+  modules:
+    - packages/core/src/targeted.ts
+    - packages/scope/src
+  relevance: high
+license_review:
+  status: paper metadata only
+  code_copy_allowed: false
+status:
+  source_verified: true
+  distilled: false
+  decision: ADAPT
+primary_secondary: primary
+verification_status: SOURCE_VERIFIED_PRIMARY
+provenance_audit:
+  ticket: PD-R100
+  previous_status: SOURCE_VERIFIED
+  previous_pin: null
+  reason: Publisher HTTP 403; bibliographic identity known, original content verification remains open.
+  historical_record: reports/PRE_CORRECTION_RECORDS.json
+  resolution: Publisher remains blocked, but full original content independently located and inspected at Purdue.
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+paper_version_used: TOSEM 6(2), April 1997, 173–210; 38-page university-hosted original paper
+inspection:
+  url: https://www.cs.purdue.edu/homes/xyzhang/fall07/Papers/p173-rothermel.pdf
+  retrieved_at: 2026-10-26
+  locators:
+    - Title page
+    - Section 2.1 edge traces
+    - Section 3.1.2 controlled regression testing and Theorem 3.1.2.1
+    - Section 6 safety limitations
+gate_justifications:
+  D7: Source distillation introduces no implementation in this phase; historical runtime regression is recorded
+    separately. This is not an adoption claim.
+  D6: Research-only provenance/source review; no runtime adoption ticket is required.
+ticket_refs:
+  - PD-R100
+  - PD-R101
+  - PD-R159

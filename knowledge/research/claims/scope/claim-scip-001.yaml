@@ -1,0 +1,22 @@
+id: claim:scip:001
+statement: A language-agnostic index can normalize symbol definitions and references across tools, but its value depends
+  on indexer coverage and update cost.
+source:
+  id: project:scip
+evidence_type: reference-implementation
+scope: code-intelligence
+confidence: medium
+assumptions:
+  - supported indexers are available in CI and Windows environments
+limitations:
+  - protocol adoption alone does not improve precision; benchmark evidence is required
+patchdiet_mapping:
+  affected_components:
+    - packages/evidence/src
+    - packages/knowledge/src
+    - packages/core/src/symbols.ts
+possible_action: prototype optional import and compare with SQLite graph
+safety_effect: neutral
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

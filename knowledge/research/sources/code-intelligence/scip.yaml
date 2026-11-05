@@ -1,0 +1,79 @@
+id: project:scip
+title: SCIP code intelligence protocol
+source_type: reference-implementation
+authority_tier: B
+year: 2021
+canonical_url: https://github.com/scip-code/scip
+retrieved_at: 2026-10-26
+repository: https://github.com/scip-code/scip
+license: Apache-2.0
+authors:
+  - SCIP contributors
+topics:
+  - code-intelligence
+  - symbols
+  - references
+problem:
+  summary: Defines a language-agnostic index format for definitions, references, implementations, and documents.
+technique:
+  summary: Stable symbol and occurrence records serialized for cross-tool consumption.
+validated_on:
+  - GitHub repository reachable with HTTP 200
+claims:
+  - claim:scip:001
+assumptions:
+  - an indexer exists for the language and build can afford its runtime
+limitations:
+  - index generation and Windows/CI installation cost need measurement
+patchdiet_relevance:
+  modules:
+    - packages/evidence/src
+    - packages/knowledge/src
+    - packages/core/src/symbols.ts
+  relevance: high
+license_review:
+  status: ROOT_LICENSE_INSPECTED_AT_COMMIT
+  code_copy_allowed: false
+  note: Research summaries only. Dependencies, subcomponents and any future copied files require their own notices review.
+status:
+  source_verified: true
+  distilled: false
+  decision: EXPERIMENT
+primary_secondary: primary-repository
+verification_status: SOURCE_VERIFIED_REPOSITORY
+provenance_audit:
+  ticket: PD-R100
+  previous_status: SOURCE_VERIFIED
+  previous_pin: repository metadata default branch main checked 2026-10-26
+  reason: "DOWNGRADED: prior branch/date string is not an inspected commit. New captures require separate license/content
+    review."
+  historical_record: reports/PRE_CORRECTION_RECORDS.json
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: FAIL
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: FAIL
+inspected_commit: d556dd3c24b3c1787e0b62cd31f25188300e3098
+license_verified_at_commit: d556dd3c24b3c1787e0b62cd31f25188300e3098
+license_path: LICENSE
+license_type: Apache-2.0
+repository_evidence: evidence/repositories/project-scip.json
+inspection:
+  retrieved_at: 2026-10-26
+  url: https://github.com/scip-code/scip/blob/d556dd3c24b3c1787e0b62cd31f25188300e3098/LICENSE
+  locators:
+    - LICENSE
+    - https://github.com/scip-code/scip/blob/d556dd3c24b3c1787e0b62cd31f25188300e3098/README.md
+  scope: Repository identity, root license text and README-level architecture. No claims about uninspected implementation
+    correctness.
+commit_date: 2026-10-22T03:15:31Z
+license_scope: Research summaries only. Dependencies, subcomponents and any future copied files require their own notices review.
+project_status:
+  observed: Pinned upstream snapshot
+  maintenance_assessment: Snapshot evidence only
+gate_justifications:
+  D6: Research-only provenance/source review; no runtime adoption ticket is required.
+  D7: No implementation or experiment was performed in this phase; runtime validation is not applicable.

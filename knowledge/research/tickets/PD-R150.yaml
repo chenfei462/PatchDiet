@@ -1,0 +1,36 @@
+id: PD-R150
+title: P1-A Source Verification Closure
+status: IN_PROGRESS
+research_basis:
+  sources:
+    - project:scip-typescript
+    - project:scip-python
+    - project:scip-java
+    - project:joern
+    - project:ast-grep
+    - project:semgrep
+    - project:codeql
+    - project:pit
+    - paper:mutation-testing-survey-2018
+    - benchmark:swe-rebench
+    - benchmark:swe-bench-live
+    - benchmark:aidev
+    - benchmark:codereviewqa
+    - project:pr-agent
+    - project:alibaba-open-code-review
+    - project:danger-js
+    - project:libgit2
+    - project:gitoxide
+    - standard:openssf-baseline-current
+  claims: []
+decision: RESEARCH_ONLY
+automatic_removal_authority: false
+implementation: Research provenance, source/claim/license/data-use and validator evidence only. No runtime adoption or experiments.
+acceptance_criteria:
+  - Primary evidence and limitations recorded separately
+  - D1-D7 explicitly consistent
+  - Independent review V2 assesses remaining blockers
+acceptance_evidence:
+  - reports/RESEARCH_GATE_STATUS.md
+  - reports/RESEARCH_INTEGRITY_VALIDATION.json
+independent_review: PENDING

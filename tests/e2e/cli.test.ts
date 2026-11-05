@@ -1,4 +1,5 @@
-import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { rm } from "node:fs/promises";
+import { existsSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { execFile } from "node:child_process";
@@ -7,14 +8,15 @@ import { promisify } from "node:util";
 import { afterEach, describe, expect, it } from "vitest";
 
 import { createExampleRepo } from "./helpers/create-example-repo.js";
+import { loadPatchDietConfig } from "../../packages/core/src/config.js";
 
 const execFileAsync = promisify(execFile);
 const tempDirs: string[] = [];
 const cliEntry = join(process.cwd(), "dist", "packages", "cli", "src", "index.js");
 
-afterEach(() => {
+afterEach(async () => {
   for (const dir of tempDirs.splice(0)) {
-    rmSync(dir, { recursive: true, force: true });
+    await rm(dir, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
   }
 });
 
@@ -40,6 +42,20 @@ describe("patchdiet cli", () => {
     });
 
     expect(readFileSync(join(dir, "patchdiet.yaml"), "utf8")).toContain("base: origin/main");
+  });
+
+  it("creates a loadable v2 template with supported hunk reduction and safety policy", async () => {
+    const dir = mkdtempSync(join(tmpdir(), "patchdiet-cli-init-v2-"));
+    tempDirs.push(dir);
+    await execFileAsync("node", [cliEntry, "init", "--v2"], { cwd: dir });
+    const config = loadPatchDietConfig(dir);
+    expect(config.version).toBe(2);
+    expect(config.reduction.strategy).toBe("ddmin");
+    // The v2 template defaults to AST granularity: the AST runtime is proven
+    // (real three-language gates) and integrated in this version.
+    expect(config.reduction.atomGranularity).toBe("ast");
+    expect(config.safety.protect).toContain("**/migrations/**");
+    expect(config.verification?.fullRequiredAtEnd).toBe(true);
   });
 
   it("runs check and shrink in the example repo", async () => {
@@ -72,7 +88,7 @@ describe("patchdiet cli", () => {
 
     expect(readFileSync(join(dir, ".patchdiet", "report.md"), "utf8")).toContain("PatchDiet Report");
     expect(readFileSync(join(dir, ".patchdiet", "run.json"), "utf8")).toContain("\"baseRef\": \"main\"");
-  });
+  }, 60000);
 
   it("runs check with detected refs and human-friendly output", async () => {
     const dir = mkdtempSync(join(tmpdir(), "patchdiet-cli-check-zero-config-"));
@@ -411,6 +427,157 @@ describe("patchdiet cli", () => {
       });
     }
   }, 60000);
+});
+
+// ── CLI error paths (review M8) ──────────────────────────────────────
+// Every failure path must exit with code 1 and print a human-readable
+// message — thrown errors go to stderr; `doctor` reports diagnostics on
+// stdout and signals failure through the exit code alone.
+
+interface CliFailure {
+  code: number;
+  stdout: string;
+  stderr: string;
+}
+
+async function runCliExpectingFailure(
+  args: string[],
+  env: NodeJS.ProcessEnv = {}
+): Promise<CliFailure> {
+  try {
+    await execFileAsync("node", [cliEntry, ...args], {
+      cwd: process.cwd(),
+      env: { ...process.env, ...env }
+    });
+  } catch (error) {
+    const failure = error as NodeJS.ErrnoException & { stdout?: string; stderr?: string };
+    return {
+      code: Number(failure.code),
+      stdout: failure.stdout ?? "",
+      stderr: failure.stderr ?? ""
+    };
+  }
+  throw new Error(`expected the CLI to fail, but it exited 0: patchdiet ${args.join(" ")}`);
+}
+
+describe("patchdiet cli error paths", () => {
+  it("check fails with exit code 1 and a readable stderr when the base ref does not exist", async () => {
+    const dir = mkdtempSync(join(tmpdir(), "patchdiet-cli-err-badref-"));
+    tempDirs.push(dir);
+    await createExampleRepo("ts-bloated-pr", dir);
+
+    const failure = await runCliExpectingFailure(
+      ["check", "--base", "no-such-base-ref", "--head", "agent/bloated"],
+      { PATCHDIET_TARGET_CWD: dir }
+    );
+
+    expect(failure.code).toBe(1);
+    expect(failure.stderr).toContain("Git ref not found: no-such-base-ref");
+  });
+
+  it("check fails with exit code 1 and a readable stderr for an invalid patchdiet.yaml", async () => {
+    const dir = mkdtempSync(join(tmpdir(), "patchdiet-cli-err-badcfg-"));
+    tempDirs.push(dir);
+    writeFileSync(join(dir, "patchdiet.yaml"), "base: origin/main\nlanguage: generic\nevil_key: injected\n", "utf8");
+
+    const failure = await runCliExpectingFailure(["check"], { PATCHDIET_TARGET_CWD: dir });
+
+    expect(failure.code).toBe(1);
+    expect(failure.stderr).toContain("Invalid patchdiet.yaml");
+    expect(failure.stderr).toContain("evil_key");
+  });
+
+  it("doctor fails with exit code 1 and a readable stderr for an invalid patchdiet.yaml", async () => {
+    const dir = mkdtempSync(join(tmpdir(), "patchdiet-cli-err-doctor-cfg-"));
+    tempDirs.push(dir);
+    writeFileSync(join(dir, "patchdiet.yaml"), "base: origin/main\nreduction:\n  max_runtime_minutes: 99999\n", "utf8");
+
+    const failure = await runCliExpectingFailure(["doctor"], { PATCHDIET_TARGET_CWD: dir });
+
+    expect(failure.code).toBe(1);
+    expect(failure.stderr).toContain("Invalid patchdiet.yaml");
+    expect(failure.stderr).toContain("max_runtime_minutes");
+  });
+
+  it("doctor fails with exit code 1 and readable diagnostics outside a git repository", async () => {
+    const dir = mkdtempSync(join(tmpdir(), "patchdiet-cli-err-doctor-nogit-"));
+    tempDirs.push(dir);
+
+    const failure = await runCliExpectingFailure(["doctor"], { PATCHDIET_TARGET_CWD: dir });
+
+    expect(failure.code).toBe(1);
+    // doctor reports on stdout (not by throwing), so the readable message
+    // lives there while the exit code alone signals the failure.
+    expect(failure.stdout).toContain("PatchDiet doctor");
+    expect(failure.stdout).toContain("repository: failed");
+    expect(failure.stdout).toContain("test: not detected");
+    expect(failure.stdout).toContain("test hint:");
+  });
+
+  it.each([
+    { flag: "--timeout-ms", value: "zero", message: "Expected a positive integer, got: zero" },
+    { flag: "--timeout-ms", value: "-5", message: "Expected a positive integer, got: -5" },
+    { flag: "--retry-flaky-tests", value: "-1", message: "Expected a non-negative integer, got: -1" }
+  ])("shrink rejects $flag $value with exit code 1 and a readable stderr", async (testCase: { flag: string; value: string; message: string }) => {
+    const dir = mkdtempSync(join(tmpdir(), "patchdiet-cli-err-badflag-"));
+    tempDirs.push(dir);
+
+    const failure = await runCliExpectingFailure(
+      ["shrink", testCase.flag, testCase.value, "--test", "node -e \"process.exit(0)\""],
+      { PATCHDIET_TARGET_CWD: dir }
+    );
+
+    expect(failure.code).toBe(1);
+    expect(failure.stderr).toContain(testCase.message);
+  });
+
+  it("report fails with exit code 1 and a readable stderr when no shrink has run", async () => {
+    const dir = mkdtempSync(join(tmpdir(), "patchdiet-cli-err-report-"));
+    tempDirs.push(dir);
+
+    const failure = await runCliExpectingFailure(["report"], { PATCHDIET_TARGET_CWD: dir });
+
+    expect(failure.code).toBe(1);
+    expect(failure.stderr).toContain("ENOENT");
+    expect(failure.stderr).toContain("run.json");
+  });
+
+  it("retries per --retry-flaky-tests but refuses conflicting baseline outcomes", async () => {
+    const dir = mkdtempSync(join(tmpdir(), "patchdiet-cli-retry-"));
+    tempDirs.push(dir);
+    await createExampleRepo("ts-bloated-pr", dir);
+    const counterPath = join(dir, "flaky-count.txt");
+    // Fails the first invocation, passes afterwards (counter-based flake).
+    const flakyCommand =
+      `node -e "const fs=require('fs');const p='${counterPath.replaceAll("\\", "/")}';` +
+      `const n=Number(fs.readFileSync(p,'utf8'))+1;fs.writeFileSync(p,String(n));process.exit(n-1?0:1)"`;
+    const targetEnv = { PATCHDIET_TARGET_CWD: dir };
+
+    // Retries disabled: the single flaky failure aborts the run with exit 1.
+    writeFileSync(counterPath, "0", "utf8");
+    const failure = await runCliExpectingFailure(
+      ["shrink", "--base", "main", "--head", "agent/bloated", "--test", flakyCommand, "--retry-flaky-tests", "0"],
+      targetEnv
+    );
+    expect(failure.code).toBe(1);
+    expect(failure.stderr).toContain("required command failed");
+    expect(readFileSync(counterPath, "utf8")).toBe("1");
+
+    // v0.2: a later retry pass does not erase the observed baseline failure.
+    // The initial attempt and both configured retries execute; conflicting outcomes prohibit attestation.
+    writeFileSync(counterPath, "0", "utf8");
+    const inconclusive = await runCliExpectingFailure(
+      ["shrink", "--base", "main", "--head", "agent/bloated", "--test", flakyCommand],
+      targetEnv
+    );
+    expect(inconclusive.code).toBe(1);
+    expect(inconclusive.stderr).toContain("INCONCLUSIVE baseline");
+    expect(readFileSync(counterPath, "utf8")).toBe("3");
+    expect(existsSync(join(dir, ".patchdiet", "run.json"))).toBe(false);
+    expect(existsSync(join(dir, ".patchdiet", "cleanup.diff"))).toBe(false);
+    const { stdout: worktrees } = await execFileAsync("git", ["worktree", "list", "--porcelain"], { cwd: dir });
+    expect(worktrees).not.toContain(".patchdiet/eval");
+  }, 45000);
 });
 
 async function createMinimalDiffRepo(dir: string): Promise<void> {

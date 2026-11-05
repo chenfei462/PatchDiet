@@ -1,0 +1,158 @@
+{
+  "baseRef": "main",
+  "headRef": "agent",
+  "input": {
+    "fileCount": 2,
+    "hunkCount": 2,
+    "addedLineCount": 6,
+    "removedLineCount": 1,
+    "changedLineCount": 7
+  },
+  "output": {
+    "fileCount": 1,
+    "hunkCount": 1,
+    "addedLineCount": 5,
+    "removedLineCount": 1,
+    "changedLineCount": 6
+  },
+  "testCommand": {
+    "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"process.exit(0)\"",
+    "status": "passed",
+    "durationMs": 383,
+    "attempts": 1
+  },
+  "mode": "verified",
+  "verification": {
+    "baseline": {
+      "stage": "baseline",
+      "status": "passed",
+      "commands": [
+        {
+          "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"process.exit(0)\"",
+          "status": "passed",
+          "durationMs": 270,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 149
+            }
+          ]
+        }
+      ],
+      "durationMs": 383,
+      "baseCommitSha": "846a946ed6676351ffcf2f72cd8ed21cffb53cce",
+      "headCommitSha": "923bb712b1dfc7ae2722ecd5a2fd8a3f68612cab"
+    },
+    "final": {
+      "stage": "final",
+      "status": "passed",
+      "commands": [
+        {
+          "command": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"process.exit(0)\"",
+          "status": "passed",
+          "durationMs": 266,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 166
+            }
+          ]
+        }
+      ],
+      "durationMs": 706,
+      "baseCommitSha": "846a946ed6676351ffcf2f72cd8ed21cffb53cce",
+      "headCommitSha": "923bb712b1dfc7ae2722ecd5a2fd8a3f68612cab",
+      "expectedTreeSha": "f6a374a08465882bf9a83230c47f5d57b5682dc1",
+      "artifactTreeSha": "f6a374a08465882bf9a83230c47f5d57b5682dc1",
+      "treesMatch": true
+    }
+  },
+  "reduction": {
+    "strategy": "ddmin",
+    "selectedGroupIds": [
+      "grp-72f25873609a"
+    ],
+    "attempts": [
+      {
+        "ids": [
+          "grp-72f25873609a"
+        ],
+        "key": "1603d963e14b84fe73f39a6b2b15057f4dfab66df1b02b90863d508abdc6f311",
+        "verdict": "PASS",
+        "cached": false
+      }
+    ],
+    "atomGranularity": "ast",
+    "dependencyGroups": [
+      {
+        "id": "grp-72f25873609a",
+        "memberIds": [
+          "atom-350acdb2de2e34b5"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "filePath": "src/other.js",
+      "hunkHeader": "ast: insert block",
+      "category": "unknown",
+      "verdict": "removed",
+      "reason": "removed after ddmin: the grouped removal set passed the full configured oracle"
+    },
+    {
+      "filePath": "src/total.js",
+      "hunkHeader": "ast: replace export_statement -> export_statement",
+      "category": "unknown",
+      "verdict": "kept",
+      "reason": "RETAIN scope state candidate (mixed evidence: this coarse edit's span covers a task-required symbol; a debug sub-span exclusion cannot authorize reverting it)"
+    }
+  ],
+  "removals": [
+    {
+      "filePath": "src/other.js",
+      "hunkHeader": "ast: insert block",
+      "category": "unknown",
+      "reason": "removed after ddmin: the grouped removal set passed the full configured oracle",
+      "confidence": "high-confidence removal"
+    }
+  ],
+  "kept": [
+    {
+      "filePath": "src/total.js",
+      "hunkHeader": "ast: replace export_statement -> export_statement",
+      "category": "unknown",
+      "reason": "RETAIN scope state candidate (mixed evidence: this coarse edit's span covers a task-required symbol; a debug sub-span exclusion cannot authorize reverting it)",
+      "confidence": "kept"
+    }
+  ],
+  "needsHumanReview": [],
+  "artifacts": [
+    ".patchdiet/cleanup.diff",
+    ".patchdiet/report.md",
+    ".patchdiet/run.json",
+    ".patchdiet/report.html",
+    ".patchdiet/report.github.md"
+  ],
+  "patchPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-EsSGqV\\inj-coarse-weak-oracle-iBpfZ8\\.patchdiet\\cleanup.diff",
+  "startedAt": "2026-10-06T12:22:21.721Z",
+  "patchdietVersion": "0.1.1",
+  "baseCommitSha": "846a946ed6676351ffcf2f72cd8ed21cffb53cce",
+  "headCommitSha": "923bb712b1dfc7ae2722ecd5a2fd8a3f68612cab",
+  "mergeBaseCommitSha": "846a946ed6676351ffcf2f72cd8ed21cffb53cce",
+  "commandLineArgs": [],
+  "partial": false,
+  "durationMs": 3933,
+  "finishedAt": "2026-10-06T12:22:25.654Z",
+  "reportPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-EsSGqV\\inj-coarse-weak-oracle-iBpfZ8\\.patchdiet\\report.md",
+  "reportJsonPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-EsSGqV\\inj-coarse-weak-oracle-iBpfZ8\\.patchdiet\\run.json"
+}

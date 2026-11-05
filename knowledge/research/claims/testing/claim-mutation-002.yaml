@@ -1,0 +1,21 @@
+id: claim:mutation:002
+statement: Surviving mutants identify a verification confidence limitation, not permission to block or authorize cleanup
+  by themselves.
+source:
+  id: project:strykerjs
+evidence_type: engineering-inference
+scope: verification
+confidence: high
+assumptions:
+  - PatchDiet reports configured checks accurately
+limitations:
+  - the audit cannot enumerate all untested behavior
+patchdiet_mapping:
+  affected_components:
+    - packages/core/src/runner.ts
+    - packages/report/src
+possible_action: surface WEAK_ORACLE evidence without changing deletion authority
+safety_effect: positive
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

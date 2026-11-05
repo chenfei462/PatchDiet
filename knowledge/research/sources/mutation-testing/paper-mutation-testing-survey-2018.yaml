@@ -1,0 +1,73 @@
+id: paper:mutation-testing-survey-2018
+title: "Mutation Testing Advances: An Analysis and Survey"
+source_type: paper
+authority_tier: B
+primary_secondary: primary-source-record
+canonical_url: https://doi.org/10.1016/bs.adcom.2018.03.015
+retrieved_at: 2026-10-27
+claims: []
+assumptions:
+  - PatchDiet applicability and benefit require separately authorized measured evidence.
+limitations:
+  - No automatic removal authority.
+  - No PatchDiet experiment or benchmark benefit established.
+  - Survey synthesizes studies; it is not the original invention of mutation testing or an implementation.
+  - Equivalent mutants distort denominator/interpretation. Operator, language, program and test selection limit transfer.
+  - Coupling is a hypothesis and empirical relation under selected settings, not a theorem guaranteeing detection of
+    every complex or real fault.
+  - Accepted manuscript differs from publisher typesetting; do not assert line/page parity with final chapter.
+patchdiet_relevance:
+  mapping: Terminology and oracle-strength confidence limits; mutation score never authorizes removal.
+  relevance: research-only
+status:
+  source_verified: true
+  distilled: true
+  decision: RESEARCH_ONLY
+verification_status: SOURCE_VERIFIED_PRIMARY
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: Research-only source assessment; no experiment benefit or runtime adoption has been demonstrated, so no PD-E runtime
+    ticket is permitted.
+  D7: No implementation/integration or experiment performed in this research-only phase; validation is not represented as
+    runtime evidence.
+automatic_removal_authority: false
+independent_review: PENDING
+authors:
+  - Mike Papadakis
+  - Marinos Kintis
+  - Jie Zhang
+  - Yue Jia
+  - Yves Le Traon
+  - Mark Harman
+year: 2019
+venue: Advances in Computers, volume 112, pages 275-378
+doi: 10.1016/bs.adcom.2018.03.015
+paper_version_used: Author accepted manuscript / preprint dated December 14, 2017, hosted by mutationtesting.uni.lu;
+  published bibliographic metadata independently matched to 2019 chapter.
+primary_source: https://mutationtesting.uni.lu/survey.pdf
+license: Copyright Elsevier; accepted manuscript accessible for reading; no open reuse license established.
+inspection:
+  url: https://mutationtesting.uni.lu/survey.pdf
+  evidence:
+    - evidence/pd-r155-r156-2026-10-27/mutation-survey-accepted.pdf
+    - evidence/pd-r155-r156-2026-10-27/mutation-survey-accepted.txt
+    - evidence/pd-r155-r156-2026-10-27/mutation-survey-2019-doi.json
+    - evidence/pd-r155-r156-2026-10-27/mutation-survey-ucl.html
+metadata_correction: Legacy id ending 2018 retained for references. Publisher/Crossref and UCL record published volume
+  as 2019; DOI suffix and 2018 copyright are not the publication year. theory.php is not the paper.
+evidence_summary: Primary author manuscript supplies theory, equivalent-mutant and experimental-methodology limitations;
+  final chapter identity/year verified separately.
+extracted_claims:
+  - statement: Mutation adequacy depends on the selected faults/operators and is a test-sensitivity measure.
+    locator: Sections 1, 2 and 7 (author manuscript)
+    evidence: evidence/pd-r155-r156-2026-10-27/mutation-survey-accepted.txt
+  - statement: Equivalent-mutant identification is undecidable in general; heuristics and manual judgments have limits.
+    locator: Section 5.3.1 and experimental methodology discussion
+    evidence: evidence/pd-r155-r156-2026-10-27/mutation-survey-accepted.txt

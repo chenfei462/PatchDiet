@@ -1,4 +1,5 @@
-import { mkdtempSync, readFileSync, rmSync } from "node:fs";
+import { rm } from "node:fs/promises";
+import { existsSync, mkdtempSync, readFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
@@ -9,9 +10,9 @@ import { createExampleRepo } from "./helpers/create-example-repo.js";
 
 const tempDirs: string[] = [];
 
-afterEach(() => {
+afterEach(async () => {
   for (const dir of tempDirs.splice(0)) {
-    rmSync(dir, { recursive: true, force: true });
+    await rm(dir, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
   }
 });
 
@@ -79,22 +80,27 @@ describe("runShrink", () => {
     expect(readFileSync(result.patchPath!, "utf8")).toContain("Unrelated docs update");
   });
 
-  it("retries flaky checks during baseline verification", async () => {
+  it("rejects conflicting baseline retries without producing a verified artifact", async () => {
     const dir = mkdtempSync(join(tmpdir(), "patchdiet-shrink-retry-"));
     tempDirs.push(dir);
     await createExampleRepo("ts-bloated-pr", dir);
 
-    const flakyScript = "node -e \"const fs=require('fs'); const p='.flaky'; if(!fs.existsSync(p)){fs.writeFileSync(p,'1'); process.exit(1)}\"";
-    const result = await runShrink({
+    // v0.2: observe both outcomes through a shared counter, then fail closed.
+    // A baseline FAIL followed by PASS is INCONCLUSIVE, just like the final
+    // artifact stage; it must never authorize candidate removal.
+    const markerPath = join(dir, "flaky-marker.txt").replaceAll("\\", "/");
+    const flakyScript = `node -e "const fs=require('fs'); const p='${markerPath}'; const n=(fs.existsSync(p)?Number(fs.readFileSync(p,'utf8')):0)+1; fs.writeFileSync(p,String(n)); process.exit(n===1?1:0)"`;
+    await expect(runShrink({
       cwd: dir,
       baseRef: "main",
       headRef: "agent/bloated",
       requiredCommands: [flakyScript],
       retryFlakyTests: 1
-    });
+    })).rejects.toThrow(/INCONCLUSIVE baseline/);
 
-    expect(result.testCommand.attempts).toBe(2);
-    expect(result.testCommand.status).toBe("passed");
+    expect(readFileSync(markerPath, "utf8")).toBe("2");
+    expect(existsSync(join(dir, ".patchdiet", "cleanup.diff"))).toBe(false);
+    expect(existsSync(join(dir, ".patchdiet", "run.json"))).toBe(false);
   });
 
   it("fails with a readable timeout message when checks exceed the budget", async () => {

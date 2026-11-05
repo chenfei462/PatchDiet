@@ -1,0 +1,20 @@
+id: claim:git:001
+statement: Git patch output can include extended headers for modes, renames, copies, similarity, binary content, and quoted paths.
+source:
+  id: standard:git-diff-format
+evidence_type: normative-specification
+scope: git-fidelity
+confidence: high
+assumptions:
+  - Git output is the compatibility contract
+limitations:
+  - a parser still needs fixtures for every format and merge-specific cases
+patchdiet_mapping:
+  affected_components:
+    - packages/core/src/diff.ts
+    - packages/core/src/patch-encoder.ts
+possible_action: retain round-trip fixtures for all documented headers
+safety_effect: positive
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

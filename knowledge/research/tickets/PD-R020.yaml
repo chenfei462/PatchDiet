@@ -1,0 +1,19 @@
+id: PD-R020
+title: Benchmark lightweight graph against optional SCIP import
+research_basis:
+  sources: [project:scip, project:tree-sitter]
+  claims: [claim:scip:001]
+problem: SCIP may improve cross-file symbol evidence, but added indexer cost is unmeasured.
+current_repo_evidence: packages/evidence and knowledge use a lightweight local graph.
+proposed_change: Build an optional importer prototype and compare it without replacing the current graph.
+files_likely_affected: [packages/evidence, packages/knowledge, benchmarks]
+implementation_steps: [choose fixture repos, import supported indexes, measure precision/recall and cost, decide]
+safety_invariants: [missing graph edges mean unknown, never unused]
+tests: [graph schema tests, import fixture tests]
+benchmark: [index time, size, symbol precision, reference precision, incremental update, Windows/CI setup]
+acceptance_criteria: [measured comparison and explicit decision]
+dependencies: [PD-R001]
+complexity: medium
+do_not_change: [default SQLite graph until benchmark evidence]
+status: EXPERIMENTAL
+

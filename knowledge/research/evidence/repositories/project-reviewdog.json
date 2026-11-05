@@ -1,0 +1,20 @@
+{
+  "id": "project:reviewdog",
+  "retrieved_at": "2026-10-26",
+  "captured_at_utc": "2026-10-27T04:18:50.561Z",
+  "repository": "https://github.com/reviewdog/reviewdog",
+  "default_branch": "master",
+  "inspected_commit": "97de34b5b8a6eb20fa7c5a768c10b81c7671d689",
+  "commit_date": "2026-10-27T02:51:38Z",
+  "license_path": "LICENSE",
+  "license_type": "MIT",
+  "license_url": "https://github.com/reviewdog/reviewdog/blob/97de34b5b8a6eb20fa7c5a768c10b81c7671d689/LICENSE",
+  "license_sha256": "92d4ef949ca2214f27ed3f426a2db4b2c7344e30746397f23745b1e1f59d24b9",
+  "license_text": "MIT License\n\nCopyright (c) 2016 haya14busa\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+  "readme_url": "https://github.com/reviewdog/reviewdog/blob/97de34b5b8a6eb20fa7c5a768c10b81c7671d689/README.md",
+  "readme_status": "CAPTURED",
+  "readme_sha256": "82a38d93bba678076bf8ff1e2338d82bcbdcf42f7d5ba883b895c066b43ad6c7",
+  "capture_method": "git bare shallow blob-filtered clone; git show at fixed SHA",
+  "previous_pin": "97de34b5b8a6eb20fa7c5a768c10b81c7671d689",
+  "note": "Captured repository artifacts only. Human/independent review determines verification and claim support."
+}

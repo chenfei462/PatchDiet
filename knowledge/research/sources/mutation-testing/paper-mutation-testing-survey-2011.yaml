@@ -1,0 +1,62 @@
+id: paper:mutation-testing-survey-2011
+title: An Analysis and Survey of the Development of Mutation Testing
+source_type: paper
+authority_tier: B
+primary_secondary: primary-source-record
+canonical_url: https://doi.org/10.1109/TSE.2010.62
+retrieved_at: 2026-10-27
+claims: []
+assumptions:
+  - PatchDiet applicability and benefit require separately authorized measured evidence.
+limitations:
+  - No automatic removal authority.
+  - No PatchDiet experiment or benchmark benefit established.
+  - Historical coverage through 2009; not current tool maintenance evidence.
+  - Technical report version inspected, not final IEEE pagination.
+  - Equivalent mutants, operator selection and empirical coupling limits prevent semantic-proof interpretations.
+patchdiet_relevance:
+  mapping: Historical mutation theory only, separate from PIT/Stryker implementation and removal decisions.
+  relevance: research-only
+status:
+  source_verified: true
+  distilled: true
+  decision: RESEARCH_ONLY
+verification_status: SOURCE_VERIFIED_PRIMARY
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: D6_NOT_APPLICABLE
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+gate_justifications:
+  D6: Research-only source assessment; no experiment benefit or runtime adoption has been demonstrated, so no PD-E runtime
+    ticket is permitted.
+  D7: No implementation/integration or experiment performed in this research-only phase; validation is not represented as
+    runtime evidence.
+automatic_removal_authority: false
+independent_review: PENDING
+authors:
+  - Yue Jia
+  - Mark Harman
+year: 2011
+venue: IEEE Transactions on Software Engineering 37(5), pages 649-678
+doi: 10.1109/TSE.2010.62
+paper_version_used: CREST technical report TR-09-06, author predecessor version; final 2011 journal metadata
+  independently matched by Crossref. Not claimed byte-identical to journal version.
+primary_source: https://mutationtesting.uni.lu/TR-09-06.pdf
+license: No open reuse license established for technical report or journal text. Reading access only recorded.
+inspection:
+  url: https://mutationtesting.uni.lu/TR-09-06.pdf
+  evidence:
+    - evidence/pd-r155-r156-2026-10-27/WEB_OBSERVATIONS.md
+    - evidence/pd-r155-r156-2026-10-27/mutation-survey-2011-doi.json
+    - evidence/pd-r155-r156-2026-10-27/mutation-home.html
+evidence_summary: Author technical report separately identifies foundational hypotheses and computation/equivalence
+  costs; final journal title/authors/year/venue/DOI independently matched.
+extracted_claims:
+  - statement: The competent-programmer and coupling hypotheses motivate using selected simple mutants; they do not
+      enumerate all possible faults.
+    locator: TR-09-06 section II.A, PDF page 3
+    evidence: evidence/pd-r155-r156-2026-10-27/WEB_OBSERVATIONS.md

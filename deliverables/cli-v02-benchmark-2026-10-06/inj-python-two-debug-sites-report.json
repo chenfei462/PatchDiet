@@ -1,0 +1,242 @@
+{
+  "baseRef": "main",
+  "headRef": "agent",
+  "input": {
+    "fileCount": 2,
+    "hunkCount": 2,
+    "addedLineCount": 4,
+    "removedLineCount": 1,
+    "changedLineCount": 5
+  },
+  "output": {
+    "fileCount": 1,
+    "hunkCount": 1,
+    "addedLineCount": 2,
+    "removedLineCount": 1,
+    "changedLineCount": 3
+  },
+  "testCommand": {
+    "command": "\"C:/Users/hacjr/AppData/Local/Programs/Python/Python311/python.exe\" check_total.py && \"C:/Users/hacjr/AppData/Local/Programs/Python/Python311/python.exe\" check_util.py",
+    "status": "passed",
+    "durationMs": 459,
+    "attempts": 2
+  },
+  "mode": "verified",
+  "verification": {
+    "baseline": {
+      "stage": "baseline",
+      "status": "passed",
+      "commands": [
+        {
+          "command": "\"C:/Users/hacjr/AppData/Local/Programs/Python/Python311/python.exe\" check_total.py",
+          "status": "passed",
+          "durationMs": 175,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 83
+            }
+          ]
+        },
+        {
+          "command": "\"C:/Users/hacjr/AppData/Local/Programs/Python/Python311/python.exe\" check_util.py",
+          "status": "passed",
+          "durationMs": 182,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 97
+            }
+          ]
+        }
+      ],
+      "durationMs": 459,
+      "baseCommitSha": "5e8e26eeb9e03956ca0a988c68a8f5a21766ba73",
+      "headCommitSha": "c2810ced96d4ce19c824616b78881b8db2592fe8"
+    },
+    "final": {
+      "stage": "final",
+      "status": "passed",
+      "commands": [
+        {
+          "command": "\"C:/Users/hacjr/AppData/Local/Programs/Python/Python311/python.exe\" check_total.py",
+          "status": "passed",
+          "durationMs": 215,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 105
+            }
+          ]
+        },
+        {
+          "command": "\"C:/Users/hacjr/AppData/Local/Programs/Python/Python311/python.exe\" check_util.py",
+          "status": "passed",
+          "durationMs": 207,
+          "attempts": 1,
+          "exitCode": 0,
+          "timedOut": false,
+          "attemptRecords": [
+            {
+              "exitCode": 0,
+              "timedOut": false,
+              "durationMs": 104
+            }
+          ]
+        }
+      ],
+      "durationMs": 880,
+      "baseCommitSha": "5e8e26eeb9e03956ca0a988c68a8f5a21766ba73",
+      "headCommitSha": "c2810ced96d4ce19c824616b78881b8db2592fe8",
+      "expectedTreeSha": "30dd6291ee45850567bdea0aa791325adda01826",
+      "artifactTreeSha": "30dd6291ee45850567bdea0aa791325adda01826",
+      "treesMatch": true
+    }
+  },
+  "reduction": {
+    "strategy": "ddmin",
+    "selectedGroupIds": [
+      "grp-9a399adc5a05",
+      "grp-f40a32eae1b0"
+    ],
+    "attempts": [
+      {
+        "ids": [
+          "grp-9a399adc5a05",
+          "grp-f40a32eae1b0"
+        ],
+        "key": "af3dba2513063e5431c7f8dd988077757653a4ee6ef1cdf7a9253f7c5848568d",
+        "verdict": "PASS",
+        "cached": false
+      }
+    ],
+    "atomGranularity": "ast",
+    "dependencyGroups": [
+      {
+        "id": "grp-9a399adc5a05",
+        "memberIds": [
+          "atom-b00f80433d72f75c"
+        ],
+        "reasons": []
+      },
+      {
+        "id": "grp-f40a32eae1b0",
+        "memberIds": [
+          "atom-0e9888bf57d5bc6b",
+          "atom-6d36d117090a093d"
+        ],
+        "reasons": [
+          "local-def-use"
+        ]
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "filePath": "src/total.py",
+      "hunkHeader": "ast: delete block in total",
+      "category": "unknown",
+      "verdict": "kept",
+      "reason": "RETAIN scope state candidate (no task evidence positively tied to this atom)"
+    },
+    {
+      "filePath": "src/total.py",
+      "hunkHeader": "ast: insert expression_statement in total",
+      "category": "unknown",
+      "verdict": "removed",
+      "reason": "removed after ddmin: the grouped removal set passed the full configured oracle"
+    },
+    {
+      "filePath": "src/total.py",
+      "hunkHeader": "ast: insert expression_statement in total",
+      "category": "unknown",
+      "verdict": "removed",
+      "reason": "removed after ddmin: the grouped removal set passed the full configured oracle"
+    },
+    {
+      "filePath": "src/total.py",
+      "hunkHeader": "ast: insert return_statement in total",
+      "category": "unknown",
+      "verdict": "kept",
+      "reason": "RETAIN scope state candidate (no task evidence positively tied to this atom)"
+    },
+    {
+      "filePath": "src/util.py",
+      "hunkHeader": "ast: insert block",
+      "category": "unknown",
+      "verdict": "removed",
+      "reason": "removed after ddmin: the grouped removal set passed the full configured oracle"
+    }
+  ],
+  "removals": [
+    {
+      "filePath": "src/total.py",
+      "hunkHeader": "ast: insert expression_statement in total",
+      "category": "unknown",
+      "reason": "removed after ddmin: the grouped removal set passed the full configured oracle",
+      "confidence": "high-confidence removal"
+    },
+    {
+      "filePath": "src/total.py",
+      "hunkHeader": "ast: insert expression_statement in total",
+      "category": "unknown",
+      "reason": "removed after ddmin: the grouped removal set passed the full configured oracle",
+      "confidence": "high-confidence removal"
+    },
+    {
+      "filePath": "src/util.py",
+      "hunkHeader": "ast: insert block",
+      "category": "unknown",
+      "reason": "removed after ddmin: the grouped removal set passed the full configured oracle",
+      "confidence": "high-confidence removal"
+    }
+  ],
+  "kept": [
+    {
+      "filePath": "src/total.py",
+      "hunkHeader": "ast: delete block in total",
+      "category": "unknown",
+      "reason": "RETAIN scope state candidate (no task evidence positively tied to this atom)",
+      "confidence": "kept"
+    },
+    {
+      "filePath": "src/total.py",
+      "hunkHeader": "ast: insert return_statement in total",
+      "category": "unknown",
+      "reason": "RETAIN scope state candidate (no task evidence positively tied to this atom)",
+      "confidence": "kept"
+    }
+  ],
+  "needsHumanReview": [],
+  "artifacts": [
+    ".patchdiet/cleanup.diff",
+    ".patchdiet/report.md",
+    ".patchdiet/run.json",
+    ".patchdiet/report.html",
+    ".patchdiet/report.github.md"
+  ],
+  "patchPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-EsSGqV\\inj-python-two-debug-sites-NNkEkc\\.patchdiet\\cleanup.diff",
+  "startedAt": "2026-10-06T12:22:05.996Z",
+  "patchdietVersion": "0.1.1",
+  "baseCommitSha": "5e8e26eeb9e03956ca0a988c68a8f5a21766ba73",
+  "headCommitSha": "c2810ced96d4ce19c824616b78881b8db2592fe8",
+  "mergeBaseCommitSha": "5e8e26eeb9e03956ca0a988c68a8f5a21766ba73",
+  "commandLineArgs": [],
+  "partial": false,
+  "durationMs": 4492,
+  "finishedAt": "2026-10-06T12:22:10.488Z",
+  "reportPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-EsSGqV\\inj-python-two-debug-sites-NNkEkc\\.patchdiet\\report.md",
+  "reportJsonPath": "C:\\Users\\hacjr\\AppData\\Local\\Temp\\patchdiet-benchmark-EsSGqV\\inj-python-two-debug-sites-NNkEkc\\.patchdiet\\run.json"
+}

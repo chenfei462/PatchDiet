@@ -1,0 +1,77 @@
+@view-transition {
+  navigation: auto;
+}
+
+@keyframes glass-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Hero entrance and scroll reveal only run once JS confirms motion is allowed,
+   so the page is fully visible without JS. */
+.motion-ok .hero__nav,
+.motion-ok .hero__center > *,
+.motion-ok .hero__quote,
+.motion-ok .hero__right > * {
+  animation: glass-rise var(--motion-scene) var(--ease-glass) both;
+}
+
+.motion-ok .hero__center > :nth-child(2) { animation-delay: 80ms; }
+.motion-ok .hero__center > :nth-child(3) { animation-delay: 160ms; }
+.motion-ok .hero__center > :nth-child(4) { animation-delay: 240ms; }
+.motion-ok .hero__center > :nth-child(5) { animation-delay: 320ms; }
+.motion-ok .hero__quote { animation-delay: 400ms; }
+.motion-ok .hero__right > :nth-child(1) { animation-delay: 120ms; }
+.motion-ok .hero__right > :nth-child(2) { animation-delay: 240ms; }
+.motion-ok .hero__right > :nth-child(3) { animation-delay: 360ms; }
+
+.motion-ok [data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity var(--motion-scene) var(--ease-glass), transform var(--motion-scene) var(--ease-glass);
+}
+
+.motion-ok [data-reveal][data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Deepen the backdrop once the reader leaves the hero so panels stay legible. */
+body[data-active-scene]:not([data-active-scene="intake"]) .backdrop__shade {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+/* Static tier (reduced motion): show the poster frame instead of the loop. */
+[data-motion="static"] .backdrop video {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  .backdrop video {
+    display: none;
+  }
+
+  .pressable:hover,
+  .pressable:active {
+    transform: none;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "scope": "metadata, documentation, license, and paper evidence only; no dataset rows or container images",
+  "entries": [
+    {
+      "file": "aidev-code-commit.json",
+      "url": "https://api.github.com/repos/SAILResearch/AI_Teammates_in_SE3/commits/main",
+      "error": "('Connection aborted.', ConnectionResetError(10054, '\u8fdc\u7a0b\u4e3b\u673a\u5f3a\u8feb\u5173\u95ed\u4e86\u4e00\u4e2a\u73b0\u6709\u7684\u8fde\u63a5\u3002', None, 10054, None))"
+    },
+    {
+      "file": "aidev-code-repo.json",
+      "url": "https://api.github.com/repos/SAILResearch/AI_Teammates_in_SE3",
+      "resolved_url": "https://api.github.com/repos/SAILResearch/AI_Teammates_in_SE3",
+      "retrieved_at": "2026-10-27T16:51:22.655034+00:00",
+      "sha256": "366447e0ec9e6fc324a6f50e3a54550847440aed02b4e622c4085f4eb1a0da47",
+      "bytes": 6880
+    },
+    {
+      "file": "aidev-dataset-README.md",
+      "url": "https://huggingface.co/datasets/hao-li/AIDev/raw/b8dc67df93e7c11f6f20c84129db7232eb1ec253/README.md",
+      "error": "('Connection aborted.', ConnectionResetError(10054, '\u8fdc\u7a0b\u4e3b\u673a\u5f3a\u8feb\u5173\u95ed\u4e86\u4e00\u4e2a\u73b0\u6709\u7684\u8fde\u63a5\u3002', None, 10054, None))"
+    },
+    {
+      "file": "aidev-dataset-commits.json",
+      "url": "https://huggingface.co/api/datasets/hao-li/AIDev/commits/b8dc67df93e7c11f6f20c84129db7232eb1ec253",
+      "resolved_url": "https://huggingface.co/api/datasets/hao-li/AIDev/commits/b8dc67df93e7c11f6f20c84129db7232eb1ec253",
+      "retrieved_at": "2026-10-27T16:51:38.679748+00:00",
+      "sha256": "ee74f07c43f7e349776d919a5f97f81490c48669783fef7173dd16f444d4e67e",
+      "bytes": 15200
+    },
+    {
+      "file": "aidev-dataset-meta.json",
+      "url": "https://huggingface.co/api/datasets/hao-li/AIDev",
+      "resolved_url": "https://huggingface.co/api/datasets/hao-li/AIDev",
+      "retrieved_at": "2026-10-27T16:51:32.119170+00:00",
+      "sha256": "86bea936056932bfbfb7da8319e029376cbe6e8214bd51cbd131c2f899b41c1e",
+      "bytes": 4257
+    },
+    {
+      "file": "aidev-doi.json",
+      "url": "https://api.crossref.org/works/10.1145/3793302.3797249",
+      "resolved_url": "https://api.crossref.org/works/10.1145/3793302.3797249",
+      "retrieved_at": "2026-10-27T16:51:45.846335+00:00",
+      "sha256": "c5cc73c9581e5bb5a64865f423eca5af95af5d79722d2c7c8799964846266b9a",
+      "bytes": 15859
+    },
+    {
+      "file": "aidev-metadata.html",
+      "url": "https://arxiv.org/abs/2602.09185v1",
+      "resolved_url": "https://arxiv.org/abs/2602.09185v1",
+      "retrieved_at": "2026-10-27T16:51:45.687170+00:00",
+      "sha256": "ab27391c979b5bd79b3081098b2b10c12f76bdee8d7055fbdf251db4464c41f3",
+      "bytes": 42510
+    },
+    {
+      "file": "aidev-paper.html",
+      "url": "https://arxiv.org/html/2602.09185v1",
+      "resolved_url": "https://arxiv.org/html/2602.09185v1",
+      "retrieved_at": "2026-10-27T16:51:46.219271+00:00",
+      "sha256": "77f397e838236454c0c2c2aa95faebb29aaa454d43c88ef1c32b0d721a3caac1",
+      "bytes": 140193
+    },
+    {
+      "file": "ccby40.html",
+      "url": "https://creativecommons.org/licenses/by/4.0/legalcode.en",
+      "resolved_url": "https://creativecommons.org/licenses/by/4.0/legalcode.en",
+      "retrieved_at": "2026-10-27T16:51:48.660725+00:00",
+      "sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650",
+      "bytes": 48742
+    },
+    {
+      "file": "codereviewqa-code-commit.json",
+      "url": "https://api.github.com/repos/hongyi-tom/CodeReviewQA/commits/main",
+      "error": "('Connection aborted.', ConnectionResetError(10054, '\u8fdc\u7a0b\u4e3b\u673a\u5f3a\u8feb\u5173\u95ed\u4e86\u4e00\u4e2a\u73b0\u6709\u7684\u8fde\u63a5\u3002', None, 10054, None))"
+    },
+    {
+      "file": "codereviewqa-code-repo.json",
+      "url": "https://api.github.com/repos/hongyi-tom/CodeReviewQA",
+      "resolved_url": "https://api.github.com/repos/hongyi-tom/CodeReviewQA",
+      "retrieved_at": "2026-10-27T16:51:22.543262+00:00",
+      "sha256": "ba7c2df1de951eec9126841ab385a7ccd4823e0ed0f297dd18f5bf71300b84b1",
+      "bytes": 5449
+    },
+    {
+      "file": "codereviewqa-dataset-README.md",
+      "url": "https://huggingface.co/datasets/Tomo-Melb/CodeReviewQA/raw/b6f89e6d10f7558bf188ff9bc0bd039947eff8d6/README.md",
+      "error": "401 Client Error: Unauthorized for url: https://huggingface.co/datasets/Tomo-Melb/CodeReviewQA/raw/b6f89e6d10f7558bf188ff9bc0bd039947eff8d6/README.md"
+    },
+    {
+      "file": "codereviewqa-dataset-commits.json",
+      "url": "https://huggingface.co/api/datasets/Tomo-Melb/CodeReviewQA/commits/b6f89e6d10f7558bf188ff9bc0bd039947eff8d6",
+      "error": "('Connection aborted.', ConnectionResetError(10054, '\u8fdc\u7a0b\u4e3b\u673a\u5f3a\u8feb\u5173\u95ed\u4e86\u4e00\u4e2a\u73b0\u6709\u7684\u8fde\u63a5\u3002', None, 10054, None))"
+    },
+    {
+      "file": "codereviewqa-dataset-meta.json",
+      "url": "https://huggingface.co/api/datasets/Tomo-Melb/CodeReviewQA",
+      "resolved_url": "https://huggingface.co/api/datasets/Tomo-Melb/CodeReviewQA",
+      "retrieved_at": "2026-10-27T16:51:32.203758+00:00",
+      "sha256": "b3ccb70f7adc15ffe8cb0f21407e11b397aac7849f3569caff1279dcfee7434c",
+      "bytes": 1891
+    },
+    {
+      "file": "codereviewqa-metadata.html",
+      "url": "https://aclanthology.org/2025.findings-acl.476/",
+      "resolved_url": "https://aclanthology.org/2025.findings-acl.476/",
+      "retrieved_at": "2026-10-27T16:51:47.262790+00:00",
+      "sha256": "c77e1cf256a62a77569542d46517b30d0ccb8ab429d2ff284a7b2de42ea340d9",
+      "bytes": 46807
+    },
+    {
+      "file": "codereviewqa-paper.pdf",
+      "url": "https://aclanthology.org/2025.findings-acl.476.pdf",
+      "resolved_url": "https://aclanthology.org/2025.findings-acl.476.pdf",
+      "retrieved_at": "2026-10-27T16:51:48.331684+00:00",
+      "sha256": "b9ed06df7b4477123ad790b8b056e3f1f4c64f2eadadf7d8f9622c20e5fb5379",
+      "bytes": 1189204
+    },
+    {
+      "file": "live-dataset-meta.json",
+      "url": "https://huggingface.co/api/datasets/SWE-bench-Live/SWE-bench-Live",
+      "error": "HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /api/datasets/SWE-bench-Live/SWE-bench-Live (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))"
+    },
+    {
+      "file": "live-harness-commit.json",
+      "url": "https://api.github.com/repos/microsoft/SWE-bench-Live/commits/main",
+      "error": "('Connection aborted.', ConnectionResetError(10054, '\u8fdc\u7a0b\u4e3b\u673a\u5f3a\u8feb\u5173\u95ed\u4e86\u4e00\u4e2a\u73b0\u6709\u7684\u8fde\u63a5\u3002', None, 10054, None))"
+    },
+    {
+      "file": "live-harness-repo.json",
+      "url": "https://api.github.com/repos/microsoft/SWE-bench-Live",
+      "resolved_url": "https://api.github.com/repos/microsoft/SWE-bench-Live",
+      "retrieved_at": "2026-10-27T16:51:22.588116+00:00",
+      "sha256": "b85a1441847c77537e954675600e3a4600941ec1ed46fa051e08f98b0386751b",
+      "bytes": 6596
+    },
+    {
+      "file": "live-metadata.html",
+      "url": "https://arxiv.org/abs/2505.23419v2",
+      "resolved_url": "https://arxiv.org/abs/2505.23419v2",
+      "retrieved_at": "2026-10-27T16:51:44.169030+00:00",
+      "sha256": "330ff3c7df93256e055ca4d46673b04e5cebf5d9282dbda32ae20ae0d0320266",
+      "bytes": 45427
+    },
+    {
+      "file": "live-paper.html",
+      "url": "https://arxiv.org/html/2505.23419v2",
+      "resolved_url": "https://arxiv.org/html/2505.23419v2",
+      "retrieved_at": "2026-10-27T16:51:46.550589+00:00",
+      "sha256": "76c3a626b7106b447cfd24343b229607ee6a4f8cb35de8dc8dc39b8079143cdf",
+      "bytes": 280357
+    },
+    {
+      "file": "live-site.html",
+      "url": "https://swe-bench-live.github.io/",
+      "resolved_url": "https://swe-bench-live.github.io/",
+      "retrieved_at": "2026-10-27T16:51:44.983388+00:00",
+      "sha256": "f9da9b7c1fe823f65f6273fcaa47cce31b5634c5459e7eb157c61adb0f138899",
+      "bytes": 12348
+    },
+    {
+      "file": "mutation-home.html",
+      "url": "https://mutationtesting.uni.lu/",
+      "resolved_url": "https://mutationtesting.uni.lu/",
+      "retrieved_at": "2026-10-27T16:51:41.308648+00:00",
+      "sha256": "2cd03de310051dd94b7da0e76562c8aee7f34058a68b4156a97bc87509db13b4",
+      "bytes": 8781
+    },
+    {
+      "file": "mutation-survey-2011-doi.json",
+      "url": "https://api.crossref.org/works/10.1109/TSE.2010.62",
+      "resolved_url": "https://api.crossref.org/works/10.1109/TSE.2010.62",
+      "retrieved_at": "2026-10-27T16:51:41.059799+00:00",
+      "sha256": "d785053dbc990ba164bedffb5f032c0199d4a115078170a62e9e5f3d13d45d34",
+      "bytes": 28905
+    },
+    {
+      "file": "mutation-survey-2011.pdf",
+      "url": "https://crest.cs.ucl.ac.uk/fileadmin/crest/sebasepaper/JiaH10.pdf",
+      "error": "('Connection aborted.', ConnectionResetError(10054, '\u8fdc\u7a0b\u4e3b\u673a\u5f3a\u8feb\u5173\u95ed\u4e86\u4e00\u4e2a\u73b0\u6709\u7684\u8fde\u63a5\u3002', None, 10054, None))"
+    },
+    {
+      "file": "mutation-survey-2019-doi.json",
+      "url": "https://api.crossref.org/works/10.1016/bs.adcom.2018.03.015",
+      "resolved_url": "https://api.crossref.org/works/10.1016/bs.adcom.2018.03.015",
+      "retrieved_at": "2026-10-27T16:51:42.265777+00:00",
+      "sha256": "f8fedf13714c5a20423076996ea366e7e215856b5912fd65ca7460adb2b77e2e",
+      "bytes": 88535
+    },
+    {
+      "file": "mutation-survey-accepted.pdf",
+      "url": "https://mutationtesting.uni.lu/survey.pdf",
+      "resolved_url": "https://mutationtesting.uni.lu/survey.pdf",
+      "retrieved_at": "2026-10-27T16:51:45.937398+00:00",
+      "sha256": "63b7bfca877cd4661cb24e93fbfe1757a2740b39fb65ee3a79eb17e36215f023",
+      "bytes": 1129278
+    },
+    {
+      "file": "mutation-survey-publisher.html",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0065245818300305",
+      "error": "403 Client Error: Forbidden for url: https://www.sciencedirect.com/science/article/pii/S0065245818300305"
+    },
+    {
+      "file": "mutation-survey-ucl.html",
+      "url": "https://discovery.ucl.ac.uk/id/eprint/10056704/",
+      "resolved_url": "https://discovery.ucl.ac.uk/id/eprint/10056704/",
+      "retrieved_at": "2026-10-27T16:51:48.068737+00:00",
+      "sha256": "4096dbf4c8bf64b109bc00feb08abcd95a74346fecc04571645ec7190f1ab65d",
+      "bytes": 39437
+    },
+    {
+      "file": "mutation-theory.html",
+      "url": "https://mutationtesting.uni.lu/theory.php",
+      "resolved_url": "https://mutationtesting.uni.lu/theory.php",
+      "retrieved_at": "2026-10-27T16:51:42.190079+00:00",
+      "sha256": "4bf4e2bccccfd2436a674f9379a144e7c9fd24a57abf01a7de6d9e8180882554",
+      "bytes": 16106
+    },
+    {
+      "file": "pit-commit.json",
+      "url": "https://api.github.com/repos/hcoles/pitest/commits/master",
+      "error": "('Connection aborted.', ConnectionResetError(10054, '\u8fdc\u7a0b\u4e3b\u673a\u5f3a\u8feb\u5173\u95ed\u4e86\u4e00\u4e2a\u73b0\u6709\u7684\u8fde\u63a5\u3002', None, 10054, None))"
+    },
+    {
+      "file": "pit-concepts.html",
+      "url": "https://pitest.org/quickstart/basic_concepts/",
+      "resolved_url": "https://pitest.org/quickstart/basic_concepts/",
+      "retrieved_at": "2026-10-27T16:51:43.168307+00:00",
+      "sha256": "c51d8423f5a75e00c7039463f8a5992ef8f1f92b994d69f67d212ff7bfd92b3a",
+      "bytes": 12155
+    },
+    {
+      "file": "pit-repo.json",
+      "url": "https://api.github.com/repos/hcoles/pitest",
+      "resolved_url": "https://api.github.com/repos/hcoles/pitest",
+      "retrieved_at": "2026-10-27T16:51:22.566642+00:00",
+      "sha256": "c323f4c3b2907cde1f320c9cc05c09626e56b56e30864c6c6c4488bdb5115fa8",
+      "bytes": 5093
+    },
+    {
+      "file": "rebench-dataset-README.md",
+      "url": "https://huggingface.co/datasets/nebius/SWE-rebench/raw/89cdfbab4ab1bd8f5a658bb212d1b63624f4f881/README.md",
+      "resolved_url": "https://huggingface.co/datasets/nebius/SWE-rebench/raw/89cdfbab4ab1bd8f5a658bb212d1b63624f4f881/README.md",
+      "retrieved_at": "2026-10-27T16:51:33.690355+00:00",
+      "sha256": "579179c9eccb15c61ca8c42fbf7ea46cc225fddd9ca0a6b3d7bbec9f712f88c3",
+      "bytes": 9190
+    },
+    {
+      "file": "rebench-dataset-commits.json",
+      "url": "https://huggingface.co/api/datasets/nebius/SWE-rebench/commits/89cdfbab4ab1bd8f5a658bb212d1b63624f4f881",
+      "error": "HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /api/datasets/nebius/SWE-rebench/commits/89cdfbab4ab1bd8f5a658bb212d1b63624f4f881 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))"
+    },
+    {
+      "file": "rebench-dataset-meta.json",
+      "url": "https://huggingface.co/api/datasets/nebius/SWE-rebench",
+      "resolved_url": "https://huggingface.co/api/datasets/nebius/SWE-rebench",
+      "retrieved_at": "2026-10-27T16:51:32.223530+00:00",
+      "sha256": "0dd8fc0be726f8cac7113291eb6323c7c1dc31b4f93c95feb015757d5a2101e0",
+      "bytes": 3483
+    },
+    {
+      "file": "rebench-harness-commit.json",
+      "url": "https://api.github.com/repos/SWE-rebench/SWE-bench-fork/commits/main",
+      "error": "('Connection aborted.', ConnectionResetError(10054, '\u8fdc\u7a0b\u4e3b\u673a\u5f3a\u8feb\u5173\u95ed\u4e86\u4e00\u4e2a\u73b0\u6709\u7684\u8fde\u63a5\u3002', None, 10054, None))"
+    },
+    {
+      "file": "rebench-harness-repo.json",
+      "url": "https://api.github.com/repos/SWE-rebench/SWE-bench-fork",
+      "resolved_url": "https://api.github.com/repos/SWE-rebench/SWE-bench-fork",
+      "retrieved_at": "2026-10-27T16:51:22.581413+00:00",
+      "sha256": "2e1a8c14236488974b253e4075ffb315cce7ae6e7c4e90372e36d03235f53de5",
+      "bytes": 17153
+    },
+    {
+      "file": "rebench-metadata.html",
+      "url": "https://arxiv.org/abs/2505.20411v2",
+      "resolved_url": "https://arxiv.org/abs/2505.20411v2",
+      "retrieved_at": "2026-10-27T16:51:43.883940+00:00",
+      "sha256": "8de5a815c3af8cf40445c1b954dced823d52217ae538b0baaf81e26a66e8eed2",
+      "bytes": 44766
+    },
+    {
+      "file": "rebench-paper.html",
+      "url": "https://arxiv.org/html/2505.20411v2",
+      "resolved_url": "https://arxiv.org/html/2505.20411v2",
+      "retrieved_at": "2026-10-27T16:51:45.359703+00:00",
+      "sha256": "544ec006f97df9a0354238a20b69dc391f8e0e41eb76a4e733b1c3d7816ff212",
+      "bytes": 1345159
+    },
+    {
+      "file": "rebench-publisher.html",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/21bec6ace947b1b58967b945c8ac0f10-Abstract-Datasets_and_Benchmarks_Track.html",
+      "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/21bec6ace947b1b58967b945c8ac0f10-Abstract-Datasets_and_Benchmarks_Track.html",
+      "retrieved_at": "2026-10-27T16:51:40.529043+00:00",
+      "sha256": "312e97f14f44a6786635f659c9188a8911fd25a39a9fcd543da9c0f24491c59c",
+      "bytes": 10643
+    }
+  ]
+}

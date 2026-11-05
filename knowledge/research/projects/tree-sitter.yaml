@@ -1,0 +1,68 @@
+name: Tree-sitter
+repository: https://github.com/tree-sitter/tree-sitter
+official_site: https://tree-sitter.github.io/tree-sitter/
+license: MIT
+languages:
+  - C
+  - JavaScript
+  - Rust
+primary_purpose: Incremental error-tolerant parsing.
+architecture: Generated parsers and concrete syntax trees with incremental updates.
+key_modules:
+  - parser runtime
+  - grammar compiler
+  - node ranges
+algorithms: []
+useful_patterns:
+  - changed ranges
+  - syntax nodes
+  - error-tolerant structure
+patchdiet_mapping:
+  - packages/core/src/ast-atomizer.ts
+  - packages/parsers/src
+do_not_copy:
+  - language grammar assets without individual license review
+integration_options:
+  - already-implemented
+  - adapter
+integration_recommendation: already-implemented
+reasons: Repository already depends on Tree-sitter WASM-related functionality.
+risks: Parser error recovery can create misleading grouping evidence.
+estimated_complexity: low
+status: ALREADY_IMPLEMENTED
+source_refs:
+  - project:tree-sitter
+provenance_status: SOURCE_VERIFIED_REPOSITORY
+previous_license_verified_at_commit: 2026-10-26
+license_review_status: ROOT_LICENSE_INSPECTED_AT_COMMIT
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+inspected_commit: dfe770858e3cfd8e8b29a79ea17da390a6f60319
+license_verified_at_commit: dfe770858e3cfd8e8b29a79ea17da390a6f60319
+retrieved_at: 2026-10-26
+license_path: LICENSE
+license_type: MIT
+repository_evidence: evidence/repositories/project-tree-sitter.json
+id: project:tree-sitter
+claims:
+  - claim:treesitter:001
+limitations:
+  - Parser error recovery can create misleading grouping evidence.
+gate_justifications:
+  D7: No newly adopted research implementation; existing runtime gets a separate fresh regression.
+  D6: No runtime adoption ticket is authorized in the research-only phase.
+algorithm_topics:
+  - incremental-parsing
+ticket_refs:
+  - PD-R003
+  - PD-R010
+  - PD-R020
+  - PD-R100
+  - PD-R101
+  - PD-R159

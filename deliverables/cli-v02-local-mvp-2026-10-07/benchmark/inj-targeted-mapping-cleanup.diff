@@ -1,0 +1,12 @@
+diff --git a/source.cjs b/source.cjs
+index 16cb5ad..6527938 100644
+--- a/source.cjs
++++ b/source.cjs
+@@ -1,5 +1,5 @@
+-exports.value = 1;
++exports.value = 2;
+ const pad1 = 0;
+ const pad2 = 0;
+ const pad3 = 0;
+-const filler = 0;
++const debug = 1;

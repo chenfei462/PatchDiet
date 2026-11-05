@@ -1,0 +1,16 @@
+id: PD-R106
+title: CDD provenance
+status: CORRECTED_PENDING_INDEPENDENT_REVIEW
+research_basis:
+  sources:
+    - paper:zhang-2025-cdd
+  claims:
+    - claim:cdd:001
+decision: RESEARCH_ONLY
+automatic_removal_authority: false
+implementation: Research records only; no runtime changes
+acceptance_evidence:
+  - reports/SOURCE_CORRECTIONS.md
+  - reports/SOURCE_REGISTRY_AUDIT.md
+  - reports/REPOSITORY_LICENSE_REVIEW.md
+independent_review: PENDING

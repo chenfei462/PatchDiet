@@ -1,0 +1,52 @@
+/*
+ * Liquid-glass design tokens. The palette is strict grayscale: every color is
+ * an HSL value with 0% saturation, and hierarchy comes from white alpha steps.
+ */
+:root {
+  color-scheme: dark;
+
+  --background: 0 0% 4%;
+  --foreground: 0 0% 100%;
+  --surface: 0 0% 8%;
+  --muted: 0 0% 60%;
+
+  --color-void: hsl(var(--background));
+  --color-ink: hsl(var(--foreground));
+  --color-surface: hsl(var(--surface));
+  --text-strong: hsl(0 0% 100%);
+  --text-80: hsl(0 0% 100% / 0.8);
+  --text-60: hsl(0 0% 100% / 0.6);
+  --text-50: hsl(0 0% 100% / 0.5);
+  --text-35: hsl(0 0% 100% / 0.35);
+  --fill-15: hsl(0 0% 100% / 0.15);
+  --fill-10: hsl(0 0% 100% / 0.1);
+  --fill-06: hsl(0 0% 100% / 0.06);
+  --shade: hsl(0 0% 0% / 0.55);
+  --color-focus: hsl(0 0% 100%);
+
+  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+
+  --radius: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2.5rem;
+  --content-max: 1280px;
+  --gutter: 24px;
+
+  --z-video: 0;
+  --z-content: 10;
+  --z-skip: 50;
+
+  --motion-fast: 160ms;
+  --motion-standard: 280ms;
+  --motion-scene: 700ms;
+  --ease-glass: cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+@media (max-width: 700px) {
+  :root {
+    --gutter: 16px;
+  }
+}

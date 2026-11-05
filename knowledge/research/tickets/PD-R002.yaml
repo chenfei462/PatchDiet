@@ -1,0 +1,18 @@
+id: PD-R002
+title: Benchmark current reducer against ddmin baseline
+research_basis:
+  sources: [paper:perses-icse-2018, project:picire]
+  claims: [claim:picire:001, claim:creduce:001]
+problem: Current reducer behavior is implemented but strategy cost and precision are not measured against named baselines.
+current_repo_evidence: packages/core/src/reducer.ts provides deterministic search, cache, and inconclusive handling.
+proposed_change: Add a benchmark fixture set comparing current behavior to a minimal ddmin baseline without changing runtime defaults.
+files_likely_affected: [benchmarks, packages/core/src/reducer.ts, tests/e2e/shrink-ddmin.test.ts]
+implementation_steps: [define fixtures, measure oracle calls/runtime/cache, report precision/recall, review results]
+safety_invariants: [same executable oracle for all strategies, no heuristic deletion authority]
+tests: [reducer unit suite, benchmark smoke]
+benchmark: [removal precision, removal recall, oracle calls, runtime, cache hit rate]
+acceptance_criteria: [baseline report exists, strategy choice is evidence-backed, no regressions in final validation]
+dependencies: [PD-R001]
+complexity: medium
+do_not_change: [default reducer strategy until evidence exists]
+status: EXPERIMENTAL

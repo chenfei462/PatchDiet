@@ -1,0 +1,21 @@
+id: claim:security:001
+statement: NIST SSDF v1.1 recommends secure-development practices covering preparation, software protection, production
+  and vulnerability response.
+source:
+  id: standard:nist-ssdf-1.1
+evidence_type: normative-specification
+scope: security
+confidence: high
+assumptions:
+  - PatchDiet may run in CI over untrusted changes
+limitations:
+  - SSDF controls are process guidance and do not replace sandboxing or tests
+patchdiet_mapping:
+  affected_components:
+    - packages/core/src/runner.ts
+    - docs/security-model.md
+possible_action: retain provenance and runner isolation evidence in reports
+safety_effect: positive
+automatic_removal_authority: false
+status: RESEARCH_ONLY
+independent_review: PENDING

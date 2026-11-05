@@ -1,0 +1,64 @@
+name: GumTree
+repository: https://github.com/GumTreeDiff/gumtree
+official_site: https://github.com/GumTreeDiff/gumtree
+license: LGPL-3.0
+languages:
+  - Java
+primary_purpose: Fine-grained AST differencing.
+architecture: Tree generators, matchers, and edit-action scripts.
+key_modules:
+  - tree generators
+  - matchers
+  - action generator
+algorithms:
+  - ast-differencing
+useful_patterns:
+  - move detection
+  - edit actions
+  - matcher confidence
+patchdiet_mapping:
+  - packages/core/src/diff.ts
+  - packages/core/src/insights.ts
+do_not_copy:
+  - LGPL code and JVM service integration
+integration_options:
+  - adapter
+  - external-tool
+  - no-integration
+integration_recommendation: research-only adapter
+reasons: Semantic evidence may improve grouping but value is unmeasured.
+risks: Operational complexity and false matches.
+estimated_complexity: high
+status: RESEARCH_ONLY
+source_refs:
+  - project:gumtree
+provenance_status: SOURCE_VERIFIED_REPOSITORY
+previous_license_verified_at_commit: 2026-10-26
+license_review_status: ROOT_LICENSE_INSPECTED_AT_COMMIT
+distillation_gates:
+  D1_SOURCE_VERIFIED: PASS
+  D2_CLAIMS_EXTRACTED: PASS
+  D3_LIMITATIONS_CAPTURED: PASS
+  D4_PATCHDIET_MAPPED: PASS
+  D5_DECISION_RECORDED: PASS
+  D6_TICKET_CREATED_IF_REQUIRED: PASS
+  D7_VALIDATED_IF_IMPLEMENTED: D7_NOT_APPLICABLE
+inspected_commit: 6e9a863940d6805aa9455b97f404b43390e8079e
+license_verified_at_commit: 6e9a863940d6805aa9455b97f404b43390e8079e
+retrieved_at: 2026-10-26
+license_path: LICENSE
+license_type: LGPL-3.0
+repository_evidence: evidence/repositories/project-gumtree.json
+id: project:gumtree
+claims:
+  - claim:gumtree:001
+limitations:
+  - Operational complexity and false matches.
+gate_justifications:
+  D7: No newly adopted research implementation; existing runtime gets a separate fresh regression.
+  D6: No runtime adoption ticket is authorized in the research-only phase.
+ticket_refs:
+  - PD-R010
+  - PD-R100
+  - PD-R101
+  - PD-R159
